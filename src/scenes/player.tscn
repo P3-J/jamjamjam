@@ -15,3 +15,20 @@ mesh = SubResource("CapsuleMesh_cyvha")
 
 [node name="playershape" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_oqcdt")
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="coin_display" type="RichTextLabel" parent="ui"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 16.0
+offset_right = 623.0
+offset_bottom = 92.0
+theme_override_font_sizes/normal_font_size = 32
+text = "🪙: 0"
