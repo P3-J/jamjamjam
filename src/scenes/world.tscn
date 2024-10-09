@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=42 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_6y0s3"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -25,6 +25,8 @@
 [ext_resource type="Resource" uid="uid://bu2f3lupsjhfp" path="res://addons/qodot/game_definitions/fgd/solid_classes/wall_solid_class.tres" id="18_k3be8"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="19_a8skn"]
 [ext_resource type="PackedScene" uid="uid://bgs46evorsb8f" path="res://src/scenes/coin.tscn" id="25_dfcbn"]
+[ext_resource type="PackedScene" uid="uid://cakfw7t63erfs" path="res://src/scenes/roots/enemy_base.tscn" id="26_nw2n0"]
+[ext_resource type="PackedScene" uid="uid://hnhxhfj8d1el" path="res://src/scenes/roots/enemy_green.tscn" id="27_snkoy"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_wyncn"]
 ground_color = Color(0.754641, 0.10502, 0.526505, 1)
@@ -38,7 +40,6 @@ sky = SubResource("Sky_vh7un")
 tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
-fog_enabled = true
 fog_mode = 1
 fog_density = 1.0
 fog_depth_begin = 12.0
@@ -172,3 +173,11 @@ transform = Transform3D(1, 0, 0, 0, 0.98837, 0.152072, 0, -0.152072, 0.98837, -0
 [node name="pickups" type="Node3D" parent="."]
 
 [node name="coin" parent="pickups" instance=ExtResource("25_dfcbn")]
+
+[node name="enemies" type="Node3D" parent="."]
+
+[node name="enemyBase" parent="enemies" instance=ExtResource("26_nw2n0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51387, 2.28879, 0)
+
+[node name="enemyBase2" parent="enemies" instance=ExtResource("27_snkoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.964907, 2.28879, 0)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cakfw7t63erfs"]
+
+[ext_resource type="Script" path="res://src/scripts/enemy_base.gd" id="1_5sfbh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5v57"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_33ce0"]
+
+[node name="enemyBase" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.28879, 0)
+script = ExtResource("1_5sfbh")
+
+[node name="enemybodybase" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_w5v57")
+mesh = SubResource("CapsuleMesh_33ce0")
+skeleton = NodePath("../..")
