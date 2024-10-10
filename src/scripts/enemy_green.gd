@@ -11,6 +11,3 @@ func _ready() -> void:
 # writing over parent class
 func set_color() -> void:
 	body.material_override.set("albedo_color", "#278400")
-
-
-

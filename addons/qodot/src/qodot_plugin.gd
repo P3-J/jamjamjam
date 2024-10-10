@@ -4,13 +4,11 @@ extends EditorPlugin
 
 var map_import_plugin : QuakeMapImportPlugin = null
 var palette_import_plugin : QuakePaletteImportPlugin = null
-var wad_import_plugin: QuakeWadImportPlugin = null
+var wad_import_plugin: EditorImportPlugin = null
 
 var qodot_map_control: Control = null
 var qodot_map_progress_bar: Control = null
 var edited_object_ref: WeakRef = weakref(null)
-
-var qodot_editor_button = preload("./util/qodot_editor_button.gd").new()
 
 func _get_plugin_name() -> String:
 	return "Qodot"
@@ -32,34 +30,39 @@ func _enter_tree() -> void:
 	# Project settings
 	setup_project_settings()
 
+	var csharp_support := QodotUtil.has_csharp_support()
+	if not csharp_support:
+		push_warning("Qodot: Engine does not have C# support. Map building and WAD imports are disabled.")
+
 	# Import plugins
 	map_import_plugin = QuakeMapImportPlugin.new()
 	palette_import_plugin = QuakePaletteImportPlugin.new()
-	wad_import_plugin = QuakeWadImportPlugin.new()
+	if csharp_support:
+		wad_import_plugin = load("res://addons/qodot/src/import_plugins/QuakeWadImportPlugin.cs").new()
 
 	add_import_plugin(map_import_plugin)
 	add_import_plugin(palette_import_plugin)
-	add_import_plugin(wad_import_plugin)
+	if(wad_import_plugin):
+		add_import_plugin(wad_import_plugin)
 
 	# QodotMap button
-	qodot_map_control = create_qodot_map_control()
-	qodot_map_control.set_visible(false)
-	add_control_to_container(EditorPlugin.CONTAINER_SPATIAL_EDITOR_MENU, qodot_map_control)
+	if csharp_support:
+		qodot_map_control = create_qodot_map_control()
+		qodot_map_control.set_visible(false)
+		add_control_to_container(EditorPlugin.CONTAINER_SPATIAL_EDITOR_MENU, qodot_map_control)
 
-	qodot_map_progress_bar = create_qodot_map_progress_bar()
-	qodot_map_progress_bar.set_visible(false)
-	add_control_to_container(EditorPlugin.CONTAINER_INSPECTOR_BOTTOM, qodot_map_progress_bar)
+		qodot_map_progress_bar = create_qodot_map_progress_bar()
+		qodot_map_progress_bar.set_visible(false)
+		add_control_to_container(EditorPlugin.CONTAINER_INSPECTOR_BOTTOM, qodot_map_progress_bar)
 
-	add_custom_type("QodotMap", "Node3D", preload("res://addons/qodot/src/nodes/qodot_map.gd"), null)
-	add_custom_type("QodotEntity", "Node3D", preload("res://addons/qodot/src/nodes/qodot_entity.gd"), null)
-	add_custom_type("QodotNode3D", "Node3D", preload("res://addons/qodot/src/nodes/qodot_node3d.gd"), null)
-
-	add_inspector_plugin(qodot_editor_button)
+		add_custom_type("QodotMap", "Node3D", preload("res://addons/qodot/src/nodes/qodot_map.gd"), null)
+		add_custom_type("QodotEntity", "Node3D", preload("res://addons/qodot/src/nodes/qodot_entity.gd"), null)
+		add_custom_type("QodotNode3D", "Node3D", preload("res://addons/qodot/src/nodes/qodot_node3d.gd"), null)
 
 func _exit_tree() -> void:
 	remove_custom_type("QodotMap")
 	remove_custom_type("QodotEntity")
-	remove_custom_type("QodotNode3D")
+	remove_custom_type("QodotSpatial")
 	remove_import_plugin(map_import_plugin)
 	remove_import_plugin(palette_import_plugin)
 	if wad_import_plugin:
@@ -78,8 +81,6 @@ func _exit_tree() -> void:
 		remove_control_from_container(EditorPlugin.CONTAINER_SPATIAL_EDITOR_BOTTOM, qodot_map_progress_bar)
 		qodot_map_progress_bar.queue_free()
 		qodot_map_progress_bar = null
-	
-	remove_inspector_plugin(qodot_editor_button)
 
 ## Add Qodot-specific settings to Godot's Project Settings
 func setup_project_settings() -> void:
@@ -89,7 +90,6 @@ func setup_project_settings() -> void:
 	try_add_project_setting('qodot/textures/emission_pattern', TYPE_STRING, QodotTextureLoader.PBR_SUFFIX_PATTERNS[QodotTextureLoader.PBRSuffix.EMISSION])
 	try_add_project_setting('qodot/textures/ao_pattern', TYPE_STRING, QodotTextureLoader.PBR_SUFFIX_PATTERNS[QodotTextureLoader.PBRSuffix.AO])
 	try_add_project_setting('qodot/textures/height_pattern', TYPE_STRING, QodotTextureLoader.PBR_SUFFIX_PATTERNS[QodotTextureLoader.PBRSuffix.HEIGHT])
-	try_add_project_setting('qodot/textures/albedo_pattern', TYPE_STRING, QodotTextureLoader.PBR_SUFFIX_PATTERNS[QodotTextureLoader.PBRSuffix.ALBEDO])
 
 ## Add property, if not already present. See [method add_project_setting] for usage.
 func try_add_project_setting(name: String, type: int, value, info: Dictionary = {}) -> void:

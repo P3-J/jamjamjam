@@ -24,9 +24,6 @@ func _get_import_options(path, preset):
 
 func _get_preset_count() -> int:
 	return 0
-
-func _get_priority():
-	return 1.0
 	
 func _get_import_order():
 	return 0

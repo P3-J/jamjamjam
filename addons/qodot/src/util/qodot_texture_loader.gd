@@ -9,7 +9,6 @@ enum PBRSuffix {
 	EMISSION,
 	AO,
 	HEIGHT,
-	ALBEDO
 }
 
 # Suffix string / Godot enum / StandardMaterial3D property
@@ -20,7 +19,6 @@ const PBR_SUFFIX_NAMES := {
 	PBRSuffix.EMISSION: 'emission',
 	PBRSuffix.AO: 'ao',
 	PBRSuffix.HEIGHT: 'height',
-	PBRSuffix.ALBEDO: 'albedo',
 }
 
 const PBR_SUFFIX_PATTERNS := {
@@ -29,8 +27,7 @@ const PBR_SUFFIX_PATTERNS := {
 	PBRSuffix.ROUGHNESS: '%s_roughness.%s',
 	PBRSuffix.EMISSION: '%s_emission.%s',
 	PBRSuffix.AO: '%s_ao.%s',
-	PBRSuffix.HEIGHT: '%s_height.%s',
-	PBRSuffix.ALBEDO: '%s_albedo.%s'
+	PBRSuffix.HEIGHT: '%s_height.%s'
 }
 
 var PBR_SUFFIX_TEXTURES := {
@@ -39,8 +36,7 @@ var PBR_SUFFIX_TEXTURES := {
 	PBRSuffix.ROUGHNESS: StandardMaterial3D.TEXTURE_ROUGHNESS,
 	PBRSuffix.EMISSION: StandardMaterial3D.TEXTURE_EMISSION,
 	PBRSuffix.AO: StandardMaterial3D.TEXTURE_AMBIENT_OCCLUSION,
-	PBRSuffix.HEIGHT: StandardMaterial3D.TEXTURE_HEIGHTMAP,
-	PBRSuffix.ALBEDO: StandardMaterial3D.TEXTURE_ALBEDO
+	PBRSuffix.HEIGHT: StandardMaterial3D.TEXTURE_HEIGHTMAP
 }
 
 const PBR_SUFFIX_PROPERTIES := {
@@ -116,7 +112,7 @@ func load_texture(texture_name: String) -> Texture2D:
 
 func create_materials(texture_list: Array, material_extension: String, default_material: Material, default_material_albedo_uniform: String) -> Dictionary:
 	var texture_materials := {}
-	# prints("TEXLI", texture_list)
+	prints("TEXLI", texture_list)
 	for texture in texture_list:
 		texture_materials[texture] = create_material(
 			texture,
@@ -154,14 +150,13 @@ func create_material(
 	var texture : Texture2D = load_texture(texture_name)
 	if not texture:
 		return material
-
-	if material is BaseMaterial3D:
-		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED if unshaded else BaseMaterial3D.SHADING_MODE_PER_PIXEL
+	
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED if unshaded else BaseMaterial3D.SHADING_MODE_PER_PIXEL
 
 	if material is StandardMaterial3D:
 		material.set_texture(StandardMaterial3D.TEXTURE_ALBEDO, texture)
 	elif material is ShaderMaterial && default_material_albedo_uniform != "":
-		material.set_shader_parameter(default_material_albedo_uniform, texture)
+		material.set_shader_param(default_material_albedo_uniform, texture)
 
 	var pbr_textures : Dictionary = get_pbr_textures(texture_name)
 	

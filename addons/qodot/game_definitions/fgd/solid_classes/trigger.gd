@@ -1,4 +1,4 @@
-extends Area3D
+extends Node
 
 signal trigger()
 
