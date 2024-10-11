@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oqcdt"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_gkg3u"]
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_ve44u")
@@ -13,10 +13,19 @@ script = ExtResource("1_ve44u")
 mesh = SubResource("CapsuleMesh_cyvha")
 
 [node name="playershape" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_oqcdt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.359996, 0)
+shape = SubResource("BoxShape3D_gkg3u")
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 fov = 80.0
+
+[node name="utils" type="Node" parent="."]
+
+[node name="jump_timer" type="Timer" parent="utils"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
