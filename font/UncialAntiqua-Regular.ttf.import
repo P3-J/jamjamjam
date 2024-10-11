@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ficbuvq5hqkl"
-path="res://.godot/imported/UncialAntiqua-Regular.ttf-87348166cec475874ec1e47a7a388a0d.fontdata"
+path="res://.godot/imported/UncialAntiqua-Regular.ttf-cd0b84351b6f8ccca85f9980625f8da0.fontdata"
 
 [deps]
 
-source_file="res://Font/UncialAntiqua-Regular.ttf"
-dest_files=["res://.godot/imported/UncialAntiqua-Regular.ttf-87348166cec475874ec1e47a7a388a0d.fontdata"]
+source_file="res://font/UncialAntiqua-Regular.ttf"
+dest_files=["res://.godot/imported/UncialAntiqua-Regular.ttf-cd0b84351b6f8ccca85f9980625f8da0.fontdata"]
 
 [params]
 
