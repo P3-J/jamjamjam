@@ -22,14 +22,14 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-    var direction := Vector3()
+	var direction := Vector3()
 
     direction = _player_movement(direction)
     direction = direction.normalized()
 
-    velocity.x = direction.x * speed
-    velocity.z = direction.z * speed
-    velocity = global_transform.basis * velocity  
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
+	velocity = global_transform.basis * velocity  
 
     if is_on_floor():
         # reset the ability to jump.
@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
         if velocity.y < max_fall_speed:
             velocity.y = max_fall_speed
 
-    move_and_slide()
+	move_and_slide()
 
     if is_on_floor() and velocity.y < 0:
         velocity.y = 0
