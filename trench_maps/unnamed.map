@@ -4,14 +4,41 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"_tb_textures" "textures;textures\128x128\Elements"
+"_tb_textures" "textures;textures\128x128;textures\128x128\Brick;textures\128x128\Dirt;textures\128x128\Elements;textures\128x128\Metal;textures\128x128\Plaster;textures\128x128\Stone;textures\128x128\Tile;textures\128x128\Wood;textures\Art;textures\Art\Materials;textures\Books;textures\Books\Materials;textures\Buildings;textures\Buildings\Materials;textures\Concrete;textures\Concrete\Materials;textures\Doors;textures\Doors\Materials;textures\Electrical;textures\Electrical\Materials;textures\Floor;textures\Floor\Materials;textures\Ground;textures\Ground\Materials;textures\Industrial;textures\Industrial\Materials;textures\Metal;textures\Metal\Materials;textures\Nature;textures\Nature\Materials;textures\Products;textures\Products\Materials;textures\Roof;textures\Roof\Materials;textures\Tools;textures\Tools\Materials;textures\Units;textures\Units\Materials;textures\Vehicles;textures\Vehicles\Materials;textures\Walls;textures\Walls\Materials;textures\Water;textures\Windows;textures\Windows\Materials;textures\newwithe"
 // brush 0
 {
-( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) 128x128/Elements/Elements_02-128x128 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) 128x128/Elements/Elements_02-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) 128x128/Elements/Elements_02-128x128 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) 128x128/Elements/Elements_02-128x128 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) 128x128/Elements/Elements_02-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) 128x128/Elements/Elements_02-128x128 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -832 -64 -16 ) ( -832 -63 -16 ) ( -832 -64 -15 ) 128x128/Dirt/Dirt_10-128x128 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -64 -672 -16 ) ( -64 -672 -15 ) ( -63 -672 -16 ) 128x128/Dirt/Dirt_10-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) 128x128/Dirt/Dirt_10-128x128 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) 128x128/Dirt/Dirt_19-128x128 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 64 1088 16 ) ( 65 1088 16 ) ( 64 1088 17 ) 128x128/Dirt/Dirt_10-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 800 64 16 ) ( 800 64 17 ) ( 800 65 16 ) 128x128/Dirt/Dirt_10-128x128 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 1
+{
+( -96 352 0 ) ( -96 353 0 ) ( -96 352 1 ) 128x128/Dirt/Dirt_16-128x128 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -96 352 0 ) ( -96 352 1 ) ( -95 352 0 ) 128x128/Dirt/Dirt_16-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -96 352 0 ) ( -95 352 0 ) ( -96 353 0 ) 128x128/Dirt/Dirt_16-128x128 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 512 48 ) ( 32 513 48 ) ( 33 512 48 ) 128x128/Dirt/Dirt_16-128x128 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 512 32 ) ( 33 512 32 ) ( 32 512 33 ) 128x128/Dirt/Dirt_16-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 512 32 ) ( 32 512 33 ) ( 32 513 32 ) 128x128/Dirt/Dirt_16-128x128 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 2
+{
+( -96 64 0 ) ( -96 65 0 ) ( -96 64 1 ) 128x128/Dirt/Dirt_16-128x128 [ 0 -1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
+( -96 64 0 ) ( -96 64 1 ) ( -95 64 0 ) 128x128/Dirt/Dirt_16-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -96 64 0 ) ( -95 64 0 ) ( -96 65 0 ) 128x128/Dirt/Dirt_16-128x128 [ -1 0 0 0 ] [ 0 -1 0 -32 ] 0 1 1
+( 32 224 48 ) ( 32 225 48 ) ( 33 224 48 ) 128x128/Dirt/Dirt_16-128x128 [ 1 0 0 0 ] [ 0 -1 0 -32 ] 0 1 1
+( 32 224 32 ) ( 33 224 32 ) ( 32 224 33 ) 128x128/Dirt/Dirt_16-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 224 32 ) ( 32 224 33 ) ( 32 225 32 ) 128x128/Dirt/Dirt_16-128x128 [ 0 1 0 32 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 3
+{
+( -96 -288 0 ) ( -96 -287 0 ) ( -96 -288 1 ) 128x128/Dirt/Dirt_16-128x128 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -96 -288 0 ) ( -96 -288 1 ) ( -95 -288 0 ) 128x128/Dirt/Dirt_16-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -96 -288 0 ) ( -95 -288 0 ) ( -96 -287 0 ) 128x128/Dirt/Dirt_16-128x128 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -128 64 ) ( 32 -127 64 ) ( 33 -128 64 ) 128x128/Dirt/Dirt_16-128x128 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -128 32 ) ( 33 -128 32 ) ( 32 -128 33 ) 128x128/Dirt/Dirt_16-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 -128 32 ) ( 32 -128 33 ) ( 32 -127 32 ) 128x128/Dirt/Dirt_16-128x128 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }

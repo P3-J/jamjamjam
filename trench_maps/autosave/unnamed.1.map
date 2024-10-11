@@ -1,0 +1,17 @@
+// Game: jam2
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"classname" "worldspawn"
+"_tb_textures" "textures;textures\128x128;textures\128x128\Brick;textures\128x128\Dirt;textures\128x128\Elements;textures\128x128\Metal;textures\128x128\Plaster;textures\128x128\Stone;textures\128x128\Tile;textures\128x128\Wood;textures\Art;textures\Art\Materials;textures\Books;textures\Books\Materials;textures\Buildings;textures\Buildings\Materials;textures\Concrete;textures\Concrete\Materials;textures\Doors;textures\Doors\Materials;textures\Electrical;textures\Electrical\Materials;textures\Floor;textures\Floor\Materials;textures\Ground;textures\Ground\Materials;textures\Industrial;textures\Industrial\Materials;textures\Metal;textures\Metal\Materials;textures\Nature;textures\Nature\Materials;textures\Products;textures\Products\Materials;textures\Roof;textures\Roof\Materials;textures\Tools;textures\Tools\Materials;textures\Units;textures\Units\Materials;textures\Vehicles;textures\Vehicles\Materials;textures\Walls;textures\Walls\Materials;textures\Water;textures\Windows;textures\Windows\Materials;textures\newwithe"
+// brush 0
+{
+( -544 -64 -16 ) ( -544 -63 -16 ) ( -544 -64 -15 ) 128x128/Dirt/Dirt_10-128x128 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -64 -480 -16 ) ( -64 -480 -15 ) ( -63 -480 -16 ) 128x128/Dirt/Dirt_10-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) 128x128/Dirt/Dirt_10-128x128 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) 128x128/Dirt/Dirt_19-128x128 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 64 1088 16 ) ( 65 1088 16 ) ( 64 1088 17 ) 128x128/Dirt/Dirt_10-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 480 64 16 ) ( 480 64 17 ) ( 480 65 16 ) 128x128/Dirt/Dirt_10-128x128 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
