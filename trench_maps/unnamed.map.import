@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://ckvw31bf1j12d"
+path="res://.godot/imported/unnamed.map-3abcfe9d8e5eef109927dae7622eeab9.tres"
+
+[deps]
+
+source_file="res://trench_maps/unnamed.map"
+dest_files=["res://.godot/imported/unnamed.map-3abcfe9d8e5eef109927dae7622eeab9.tres"]
+
+[params]
+

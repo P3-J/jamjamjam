@@ -11,7 +11,7 @@
 [resource]
 script = ExtResource("3_8vw40")
 export_file = false
-trenchbroom_games_folder = ""
+trenchbroom_games_folder = "C:/Users/Administrator/Desktop/trench/games"
 game_name = "Qodot"
 icon = ExtResource("2_jej4n")
 map_formats = Array[Dictionary]([{
@@ -32,5 +32,3 @@ entity_scale = "1"
 default_uv_scale = Vector2(1, 1)
 brush_tags = Array[Resource]([ExtResource("1_bjrlk"), ExtResource("2_kk04y")])
 face_tags = Array[Resource]([ExtResource("3_hren3"), ExtResource("4_y3jqb")])
-face_attrib_surface_flags = Array[Resource]([])
-face_attrib_content_flags = Array[Resource]([])
