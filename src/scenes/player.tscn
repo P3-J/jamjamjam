@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=5 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
+[ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
@@ -21,6 +22,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 fov = 80.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head"]
+light_energy = 1.212
+spot_range = 80.0
+spot_angle = 60.0
+
+[node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
+transform = Transform3D(-0.063973, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.063973, 0.358111, -0.368322, -0.55576)
 
 [node name="utils" type="Node" parent="."]
 
