@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var jump_timer: Timer
 
 var speed = 10.0
+var air_speed = 10.0
 var jump_speed = 10.0  
 var gravity = -25.0  
 var max_fall_speed = -60.0  
@@ -27,37 +28,39 @@ func _physics_process(delta: float) -> void:
     direction = _player_movement(direction)
     direction = direction.normalized()
 
-    velocity.x = direction.x * speed
-    velocity.z = direction.z * speed
-    velocity = global_transform.basis * velocity  
+    direction = global_transform.basis * direction
 
     if is_on_floor():
-        # reset the ability to jump.
+        velocity.x = direction.x * speed
+        velocity.z = direction.z * speed
+
         if (!jump_timer.is_stopped()):
             jump_timer.stop()
             can_still_jump = true
 
         jumped = false
 
-    if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
-        jumped = true
-        velocity.y = jump_speed
-        can_still_jump = false
+        if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
+            jumped = true
+            velocity.y = jump_speed
+            can_still_jump = false
 
-
-    if not is_on_floor():
-
-        if (jump_timer.is_stopped()):
-            jump_timer.start()
+    else:
+        velocity.x += (direction.x * air_speed - velocity.x) * 0.1  
+        velocity.z += (direction.z * air_speed - velocity.z) * 0.1  
 
         velocity.y += gravity * delta
         if velocity.y < max_fall_speed:
             velocity.y = max_fall_speed
 
+        if jump_timer.is_stopped():
+            jump_timer.start()
+
     move_and_slide()
 
     if is_on_floor() and velocity.y < 0:
         velocity.y = 0
+
 
 
 func _input(event: InputEvent) -> void:
