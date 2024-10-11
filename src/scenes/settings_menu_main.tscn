@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk5wahcoppm4r"]
+[gd_scene load_steps=3 format=3 uid="uid://dk5wahcoppm4r"]
 
+[ext_resource type="Script" path="res://src/scripts/settingsmenu_main.gd" id="1_hpeub"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_nuf0f"]
 
 [node name="SettingsMenu" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hpeub")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -24,11 +26,18 @@ scale = Vector2(2, 2)
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_nuf0f")
 text = "Mouse sensitivity"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="MouseValue" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
