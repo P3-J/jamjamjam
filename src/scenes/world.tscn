@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=36 format=4 uid="uid://bkoasxvpq0gjv"]
 
+[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
 [ext_resource type="Resource" uid="uid://dgm276g7bw8q5" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="2_60xna"]
 [ext_resource type="Resource" uid="uid://ccdjpf5j25aua" path="res://addons/qodot/game_definitions/fgd/base_classes/targetname_base_class.tres" id="3_ugn0r"]
@@ -103,6 +104,19 @@ points = PackedVector3Array(4, 3, -6, 4, 0, -6, 14, 0, -6, 14, 3, -6, 4, 3, 2, 4
 points = PackedVector3Array(-18, 4, -6, -18, 0, -6, -8, 0, -6, -8, 4, -6, -18, 4, 2, -18, 0, 2, -8, 0, 2, -8, 4, 2)
 
 [node name="world" type="Node3D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("1_0qpcy")]
+process_mode = 3
+visible = false
+layout_mode = 1
 
 [node name="map" type="Node3D" parent="."]
 
