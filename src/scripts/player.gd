@@ -7,7 +7,7 @@ var jump_speed = 10.0
 var gravity = -25.0  
 var max_fall_speed = -60.0  
 
-var mouse_sensitivity = 0.01
+var mouse_sensitivity = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
 var can_still_jump: bool = true
