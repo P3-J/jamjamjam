@@ -1,5 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bkoasxvpq0gjv"]
-[gd_scene load_steps=49 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=50 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -26,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://u1wk2s8lv6vn" path="res://textures/128x128/Dirt/Dirt_19-128x128.png" id="21_32pam"]
 [ext_resource type="Texture2D" uid="uid://cnwdunvmduprc" path="res://textures/128x128/Dirt/Dirt_15-128x128.png" id="21_52k5b"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="22_5owo0"]
-[ext_resource type="Material" uid="uid://2jahmr774j55" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="24_nl72r"]
+[ext_resource type="Material" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="24_nl72r"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 
@@ -180,6 +179,7 @@ grow_vertical = 2
 process_mode = 3
 visible = false
 layout_mode = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tvsks")
 
