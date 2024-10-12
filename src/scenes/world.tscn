@@ -1,4 +1,4 @@
-[gd_scene load_steps=816 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=817 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="7_uv7ra"]
 [ext_resource type="PackedScene" uid="uid://d23ucxdqa5qx1" path="res://src/scenes/hookspot.tscn" id="11_qp01i"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="12_tthp8"]
+[ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
 [ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
@@ -4955,3 +4956,5 @@ fov = 90.0
 
 [node name="Lava" parent="." instance=ExtResource("12_tthp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.66012, 0)
+
+[node name="AudioManager" parent="." instance=ExtResource("15_uwbxw")]
