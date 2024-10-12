@@ -1,21 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=6 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
+[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gkg3u"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_a27d8"]
+margin = 0.08
 
 [node name="player" type="CharacterBody3D"]
+floor_max_angle = 1.22173
 script = ExtResource("1_ve44u")
 
 [node name="playermesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_cyvha")
 
 [node name="playershape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.359996, 0)
-shape = SubResource("BoxShape3D_gkg3u")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288002, -0.375598, 0.278954)
+shape = SubResource("SphereShape3D_a27d8")
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0)
@@ -24,17 +27,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0)
 fov = 80.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head"]
+light_color = Color(1, 1, 0.654902, 1)
 light_energy = 1.212
+shadow_enabled = true
 spot_range = 80.0
 spot_angle = 60.0
 
 [node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
-transform = Transform3D(-0.063973, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.063973, 0.358111, -0.368322, -0.55576)
+transform = Transform3D(-0.0319864, 0, -0.999488, 0, 1, 0, 0.999488, 0, -0.0319864, 0.163957, -0.214603, -0.27774)
 
 [node name="utils" type="Node" parent="."]
 
 [node name="jump_timer" type="Timer" parent="utils"]
-wait_time = 0.2
+wait_time = 0.4
 one_shot = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("3_vvjmd")]
+process_mode = 3
+visible = false
+layout_mode = 1
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
