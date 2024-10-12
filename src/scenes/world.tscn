@@ -1,6 +1,7 @@
-[gd_scene load_steps=784 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=785 format=4 uid="uid://bkoasxvpq0gjv"]
 
-[ext_resource type="PackedScene" path="res://src/scenes/lava.tscn" id="1_bhc4r"]
+[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
+[ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="1_bhc4r"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_hu0av"]
 [ext_resource type="Resource" uid="uid://dgm276g7bw8q5" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="2_60xna"]
@@ -24,12 +25,12 @@
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="19_a8skn"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
-[ext_resource type="Material" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
+[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
 [ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://textures/128x128/Stone/Stone_09-128x128.png" id="23_n27sg"]
 [ext_resource type="Texture2D" uid="uid://bgudvv336yten" path="res://textures/128x128/Tile/Tile_09-128x128.png" id="24_6qlp5"]
 [ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="25_maeyn"]
 [ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="26_22tpj"]
-[ext_resource type="Material" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
+[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -4671,3 +4672,16 @@ transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, 
 [node name="Camera3D" type="Camera3D" parent="controllableCharacters"]
 transform = Transform3D(0.111536, -0.025361, -0.993437, 0.0199579, 0.99953, -0.0232758, 0.99356, -0.0172308, 0.111989, -6.01703, 17.7281, 82.561)
 fov = 90.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("1_0qpcy")]
+process_mode = 3
+visible = false
+layout_mode = 1
