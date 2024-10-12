@@ -8,6 +8,7 @@ var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tsc
 @onready var pickaxe: Node3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
+@onready var crosshair: TextureRect = $UI/Crosshair
 @onready var ui_node = $UI
 
 var speed = 10.0
@@ -44,7 +45,6 @@ func _ready() -> void:
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Signalbus.connect('kill_player', _on_player_kill)
-
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
@@ -118,10 +118,12 @@ func _input(event: InputEvent) -> void:
 func check_for_hook_collision():
 	if (!hookray.is_colliding()):
 		reset_pickaxe_position()
+		crosshair.texture = load("res://src/assets/crosshair_normal.png")
 		can_hook = false
 		can_move_towards_hook = false
 		return
 	can_hook = true
+	crosshair.texture = load("res://src/assets/crosshair_highlighted.png")
 
 func reset_pickaxe_position():
 	pickaxe.position = pickaxe_reset_pos
