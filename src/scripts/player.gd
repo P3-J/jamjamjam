@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var jump_timer: Timer
 
 var speed = 10.0
+var air_speed = 10.0
 var jump_speed = 10.0  
 var gravity = -25.0  
 var max_fall_speed = -60.0  
@@ -12,13 +13,15 @@ var y_rotation = 0.0
 
 var can_still_jump: bool = true
 var jumped: bool = false
-
+# audio lava, channels
+# signs tutorial
 
 func _ready() -> void:
 	head = get_node("head")
 	jump_timer = get_node("utils/jump_timer")
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Signalbus.connect('kill_player', _on_player_kill)
 
 
 func _process(delta: float) -> void:
@@ -31,37 +34,41 @@ func _physics_process(delta: float) -> void:
 	direction = _player_movement(direction)
 	direction = direction.normalized()
 
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
-	velocity = global_transform.basis * velocity  
+	direction = global_transform.basis * direction
+
+
+
+
 
 	if is_on_floor():
-		# reset the ability to jump.
-		if (!jump_timer.is_stopped()):
-			jump_timer.stop()
-			can_still_jump = true
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 
+		jump_timer.stop()
+		can_still_jump = true
 		jumped = false
+
+	else:
+		velocity.x = lerp(velocity.x, direction.x * air_speed, 0.05)
+		velocity.z = lerp(velocity.z, direction.z * air_speed, 0.05)
+
+		velocity.y += gravity * delta
+		if velocity.y < max_fall_speed:
+			velocity.y = max_fall_speed
+
+		if jump_timer.is_stopped():
+			jump_timer.start()
 
 	if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
 		jumped = true
 		velocity.y = jump_speed
 		can_still_jump = false
 
-
-	if not is_on_floor():
-
-		if (jump_timer.is_stopped()):
-			jump_timer.start()
-
-		velocity.y += gravity * delta
-		if velocity.y < max_fall_speed:
-			velocity.y = max_fall_speed
-
 	move_and_slide()
 
 	if is_on_floor() and velocity.y < 0:
 		velocity.y = 0
+
 
 
 func _input(event: InputEvent) -> void:
@@ -86,5 +93,9 @@ func _player_movement(direction: Vector3) -> Vector3:
 
 
 func _on_jump_timer_timeout() -> void:
-	print("epic")
 	can_still_jump = false
+
+func _on_player_kill() -> void:
+	# TODO Handle kill player
+	print('player should die!')
+	pass
