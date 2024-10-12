@@ -1,6 +1,6 @@
-[gd_scene load_steps=784 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=817 format=4 uid="uid://bkoasxvpq0gjv"]
 
-[ext_resource type="PackedScene" path="res://src/scenes/lava.tscn" id="1_bhc4r"]
+[ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_feymb"]
 [ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="7_uv7ra"]
@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
-[ext_resource type="Material" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
+[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
 [ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://textures/128x128/Stone/Stone_09-128x128.png" id="23_n27sg"]
 [ext_resource type="Texture2D" uid="uid://bgudvv336yten" path="res://textures/128x128/Tile/Tile_09-128x128.png" id="24_6qlp5"]
 [ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="25_maeyn"]
 [ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="26_22tpj"]
-[ext_resource type="Material" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
+[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1

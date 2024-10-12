@@ -4,6 +4,7 @@ extends Node3D
 signal game_starts()
 
 # Player specifics
+signal respawn_called()
 signal kill_player()
 
 # Others
