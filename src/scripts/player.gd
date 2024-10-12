@@ -13,7 +13,7 @@ var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tsc
 var speed = 10.0
 var hook_speed = 15.0
 var air_speed = 10.0
-var jump_speed = 10.0  
+var jump_speed = 14.0  
 var gravity = -25.0  
 var max_fall_speed = -80.0  
 
