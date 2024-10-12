@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvrkoeblxv58u"]
+
+[ext_resource type="Script" path="res://src/scripts/winning_zone.gd" id="1_nk46n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ij1v"]
+size = Vector3(2, 2, 0.5)
+
+[node name="WinningZone" type="Area3D"]
+script = ExtResource("1_nk46n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999919, 0.0127406, 0, -0.0127406, 0.999919, 0, 1, 0)
+shape = SubResource("BoxShape3D_7ij1v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

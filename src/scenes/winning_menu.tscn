@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccyy5gpcyx16d"]
+
+[ext_resource type="Script" path="res://src/scripts/winning_menu.gd" id="1_jdjmc"]
+[ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_5emur"]
+
+[node name="WinningMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jdjmc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5emur")
+theme_override_font_sizes/font_size = 20
+text = "You finally got your  beer!
+But it's time to run more!!!
+"
+horizontal_alignment = 1
+
+[node name="NextLevel" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5emur")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Next level"
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5emur")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
+[node name="BackToMain" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5emur")
+theme_override_font_sizes/font_size = 50
+text = "Main menu"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackToMain" to="." method="_on_back_to_main_pressed"]

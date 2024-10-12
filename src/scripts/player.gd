@@ -1,10 +1,14 @@
 extends CharacterBody3D
+
+var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tscn") as PackedScene
+
 @onready var head: Node3D
 @onready var jump_timer: Timer
 @onready var hookray: RayCast3D
 @onready var pickaxe: Node3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
+@onready var ui_node = $UI
 
 var speed = 10.0
 var hook_speed = 15.0
@@ -27,6 +31,7 @@ var can_move_towards_hook: bool = false
 var pickaxe_reset_pos: Vector3
 
 func _ready() -> void:
+	setup_ui();
 	head = get_node("head")
 	jump_timer = get_node("utils/jump_timer")
 	hookray = get_node("head/hookray")
@@ -154,3 +159,8 @@ func _on_player_kill() -> void:
 	# TODO Handle kill player
 	print('player should die!')
 	pass
+
+func setup_ui() -> void:
+	var winning_menu = winning_menu_scene.instantiate()
+	winning_menu.visible = false
+	ui_node.add_child(winning_menu)
