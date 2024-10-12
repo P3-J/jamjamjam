@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn5kewb311n14"]
+[gd_scene load_steps=4 format=3 uid="uid://bn5kewb311n14"]
 
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_lvya8"]
 [ext_resource type="Script" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
+[ext_resource type="PackedScene" uid="uid://b2wukaf1tyfjc" path="res://src/scenes/settings_menu_pause.tscn" id="3_pjeeh"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -19,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_left = -130.5
+offset_top = -156.0
+offset_right = 130.5
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -50,5 +51,11 @@ theme_override_fonts/font = ExtResource("1_lvya8")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
+[node name="SettingsMenu" parent="." instance=ExtResource("3_pjeeh")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/RespawnButton" to="." method="_on_respawn_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

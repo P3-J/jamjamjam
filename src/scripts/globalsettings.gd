@@ -1,6 +1,6 @@
 extends Node3D
 
-var mouse_sensitivity: float = 0.01
+var mouse_sensitivity: float
 
 # File path to save settings
 const SETTINGS_PATH = "user://settings.cfg"
@@ -19,4 +19,4 @@ func load_settings() -> void:
 	var config = ConfigFile.new()
 	var err = config.load(SETTINGS_PATH)
 	if err == OK:
-		mouse_sensitivity = config.get_value("Settings", "mouse_sensitivity", 0.01)  # Default to 0.01 if not set
+		mouse_sensitivity = config.get_value("Settings", "mouse_sensitivity", 0.001)  # Default to 0.01 if not set

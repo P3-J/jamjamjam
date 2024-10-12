@@ -13,7 +13,7 @@ var jump_speed = 10.0
 var gravity = -25.0  
 var max_fall_speed = -80.0  
 
-var mouse_sensitivity = Globalsettings.mouse_sensitivity
+var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
 var can_still_jump: bool = true
@@ -37,6 +37,11 @@ func _ready() -> void:
 	pickaxe_reset_pos = pickaxe.position
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Signalbus.connect('kill_player', _on_player_kill)
+
+
+func _process(delta: float) -> void:
+	mouse_sensitivity = Globalsettings.mouse_sensitivity
 
 
 func _physics_process(delta: float) -> void:
@@ -88,8 +93,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 
 
-func _process(delta: float) -> void:
-	check_for_hook_collision()
+#func _process(delta: float) -> void:
+	#check_for_hook_collision()
 
 
 func _input(event: InputEvent) -> void:
@@ -148,3 +153,7 @@ func _on_jump_timer_timeout() -> void:
 func _on_hook_start_time_timeout() -> void:
 	print("timed out")
 	can_move_towards_hook = true
+func _on_player_kill() -> void:
+	# TODO Handle kill player
+	print('player should die!')
+	pass
