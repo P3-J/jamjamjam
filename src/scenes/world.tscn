@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=36 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
 [ext_resource type="Resource" uid="uid://dgm276g7bw8q5" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="2_60xna"]
@@ -20,9 +20,10 @@
 [ext_resource type="Resource" uid="uid://b70dbh5v15xno" path="res://addons/qodot/game_definitions/fgd/solid_classes/trigger_solid_class.tres" id="17_wrigs"]
 [ext_resource type="Resource" uid="uid://bu2f3lupsjhfp" path="res://addons/qodot/game_definitions/fgd/solid_classes/wall_solid_class.tres" id="18_k3be8"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="19_a8skn"]
-[ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="20_5eyoa"]
-[ext_resource type="Texture2D" uid="uid://u1wk2s8lv6vn" path="res://textures/128x128/Dirt/Dirt_19-128x128.png" id="21_32pam"]
-[ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="22_5owo0"]
+[ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://src/textures/128x128/Dirt/Dirt_10-128x128.png" id="20_5eyoa"]
+[ext_resource type="Texture2D" uid="uid://u1wk2s8lv6vn" path="res://src/textures/128x128/Dirt/Dirt_19-128x128.png" id="21_32pam"]
+[ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://src/textures/128x128/Dirt/Dirt_16-128x128.png" id="22_5owo0"]
+[ext_resource type="PackedScene" uid="uid://cyxydyqne5ouo" path="res://src/scenes/fire_red.tscn" id="24_uu6wp"]
 
 [sub_resource type="Resource" id="Resource_5kpi8"]
 script = ExtResource("19_a8skn")
@@ -140,3 +141,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.15185, 2.28214)
 
 [node name="Camera3D" type="Camera3D" parent="controllableCharacters/player"]
 transform = Transform3D(1, 0, 0, 0, 0.98837, 0.152072, 0, -0.152072, 0.98837, -0.192641, 2.41192, 5.59522)
+
+[node name="fire_red" parent="." instance=ExtResource("24_uu6wp")]

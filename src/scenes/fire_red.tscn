@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyxydyqne5ouo"]
+
+[ext_resource type="Shader" uid="uid://p17vin33qjap" path="res://src/shaders/fire_red.tres" id="1_nb0ta"]
+[ext_resource type="Texture2D" uid="uid://n3ss8mlytmt6" path="res://Flame01.png" id="2_2i1yw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4jbm"]
+render_priority = 0
+shader = ExtResource("1_nb0ta")
+shader_parameter/maintext = ExtResource("2_2i1yw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1504j"]
+gravity = Vector3(0, 0, 0)
+color = Color(4, 1.25, 0.6, 0.8)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2tngd"]
+
+[node name="fire_red" type="Node3D"]
+
+[node name="staticflame" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_u4jbm")
+amount = 1
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_1504j")
+draw_pass_1 = SubResource("QuadMesh_2tngd")
