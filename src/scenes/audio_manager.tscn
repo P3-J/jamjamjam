@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwjc8lhq044v0"]
+
+[ext_resource type="Script" path="res://src/scripts/audio_manager.gd" id="1_wdger"]
+[ext_resource type="AudioStream" uid="uid://vnymgvhcn2wt" path="res://src/assets/sounds/oudukas_cut.wav" id="2_nvaun"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_wdger")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nvaun")
