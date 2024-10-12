@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=12 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
@@ -19,6 +19,9 @@ shader_parameter/pixel_size = 4
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6n8qt"]
 material = SubResource("ShaderMaterial_7jmme")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
+size = Vector3(0.75, 0.5, 0.75)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 floor_max_angle = 1.22173
@@ -100,6 +103,10 @@ one_shot = true
 [node name="hook_start_time" type="Timer" parent="utils"]
 wait_time = 0.3
 one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04943, -0.0232038)
+shape = SubResource("BoxShape3D_vf6xc")
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
