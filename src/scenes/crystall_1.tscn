@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://2dspr6xg6ey"]
+
+[ext_resource type="PackedScene" uid="uid://hjqfy27qoq5j" path="res://src/assets/Crystalls/Crystall1.fbx" id="1_ddjxf"]
+[ext_resource type="Texture2D" uid="uid://doxank5oeh6mm" path="res://src/assets/Crystalls/Crystall1_BaseColor.png" id="2_biomn"]
+[ext_resource type="Texture2D" uid="uid://doyv3aavnxpt" path="res://src/assets/Crystalls/Crystall1_Crystall_Emissive.png" id="3_xfsmy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywh22"]
+albedo_texture = ExtResource("2_biomn")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("3_xfsmy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5upv"]
+albedo_texture = ExtResource("2_biomn")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("3_xfsmy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n848t"]
+albedo_texture = ExtResource("2_biomn")
+
+[node name="Crystall1" instance=ExtResource("1_ddjxf")]
+
+[node name="Crystall" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ywh22")
+
+[node name="pCylinder12" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder13" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder14" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder15" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder16" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder20" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder21" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder22" parent="." index="8"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")
+
+[node name="pCylinder23" parent="." index="9"]
+material_override = SubResource("StandardMaterial3D_y5upv")
+surface_material_override/0 = SubResource("StandardMaterial3D_n848t")

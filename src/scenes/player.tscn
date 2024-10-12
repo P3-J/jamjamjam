@@ -1,15 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=12 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/crosshair_normal.png" id="4_lgdho"]
-[ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
+[ext_resource type="PackedScene" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
+[ext_resource type="Shader" path="res://src/shaders/lava.gdshader" id="5_05xrp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a27d8"]
 margin = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jmme"]
+render_priority = 0
+shader = ExtResource("5_05xrp")
+shader_parameter/pixel_size = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6n8qt"]
+material = SubResource("ShaderMaterial_7jmme")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
+size = Vector3(0.75, 0.5, 0.75)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 floor_max_angle = 1.22173
@@ -32,7 +44,6 @@ visible = false
 layout_mode = 1
 
 [node name="Crosshair" type="TextureRect" parent="UI"]
-modulate = Color(1, 1, 1, 0.588235)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -57,10 +68,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288002, -0.375598, 0.27895
 shape = SubResource("SphereShape3D_a27d8")
 
 [node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 fov = 80.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.392649)
+mesh = SubResource("PlaneMesh_6n8qt")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head"]
 light_color = Color(1, 1, 0.654902, 1)
@@ -70,7 +85,7 @@ spot_range = 80.0
 spot_angle = 60.0
 
 [node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
-transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729, 0.386384, -0.384911, -0.589753)
+transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729, 0.449391, -0.384911, -0.574789)
 
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
@@ -86,13 +101,12 @@ wait_time = 0.4
 one_shot = true
 
 [node name="hook_start_time" type="Timer" parent="utils"]
-wait_time = 0.5
+wait_time = 0.3
 one_shot = true
 
-[node name="death_timer" type="Timer" parent="utils"]
-wait_time = 4.0
-one_shot = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04943, -0.0232038)
+shape = SubResource("BoxShape3D_vf6xc")
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
-[connection signal="timeout" from="utils/death_timer" to="UI/DeathScreen" method="_on_death_timer_timeout"]
