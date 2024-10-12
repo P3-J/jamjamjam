@@ -264,7 +264,7 @@ transform = Transform3D(0.274077, 0, -0.961708, 0, 1, 0, 0.961708, 0, 0.274077, 
 [node name="controllableCharacters" type="Node3D" parent="."]
 
 [node name="player" parent="controllableCharacters" instance=ExtResource("7_uv7ra")]
-transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, 38.2526, 9.26132, -43.4685)
+transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, -72.0593, -11.279, -43.4685)
 
 [node name="Camera3D" type="Camera3D" parent="controllableCharacters"]
 transform = Transform3D(0.111536, -0.025361, -0.993437, 0.0199579, 0.99953, -0.0232758, 0.99356, -0.0172308, 0.111989, -6.01703, 17.7281, 82.561)
