@@ -1,6 +1,7 @@
 extends Node3D
 
 var mouse_sensitivity: float
+var input_disabled = false
 
 # File path to save settings
 const SETTINGS_PATH = "user://settings.cfg"
