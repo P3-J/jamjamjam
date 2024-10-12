@@ -40,10 +40,6 @@ func _ready() -> void:
 	Signalbus.connect('kill_player', _on_player_kill)
 
 
-func _process(delta: float) -> void:
-	mouse_sensitivity = Globalsettings.mouse_sensitivity
-
-
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
 
@@ -93,8 +89,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 
 
-#func _process(delta: float) -> void:
-	#check_for_hook_collision()
+func _process(_delta: float) -> void:
+	check_for_hook_collision()
+	mouse_sensitivity = Globalsettings.mouse_sensitivity
 
 
 func _input(event: InputEvent) -> void:

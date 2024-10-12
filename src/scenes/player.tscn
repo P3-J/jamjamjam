@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
-[ext_resource type="PackedScene" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
+[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
