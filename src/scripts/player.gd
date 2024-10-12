@@ -21,6 +21,7 @@ func _ready() -> void:
 	jump_timer = get_node("utils/jump_timer")
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Signalbus.connect('kill_player', _on_player_kill)
 
 
 func _physics_process(delta: float) -> void:
@@ -89,3 +90,8 @@ func _player_movement(direction: Vector3) -> Vector3:
 
 func _on_jump_timer_timeout() -> void:
 	can_still_jump = false
+
+func _on_player_kill() -> void:
+	# TODO Handle kill player
+	print('player should die!')
+	pass
