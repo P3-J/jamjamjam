@@ -5,6 +5,7 @@ signal game_starts()
 
 # Player specifics
 signal kill_player()
+signal player_wins()
 
 # Others
 signal make_lava_rise()
