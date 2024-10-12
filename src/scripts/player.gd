@@ -13,7 +13,7 @@ var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tsc
 var speed = 10.0
 var hook_speed = 15.0
 var air_speed = 10.0
-var jump_speed = 10.0  
+var jump_speed = 14.0  
 var gravity = -25.0  
 var max_fall_speed = -80.0  
 
@@ -155,6 +155,7 @@ func _on_jump_timer_timeout() -> void:
 func _on_hook_start_time_timeout() -> void:
 	print("timed out")
 	can_move_towards_hook = true
+	
 func _on_player_kill() -> void:
 	# TODO Handle kill player
 	print('player should die!')
