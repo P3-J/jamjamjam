@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddk73t8n4ysd6"]
+
+[ext_resource type="Script" path="res://src/scripts/lava.gd" id="1_u7ucl"]
+[ext_resource type="Shader" path="res://src/shaders/lava.gdshader" id="2_lffpx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5tww"]
+emission_enabled = true
+emission = Color(0.752941, 0, 0, 1)
+emission_energy_multiplier = 2.19
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_652k1"]
+material = SubResource("StandardMaterial3D_e5tww")
+size = Vector2(500, 500)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpvo5"]
+render_priority = 0
+shader = ExtResource("2_lffpx")
+shader_parameter/WATER_COL = Color(0.78945, 0.153223, 0, 1)
+shader_parameter/WATER2_COL = Color(0.891788, 0.434272, 3.85046e-07, 1)
+shader_parameter/FOAM_COL = Color(0, 0, 0, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(60, 60)
+shader_parameter/wave_speed = 1.0
+shader_parameter/wave_amplitude = 0.5
+shader_parameter/wave_frequency = 1.5
+shader_parameter/time_offset = 0.0
+shader_parameter/water_size = Vector2(100, 100)
+shader_parameter/water_transparency = 1.0
+shader_parameter/water_depth_factor = 10.0
+shader_parameter/foam_width = 0.5
+shader_parameter/foam_edge_softness = 0.05
+shader_parameter/foam_smoothness = 0.03
+shader_parameter/foam_distortion_speed = 0.5
+shader_parameter/foam_distortion_amount = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2oyh"]
+size = Vector3(500, 1, 500)
+
+[node name="Lava" type="Area3D"]
+script = ExtResource("1_u7ucl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_652k1")
+surface_material_override/0 = SubResource("ShaderMaterial_cpvo5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_k2oyh")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
