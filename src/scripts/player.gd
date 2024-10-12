@@ -7,7 +7,7 @@ var jump_speed = 10.0
 var gravity = -25.0  
 var max_fall_speed = -60.0  
 
-var mouse_sensitivity = Globalsettings.mouse_sensitivity
+var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
 var can_still_jump: bool = true
@@ -19,6 +19,10 @@ func _ready() -> void:
 	jump_timer = get_node("utils/jump_timer")
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _process(delta: float) -> void:
+	mouse_sensitivity = Globalsettings.mouse_sensitivity
 
 
 func _physics_process(delta: float) -> void:
