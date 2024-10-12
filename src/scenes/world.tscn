@@ -1,4 +1,4 @@
-[gd_scene load_steps=785 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=786 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="1_bhc4r"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="25_maeyn"]
 [ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="26_22tpj"]
 [ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
+[ext_resource type="PackedScene" uid="uid://w3ixhrgfmdby" path="res://src/scenes/audio_manager.tscn" id="32_hulqm"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -4685,3 +4686,5 @@ grow_vertical = 2
 process_mode = 3
 visible = false
 layout_mode = 1
+
+[node name="AudioManager" parent="." instance=ExtResource("32_hulqm")]

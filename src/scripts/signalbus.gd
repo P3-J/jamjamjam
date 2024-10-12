@@ -1,6 +1,7 @@
 extends Node3D
 
 # Game specific
+signal game_starts()
 
 # Player specifics
 signal respawn_called()

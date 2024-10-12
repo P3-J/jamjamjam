@@ -27,5 +27,5 @@ func add_and_start_timer() -> void:
 
 
 func _on_timer_timeout() -> void:
-	print('Game starts!')
+	Signalbus.emit_signal('game_starts')
 	Signalbus.emit_signal('make_lava_rise')
