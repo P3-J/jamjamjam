@@ -88,10 +88,5 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
-[node name="death_timer" type="Timer" parent="utils"]
-wait_time = 4.0
-one_shot = true
-
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
-[connection signal="timeout" from="utils/death_timer" to="UI/DeathScreen" method="_on_death_timer_timeout"]

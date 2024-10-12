@@ -6,7 +6,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	death_timer.connect("timeout", Callable(self, "_on_death_timer_timeout"))
 	Signalbus.connect("kill_player", _death_called)
 
 
@@ -22,10 +21,6 @@ func _death_called():
 	get_tree().paused = true
 	animation_player.play("DeathScreenAnimation")
 	animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
-
-
-func _on_death_timer_timeout() -> void:
-	pass # Replace with function body.
 	
 
 func _on_animation_finished(anim_name: String):
