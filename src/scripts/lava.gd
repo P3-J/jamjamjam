@@ -18,5 +18,4 @@ func _on_body_entered(body: Node3D) -> void:
 		Signalbus.emit_signal('kill_player')
 
 func _on_lava_start_rising() -> void:
-	self.global_position = Vector3.ZERO
 	is_rising = true

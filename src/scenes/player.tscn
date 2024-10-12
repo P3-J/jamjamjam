@@ -34,12 +34,23 @@ spot_range = 80.0
 spot_angle = 60.0
 
 [node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
-transform = Transform3D(-0.0319864, 0, -0.999488, 0, 1, 0, 0.999488, 0, -0.0319864, 0.163957, -0.214603, -0.27774)
+transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729, 0.386384, -0.384911, -0.589753)
+
+[node name="hookray" type="RayCast3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
+target_position = Vector3(0, 0, -15)
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="utils" type="Node" parent="."]
 
 [node name="jump_timer" type="Timer" parent="utils"]
 wait_time = 0.4
+one_shot = true
+
+[node name="hook_start_time" type="Timer" parent="utils"]
+wait_time = 0.5
 one_shot = true
 
 [node name="UI" type="Control" parent="."]
@@ -56,3 +67,4 @@ visible = false
 layout_mode = 1
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
