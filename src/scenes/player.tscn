@@ -9,7 +9,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_a27d8"]
 margin = 0.08
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" groups=["player"]]
 floor_max_angle = 1.22173
 script = ExtResource("1_ve44u")
 

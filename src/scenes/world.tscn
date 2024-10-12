@@ -1,7 +1,9 @@
-[gd_scene load_steps=783 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=785 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
+[ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="1_bhc4r"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
+[ext_resource type="Script" path="res://src/scripts/world.gd" id="1_hu0av"]
 [ext_resource type="Resource" uid="uid://dgm276g7bw8q5" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="2_60xna"]
 [ext_resource type="Resource" uid="uid://ccdjpf5j25aua" path="res://addons/qodot/game_definitions/fgd/base_classes/targetname_base_class.tres" id="3_ugn0r"]
 [ext_resource type="Resource" uid="uid://c5o31v30rw7v5" path="res://addons/qodot/game_definitions/fgd/base_classes/light_base_class.tres" id="4_85rmx"]
@@ -23,12 +25,12 @@
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="19_a8skn"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
-[ext_resource type="Material" uid="uid://2jahmr774j55" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
+[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
 [ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://textures/128x128/Stone/Stone_09-128x128.png" id="23_n27sg"]
 [ext_resource type="Texture2D" uid="uid://bgudvv336yten" path="res://textures/128x128/Tile/Tile_09-128x128.png" id="24_6qlp5"]
 [ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="25_maeyn"]
 [ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="26_22tpj"]
-[ext_resource type="Material" uid="uid://cj8cjgartdem0" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
+[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -2410,6 +2412,10 @@ points = PackedVector3Array(15, 36.5, 78, 15.5, 27, 79.5, 16.5, 27, 79.5, 17, 36
 points = PackedVector3Array(12.8333, 42.0417, 79.5, 13.9167, 21.4583, 83.25, 16.0833, 21.4583, 83.25, 17.1667, 42.0417, 79.5, 12.8333, 42.0417, 86, 13.9167, 21.4583, 84.4167, 16.0833, 21.4583, 84.4167, 17.1667, 42.0417, 86)
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_hu0av")
+
+[node name="Lava" parent="." instance=ExtResource("1_bhc4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639816, 0.896067, 73.8861)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tvsks")
