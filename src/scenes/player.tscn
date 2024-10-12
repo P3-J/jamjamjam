@@ -32,6 +32,7 @@ visible = false
 layout_mode = 1
 
 [node name="Crosshair" type="TextureRect" parent="UI"]
+modulate = Color(1, 1, 1, 0.588235)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
