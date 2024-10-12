@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddk73t8n4ysd6"]
+
+[ext_resource type="Script" path="res://src/scripts/lava.gd" id="1_u7ucl"]
+[ext_resource type="Texture2D" uid="uid://cdl8plytaktqu" path="res://textures/128x128/Elements/Elements_01-128x128.png" id="2_qp0cq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_652k1"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s327s"]
+albedo_texture = ExtResource("2_qp0cq")
+emission_enabled = true
+emission = Color(0.495689, 0.134983, 0.117423, 1)
+emission_energy_multiplier = 1.62
+emission_texture = ExtResource("2_qp0cq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2oyh"]
+size = Vector3(1000, 1, 1000)
+
+[node name="Lava" type="Area3D"]
+script = ExtResource("1_u7ucl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_652k1")
+surface_material_override/0 = SubResource("StandardMaterial3D_s327s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_k2oyh")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

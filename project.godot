@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Signalbus="*res://src/scripts/signalbus.gd"
 Globalsettings="*res://src/scripts/globalsettings.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray()
@@ -27,6 +31,10 @@ enabled=PackedStringArray()
 [filesystem]
 
 import/blender/enabled=false
+
+[global_group]
+
+player=""
 
 [input]
 

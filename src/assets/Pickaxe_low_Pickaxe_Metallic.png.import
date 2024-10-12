@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgudvv336yten"
-path.s3tc="res://.godot/imported/Tile_09-128x128.png-1c57981ff5bcb507f5eab010b204d270.s3tc.ctex"
+uid="uid://bjuus33a1hvcw"
+path.s3tc="res://.godot/imported/Pickaxe_low_Pickaxe_Metallic.png-d62a4d001c832747203cd439258827e6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/128x128/Tile/Tile_09-128x128.png"
-dest_files=["res://.godot/imported/Tile_09-128x128.png-1c57981ff5bcb507f5eab010b204d270.s3tc.ctex"]
+source_file="res://src/assets/Pickaxe_low_Pickaxe_Metallic.png"
+dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Metallic.png-d62a4d001c832747203cd439258827e6.s3tc.ctex"]
 
 [params]
 

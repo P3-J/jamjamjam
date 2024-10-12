@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgudvv336yten"
-path.s3tc="res://.godot/imported/Tile_09-128x128.png-1c57981ff5bcb507f5eab010b204d270.s3tc.ctex"
+uid="uid://cgrss1cuq5x3p"
+path.s3tc="res://.godot/imported/Pickaxe_low_Pickaxe_Normal.png-c78e91c1f6fbda6420263b4d6cda0e91.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/128x128/Tile/Tile_09-128x128.png"
-dest_files=["res://.godot/imported/Tile_09-128x128.png-1c57981ff5bcb507f5eab010b204d270.s3tc.ctex"]
+source_file="res://src/assets/Pickaxe_low_Pickaxe_Normal.png"
+dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Normal.png-c78e91c1f6fbda6420263b4d6cda0e91.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://src/assets/Pickaxe_low_Pickaxe_Normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
