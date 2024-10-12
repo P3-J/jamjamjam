@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=15 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
@@ -22,6 +22,43 @@ material = SubResource("ShaderMaterial_7jmme")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
 size = Vector3(0.75, 0.5, 0.75)
+
+[sub_resource type="Animation" id="Animation_5qs03"]
+resource_name = "head_sway"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.818411, 0.239081), Vector3(0, 0.6, 0.239), Vector3(0, 0.9, 0.239), Vector3(0, 0.818, 0.239)]
+}
+
+[sub_resource type="Animation" id="Animation_vun55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.818411, 0.239081)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c70xo"]
+_data = {
+"RESET": SubResource("Animation_vun55"),
+"head_sway": SubResource("Animation_5qs03")
+}
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 floor_max_angle = 1.22173
@@ -107,6 +144,11 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04943, -0.0232038)
 shape = SubResource("BoxShape3D_vf6xc")
+
+[node name="player_anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c70xo")
+}
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]

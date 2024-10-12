@@ -10,6 +10,7 @@ var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tsc
 @onready var body: MeshInstance3D
 @onready var crosshair: TextureRect = $UI/Crosshair
 @onready var ui_node = $UI
+@onready var player_anim: AnimationPlayer
 
 var speed = 10.0
 var hook_speed = 15.0
@@ -39,6 +40,7 @@ func _ready() -> void:
 	hookray = get_node("head/hookray")
 	hook_start_time = get_node("utils/hook_start_time")
 	body = get_node("playermesh")
+	player_anim = get_node("player_anim")
 
 	pickaxe = get_node("head/Pickaxe")
 	pickaxe_reset_pos = pickaxe.position
@@ -56,6 +58,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+
+		if velocity.x <= 0 and velocity.z <= 0:
+			player_anim.stop()
 
 		jump_timer.stop()
 		can_still_jump = true
@@ -112,6 +117,7 @@ func _input(event: InputEvent) -> void:
 		holding_hook_button = true
 	if Input.is_action_just_released("hook"):
 		holding_hook_button = false
+		pickaxe.scale = Vector3(1,1,1)
 		reset_pickaxe_position()
 
 	
@@ -128,11 +134,14 @@ func check_for_hook_collision():
 func reset_pickaxe_position():
 	pickaxe.position = pickaxe_reset_pos
 
+
+
 func hook_towards(collider):
 	var direction = (collider.global_position - global_transform.origin).normalized() 
 	velocity = direction * hook_speed
 
 func send_hook_towards(collider, delta):
+	pickaxe.scale = Vector3(2,2,2)
 	pickaxe.global_position = pickaxe.global_position.move_toward(collider.global_position, 15 * delta)
 
 
@@ -141,14 +150,19 @@ func send_hook_towards(collider, delta):
 func _player_movement(direction: Vector3) -> Vector3:
 	if Input.is_action_pressed("up"):
 		direction.z -= 1
+		_sway_head()
 	if Input.is_action_pressed("down"):
 		direction.z += 1
+		_sway_head()
 	if Input.is_action_pressed("left"):
 		direction.x -= 1
 	if Input.is_action_pressed("right"):
 		direction.x += 1
 	
 	return direction
+
+func _sway_head():
+	player_anim.play("head_sway")
 
 
 func _on_jump_timer_timeout() -> void:
