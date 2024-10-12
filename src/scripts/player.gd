@@ -20,6 +20,7 @@ var max_fall_speed = -80.0
 var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
+var has_died: bool = false
 var can_still_jump: bool = true
 var jumped: bool = false
 
@@ -156,10 +157,12 @@ func _on_hook_start_time_timeout() -> void:
 	print("timed out")
 	can_move_towards_hook = true
 	
+	
 func _on_player_kill() -> void:
-	# TODO Handle kill player
-	print('player should die!')
-	pass
+	if !has_died:
+		has_died = true
+		Signalbus.kill_player.emit()
+		print('player should die!')
 
 func setup_ui() -> void:
 	var winning_menu = winning_menu_scene.instantiate()
