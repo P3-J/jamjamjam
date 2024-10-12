@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/crosshair_normal.png" id="4_lgdho"]
-[ext_resource type="PackedScene" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
+[ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="Shader" path="res://src/shaders/lava.gdshader" id="5_05xrp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
@@ -15,13 +15,28 @@ margin = 0.08
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7jmme"]
 render_priority = 0
 shader = ExtResource("5_05xrp")
-shader_parameter/pixel_size = 4
+shader_parameter/pixel_size = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6n8qt"]
 material = SubResource("ShaderMaterial_7jmme")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
 size = Vector3(0.75, 0.5, 0.75)
+
+[sub_resource type="Animation" id="Animation_vun55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.818411, 0.239081)]
+}
 
 [sub_resource type="Animation" id="Animation_5qs03"]
 resource_name = "head_sway"
@@ -37,21 +52,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0.818411, 0.239081), Vector3(0, 0.6, 0.239), Vector3(0, 0.9, 0.239), Vector3(0, 0.818, 0.239)]
-}
-
-[sub_resource type="Animation" id="Animation_vun55"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.818411, 0.239081)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c70xo"]
@@ -97,6 +97,15 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_lgdho")
 
+[node name="timer_text" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 40.0
+offset_right = 504.0
+offset_bottom = 88.0
+theme_override_font_sizes/normal_font_size = 20
+text = "10:10:10"
+
 [node name="playermesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_cyvha")
 
@@ -122,7 +131,7 @@ spot_range = 80.0
 spot_angle = 60.0
 
 [node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
-transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729, 0.449391, -0.384911, -0.574789)
+transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729, 0.281748, -0.384911, -0.574789)
 
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
@@ -140,6 +149,9 @@ one_shot = true
 [node name="hook_start_time" type="Timer" parent="utils"]
 wait_time = 0.3
 one_shot = true
+
+[node name="game_time" type="Timer" parent="utils"]
+wait_time = 4096.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04943, -0.0232038)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=35 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
 [ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
 [ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
+[ext_resource type="PackedScene" uid="uid://bmdbt45de3e3r" path="res://src/scenes/winning_zone.tscn" id="19_fk0ls"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
 [ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
@@ -24,8 +25,8 @@
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
-background_color = Color(0.502501, 0.203312, 0.22756, 1)
-background_energy_multiplier = 0.47
+background_color = Color(0.914277, 0.609581, 0.617536, 1)
+background_energy_multiplier = 0.1
 tonemap_mode = 2
 tonemap_exposure = 1.18
 tonemap_white = 1.93
@@ -275,6 +276,11 @@ transform = Transform3D(0.566753, 0, 0.491214, 0, 0.75, 0, -0.491214, 0, 0.56675
 [node name="Crystall2" parent="map/world_assets" instance=ExtResource("17_v0ngd")]
 transform = Transform3D(-7.81359, 2.23517e-06, 199.847, 49.4634, -193.777, 1.93391, 193.629, 49.5012, 7.57048, -38.9958, 20.1624, -32.1515)
 
+[node name="triggers" type="Node3D" parent="map"]
+
+[node name="WinningZone" parent="map/triggers" instance=ExtResource("19_fk0ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.6207, -12.0814, -31.0049)
+
 [node name="controllableCharacters" type="Node3D" parent="."]
 
 [node name="player" parent="controllableCharacters" instance=ExtResource("7_uv7ra")]
@@ -282,7 +288,7 @@ transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, 
 
 [node name="Camera3D" type="Camera3D" parent="controllableCharacters"]
 transform = Transform3D(0.111536, -0.025361, -0.993437, 0.0199579, 0.99953, -0.0232758, 0.99356, -0.0172308, 0.111989, -6.01703, 17.7281, 82.561)
-fov = 90.0
+fov = 55.0
 
 [node name="Lava" parent="." instance=ExtResource("12_tthp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.4386, 0)

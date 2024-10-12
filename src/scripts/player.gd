@@ -11,6 +11,7 @@ var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tsc
 @onready var crosshair: TextureRect = $UI/Crosshair
 @onready var ui_node = $UI
 @onready var player_anim: AnimationPlayer
+@onready var timer_text: RichTextLabel
 
 var speed = 10.0
 var hook_speed = 15.0
@@ -30,6 +31,13 @@ var can_hook: bool = false
 var holding_hook_button: bool = false
 var can_move_towards_hook: bool = false
 
+var start_time: int = 0
+var is_stopwatch_running: bool = true
+
+var minutes : int = 0
+var seconds : int = 0
+var milliseconds : int = 0
+
 
 var pickaxe_reset_pos: Vector3
 
@@ -41,12 +49,17 @@ func _ready() -> void:
 	hook_start_time = get_node("utils/hook_start_time")
 	body = get_node("playermesh")
 	player_anim = get_node("player_anim")
+	timer_text = get_node("UI/timer_text")
 
 	pickaxe = get_node("head/Pickaxe")
 	pickaxe_reset_pos = pickaxe.position
 
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Signalbus.connect('kill_player', _on_player_kill)
+	Signalbus.player_wins.connect(reached_end)
+
+	start_speedrun_timer()
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
@@ -101,6 +114,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(_delta: float) -> void:
+	update_time()
+
+
 	check_for_hook_collision()
 	mouse_sensitivity = Globalsettings.mouse_sensitivity
 
@@ -184,3 +200,35 @@ func setup_ui() -> void:
 	var winning_menu = winning_menu_scene.instantiate()
 	winning_menu.visible = false
 	ui_node.add_child(winning_menu)
+
+
+
+func update_time():
+	if is_stopwatch_running:
+		var current_time = Time.get_ticks_msec() 
+		var elapsed_time = (current_time - start_time) / 1000.0 
+		timer_text.text = format_time(elapsed_time) 
+		print(format_time(elapsed_time) )
+
+func start_speedrun_timer():
+	start_time = Time.get_ticks_msec()
+	is_stopwatch_running = true
+
+
+func format_time(elapsed_time: float) -> String:
+	minutes = int(elapsed_time / 60)
+	seconds = int(elapsed_time) % 60
+	milliseconds = int((elapsed_time - int(elapsed_time)) * 1000)
+
+	var minute_str = str(minutes).pad_zeros(2)
+	var second_str = str(seconds).pad_zeros(2)
+	var millisecond_str = str(milliseconds).pad_zeros(3)
+	return minute_str + ":" + second_str + ":" + millisecond_str
+
+
+func reached_end():
+	Signalbus.minutes = minutes
+	Signalbus.milliseconds = milliseconds
+	Signalbus.seconds = seconds
+	
+	get_tree().change_scene_to_file("res://src/scenes/score_screen.tscn")

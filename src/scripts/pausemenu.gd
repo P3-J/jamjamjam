@@ -15,15 +15,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var mouse_mode = Input.get_mouse_mode()
 	
-	match mouse_mode:
-		Input.MOUSE_MODE_VISIBLE:
-			print("Mouse Mode: VISIBLE")
-		Input.MOUSE_MODE_HIDDEN:
-			print("Mouse Mode: HIDDEN")
-		Input.MOUSE_MODE_CAPTURED:
-			print("Mouse Mode: CAPTURED")
-		Input.MOUSE_MODE_CONFINED:
-			print("Mouse Mode: CONFINED")
+	#match mouse_mode:
+		#Input.MOUSE_MODE_VISIBLE:
+			#print("Mouse Mode: VISIBLE")
+		#Input.MOUSE_MODE_HIDDEN:
+			#print("Mouse Mode: HIDDEN")
+		#Input.MOUSE_MODE_CAPTURED:
+			#print("Mouse Mode: CAPTURED")
+		#Input.MOUSE_MODE_CONFINED:
+			#print("Mouse Mode: CONFINED")
 			
 	if !Globalsettings.input_disabled:
 		if Input.is_action_just_pressed("pause"):
