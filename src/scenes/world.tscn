@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=34 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://textures/128x128/Brick/Brick_12-128x128.png" id="14_um0t0"]
 [ext_resource type="Material" uid="uid://dq57f2xu2pg5q" path="res://textures/newwithe/Facade003_1K-JPG_Color.tres" id="15_00nks"]
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
+[ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
+[ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
 [ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
@@ -23,12 +25,13 @@
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
 background_color = Color(0.502501, 0.203312, 0.22756, 1)
-background_energy_multiplier = 1.11
+background_energy_multiplier = 0.47
 tonemap_mode = 2
 tonemap_exposure = 1.18
 tonemap_white = 1.93
 glow_enabled = true
-glow_intensity = 2.91
+glow_intensity = 2.58
+glow_bloom = 0.16
 fog_mode = 1
 fog_density = 1.0
 volumetric_fog_density = 0.0149
@@ -244,27 +247,38 @@ spot_angle = 92.12
 [node name="hookspots" type="Node3D" parent="map"]
 
 [node name="hookspot" parent="map/hookspots" instance=ExtResource("11_qp01i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0677, 3.69928, 52.6645)
+transform = Transform3D(-0.997871, 0, 0.0652289, 0, 1, 0, -0.0652289, 0, -0.997871, -22.9478, 0.563385, 51.5188)
 
 [node name="hookspot2" parent="map/hookspots" instance=ExtResource("11_qp01i")]
-transform = Transform3D(0.0809122, 0, 0.996721, 0, 1, 0, -0.996721, 0, 0.0809122, 0.387885, 10.8463, -9.43733)
+transform = Transform3D(0.289292, -0.387301, -0.87539, 0.357245, 0.892103, -0.276636, 0.88808, -0.232701, 0.396439, 1.12608, 8.23579, -8.69012)
 
 [node name="hookspot3" parent="map/hookspots" instance=ExtResource("11_qp01i")]
-transform = Transform3D(0.999162, 0, 0.0409165, 0, 1, 0, -0.0409165, 0, 0.999162, -5.26106, 15.8075, -38.6857)
+transform = Transform3D(0.999053, 0, -0.0434973, 0, 1, 0, 0.0434973, 0, 0.999053, -4.11528, 15.0882, -39.6316)
 
 [node name="hookspot4" parent="map/hookspots" instance=ExtResource("11_qp01i")]
-transform = Transform3D(0.999162, 0, 0.0409165, 0, 1, 0, -0.0409165, 0, 0.999162, 36.2021, 37.6982, 61.0576)
+transform = Transform3D(0.769611, 0, 0.638512, 0, 1, 0, -0.638512, 0, 0.769611, 36.2021, 36.6693, 61.1432)
 
 [node name="hookspot5" parent="map/hookspots" instance=ExtResource("11_qp01i")]
-transform = Transform3D(0.995822, 0, 0.0913104, 0, 1, 0, -0.0913104, 0, 0.995822, 37.3303, 22.2277, -20.3034)
+transform = Transform3D(-0.991485, 0, -0.130215, 0, 1, 0, 0.130215, 0, -0.991485, 34.8669, 22.2277, -20.0333)
 
 [node name="hookspot6" parent="map/hookspots" instance=ExtResource("11_qp01i")]
-transform = Transform3D(0.274077, 0, -0.961708, 0, 1, 0, 0.961708, 0, 0.274077, 22.9783, 25.7159, -15.8811)
+transform = Transform3D(0.470843, 0, -0.882217, 0, 1, 0, 0.882217, 0, 0.470843, 23.4222, 24.8011, -15.5312)
+
+[node name="world_assets" type="Node3D" parent="map"]
+
+[node name="Crystall1" parent="map/world_assets" instance=ExtResource("17_v0ngd")]
+transform = Transform3D(-0.78136, 0, 19.9847, 0, 20, 0, -19.9847, 0, -0.78136, -57.3134, -12.709, -41.0899)
+
+[node name="GreenMushroom" parent="map/world_assets" instance=ExtResource("18_wrg5s")]
+transform = Transform3D(0.566753, 0, 0.491214, 0, 0.75, 0, -0.491214, 0, 0.566753, -57.4758, -13.8939, -34.8546)
+
+[node name="Crystall2" parent="map/world_assets" instance=ExtResource("17_v0ngd")]
+transform = Transform3D(-7.81359, 2.23517e-06, 199.847, 49.4634, -193.777, 1.93391, 193.629, 49.5012, 7.57048, -38.9958, 20.1624, -32.1515)
 
 [node name="controllableCharacters" type="Node3D" parent="."]
 
 [node name="player" parent="controllableCharacters" instance=ExtResource("7_uv7ra")]
-transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, -72.0593, -11.279, -43.4685)
+transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, -54.1685, -9.12141, -46.6702)
 
 [node name="Camera3D" type="Camera3D" parent="controllableCharacters"]
 transform = Transform3D(0.111536, -0.025361, -0.993437, 0.0199579, 0.99953, -0.0232758, 0.99356, -0.0172308, 0.111989, -6.01703, 17.7281, 82.561)
