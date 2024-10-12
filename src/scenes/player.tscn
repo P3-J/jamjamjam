@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=8 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
+[ext_resource type="PackedScene" uid="uid://dclrjg13dhu6r" path="res://src/scenes/death_screen.tscn" id="4_xgagi"]
+[ext_resource type="Texture2D" uid="uid://cx6e53mtuphy2" path="res://src/assets/crosshair.png" id="5_ao4c5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
@@ -42,6 +44,11 @@ transform = Transform3D(-0.0319864, 0, -0.999488, 0, 1, 0, 0.999488, 0, -0.03198
 wait_time = 0.4
 one_shot = true
 
+[node name="death_timer" type="Timer" parent="utils"]
+process_mode = 3
+wait_time = 4.0
+one_shot = true
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -50,9 +57,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="DeathScreen" parent="UI" instance=ExtResource("4_xgagi")]
+visible = false
+layout_mode = 1
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("3_vvjmd")]
 process_mode = 3
 visible = false
 layout_mode = 1
 
+[node name="Crosshair" type="TextureRect" parent="UI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ao4c5")
+
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="utils/death_timer" to="." method="_on_death_timer_timeout"]

@@ -1,6 +1,9 @@
 extends CharacterBody3D
 @onready var head: Node3D
 @onready var jump_timer: Timer
+@onready var death_screen = $UI/DeathScreen
+@onready var death_timer: Timer = $utils/death_timer
+@onready var crosshair = $UI/Crosshair
 
 var speed = 10.0
 var air_speed = 10.0
@@ -11,6 +14,9 @@ var max_fall_speed = -60.0
 var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
+
+var input_enabled: bool = true
+var has_been_called: bool = false
 var can_still_jump: bool = true
 var jumped: bool = false
 # audio lava, channels
@@ -22,6 +28,7 @@ func _ready() -> void:
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Signalbus.connect('kill_player', _on_player_kill)
+	death_timer.connect("timeout", Callable(self, "_on_death_timer_timeout"))
 
 
 func _process(delta: float) -> void:
@@ -96,6 +103,15 @@ func _on_jump_timer_timeout() -> void:
 	can_still_jump = false
 
 func _on_player_kill() -> void:
-	# TODO Handle kill player
-	print('player should die!')
-	pass
+	while !has_been_called:
+		has_been_called = true
+		Signalbus.kill_player.emit()
+		death_timer.start()
+		Globalsettings.input_enabled = false
+		get_tree().paused = true
+
+
+func _on_death_timer_timeout() -> void:
+	get_tree().paused = false
+	Globalsettings.input_enabled = true
+	get_tree().reload_current_scene()
