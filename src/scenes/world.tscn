@@ -1,6 +1,6 @@
 [gd_scene load_steps=783 format=4 uid="uid://bkoasxvpq0gjv"]
 
-[ext_resource type="PackedScene" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
+[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="1_0qpcy"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
 [ext_resource type="Resource" uid="uid://dgm276g7bw8q5" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="2_60xna"]
 [ext_resource type="Resource" uid="uid://ccdjpf5j25aua" path="res://addons/qodot/game_definitions/fgd/base_classes/targetname_base_class.tres" id="3_ugn0r"]
@@ -32,9 +32,18 @@
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
-background_color = Color(0.122252, 0.122252, 0.122252, 1)
-background_energy_multiplier = 1.57
+background_color = Color(0.502501, 0.203312, 0.22756, 1)
+background_energy_multiplier = 0.19
+tonemap_mode = 2
+tonemap_exposure = 1.18
+tonemap_white = 1.93
 glow_enabled = true
+glow_intensity = 2.91
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_density = 0.0149
+volumetric_fog_emission = Color(0.965935, 0.840699, 0.917199, 1)
+volumetric_fog_emission_energy = 0.25
 
 [sub_resource type="Resource" id="Resource_5kpi8"]
 script = ExtResource("19_a8skn")
@@ -2402,19 +2411,6 @@ points = PackedVector3Array(12.8333, 42.0417, 79.5, 13.9167, 21.4583, 83.25, 16.
 
 [node name="world" type="Node3D"]
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PauseMenu" parent="UI" instance=ExtResource("1_0qpcy")]
-process_mode = 3
-visible = false
-layout_mode = 1
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tvsks")
 
@@ -4662,27 +4658,24 @@ shape = SubResource("ConvexPolygonShape3D_6fke2")
 [node name="entity_0_brush_741_collision_shape" type="CollisionShape3D" parent="map/QodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_7ak3f")
 
-[node name="lights" type="Node3D" parent="map"]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="map/lights"]
-transform = Transform3D(1, 0, 0, 0, -0.0139098, 0.999903, 0, -0.999903, -0.0139098, 0, 21.1841, 0)
-light_energy = 9.36
-spot_range = 99.018
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="map/lights"]
-transform = Transform3D(1, 0, 0, 0, -0.0139098, 0.999903, 0, -0.999903, -0.0139098, 15.4266, 21.1841, 0)
-light_energy = 9.36
-spot_range = 99.018
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="map/lights"]
-transform = Transform3D(1, 0, 0, 0, -0.0139098, 0.999903, 0, -0.999903, -0.0139098, 30.2471, 21.1841, 0)
-light_energy = 9.36
-spot_range = 99.018
-
 [node name="controllableCharacters" type="Node3D" parent="."]
 
 [node name="player" parent="controllableCharacters" instance=ExtResource("7_uv7ra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82439, 15.3162, 76.9658)
+transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, -4.20818, 14.6889, 82.0934)
 
-[node name="Camera3D" type="Camera3D" parent="controllableCharacters/player"]
-transform = Transform3D(1, 0, 0, 0, 0.98837, 0.152072, 0, -0.152072, 0.98837, -0.192641, 2.41192, 5.59522)
+[node name="Camera3D" type="Camera3D" parent="controllableCharacters"]
+transform = Transform3D(0.111536, -0.025361, -0.993437, 0.0199579, 0.99953, -0.0232758, 0.99356, -0.0172308, 0.111989, -6.01703, 17.7281, 82.561)
+fov = 90.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("1_0qpcy")]
+process_mode = 3
+visible = false
+layout_mode = 1
