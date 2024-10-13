@@ -21,6 +21,10 @@ Signalbus="*res://src/scripts/signalbus.gd"
 Globalsettings="*res://src/scripts/globalsettings.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/stretch/mode="viewport"

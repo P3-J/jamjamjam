@@ -56,7 +56,7 @@ func _on_data():
 	#print("Got data from WS server: ", _client.get_peer(1).get_packet().get_string_from_utf8())
 	pass
 
-func _process(delta):
+func _process(_delta):
 	# Call this in _process or _physics_process. Data transfer, and signals
 	# emission will only happen when calling this function.
 	#_client.poll()
