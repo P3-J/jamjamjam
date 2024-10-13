@@ -11,6 +11,7 @@ var lava_meter_scene =  ResourceLoader.load("res://src/scenes/lava_meter.tscn") 
 @onready var body: MeshInstance3D
 @onready var crosshair: TextureRect = $UI/Crosshair
 @onready var ui_node = $UI
+@onready var running_audio_stream = AudioStreamPlayer.new()
 
 var speed = 10.0
 var hook_speed = 15.0
@@ -34,7 +35,8 @@ var can_move_towards_hook: bool = false
 var pickaxe_reset_pos: Vector3
 
 func _ready() -> void:
-	setup_ui();
+	setup_ui()
+	setup_sound_stream()
 	head = get_node("head")
 	jump_timer = get_node("utils/jump_timer")
 	hookray = get_node("head/hookray")
@@ -94,6 +96,13 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor() and velocity.y < 0:
 		velocity.y = 0
+	
+	if is_on_floor() && velocity > Vector3.ZERO && !running_audio_stream.playing:
+		running_audio_stream.stream_paused = false
+		running_audio_stream.playing = true
+	
+	if velocity == Vector3.ZERO || not is_on_floor():
+		running_audio_stream.stream_paused = true
 
 
 func _process(_delta: float) -> void:
@@ -171,6 +180,9 @@ func setup_ui() -> void:
 	var winning_menu = winning_menu_scene.instantiate()
 	winning_menu.visible = false
 	ui_node.add_child(winning_menu)
-
 	var lava_meter = lava_meter_scene.instantiate()
 	ui_node.add_child(lava_meter)
+
+func setup_sound_stream() -> void:
+	running_audio_stream.stream = load('res://src/assets/sounds/running.wav')
+	self.add_child(running_audio_stream)
