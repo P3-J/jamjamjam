@@ -6,8 +6,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3071o"]
 albedo_texture = ExtResource("2_3lgxc")
 emission_enabled = true
-emission = Color(0.108277, 0.0330664, 0.000293956, 1)
-emission_energy_multiplier = 4.3
+emission = Color(0.177896, 0.0701795, 0.000686435, 1)
+emission_energy_multiplier = 7.23
 
 [node name="Hook_Spot" instance=ExtResource("1_xyjpx")]
 
