@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwjc8lhq044v0"]
+
+[ext_resource type="Script" path="res://src/scripts/audio_manager.gd" id="1_wdger"]
+[ext_resource type="AudioStream" uid="uid://vnymgvhcn2wt" path="res://src/assets/sounds/oudukas_cut.wav" id="2_nvaun"]
+[ext_resource type="AudioStream" uid="uid://bew6psjny45fs" path="res://src/assets/sounds/burning_match.wav" id="3_ckoot"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_wdger")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nvaun")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ckoot")
