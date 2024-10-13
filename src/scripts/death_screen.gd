@@ -1,7 +1,6 @@
 extends Control
 
 @onready var animation_player = $AnimationPlayer
-@onready var death_timer = $"../../utils/death_timer"
 @onready var crosshair = $"../Crosshair"
 
 # Called when the node enters the scene tree for the first time.
