@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=51 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" path="res://src/scenes/tablet.tscn" id="19_kcgn8"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
 [ext_resource type="PackedScene" uid="uid://bkb4k8axypx8n" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
+[ext_resource type="PackedScene" uid="uid://b0ldonlcqy4fy" path="res://src/scenes/falling_rock.tscn" id="30_gmcew"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -227,6 +228,9 @@ material = SubResource("StandardMaterial3D_wl3n6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfi25"]
 size = Vector3(7.03226, 3.72992, 6.1322)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bvoo5"]
+radius = 5.28623
 
 [node name="world" type="Node3D" node_paths=PackedStringArray("start_area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00804043, -0.0609179, -0.0632148)
@@ -546,3 +550,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0851, -13.6789, -40.7422)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14806, 0.893707, -0.481873)
 shape = SubResource("BoxShape3D_kfi25")
+
+[node name="FallingRock" parent="." node_paths=PackedStringArray("trigger_area") instance=ExtResource("30_gmcew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9377, 30.634, -29.0428)
+falling_speed = 25
+trigger_area = NodePath("../TriggerArea2")
+
+[node name="TriggerArea2" parent="." instance=ExtResource("29_8ktjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9565, -13.6789, -50.779)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111614, 9.53674e-07, -1.78862)
+shape = SubResource("SphereShape3D_bvoo5")
