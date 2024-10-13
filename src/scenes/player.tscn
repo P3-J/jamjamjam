@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/crosshair_normal.png" id="4_lgdho"]
-[ext_resource type="PackedScene" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
+[ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="Shader" path="res://src/shaders/lava.gdshader" id="5_05xrp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]

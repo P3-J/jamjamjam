@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://ohdy6rjqgx4j"]
+
+[ext_resource type="PackedScene" uid="uid://cfjp1m6u1qbhh" path="res://src/scenes/tablet.tscn" id="1_58ten"]
+[ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_m0fqu"]
+
+[node name="objects" type="Node3D"]
+
+[node name="Input_tablet" parent="." instance=ExtResource("1_58ten")]
+
+[node name="Label3D" type="Label3D" parent="Input_tablet"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.177487, 0.00352103)
+pixel_size = 0.0002
+modulate = Color(0.675181, 0.419749, 0.233627, 1)
+text = "W - Move forward
+S - Move backwards
+A - Move left
+D - Move right
+SPACE - Jump"
+font = ExtResource("2_m0fqu")
+font_size = 50
+
+[node name="Input_tablet2" parent="." instance=ExtResource("1_58ten")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.163371)
+
+[node name="Label3D" type="Label3D" parent="Input_tablet2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.177487, 0.00352103)
+pixel_size = 0.0002
+modulate = Color(0.67451, 0.419608, 0.235294, 1)
+text = "Hold RMB on the hook
+to grapple!"
+font = ExtResource("2_m0fqu")
+font_size = 50
+
+[node name="Input_tablet3" parent="." instance=ExtResource("1_58ten")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.349098)
+
+[node name="Label3D" type="Label3D" parent="Input_tablet3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.177487, 0.00352103)
+pixel_size = 0.0002
+modulate = Color(0.67451, 0.419608, 0.235294, 1)
+text = "Escape the lava!"
+font = ExtResource("2_m0fqu")
+font_size = 50
+
+[node name="Label3D2" type="Label3D" parent="Input_tablet3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.147619, -0.0345932)
+pixel_size = 0.0001
+modulate = Color(0.52549, 0.317647, 0.14902, 0.482353)
+outline_modulate = Color(0, 0, 0, 0)
+text = "If you read this you are special!
+ I don't know in what way, that's for you to decide!"
+font = ExtResource("2_m0fqu")
+font_size = 10
