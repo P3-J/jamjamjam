@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d23ucxdqa5qx1"]
+[gd_scene load_steps=9 format=3 uid="uid://b2exdliucx2qg"]
 
 [ext_resource type="Script" path="res://src/scripts/hookspot.gd" id="1_i0tbm"]
 [ext_resource type="PackedScene" uid="uid://dkfbtvxfwq2ov" path="res://src/scenes/hook_spot.tscn" id="2_dg221"]
