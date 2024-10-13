@@ -54,6 +54,7 @@ offset_bottom = 312.0
 text = "refresh"
 
 [node name="timer_text2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 312.0
 offset_right = 943.0
 offset_bottom = 83.0
