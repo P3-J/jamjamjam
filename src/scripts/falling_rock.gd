@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	if is_falling:
 		global_transform.origin.y -= falling_speed * delta
 	
-	if global_transform.origin.y < 0:
+	if global_transform.origin.y < -100:
 		is_falling = false
 		global_transform = initial_global_transform
 
