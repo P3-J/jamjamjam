@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Globalsettings.mouse_sensitivity = mouse_slider.value * 0.01
 	mouse_value.text = str(mouse_slider.value)
 	# If player presses ESC during settings menu then act same as back button
