@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=49 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdbt45de3e3r" path="res://src/scenes/winning_zone.tscn" id="19_fk0ls"]
 [ext_resource type="PackedScene" path="res://src/scenes/tablet.tscn" id="19_kcgn8"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
+[ext_resource type="PackedScene" uid="uid://bkb4k8axypx8n" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -224,9 +225,13 @@ albedo_color = Color(0.490196, 0.298039, 0.168627, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_bekfu"]
 material = SubResource("StandardMaterial3D_wl3n6")
 
-[node name="world" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kfi25"]
+size = Vector3(7.03226, 3.72992, 6.1322)
+
+[node name="world" type="Node3D" node_paths=PackedStringArray("start_area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00804043, -0.0609179, -0.0632148)
 script = ExtResource("1_3jldd")
+start_area = NodePath("TriggerArea")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tvsks")
@@ -534,3 +539,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.4386, 0)
 rise_per_sec = 0.6
 
 [node name="AudioManager" parent="." instance=ExtResource("15_uwbxw")]
+
+[node name="TriggerArea" parent="." instance=ExtResource("29_8ktjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0851, -13.6789, -40.7422)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14806, 0.893707, -0.481873)
+shape = SubResource("BoxShape3D_kfi25")
