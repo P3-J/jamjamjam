@@ -110,6 +110,7 @@ metadata/_edit_group_ = true
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]

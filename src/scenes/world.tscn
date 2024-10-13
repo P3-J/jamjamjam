@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="9_vvf4u"]
 [ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="10_6niwx"]
 [ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="11_8gxk5"]
-[ext_resource type="PackedScene" uid="uid://d23ucxdqa5qx1" path="res://src/scenes/hookspot.tscn" id="11_qp01i"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/scenes/hookspot.tscn" id="11_qp01i"]
 [ext_resource type="Texture2D" uid="uid://b7d0fcse0v6c3" path="res://textures/128x128/Brick/Brick_10-128x128.png" id="12_e227d"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="12_tthp8"]
 [ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://textures/128x128/Stone/Stone_14-128x128.png" id="13_itjn6"]
@@ -21,19 +21,19 @@
 [ext_resource type="PackedScene" uid="uid://b5jrkxftgh5bo" path="res://src/scenes/blue_mushroom.tscn" id="14_bslib"]
 [ext_resource type="PackedScene" uid="uid://cse18aa5wsg46" path="res://src/scenes/floor_torch.tscn" id="15_0nppk"]
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
-[ext_resource type="PackedScene" uid="uid://cf5xp2n1tr7e3" path="res://src/scenes/dust.tscn" id="16_xisyl"]
-[ext_resource type="PackedScene" uid="uid://dgobv856rt6fb" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
+[ext_resource type="PackedScene" path="res://src/scenes/dust.tscn" id="16_xisyl"]
+[ext_resource type="PackedScene" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
 [ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
-[ext_resource type="PackedScene" path="res://src/scenes/rock_2.tscn" id="17_yfxr1"]
+[ext_resource type="PackedScene" uid="uid://bop6o05w6yod6" path="res://src/scenes/rock_2.tscn" id="17_yfxr1"]
 [ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
 [ext_resource type="PackedScene" uid="uid://bmdbt45de3e3r" path="res://src/scenes/winning_zone.tscn" id="19_fk0ls"]
 [ext_resource type="PackedScene" uid="uid://bf1atwf2qrqdy" path="res://src/scenes/tablet.tscn" id="19_kcgn8"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
-[ext_resource type="PackedScene" path="res://src/scenes/crystall_2.tscn" id="26_simvn"]
-[ext_resource type="PackedScene" path="res://src/scenes/rock_1.tscn" id="28_7564s"]
-[ext_resource type="PackedScene" uid="uid://bkb4k8axypx8n" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
+[ext_resource type="PackedScene" uid="uid://7ic6wm40sqs7" path="res://src/scenes/crystall_2.tscn" id="26_simvn"]
+[ext_resource type="PackedScene" uid="uid://blvdu6jx24qoa" path="res://src/scenes/rock_1.tscn" id="28_7564s"]
+[ext_resource type="PackedScene" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
 [ext_resource type="PackedScene" uid="uid://b0ldonlcqy4fy" path="res://src/scenes/falling_rock.tscn" id="30_gmcew"]
-[ext_resource type="PackedScene" path="res://src/scenes/rock_3.tscn" id="34_b3coe"]
+[ext_resource type="PackedScene" uid="uid://b1p07ahgicyjf" path="res://src/scenes/rock_3.tscn" id="34_b3coe"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -458,6 +458,16 @@ font_size = 100
 [node name="MeshInstance3D" type="MeshInstance3D" parent="map/world_assets/tablet3"]
 transform = Transform3D(0.01, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0.0111753, 0.0937047, 0.00100915)
 mesh = SubResource("BoxMesh_bekfu")
+
+[node name="Label3D2" type="Label3D" parent="map/world_assets/tablet3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0174055, 0.149404, -0.04232)
+pixel_size = 0.0001
+modulate = Color(0.403922, 0.180392, 0.0235294, 0.356863)
+outline_modulate = Color(0, 0, 0, 0.0666667)
+text = "If you're reading this you are special! 
+I don't know in what way..
+- Bear"
+font_size = 20
 
 [node name="GreenMushroom3" parent="map/world_assets" instance=ExtResource("18_wrg5s")]
 transform = Transform3D(-0.10591, 0, -0.711543, 0, 0.719382, 0, 0.711543, 0, -0.10591, -19.7899, -13.6789, -59.603)
