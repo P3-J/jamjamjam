@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://balwks2pwlg60"]
+[gd_scene load_steps=6 format=3 uid="uid://52x5hn7dyfbu"]
 
 [ext_resource type="Script" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
 [ext_resource type="Texture2D" uid="uid://g3m8ea2st1by" path="res://icon.svg" id="2_inpa0"]
