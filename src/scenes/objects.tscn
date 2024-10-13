@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://ohdy6rjqgx4j"]
 
 [ext_resource type="PackedScene" uid="uid://cfjp1m6u1qbhh" path="res://src/scenes/tablet.tscn" id="1_58ten"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://ctmyhit4umr23"]
+
+[ext_resource type="PackedScene" uid="uid://bwoav1w0drdkx" path="res://src/scenes/tablet.tscn" id="1_58ten"]
+>>>>>>> Stashed changes
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_m0fqu"]
 
 [node name="objects" type="Node3D"]

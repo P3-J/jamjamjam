@@ -9,7 +9,11 @@ func _ready():
 func _process(_delta: float) -> void:
 	if visible:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+<<<<<<< Updated upstream
 		
+=======
+
+>>>>>>> Stashed changes
 
 func _show_winning_screen() -> void:
 	visible = true

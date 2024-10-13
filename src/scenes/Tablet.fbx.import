@@ -3,27 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-uid="uid://gdm0iopq4kd1"
-=======
-uid="uid://g0e7wetpp71o"
->>>>>>> Stashed changes
-path="res://.godot/imported/Tablet.fbx-c52c829d0bd8c849abca517451f161da.scn"
+uid="uid://dq0gd2r60uw1t"
+path="res://.godot/imported/Tablet.fbx-2b308dadb63e9bf1e46d95016d7786a6.scn"
 
 [deps]
 
-source_file="res://src/assets/Tablet.fbx"
-dest_files=["res://.godot/imported/Tablet.fbx-c52c829d0bd8c849abca517451f161da.scn"]
+source_file="res://src/scenes/Tablet.fbx"
+dest_files=["res://.godot/imported/Tablet.fbx-2b308dadb63e9bf1e46d95016d7786a6.scn"]
 
 [params]
 
-<<<<<<< Updated upstream
 nodes/root_type=""
 nodes/root_name=""
-=======
-nodes/root_type="MeshInstance3D"
-nodes/root_name="tablet"
->>>>>>> Stashed changes
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -34,11 +25,7 @@ meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
-<<<<<<< Updated upstream
 animation/import=true
-=======
-animation/import=false
->>>>>>> Stashed changes
 animation/fps=30
 animation/trimming=true
 animation/remove_immutable_tracks=true
