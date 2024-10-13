@@ -5,6 +5,8 @@ var list: ItemList
 var text_edit: TextEdit
 var has_submit: bool
 
+@onready var timer = $Timer2
+
 func _ready() -> void:
 	time_text = get_node("timer_text")
 	list = get_node("ItemList")
@@ -39,7 +41,7 @@ func int_to_time(total_mils: int):
 func submit():
 	print("sending_data")
 	SilentWolf.Scores.save_score(text_edit.text, -time_to_int(Signalbus.minutes, Signalbus.seconds, Signalbus.milliseconds))
-
+	timer.start()
 
 func refresh():
 	print("getting")
@@ -74,3 +76,7 @@ func _on_timer_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_timer_2_timeout() -> void:
+	refresh()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://br8ugoivcgshj"]
+[gd_scene load_steps=37 format=4 uid="uid://br8ugoivcgshj"]
 
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_vee6o"]
 [ext_resource type="Script" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
@@ -495,5 +495,5 @@ stream = ExtResource("18_ofngt")
 [connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer/HSlider" to="SettingsMenu" method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer2/audioslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
 [connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer3/musicslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
-[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_button_pressed"]

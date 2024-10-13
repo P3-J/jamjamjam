@@ -108,7 +108,11 @@ scale = Vector2(0.608333, 0.614815)
 texture = ExtResource("4_r7e2x")
 metadata/_edit_group_ = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

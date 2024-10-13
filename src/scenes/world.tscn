@@ -18,17 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://textures/128x128/Stone/Stone_14-128x128.png" id="13_itjn6"]
 [ext_resource type="PackedScene" path="res://src/scenes/brown_mushroom.tscn" id="13_ogawa"]
 [ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://textures/128x128/Brick/Brick_12-128x128.png" id="14_4rjuu"]
-[ext_resource type="PackedScene" uid="uid://b5jrkxftgh5bo" path="res://src/scenes/blue_mushroom.tscn" id="14_bslib"]
+[ext_resource type="PackedScene" path="res://src/scenes/blue_mushroom.tscn" id="14_bslib"]
 [ext_resource type="PackedScene" uid="uid://cse18aa5wsg46" path="res://src/scenes/floor_torch.tscn" id="15_0nppk"]
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
-[ext_resource type="PackedScene" uid="uid://cf5xp2n1tr7e3" path="res://src/scenes/dust.tscn" id="16_xisyl"]
-[ext_resource type="PackedScene" uid="uid://dgobv856rt6fb" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
-[ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
-[ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
+[ext_resource type="PackedScene" path="res://src/scenes/dust.tscn" id="16_xisyl"]
+[ext_resource type="PackedScene" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
+[ext_resource type="PackedScene" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
+[ext_resource type="PackedScene" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
 [ext_resource type="PackedScene" uid="uid://bmdbt45de3e3r" path="res://src/scenes/winning_zone.tscn" id="19_fk0ls"]
 [ext_resource type="PackedScene" uid="uid://bf1atwf2qrqdy" path="res://src/scenes/tablet.tscn" id="19_kcgn8"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
-[ext_resource type="PackedScene" uid="uid://bkb4k8axypx8n" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
+[ext_resource type="PackedScene" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
 [ext_resource type="PackedScene" uid="uid://b0ldonlcqy4fy" path="res://src/scenes/falling_rock.tscn" id="30_gmcew"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
@@ -380,14 +380,14 @@ transform = Transform3D(0.429464, 0, 0.372224, 0, 0.568322, 0, -0.372224, 0, 0.4
 transform = Transform3D(-7.81359, 2.23517e-06, 199.847, 49.4634, -193.777, 1.93391, 193.629, 49.5012, 7.57048, -38.9958, 20.1624, -32.1515)
 
 [node name="tablet" parent="map/world_assets" instance=ExtResource("19_kcgn8")]
-transform = Transform3D(-8.91224, 0, -12.0653, 0, 15, 0, 12.0653, 0, -8.91224, -67.06, -13.8052, -49.8144)
+transform = Transform3D(-1.99554, 0, -14.8667, 0, 15, 0, 14.8667, 0, -1.99554, -70.1287, -13.8052, -48.6159)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="map/world_assets/tablet"]
 transform = Transform3D(0.01, 0, -2.32831e-10, 0, 0.1, 0, 2.32831e-10, 0, 0.01, 0.0111754, 0.0937047, 0.00100899)
 mesh = SubResource("BoxMesh_hr2m6")
 
 [node name="Label3D" type="Label3D" parent="map/world_assets/tablet"]
-transform = Transform3D(-2.8871e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, 1.49012e-08, 0.0153122, 0.180898, -0.000378132)
+transform = Transform3D(-2.8871e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, 1.49012e-08, 0.0179375, 0.180898, -0.000378132)
 layers = 1048575
 pixel_size = 0.001
 shaded = true
@@ -395,10 +395,11 @@ render_priority = 2
 outline_render_priority = 1
 text = "W - Move forward
 S - Move backwards
-D - Mode right
-A - Move left"
+d - Mode right
+A - Move left
+SPACE - Jump"
 font = ExtResource("20_0m4b8")
-font_size = 100
+font_size = 78
 
 [node name="tablet2" parent="map/world_assets" instance=ExtResource("19_kcgn8")]
 transform = Transform3D(-11.4991, 0, -9.63178, 0, 15, 0, 9.63178, 0, -11.4991, -54.7937, -14.803, -51.5417)
