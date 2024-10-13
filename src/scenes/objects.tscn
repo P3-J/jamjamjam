@@ -1,59 +1,54 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=3 format=3 uid="uid://ohdy6rjqgx4j"]
+[gd_scene load_steps=3 format=3 uid="uid://d33yeqhli3ehf"]
 
-[ext_resource type="PackedScene" uid="uid://cfjp1m6u1qbhh" path="res://src/scenes/tablet.tscn" id="1_58ten"]
-=======
-[gd_scene load_steps=3 format=3 uid="uid://ctmyhit4umr23"]
-
-[ext_resource type="PackedScene" uid="uid://bwoav1w0drdkx" path="res://src/scenes/tablet.tscn" id="1_58ten"]
->>>>>>> Stashed changes
+[ext_resource type="PackedScene" uid="uid://bf1atwf2qrqdy" path="res://src/scenes/tablet.tscn" id="1_u2cg3"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_m0fqu"]
 
 [node name="objects" type="Node3D"]
 
-[node name="Input_tablet" parent="." instance=ExtResource("1_58ten")]
+[node name="tablet" parent="." instance=ExtResource("1_u2cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.229508)
 
-[node name="Label3D" type="Label3D" parent="Input_tablet"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.177487, 0.00352103)
-pixel_size = 0.0002
-modulate = Color(0.675181, 0.419749, 0.233627, 1)
+[node name="Label3D" type="Label3D" parent="tablet"]
+transform = Transform3D(-2.90453e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, -3.08296e-09, 0.0153121, 0.180898, -0.000378221)
+pixel_size = 0.001
+modulate = Color(0.720425, 0.47233, 0.355166, 1)
 text = "W - Move forward
 S - Move backwards
-A - Move left
-D - Move right
-SPACE - Jump"
+D - Mode right
+A - Move left"
 font = ExtResource("2_m0fqu")
-font_size = 50
+font_size = 100
 
-[node name="Input_tablet2" parent="." instance=ExtResource("1_58ten")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.163371)
+[node name="tablet2" parent="." instance=ExtResource("1_u2cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0410594)
 
-[node name="Label3D" type="Label3D" parent="Input_tablet2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.177487, 0.00352103)
-pixel_size = 0.0002
-modulate = Color(0.67451, 0.419608, 0.235294, 1)
-text = "Hold RMB on the hook
+[node name="Label3D" type="Label3D" parent="tablet2"]
+transform = Transform3D(-2.90453e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, -3.08296e-09, 0.0153121, 0.180898, -0.000378221)
+pixel_size = 0.001
+modulate = Color(0.720425, 0.47233, 0.355166, 1)
+text = "Hold RMB on the hook 
 to grapple!"
 font = ExtResource("2_m0fqu")
-font_size = 50
+font_size = 100
 
-[node name="Input_tablet3" parent="." instance=ExtResource("1_58ten")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.349098)
+[node name="tablet3" parent="." instance=ExtResource("1_u2cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.413367)
 
-[node name="Label3D" type="Label3D" parent="Input_tablet3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.177487, 0.00352103)
-pixel_size = 0.0002
-modulate = Color(0.67451, 0.419608, 0.235294, 1)
+[node name="Label3D" type="Label3D" parent="tablet3"]
+transform = Transform3D(-2.90453e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, -3.08296e-09, 0.0153121, 0.180898, -0.000378221)
+pixel_size = 0.001
+modulate = Color(0.720425, 0.47233, 0.355166, 1)
 text = "Escape the lava!"
 font = ExtResource("2_m0fqu")
-font_size = 50
+font_size = 100
 
-[node name="Label3D2" type="Label3D" parent="Input_tablet3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0152967, 0.147619, -0.0345932)
+[node name="Label3D2" type="Label3D" parent="tablet3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0320197, 0.150417, -0.0352777)
 pixel_size = 0.0001
-modulate = Color(0.52549, 0.317647, 0.14902, 0.482353)
-outline_modulate = Color(0, 0, 0, 0)
-text = "If you read this you are special!
- I don't know in what way, that's for you to decide!"
+modulate = Color(0.721569, 0.470588, 0.356863, 0.184314)
+outline_modulate = Color(0, 0, 0, 0.207843)
+text = "If you read this, you are special! 
+I don't know in what way...
+-Bear"
 font = ExtResource("2_m0fqu")
 font_size = 10
