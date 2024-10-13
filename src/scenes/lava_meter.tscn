@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://52x5hn7dyfbu"]
+[gd_scene load_steps=7 format=3 uid="uid://52x5hn7dyfbu"]
 
 [ext_resource type="Script" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
 [ext_resource type="Texture2D" uid="uid://c1qc1d5dy2pml" path="res://src/assets/images/Player_Icon.png" id="2_3w4a4"]
+[ext_resource type="Texture2D" uid="uid://dp3mdqpbwfuug" path="res://src/assets/images/Lava_Meter.png" id="2_qgiuq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slkrb"]
-bg_color = Color(0.6, 0.6, 0.6, 0.368627)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -14,8 +15,6 @@ corner_radius_bottom_left = 5
 bg_color = Color(0.714902, 0.311203, 0.156468, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_g0pmd"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_slkrb")
@@ -32,26 +31,8 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_c1dsj")
 
-[node name="PlayerPos" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -46.0001
-offset_top = -88.0
-offset_right = 144.0
-offset_bottom = 92.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_3w4a4")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="LavaMeter" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(20, 400)
+custom_minimum_size = Vector2(16, 400)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -68,3 +49,32 @@ theme = SubResource("Theme_g0pmd")
 value = 30.0
 fill_mode = 3
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="LavaMeter"]
+z_index = -1
+layout_mode = 0
+offset_left = -5.0
+offset_top = 411.0
+offset_right = 414.0
+offset_bottom = 441.0
+rotation = -1.5708
+texture = ExtResource("2_qgiuq")
+expand_mode = 1
+
+[node name="PlayerPos" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -96.0
+offset_right = 194.0
+offset_bottom = 124.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3w4a4")
+expand_mode = 1
+stretch_mode = 5
