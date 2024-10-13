@@ -1,25 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=13 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
-[ext_resource type="Shader" path="res://src/shaders/lava.gdshader" id="5_05xrp"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a27d8"]
 margin = 0.08
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jmme"]
-render_priority = 0
-shader = ExtResource("5_05xrp")
-shader_parameter/pixel_size = 2
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_6n8qt"]
-material = SubResource("ShaderMaterial_7jmme")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
 size = Vector3(0.75, 0.5, 0.75)
@@ -123,10 +114,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 fov = 80.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.392649)
-mesh = SubResource("PlaneMesh_6n8qt")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head"]
 light_color = Color(1, 1, 0.654902, 1)

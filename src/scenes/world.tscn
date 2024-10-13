@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bkoasxvpq0gjv"]
+[gd_scene load_steps=45 format=4 uid="uid://bkoasxvpq0gjv"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
@@ -7,22 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="7_uv7ra"]
 [ext_resource type="PackedScene" uid="uid://d23ucxdqa5qx1" path="res://src/scenes/hookspot.tscn" id="11_qp01i"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="12_tthp8"]
-[ext_resource type="Texture2D" uid="uid://b7d0fcse0v6c3" path="res://textures/128x128/Brick/Brick_10-128x128.png" id="13_lwod0"]
-[ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://textures/128x128/Stone/Stone_14-128x128.png" id="14_tqt5k"]
-[ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://textures/128x128/Brick/Brick_12-128x128.png" id="14_um0t0"]
+[ext_resource type="Texture2D" uid="uid://b7d0fcse0v6c3" path="res://src/textures/128x128/Brick/Brick_10-128x128.png" id="13_lwod0"]
+[ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://src/textures/128x128/Stone/Stone_14-128x128.png" id="14_tqt5k"]
+[ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://src/textures/128x128/Brick/Brick_12-128x128.png" id="14_um0t0"]
+[ext_resource type="PackedScene" uid="uid://cse18aa5wsg46" path="res://src/scenes/floor_torch.tscn" id="15_0nppk"]
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
-[ext_resource type="PackedScene" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
-[ext_resource type="PackedScene" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
+[ext_resource type="PackedScene" uid="uid://cf5xp2n1tr7e3" path="res://src/scenes/dust.tscn" id="16_xisyl"]
+[ext_resource type="PackedScene" uid="uid://dgobv856rt6fb" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
+[ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
+[ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
 [ext_resource type="PackedScene" uid="uid://bmdbt45de3e3r" path="res://src/scenes/winning_zone.tscn" id="19_fk0ls"]
 [ext_resource type="PackedScene" uid="uid://bf1atwf2qrqdy" path="res://src/scenes/tablet.tscn" id="19_kcgn8"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
-[ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
-[ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
-[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
-[ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://textures/128x128/Stone/Stone_09-128x128.png" id="23_n27sg"]
-[ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="25_maeyn"]
-[ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="26_22tpj"]
-[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
+[ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://src/textures/128x128/Dirt/Dirt_16-128x128.png" id="20_qlvxt"]
+[ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://src/textures/128x128/Dirt/Dirt_10-128x128.png" id="21_e6x7v"]
+[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://src/textures/128x128/Elements/Elements_03-128x128.tres" id="22_ubvxg"]
+[ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://src/textures/128x128/Stone/Stone_09-128x128.png" id="23_n27sg"]
+[ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://src/textures/128x128/Stone/Stone_19-128x128.png" id="25_maeyn"]
+[ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://src/textures/128x128/Elements/Elements_02-128x128.png" id="26_22tpj"]
+[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://src/textures/128x128/Elements/Elements_14-128x128.tres" id="27_goxny"]
 
 [sub_resource type="Environment" id="Environment_tvsks"]
 background_mode = 1
@@ -247,11 +250,14 @@ shape = SubResource("ConcavePolygonShape3D_blkxo")
 
 [node name="lights" type="Node3D" parent="map"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="map/lights"]
-transform = Transform3D(1, 0, 0, 0, 0.00253077, 0.999997, 0, -0.999997, 0.00253077, 33.9175, 35.8826, 162.459)
-light_energy = 4.665
-spot_range = 58.712
-spot_angle = 92.12
+[node name="FloorTorch" parent="map/lights" instance=ExtResource("15_0nppk")]
+transform = Transform3D(0.262442, 0, 0.964948, 0, 1, 0, -0.964948, 0, 0.262442, -51.2939, -12.8542, -41.829)
+
+[node name="dust" parent="map/lights" instance=ExtResource("16_xisyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8855, 27.4669, -20.1104)
+
+[node name="Tavern_Door" parent="map/lights" instance=ExtResource("17_tyrj2")]
+transform = Transform3D(-1.82294, 0, -0.822742, 0, 2, 0, 0.822742, 0, -1.82294, -54.5991, -13.1784, -32.1224)
 
 [node name="hookspots" type="Node3D" parent="map"]
 
