@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7nywv5gyuyjd"]
+
+[ext_resource type="Script" path="res://src/scripts/score_screen.gd" id="1_imtw2"]
+
+[node name="score_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_imtw2")
+
+[node name="timer_text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 48.0
+offset_right = 968.0
+offset_bottom = 144.0
+theme_override_font_sizes/normal_font_size = 30
+text = "TIME : 10:10:100"
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 120.0
+offset_right = 552.0
+offset_bottom = 560.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 912.0
+offset_bottom = 192.0
+placeholder_text = "NAME HERE"
+
+[node name="submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 224.0
+offset_right = 880.0
+offset_bottom = 296.0
+text = "submit
+"
+
+[node name="refresh" type="Button" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 312.0
+offset_right = 880.0
+offset_bottom = 384.0
+text = "refresh"
+
+[connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
