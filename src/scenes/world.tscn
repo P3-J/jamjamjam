@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://textures/128x128/Stone/Stone_14-128x128.png" id="14_tqt5k"]
 [ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://textures/128x128/Brick/Brick_12-128x128.png" id="14_um0t0"]
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
-[ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
-[ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
+[ext_resource type="PackedScene" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
+[ext_resource type="PackedScene" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
 [ext_resource type="PackedScene" uid="uid://bmdbt45de3e3r" path="res://src/scenes/winning_zone.tscn" id="19_fk0ls"]
 [ext_resource type="PackedScene" uid="uid://bf1atwf2qrqdy" path="res://src/scenes/tablet.tscn" id="19_kcgn8"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
@@ -300,7 +300,7 @@ transform = Transform3D(0.566753, 0, 0.491214, 0, 0.75, 0, -0.491214, 0, 0.56675
 transform = Transform3D(-7.81359, 2.23517e-06, 199.847, 49.4634, -193.777, 1.93391, 193.629, 49.5012, 7.57048, -38.9958, 20.1624, -32.1515)
 
 [node name="tablet" parent="map/world_assets" instance=ExtResource("19_kcgn8")]
-transform = Transform3D(-3.17269, 0, -14.6606, 0, 15, 0, 14.6606, 0, -3.17269, -66.0558, -13.8052, -48.8346)
+transform = Transform3D(-7.02496, 0, -13.2533, 0, 15, 0, 13.2533, 0, -7.02496, -66.8456, -13.8052, -50.667)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="map/world_assets/tablet"]
 transform = Transform3D(0.01, 0, -2.32831e-10, 0, 0.1, 0, 2.32831e-10, 0, 0.01, 0.0111754, 0.0937047, 0.00100899)
@@ -322,7 +322,7 @@ font = ExtResource("20_0m4b8")
 font_size = 100
 
 [node name="tablet2" parent="map/world_assets" instance=ExtResource("19_kcgn8")]
-transform = Transform3D(-9.07503, 0, 11.9434, 0, 15, 0, -11.9434, 0, -9.07503, -15.9904, -10.8409, 11.8469)
+transform = Transform3D(-9.07503, 0, 11.9434, 0, 15, 0, -11.9434, 0, -9.07503, -16.4288, -11.5538, 8.9287)
 
 [node name="Label3D" type="Label3D" parent="map/world_assets/tablet2"]
 transform = Transform3D(-2.90453e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, -3.08296e-09, 0.0153121, 0.180898, -0.000378221)
@@ -340,7 +340,7 @@ transform = Transform3D(0.01, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0.0111753, 0.0937047,
 mesh = SubResource("BoxMesh_m57ds")
 
 [node name="tablet3" parent="map/world_assets" instance=ExtResource("19_kcgn8")]
-transform = Transform3D(-14.9524, 0, 1.19463, 0, 15, 0, -1.19463, 0, -14.9524, -49.4878, -13.9844, -45.0582)
+transform = Transform3D(-14.9524, 0, 1.19463, 0, 15, 0, -1.19463, 0, -14.9524, -50.4155, -14.7689, -45.807)
 
 [node name="Label3D" type="Label3D" parent="map/world_assets/tablet3"]
 transform = Transform3D(-2.90453e-08, 0, 0.664479, 0, 0.137423, 0, -0.0705299, 0, -3.08296e-09, 0.0153121, 0.180898, -0.000378221)
@@ -371,6 +371,7 @@ font_size = 10
 [node name="MeshInstance3D" type="MeshInstance3D" parent="map/world_assets/tablet3"]
 transform = Transform3D(0.01, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0.0111753, 0.0937047, 0.00100915)
 mesh = SubResource("BoxMesh_bekfu")
+
 [node name="triggers" type="Node3D" parent="map"]
 
 [node name="WinningZone" parent="map/triggers" instance=ExtResource("19_fk0ls")]
@@ -379,7 +380,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.0376, 32.4457, 72.5823)
 [node name="controllableCharacters" type="Node3D" parent="."]
 
 [node name="player" parent="controllableCharacters" instance=ExtResource("7_uv7ra")]
-transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, -68.7696, -11.5037, -45.0582)
+transform = Transform3D(0.109734, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734, -70.7113, -11.5037, -47.4467)
 
 [node name="Camera3D" type="Camera3D" parent="controllableCharacters"]
 transform = Transform3D(0.111536, -0.025361, -0.993437, 0.0199579, 0.99953, -0.0232758, 0.99356, -0.0172308, 0.111989, -6.01703, 17.7281, 82.561)

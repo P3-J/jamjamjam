@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=16 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="Shader" path="res://src/shaders/lava.gdshader" id="5_05xrp"]
+[ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
@@ -98,11 +99,15 @@ mouse_filter = 2
 texture = ExtResource("4_lgdho")
 
 [node name="timer_text" type="RichTextLabel" parent="UI"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 40.0
-offset_right = 504.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 105.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("5_sjss2")
 theme_override_font_sizes/normal_font_size = 20
 text = "10:10:10"
 
