@@ -27,5 +27,3 @@ var final_time = 0
 
 
 ## pure magic
-
-

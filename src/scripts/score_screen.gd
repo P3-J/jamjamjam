@@ -3,6 +3,7 @@ extends Control
 var time_text: RichTextLabel
 var list: ItemList
 var text_edit: TextEdit
+var has_submit: bool
 
 func _ready() -> void:
 	time_text = get_node("timer_text")
@@ -58,7 +59,9 @@ func add_to_list(results):
 
 
 func _on_submit_pressed() -> void:
-	submit()
+	if !has_submit:
+		has_submit = true
+		submit()
 
 
 func _on_refresh_pressed() -> void:
