@@ -1,5 +1,7 @@
 extends Control
 
+var main_menu_scene =  ResourceLoader.load("res://src/scenes/main_menu.tscn") as PackedScene
+
 var time_text: RichTextLabel
 var list: ItemList
 var text_edit: TextEdit
@@ -75,7 +77,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_packed(main_menu_scene)
 
 
 func _on_timer_2_timeout() -> void:
