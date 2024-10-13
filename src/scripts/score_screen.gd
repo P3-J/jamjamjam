@@ -66,3 +66,11 @@ func _on_submit_pressed() -> void:
 
 func _on_refresh_pressed() -> void:
 	refresh()
+
+
+func _on_timer_timeout() -> void:
+	refresh()
+
+
+func _on_button_pressed() -> void:
+	get_tree().quit()

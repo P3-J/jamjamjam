@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
 size = Vector3(3, 5, 3)
 
-[node name="hookspot" type="Area3D"]
+[node name="hookspot" type="Area3D" groups=["hook"]]
 script = ExtResource("1_i0tbm")
 
 [node name="hookshape" type="CollisionShape3D" parent="."]
