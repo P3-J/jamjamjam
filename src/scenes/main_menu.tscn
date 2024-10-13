@@ -362,12 +362,13 @@ libraries = {
 autoplay = "spin"
 
 [node name="start" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_7p88j")
 }
-autoplay = "fade_in"
 
 [node name="ColorRect" type="ColorRect" parent="start"]
+modulate = Color(1, 1, 1, 0)
 offset_right = 1160.0
 offset_bottom = 656.0
 mouse_filter = 2
