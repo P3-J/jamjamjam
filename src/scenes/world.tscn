@@ -529,6 +529,9 @@ transform = Transform3D(0.394438, 0, 0, 0, 0.394438, 0, 0, 0, 0.394438, 15.5568,
 [node name="WinningZone" parent="map/triggers" instance=ExtResource("19_fk0ls")]
 transform = Transform3D(2.81814, 0, 0.792444, 0, 1, 0, -1.2638, 0, 1.76706, 35.7016, 31.7437, 68.5175)
 
+[node name="hookspot" parent="map" instance=ExtResource("11_qp01i")]
+transform = Transform3D(0.903156, 0, -0.429313, 0, 1, 0, 0.429313, 0, 0.903156, -59.6047, -4.85668, -41.5039)
+
 [node name="controllableCharacters" type="Node3D" parent="."]
 
 [node name="player" parent="controllableCharacters" instance=ExtResource("7_uv7ra")]
