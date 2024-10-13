@@ -15,7 +15,7 @@ margin = 0.08
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7jmme"]
 render_priority = 0
 shader = ExtResource("5_05xrp")
-shader_parameter/pixel_size = 4
+shader_parameter/pixel_size = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6n8qt"]
 material = SubResource("ShaderMaterial_7jmme")

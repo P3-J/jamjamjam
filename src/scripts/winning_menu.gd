@@ -9,8 +9,7 @@ func _ready():
 func _process(_delta: float) -> void:
 	if visible:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 		
 
 func _show_winning_screen() -> void:
