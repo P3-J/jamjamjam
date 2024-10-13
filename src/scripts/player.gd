@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tscn") as PackedScene
 var lava_meter_scene =  ResourceLoader.load("res://src/scenes/lava_meter.tscn") as PackedScene
 
 @onready var head: Node3D
@@ -213,9 +212,6 @@ func _on_player_kill() -> void:
 		Signalbus.kill_player.emit()
 
 func setup_ui() -> void:
-	var winning_menu = winning_menu_scene.instantiate()
-	winning_menu.visible = false
-	ui_node.add_child(winning_menu)
 	var lava_meter = lava_meter_scene.instantiate()
 	ui_node.add_child(lava_meter)
 
