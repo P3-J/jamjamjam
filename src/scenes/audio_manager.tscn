@@ -9,6 +9,7 @@
 script = ExtResource("1_wdger")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("2_nvaun")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]

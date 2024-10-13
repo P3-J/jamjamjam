@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7nywv5gyuyjd"]
+[gd_scene load_steps=3 format=3 uid="uid://c7nywv5gyuyjd"]
 
 [ext_resource type="Script" path="res://src/scripts/score_screen.gd" id="1_imtw2"]
+[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="1_wxqgc"]
 
 [node name="score_screen" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_wxqgc")
 script = ExtResource("1_imtw2")
 
 [node name="timer_text" type="RichTextLabel" parent="."]
@@ -74,7 +76,7 @@ layout_mode = 0
 offset_right = 1200.0
 offset_bottom = 664.0
 mouse_filter = 2
-color = Color(0.355694, 0.159366, 0.142704, 1)
+color = Color(0.215686, 0.227451, 0.313726, 1)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

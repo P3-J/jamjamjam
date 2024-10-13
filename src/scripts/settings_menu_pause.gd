@@ -26,8 +26,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Mouse
 	Globalsettings.mouse_sensitivity = mouse_slider.value * 0.01
 	mouse_value.text = str(mouse_slider.value)
+	# Audio
+	Globalsettings.audio_volume = audio_slider.value
+	audio_value.text = str(audio_slider.value)
+	# Music
+	Globalsettings.music_volume = music_slider.value
+	music_value.text = str(music_slider.value)
 	# If player presses ESC during settings menu then act same as back button
 	if Input.is_action_just_pressed("pause"):
 		pause_menu_buttons.show()
