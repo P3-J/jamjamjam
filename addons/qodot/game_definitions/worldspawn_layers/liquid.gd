@@ -61,7 +61,7 @@ func create_sphere_aabb(sphere_shape: SphereShape3D) -> AABB:
 	return AABB(-Vector3.ONE * sphere_shape.radius, Vector3.ONE * sphere_shape.radius)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for body in buoyancy_dict:
 		var buoyancy_data = buoyancy_dict[body]
 

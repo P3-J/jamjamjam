@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgobv856rt6fb"]
+
+[ext_resource type="PackedScene" uid="uid://cvl2iuhkdiqhk" path="res://src/assets/Tavern_Door/Tavern_Door.fbx" id="1_ox2q5"]
+[ext_resource type="Texture2D" uid="uid://dynav6dpi1ws3" path="res://src/assets/Tavern_Door/Tavern_Door_T_BaseColor.png" id="2_hlkng"]
+[ext_resource type="Texture2D" uid="uid://ctg3lr6rahyg6" path="res://src/assets/Tavern_Door/Tavern_Door_T_Emissive.png" id="3_5ktg4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq1wt"]
+albedo_texture = ExtResource("2_hlkng")
+emission_enabled = true
+emission_texture = ExtResource("3_5ktg4")
+
+[node name="Tavern_Door" instance=ExtResource("1_ox2q5")]
+
+[node name="group1_polySurface8" parent="For_UV" index="0"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface1" parent="For_UV" index="1"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface3" parent="For_UV" index="2"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface2" parent="For_UV" index="3"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface21" parent="For_UV" index="4"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="group1_polySurface9" parent="For_UV" index="5"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface22" parent="For_UV" index="6"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface23" parent="For_UV" index="7"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface24" parent="For_UV" index="8"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="polySurface25" parent="For_UV" index="9"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="Parts_polySurface27group2For_UV" parent="For_UV" index="10"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
+
+[node name="Parts_For_UVpolySurface29" parent="For_UV" index="11"]
+material_override = SubResource("StandardMaterial3D_qq1wt")
