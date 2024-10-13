@@ -28,13 +28,14 @@ offset_right = 130.5
 offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_lvya8")
 theme_override_font_sizes/font_size = 50
-text = "Start"
+text = "Resume"
 
 [node name="RespawnButton" type="Button" parent="VBoxContainer"]
 process_mode = 3

@@ -6,6 +6,5 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	print('Player enter?')
 	if body.is_in_group('player'):
 		Signalbus.emit_signal('player_wins')

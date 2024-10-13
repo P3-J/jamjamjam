@@ -13,6 +13,9 @@ var lava_meter_scene =  ResourceLoader.load("res://src/scenes/lava_meter.tscn") 
 @onready var ui_node = $UI
 @onready var running_audio_stream = AudioStreamPlayer.new()
 
+@onready var normal_crosshair_texture = load("res://src/assets/crosshair_normal.png")
+@onready var highlighted_crosshair_texture = load("res://src/assets/crosshair_highlighted.png")
+
 var speed = 10.0
 var hook_speed = 15.0
 var air_speed = 10.0
@@ -128,12 +131,12 @@ func _input(event: InputEvent) -> void:
 func check_for_hook_collision():
 	if (!hookray.is_colliding()):
 		reset_pickaxe_position()
-		crosshair.texture = load("res://src/assets/crosshair_normal.png")
+		crosshair.texture = normal_crosshair_texture
 		can_hook = false
 		can_move_towards_hook = false
 		return
 	can_hook = true
-	crosshair.texture = load("res://src/assets/crosshair_highlighted.png")
+	crosshair.texture = highlighted_crosshair_texture
 
 func reset_pickaxe_position():
 	pickaxe.position = pickaxe_reset_pos
@@ -166,7 +169,6 @@ func _on_jump_timer_timeout() -> void:
 
 
 func _on_hook_start_time_timeout() -> void:
-	print("timed out")
 	can_move_towards_hook = true
 	
 	
@@ -174,7 +176,6 @@ func _on_player_kill() -> void:
 	if !has_died:
 		has_died = true
 		Signalbus.kill_player.emit()
-		print('player should die!')
 
 func setup_ui() -> void:
 	var winning_menu = winning_menu_scene.instantiate()
