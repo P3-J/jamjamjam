@@ -3,9 +3,28 @@ extends Control
 var settings_scene = ResourceLoader.load("res://src/scenes/settings_menu_main.tscn") as PackedScene
 var game_scene =  ResourceLoader.load("res://src/scenes/world.tscn") as PackedScene
 
+@onready var animation = $"../start"
+@onready var animation_colorect = $"../start/ColorRect"
+@onready var animation_label = $"../start/ColorRect/Label"
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_setup_leaderboard_connection()
+	while !Globalsettings.splash_screen_called:
+		Globalsettings.splash_screen_called = true
+		animation.active = true
+		animation.play("fade_in")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if animation.is_playing():
+		if Input.is_action_just_pressed("pause"):
+			animation.stop()
+			animation.active = false
+			animation_colorect.hide()
+
 
 func _setup_leaderboard_connection():
 	SilentWolf.configure({
