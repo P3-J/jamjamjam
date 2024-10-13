@@ -160,7 +160,6 @@ func _on_jump_timer_timeout() -> void:
 
 
 func _on_hook_start_time_timeout() -> void:
-	print("timed out")
 	can_move_towards_hook = true
 	
 	
@@ -168,7 +167,6 @@ func _on_player_kill() -> void:
 	if !has_died:
 		has_died = true
 		Signalbus.kill_player.emit()
-		print('player should die!')
 
 func setup_ui() -> void:
 	var winning_menu = winning_menu_scene.instantiate()
