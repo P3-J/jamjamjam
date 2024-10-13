@@ -10,6 +10,8 @@ func _process(_delta: float) -> void:
 	if visible:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+		
+
 func _show_winning_screen() -> void:
 	visible = true
 	get_tree().paused = true

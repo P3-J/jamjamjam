@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scripts/winning_zone.gd" id="1_4lef6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ij1v"]
-size = Vector3(2, 2, 0.5)
+size = Vector3(5, 5, 0.5)
 
 [node name="WinningZone" type="Area3D"]
 script = ExtResource("1_4lef6")

@@ -28,4 +28,3 @@ func _on_animation_finished(anim_name: String):
 		Globalsettings.input_disabled = false
 		get_tree().paused = false
 		get_tree().reload_current_scene()
-		print("Animation is finished!")
