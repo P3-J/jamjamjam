@@ -159,6 +159,10 @@ func check_for_hook_collision():
 		can_hook = false
 		can_move_towards_hook = false
 		return
+
+	var collider = hookray.get_collider()
+	if (!collider.is_in_group("hook")):
+		return
 	can_hook = true
 	crosshair.texture = highlighted_crosshair_texture
 
