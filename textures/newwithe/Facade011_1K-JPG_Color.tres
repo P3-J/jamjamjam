@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b7d8xkhyd0qxb"]
+
+[ext_resource type="Texture2D" uid="uid://i6t08upxorfh" path="res://textures/newwithe/Facade011_1K-JPG_Color.jpg" id="1_k7l30"]
+[ext_resource type="Texture2D" uid="uid://bc2etreywixn3" path="res://textures/newwithe/Facade011_1K-JPG_Emission.jpg" id="2_7asei"]
+
+[resource]
+albedo_texture = ExtResource("1_k7l30")
+emission_enabled = true
+emission_texture = ExtResource("2_7asei")
