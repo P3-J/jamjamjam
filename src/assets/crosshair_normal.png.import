@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxm8yjq0dfbqd"
-valid=false
+uid="uid://dqd3fuoa1qmde"
+path="res://.godot/imported/crosshair_normal.png-9680d07ad4dea7b03370e9018f16d5fe.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.png"
+source_file="res://src/assets/crosshair_normal.png"
+dest_files=["res://.godot/imported/crosshair_normal.png-9680d07ad4dea7b03370e9018f16d5fe.ctex"]
 
 [params]
 

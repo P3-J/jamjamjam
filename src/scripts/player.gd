@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tscn") as PackedScene
+var lava_meter_scene =  ResourceLoader.load("res://src/scenes/lava_meter.tscn") as PackedScene
 
 @onready var head: Node3D
 @onready var jump_timer: Timer
@@ -8,19 +9,21 @@ var winning_menu_scene =  ResourceLoader.load("res://src/scenes/winning_menu.tsc
 @onready var pickaxe: Node3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
+@onready var crosshair: TextureRect = $UI/Crosshair
 @onready var ui_node = $UI
 @onready var running_audio_stream = AudioStreamPlayer.new()
 
 var speed = 10.0
 var hook_speed = 15.0
 var air_speed = 10.0
-var jump_speed = 10.0  
+var jump_speed = 14.0  
 var gravity = -25.0  
 var max_fall_speed = -80.0  
 
 var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
+var has_died: bool = false
 var can_still_jump: bool = true
 var jumped: bool = false
 
@@ -45,7 +48,6 @@ func _ready() -> void:
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Signalbus.connect('kill_player', _on_player_kill)
-
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
@@ -126,10 +128,12 @@ func _input(event: InputEvent) -> void:
 func check_for_hook_collision():
 	if (!hookray.is_colliding()):
 		reset_pickaxe_position()
+		crosshair.texture = load("res://src/assets/crosshair_normal.png")
 		can_hook = false
 		can_move_towards_hook = false
 		return
 	can_hook = true
+	crosshair.texture = load("res://src/assets/crosshair_highlighted.png")
 
 func reset_pickaxe_position():
 	pickaxe.position = pickaxe_reset_pos
@@ -164,15 +168,20 @@ func _on_jump_timer_timeout() -> void:
 func _on_hook_start_time_timeout() -> void:
 	print("timed out")
 	can_move_towards_hook = true
+	
+	
 func _on_player_kill() -> void:
-	# TODO Handle kill player
-	print('player should die!')
-	pass
+	if !has_died:
+		has_died = true
+		Signalbus.kill_player.emit()
+		print('player should die!')
 
 func setup_ui() -> void:
 	var winning_menu = winning_menu_scene.instantiate()
 	winning_menu.visible = false
 	ui_node.add_child(winning_menu)
+	var lava_meter = lava_meter_scene.instantiate()
+	ui_node.add_child(lava_meter)
 
 func setup_sound_stream() -> void:
 	running_audio_stream.stream = load('res://src/assets/sounds/running.wav')
