@@ -89,6 +89,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, direction.x * air_speed, 0.05)
 		velocity.z = lerp(velocity.z, direction.z * air_speed, 0.05)
 
+		player_anim.stop()
+
 		velocity.y += gravity * delta
 		if velocity.y < max_fall_speed:
 			velocity.y = max_fall_speed
@@ -146,7 +148,7 @@ func _input(event: InputEvent) -> void:
 		holding_hook_button = true
 	if Input.is_action_just_released("hook"):
 		holding_hook_button = false
-		pickaxe.scale = Vector3(1,1,1)
+		pickaxe.scale = Vector3(2,2,2)
 		reset_pickaxe_position()
 
 	
