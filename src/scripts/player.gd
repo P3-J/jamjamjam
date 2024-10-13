@@ -159,6 +159,10 @@ func check_for_hook_collision():
 		can_hook = false
 		can_move_towards_hook = false
 		return
+
+	var collider = hookray.get_collider()
+	if (!collider.is_in_group("hook")):
+		return
 	can_hook = true
 	crosshair.texture = highlighted_crosshair_texture
 
@@ -223,7 +227,6 @@ func update_time():
 		var current_time = Time.get_ticks_msec() 
 		var elapsed_time = (current_time - start_time) / 1000.0 
 		timer_text.text = format_time(elapsed_time) 
-		print(format_time(elapsed_time) )
 
 func start_speedrun_timer():
 	start_time = Time.get_ticks_msec()
