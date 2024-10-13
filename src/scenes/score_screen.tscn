@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7nywv5gyuyjd"]
+[gd_scene load_steps=6 format=3 uid="uid://c7nywv5gyuyjd"]
 
 [ext_resource type="Script" path="res://src/scripts/score_screen.gd" id="1_imtw2"]
+[ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_0i4hy"]
+[ext_resource type="Texture2D" uid="uid://brc1dohjeg1f3" path="res://src/end_screen_stuff/Leaderboard.png" id="3_8ekpm"]
+[ext_resource type="Texture2D" uid="uid://cmm3d5trbe7c3" path="res://src/end_screen_stuff/Banner_Rendered.jpg" id="4_r7e2x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gy6jf"]
 
 [node name="score_screen" type="Control"]
 layout_mode = 3
@@ -13,44 +18,62 @@ script = ExtResource("1_imtw2")
 
 [node name="timer_text" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 64.0
-offset_right = 943.0
-offset_bottom = 147.0
+offset_left = 416.0
+offset_top = 72.0
+offset_right = 872.0
+offset_bottom = 145.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_0i4hy")
 theme_override_font_sizes/normal_font_size = 60
-text = "TIME : 10:10:100"
+text = "10:10:100"
 fit_content = true
+
+[node name="bckground" type="Sprite2D" parent="."]
+position = Vector2(432, 388)
+scale = Vector2(0.296846, 0.342029)
+texture = ExtResource("3_8ekpm")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 165.0
-offset_right = 568.0
-offset_bottom = 605.0
+offset_left = 304.0
+offset_top = 200.0
+offset_right = 560.0
+offset_bottom = 576.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0i4hy")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxTexture_gy6jf")
+item_count = 1
+item_0/text = "jako : 10:10:10"
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 592.0
+offset_left = 600.0
 offset_top = 168.0
-offset_right = 976.0
+offset_right = 864.0
 offset_bottom = 232.0
 placeholder_text = "NAME HERE"
 
 [node name="submit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 592.0
+offset_left = 600.0
 offset_top = 240.0
-offset_right = 776.0
-offset_bottom = 312.0
+offset_right = 728.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_0i4hy")
+theme_override_font_sizes/font_size = 30
 text = "submit
 "
 
 [node name="refresh" type="Button" parent="."]
 layout_mode = 0
-offset_left = 792.0
+offset_left = 736.0
 offset_top = 240.0
-offset_right = 976.0
-offset_bottom = 312.0
+offset_right = 857.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_0i4hy")
+theme_override_font_sizes/font_size = 30
 text = "refresh"
 
 [node name="timer_text2" type="RichTextLabel" parent="."]
@@ -58,6 +81,8 @@ layout_mode = 0
 offset_left = 312.0
 offset_right = 943.0
 offset_bottom = 83.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_0i4hy")
 theme_override_font_sizes/normal_font_size = 60
 text = "Congratulations!"
 fit_content = true
@@ -68,21 +93,22 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_right = 1200.0
-offset_bottom = 664.0
-mouse_filter = 2
-color = Color(0.355694, 0.159366, 0.142704, 1)
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 592.0
-offset_top = 328.0
-offset_right = 976.0
-offset_bottom = 384.0
+offset_left = 600.0
+offset_top = 304.0
+offset_right = 856.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("2_0i4hy")
+theme_override_font_sizes/font_size = 30
 text = "Exit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(576, 324)
+scale = Vector2(0.608333, 0.614815)
+texture = ExtResource("4_r7e2x")
+metadata/_edit_group_ = true
 
 [connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
