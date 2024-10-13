@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b25o1440naild"]
+[gd_scene load_steps=10 format=3 uid="uid://b25o1440naild"]
 
 [ext_resource type="Script" path="res://src/scripts/death_screen.gd" id="1_fcakh"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_rdkbb"]
+[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="3_okqhk"]
 
 [sub_resource type="Animation" id="Animation_nmefv"]
 resource_name = "DeathScreenAnimation"
@@ -42,6 +43,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Label2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_l4ygc"]
 length = 0.001
@@ -76,6 +89,18 @@ tracks/2/path = NodePath("AnimationPlayer/TextureRect:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Label2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -145,3 +170,19 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_rdkbb")
 theme_override_font_sizes/font_size = 50
 text = "You died"
+
+[node name="Label2" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = 66.0
+offset_right = 73.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_okqhk")
+text = "Press ESC to cancel"
