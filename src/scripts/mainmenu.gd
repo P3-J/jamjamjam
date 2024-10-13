@@ -7,12 +7,6 @@ var game_scene =  ResourceLoader.load("res://src/scenes/world.tscn") as PackedSc
 func _ready() -> void:
 	_setup_leaderboard_connection()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _setup_leaderboard_connection():
 	SilentWolf.configure({
 	"api_key": "KeVYLxn01Q3dbzKH2MksU0fmymsWw6X9xG407EV2",
