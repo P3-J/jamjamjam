@@ -272,6 +272,12 @@ mesh = SubResource("ArrayMesh_0jf0k")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/QodotMap/entity_0_worldspawn/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5uh0p")
 
+[node name="Rock3" parent="map/QodotMap/entity_0_worldspawn" instance=ExtResource("34_b3coe")]
+transform = Transform3D(2.34094, 0, 0, 0, 2.34094, 0, 0, 0, 2.34094, 31.1209, 1.29105, -52.1664)
+
+[node name="Rock4" parent="map/QodotMap/entity_0_worldspawn" instance=ExtResource("34_b3coe")]
+transform = Transform3D(0.226831, 0, 1.63952, 0, 1.65514, 0, -1.63952, 0, 0.226831, 28.495, 1.25136, -52.8035)
+
 [node name="lights" type="Node3D" parent="map"]
 
 [node name="FloorTorch" parent="map/lights" instance=ExtResource("15_0nppk")]
@@ -299,7 +305,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.169, -7.87434, 62.6506)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3572, -7.22194, 58.609)
 
 [node name="FloorTorch7" parent="map/lights" instance=ExtResource("15_0nppk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3144, -4.81802, -15.4739)
+transform = Transform3D(1, 0, 0, 0, 0.824956, -0.565197, 0, 0.565197, 0.824956, 17.401, -2.04781, -16.1523)
+
+[node name="FloorTorch19" parent="map/lights" instance=ExtResource("15_0nppk")]
+transform = Transform3D(1, 0, 0, 0, 0.876886, 0.480698, 0, -0.480698, 0.876886, 16.4864, -2.55604, -7.36341)
 
 [node name="FloorTorch8" parent="map/lights" instance=ExtResource("15_0nppk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8127, -1.11661, 8.55819)
@@ -509,9 +518,6 @@ transform = Transform3D(-0.196716, 0, -0.98046, 0, 1, 0, 0.98046, 0, -0.196716, 
 
 [node name="Crystall8" parent="map/world_assets" instance=ExtResource("17_v0ngd")]
 transform = Transform3D(25.4222, 11.1755, 0, -11.1755, 25.4222, 0, 0, 0, 27.7702, 4.87385, 23.1567, -12.1583)
-
-[node name="Brown_Mushroom7" parent="map/world_assets" instance=ExtResource("13_ogawa")]
-transform = Transform3D(0.847, 0, 0, 0, 0.832994, -0.153394, 0, 0.153394, 0.832994, 29.0636, 0.935688, -50.8714)
 
 [node name="GreenMushroom6" parent="map/world_assets" instance=ExtResource("18_wrg5s")]
 transform = Transform3D(0.573736, 0, 0, 0, 0.573736, 0, 0, 0, 0.573736, 16.9208, 17.8404, -7.92257)
@@ -802,6 +808,26 @@ light_energy = 0.351
 [node name="Crystall21" parent="." instance=ExtResource("26_simvn")]
 transform = Transform3D(0.931514, -0.335582, 0.140239, 0.363706, 0.859482, -0.359177, 0, 0.385584, 0.922673, -0.147734, 4.52823, -61.9179)
 
+[node name="Crystall31" parent="." instance=ExtResource("26_simvn")]
+transform = Transform3D(1, 0, 0, 0, 0.922673, -0.385584, 0, 0.385584, 0.922673, 30.2412, 4.19991, -51.3539)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Crystall31"]
+light_color = Color(0.185315, 0.674469, 0.8486, 1)
+light_energy = 0.351
+
+[node name="Crystall32" parent="." instance=ExtResource("26_simvn")]
+transform = Transform3D(0.448029, -0.450216, 0.290566, 0.53445, 0.402705, -0.200109, -0.0385416, 0.350695, 0.60281, 29.4072, 3.52232, -51.6479)
+
+[node name="Crystall33" parent="." instance=ExtResource("26_simvn")]
+transform = Transform3D(0.429972, -0.43396, 0.0359196, 0.243894, 0.19819, -0.525094, 0.360732, 0.383258, 0.312207, 35.2573, 6.12808, -31.5656)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Crystall33"]
+light_color = Color(0.185315, 0.674469, 0.8486, 1)
+light_energy = 0.351
+
+[node name="Crystall34" parent="." instance=ExtResource("26_simvn")]
+transform = Transform3D(0.197488, -0.669962, -0.00160193, 0.511738, 0.151925, -0.45044, 0.432406, 0.126186, 0.533811, 35.5208, 5.74435, -32.6803)
+
 [node name="FloorTorch" parent="." instance=ExtResource("15_0nppk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9979, -8.09504, -8.8899)
 
@@ -849,3 +875,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4675, -9.1524, 58.6333)
 
 [node name="Rock20" parent="." instance=ExtResource("28_7564s")]
 transform = Transform3D(1.44758, 0, 0, 0, 1.44758, 0, 0, 0, 1.44758, -14.6695, -9.1524, 59.6727)
+
+[node name="Rock21" parent="." instance=ExtResource("34_b3coe")]
+transform = Transform3D(2.86249, 0, 0, 0, 2.86249, 0, 0, 0, 2.86249, 39.2943, -6.58526, -29.9757)
+
+[node name="Rock22" parent="." instance=ExtResource("17_yfxr1")]
+transform = Transform3D(-0.0086143, -1.88874, 0.456656, 1.94316, -0.00837305, 0.00202442, 2.32831e-10, 0.456661, 1.88876, 41.4836, -6.62766, -26.6065)
+
+[node name="GreenMushroom4" parent="." instance=ExtResource("18_wrg5s")]
+transform = Transform3D(0.498429, 0, 0, 0, 0.498429, 0, 0, 0, 0.498429, 21.853, -6.6524, -6.46329)
+
+[node name="GreenMushroom5" parent="." instance=ExtResource("18_wrg5s")]
+transform = Transform3D(0.337907, 0, 0, 0, 0.337907, 0, 0, 0, 0.337907, 22.915, -6.6524, -6.58982)
+
+[node name="GreenMushroom6" parent="." instance=ExtResource("18_wrg5s")]
+transform = Transform3D(0.435733, 0, 0, 0, 0.435733, 0, 0, 0, 0.435733, 22.3223, -6.6524, -7.48858)
