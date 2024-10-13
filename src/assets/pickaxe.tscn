@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c088naefj5my"]
+[gd_scene load_steps=9 format=3 uid="uid://c088naefj5my"]
 
 [ext_resource type="PackedScene" uid="uid://f0xkekdj8xlb" path="res://src/assets/Pickaxe.fbx" id="1_ebfh5"]
 [ext_resource type="Texture2D" uid="uid://bjejefux2s17x" path="res://src/assets/Pickaxe_low_Pickaxe_BaseColor.png" id="2_tf1kf"]
@@ -17,7 +17,16 @@ normal_texture = ExtResource("5_5eope")
 heightmap_enabled = true
 heightmap_texture = ExtResource("3_shf70")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_aebuv"]
+size = Vector3(0.203743, 0.355804, 0.0455933)
+
 [node name="Pickaxe" instance=ExtResource("1_ebfh5")]
 
 [node name="Pickaxe" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_74138")
+
+[node name="PickaxeArea" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickaxeArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230789, -0.00242615, 0.000213623)
+shape = SubResource("BoxShape3D_aebuv")
