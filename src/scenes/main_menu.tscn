@@ -6,16 +6,16 @@
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_27bvt"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="4_a8why"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="5_y5by4"]
-[ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://src/textures/128x128/Dirt/Dirt_16-128x128.png" id="6_0dg7v"]
-[ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://src/textures/128x128/Dirt/Dirt_10-128x128.png" id="7_mpnts"]
-[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://src/textures/128x128/Elements/Elements_03-128x128.tres" id="8_dnjre"]
-[ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://src/textures/128x128/Stone/Stone_09-128x128.png" id="9_ce5a2"]
-[ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://src/textures/128x128/Stone/Stone_19-128x128.png" id="10_616vn"]
-[ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://src/textures/128x128/Elements/Elements_02-128x128.png" id="11_70jci"]
-[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://src/textures/128x128/Elements/Elements_14-128x128.tres" id="12_rqjpa"]
-[ext_resource type="Texture2D" uid="uid://b7d0fcse0v6c3" path="res://src/textures/128x128/Brick/Brick_10-128x128.png" id="13_71w1u"]
-[ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://src/textures/128x128/Stone/Stone_14-128x128.png" id="14_wkjwa"]
-[ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://src/textures/128x128/Brick/Brick_12-128x128.png" id="15_b7r5r"]
+[ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="6_0dg7v"]
+[ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="7_mpnts"]
+[ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="8_dnjre"]
+[ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://textures/128x128/Stone/Stone_09-128x128.png" id="9_ce5a2"]
+[ext_resource type="Texture2D" uid="uid://eeun0yalkxo0" path="res://textures/128x128/Stone/Stone_19-128x128.png" id="10_616vn"]
+[ext_resource type="Texture2D" uid="uid://dqeidwitwknb4" path="res://textures/128x128/Elements/Elements_02-128x128.png" id="11_70jci"]
+[ext_resource type="Material" uid="uid://cs7psaiex0vh" path="res://textures/128x128/Elements/Elements_14-128x128.tres" id="12_rqjpa"]
+[ext_resource type="Texture2D" uid="uid://b7d0fcse0v6c3" path="res://textures/128x128/Brick/Brick_10-128x128.png" id="13_71w1u"]
+[ext_resource type="Texture2D" uid="uid://cbomejbrcwd1l" path="res://textures/128x128/Stone/Stone_14-128x128.png" id="14_wkjwa"]
+[ext_resource type="Texture2D" uid="uid://ce84u4nbxssh3" path="res://textures/128x128/Brick/Brick_12-128x128.png" id="15_b7r5r"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="16_rmt0a"]
 [ext_resource type="AudioStream" uid="uid://b8w7o1biiuvv2" path="res://src/assets/sounds/chillin_at_the_cave.mp3" id="18_ofngt"]
 
@@ -362,12 +362,13 @@ libraries = {
 autoplay = "spin"
 
 [node name="start" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_7p88j")
 }
-autoplay = "fade_in"
 
 [node name="ColorRect" type="ColorRect" parent="start"]
+modulate = Color(1, 1, 1, 0)
 offset_right = 1160.0
 offset_bottom = 656.0
 mouse_filter = 2
