@@ -1,12 +1,14 @@
-[gd_scene load_steps=35 format=4 uid="uid://br8ugoivcgshj"]
+[gd_scene load_steps=37 format=4 uid="uid://br8ugoivcgshj"]
 
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_vee6o"]
 [ext_resource type="Script" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="3_27bvt"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="4_a8why"]
+[ext_resource type="Script" path="res://src/scripts/settingsmenu_main.gd" id="4_c8xin"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="5_y5by4"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="6_0dg7v"]
+[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="6_1dsjk"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="7_mpnts"]
 [ext_resource type="Material" uid="uid://dre66h5vvq7le" path="res://textures/128x128/Elements/Elements_03-128x128.tres" id="8_dnjre"]
 [ext_resource type="Texture2D" uid="uid://dfqj11ipylcwp" path="res://textures/128x128/Stone/Stone_09-128x128.png" id="9_ce5a2"]
@@ -270,49 +272,161 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vmwyx")
 
+[node name="Label2" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 65.0
+offset_right = 851.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_vee6o")
+theme_override_font_sizes/font_size = 100
+text = "   warf Escape"
+
 [node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 2
-offset_left = 32.0
-offset_top = 24.0
-offset_right = 680.0
-offset_bottom = 145.0
+offset_left = 72.0
+offset_top = 48.0
+offset_right = 720.0
+offset_bottom = 207.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_asv1t")
-theme_override_font_sizes/font_size = 100
-text = "Dwarf Escape"
+theme_override_fonts/font = ExtResource("1_vee6o")
+theme_override_font_sizes/font_size = 120
+text = "d"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -544.0
-offset_top = -172.0
-offset_right = -272.0
-offset_bottom = 93.0
-grow_horizontal = 2
+offset_left = 84.0
+offset_top = -92.0
+offset_right = 356.0
+offset_bottom = 248.0
 grow_vertical = 2
+theme = ExtResource("6_1dsjk")
 theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vee6o")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
 [node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vee6o")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
 [node name="Quit" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vee6o")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+
+[node name="SettingsMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_c8xin")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme = ExtResource("6_1dsjk")
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+theme_override_fonts/font = ExtResource("1_vee6o")
+text = "Mouse sensitivity"
+
+[node name="HSlider" type="HSlider" parent="SettingsMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+min_value = 0.1
+max_value = 5.0
+step = 0.1
+value = 1.1
+
+[node name="MouseValue" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+theme_override_fonts/font = ExtResource("1_vee6o")
+text = "Audio volume"
+
+[node name="audioslider" type="HSlider" parent="SettingsMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="Audiovalue" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+theme_override_fonts/font = ExtResource("1_vee6o")
+text = "Music volume"
+
+[node name="musicslider" type="HSlider" parent="SettingsMenu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="Musicvalue" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+offset_right = 105.0
+grow_vertical = 0
+theme = ExtResource("6_1dsjk")
+
+[node name="Back" type="Button" parent="SettingsMenu/VBoxContainer2"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme = ExtResource("6_1dsjk")
+text = "Back"
 
 [node name="QodotMap" type="Node3D" parent="."]
 script = ExtResource("3_27bvt")
@@ -378,3 +492,8 @@ stream = ExtResource("18_ofngt")
 [connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Settings" to="MainMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer/HSlider" to="SettingsMenu" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer2/audioslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer3/musicslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
+[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_button_pressed"]

@@ -6,6 +6,7 @@ var game_scene =  ResourceLoader.load("res://src/scenes/world.tscn") as PackedSc
 @onready var animation = $"../start"
 @onready var animation_colorect = $"../start/ColorRect"
 @onready var animation_label = $"../start/ColorRect/Label"
+@onready var settings = $"../SettingsMenu"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,4 +50,5 @@ func _on_play_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_packed(settings_scene)
+	hide()
+	settings.show()

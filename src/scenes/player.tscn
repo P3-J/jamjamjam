@@ -98,9 +98,10 @@ offset_left = -42.0
 offset_right = 105.0
 offset_bottom = 34.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 6
 theme_override_fonts/normal_font = ExtResource("5_sjss2")
 theme_override_font_sizes/normal_font_size = 20
-text = "10:10:10"
+text = "00:00:00"
 
 [node name="playermesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_cyvha")

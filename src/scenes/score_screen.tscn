@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7nywv5gyuyjd"]
 
+[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="1_1420b"]
 [ext_resource type="Script" path="res://src/scripts/score_screen.gd" id="1_imtw2"]
-[ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_0i4hy"]
 [ext_resource type="Texture2D" uid="uid://brc1dohjeg1f3" path="res://src/end_screen_stuff/Leaderboard.png" id="3_8ekpm"]
 [ext_resource type="Texture2D" uid="uid://cmm3d5trbe7c3" path="res://src/end_screen_stuff/Banner_Rendered.jpg" id="4_r7e2x"]
 
@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1420b")
 script = ExtResource("1_imtw2")
 
 [node name="timer_text" type="RichTextLabel" parent="."]
@@ -22,10 +23,10 @@ offset_left = 416.0
 offset_top = 72.0
 offset_right = 872.0
 offset_bottom = 145.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_0i4hy")
+theme_override_colors/font_outline_color = Color(0.623529, 0.4, 0.168627, 1)
+theme_override_constants/outline_size = 6
 theme_override_font_sizes/normal_font_size = 60
-text = "10:10:100"
+text = "00:00:000"
 fit_content = true
 
 [node name="bckground" type="Sprite2D" parent="."]
@@ -40,12 +41,11 @@ offset_top = 200.0
 offset_right = 560.0
 offset_bottom = 576.0
 mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.560784, 0.337255, 0.105882, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_0i4hy")
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/panel = SubResource("StyleBoxTexture_gy6jf")
-item_count = 1
-item_0/text = "jako : 10:10:10"
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
@@ -61,7 +61,6 @@ offset_left = 600.0
 offset_top = 240.0
 offset_right = 728.0
 offset_bottom = 296.0
-theme_override_fonts/font = ExtResource("2_0i4hy")
 theme_override_font_sizes/font_size = 30
 text = "submit
 "
@@ -72,17 +71,17 @@ offset_left = 736.0
 offset_top = 240.0
 offset_right = 857.0
 offset_bottom = 296.0
-theme_override_fonts/font = ExtResource("2_0i4hy")
 theme_override_font_sizes/font_size = 30
 text = "refresh"
 
 [node name="timer_text2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 312.0
-offset_right = 943.0
+offset_left = 283.645
+offset_right = 914.645
 offset_bottom = 83.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_0i4hy")
+theme_override_colors/font_outline_color = Color(0.564706, 0.356863, 0.145098, 1)
+theme_override_constants/outline_size = 6
 theme_override_font_sizes/normal_font_size = 60
 text = "Congratulations!"
 fit_content = true
@@ -99,7 +98,6 @@ offset_left = 600.0
 offset_top = 304.0
 offset_right = 856.0
 offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_0i4hy")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 
@@ -110,7 +108,11 @@ scale = Vector2(0.608333, 0.614815)
 texture = ExtResource("4_r7e2x")
 metadata/_edit_group_ = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
