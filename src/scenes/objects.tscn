@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d33yeqhli3ehf"]
+[gd_scene load_steps=5 format=3 uid="uid://d33yeqhli3ehf"]
 
 [ext_resource type="PackedScene" uid="uid://bf1atwf2qrqdy" path="res://src/scenes/tablet.tscn" id="1_u2cg3"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_m0fqu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4bps"]
+albedo_color = Color(0.490196, 0.298039, 0.168627, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_82p8v"]
+material = SubResource("StandardMaterial3D_p4bps")
 
 [node name="objects" type="Node3D"]
 
@@ -19,6 +25,10 @@ A - Move left"
 font = ExtResource("2_m0fqu")
 font_size = 100
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tablet"]
+transform = Transform3D(0.01, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0.0111753, 0.0937047, 0.00100915)
+mesh = SubResource("BoxMesh_82p8v")
+
 [node name="tablet2" parent="." instance=ExtResource("1_u2cg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0410594)
 
@@ -30,6 +40,10 @@ text = "Hold RMB on the hook
 to grapple!"
 font = ExtResource("2_m0fqu")
 font_size = 100
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tablet2"]
+transform = Transform3D(0.01, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0.0111753, 0.0937047, 0.00100915)
+mesh = SubResource("BoxMesh_82p8v")
 
 [node name="tablet3" parent="." instance=ExtResource("1_u2cg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.413367)
@@ -52,3 +66,7 @@ I don't know in what way...
 -Bear"
 font = ExtResource("2_m0fqu")
 font_size = 10
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tablet3"]
+transform = Transform3D(0.01, 0, 0, 0, 0.1, 0, 0, 0, 0.01, 0.0111753, 0.0937047, 0.00100915)
+mesh = SubResource("BoxMesh_82p8v")
