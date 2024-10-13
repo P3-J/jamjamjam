@@ -37,7 +37,7 @@ var holding_hook_button: bool = false
 var can_move_towards_hook: bool = false
 
 var start_time: int = 0
-var is_stopwatch_running: bool = true
+var is_stopwatch_running: bool = false
 
 var minutes : int = 0
 var seconds : int = 0
@@ -63,9 +63,8 @@ func _ready() -> void:
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Signalbus.connect('kill_player', _on_player_kill)
+	Signalbus.connect('game_starts', _on_game_starts)
 	Signalbus.player_wins.connect(reached_end)
-
-	start_speedrun_timer()
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
@@ -255,3 +254,6 @@ func reached_end():
 func setup_sound_stream() -> void:
 	running_audio_stream.stream = load('res://src/assets/sounds/running.wav')
 	self.add_child(running_audio_stream)
+
+func _on_game_starts() -> void:
+	start_speedrun_timer()
