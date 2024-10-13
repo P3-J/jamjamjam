@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf5xp2n1tr7e3"]
+
+[ext_resource type="Texture2D" uid="uid://by8lu41cycjmr" path="res://addons/kenney_particle_pack/dirt_02.png" id="1_1blg4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v4gau"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 100)
+angle_min = 1.07288e-05
+angle_max = 360.0
+direction = Vector3(1, -1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = 30.0
+angular_velocity_max = 50.0
+linear_accel_min = 0.999998
+linear_accel_max = 10.0
+scale_min = 0.5
+turbulence_enabled = true
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyakt"]
+transparency = 1
+albedo_texture = ExtResource("1_1blg4")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_bsrol"]
+material = SubResource("StandardMaterial3D_hyakt")
+
+[node name="dust" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0382056, 0.04274, -0.0192584)
+amount = 5000
+lifetime = 5.0
+fixed_fps = 60
+visibility_aabb = AABB(-100.925, -338.004, -193.174, 380.115, 339.989, 397.022)
+process_material = SubResource("ParticleProcessMaterial_v4gau")
+draw_pass_1 = SubResource("QuadMesh_bsrol")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+size = Vector3(100, 1, 100)
