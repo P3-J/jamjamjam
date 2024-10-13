@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://7ic6wm40sqs7"]
+
+[ext_resource type="PackedScene" uid="uid://l62rrouo1x7m" path="res://src/assets/rocks/Crystall1.fbx" id="1_2ys41"]
+[ext_resource type="Texture2D" uid="uid://kjyk8kfoew48" path="res://src/assets/rocks/Crystall1_BaseColor.png" id="2_obe7k"]
+[ext_resource type="Texture2D" uid="uid://ci1pf85sb8kqe" path="res://src/assets/rocks/Crystall1_Crystall_Emissive.png" id="3_bruxh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80d3w"]
+albedo_texture = ExtResource("2_obe7k")
+emission_enabled = true
+emission_texture = ExtResource("3_bruxh")
+
+[node name="Crystall1" instance=ExtResource("1_2ys41")]
+
+[node name="Crystall" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_80d3w")
