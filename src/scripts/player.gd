@@ -151,22 +151,29 @@ func _input(event: InputEvent) -> void:
 
 	
 func check_for_hook_collision():
+	var collider = hookray.get_collider()
+
 	if (!hookray.is_colliding()):
-		reset_pickaxe_position()
-		crosshair.texture = normal_crosshair_texture
-		can_hook = false
-		can_move_towards_hook = false
+		dont_allow_to_hook()
 		return
 
-	var collider = hookray.get_collider()
 	if (!collider.is_in_group("hook")):
+		dont_allow_to_hook()
 		return
+
 	can_hook = true
 	crosshair.texture = highlighted_crosshair_texture
 
+
+func dont_allow_to_hook():
+	reset_pickaxe_position()
+	crosshair.texture = normal_crosshair_texture
+	can_hook = false
+	can_move_towards_hook = false
+
+
 func reset_pickaxe_position():
 	pickaxe.position = pickaxe_reset_pos
-
 
 
 func hook_towards(collider):
