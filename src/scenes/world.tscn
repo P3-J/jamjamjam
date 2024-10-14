@@ -21,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://b5jrkxftgh5bo" path="res://src/scenes/blue_mushroom.tscn" id="14_bslib"]
 [ext_resource type="PackedScene" uid="uid://cse18aa5wsg46" path="res://src/scenes/floor_torch.tscn" id="15_0nppk"]
 [ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="15_uwbxw"]
-[ext_resource type="PackedScene" path="res://src/scenes/dust.tscn" id="16_xisyl"]
-[ext_resource type="PackedScene" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
+[ext_resource type="PackedScene" uid="uid://cf5xp2n1tr7e3" path="res://src/scenes/dust.tscn" id="16_xisyl"]
+[ext_resource type="PackedScene" uid="uid://dgobv856rt6fb" path="res://src/scenes/tavern_door.tscn" id="17_tyrj2"]
 [ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="17_v0ngd"]
 [ext_resource type="PackedScene" uid="uid://bop6o05w6yod6" path="res://src/scenes/rock_2.tscn" id="17_yfxr1"]
 [ext_resource type="PackedScene" uid="uid://iws7wkqfkiv0" path="res://src/scenes/green_mushroom.tscn" id="18_wrg5s"]
@@ -31,7 +31,7 @@
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="20_0m4b8"]
 [ext_resource type="PackedScene" uid="uid://7ic6wm40sqs7" path="res://src/scenes/crystall_2.tscn" id="26_simvn"]
 [ext_resource type="PackedScene" uid="uid://blvdu6jx24qoa" path="res://src/scenes/rock_1.tscn" id="28_7564s"]
-[ext_resource type="PackedScene" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
+[ext_resource type="PackedScene" uid="uid://bkb4k8axypx8n" path="res://src/scenes/trigger_area.tscn" id="29_8ktjs"]
 [ext_resource type="PackedScene" uid="uid://b0ldonlcqy4fy" path="res://src/scenes/falling_rock.tscn" id="30_gmcew"]
 [ext_resource type="PackedScene" uid="uid://b1p07ahgicyjf" path="res://src/scenes/rock_3.tscn" id="34_b3coe"]
 
@@ -230,16 +230,15 @@ albedo_color = Color(0.490196, 0.298039, 0.168627, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_bekfu"]
 material = SubResource("StandardMaterial3D_wl3n6")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kfi25"]
-size = Vector3(7.03226, 3.72992, 6.1322)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_bvoo5"]
 radius = 5.28623
 
-[node name="world" type="Node3D" node_paths=PackedStringArray("start_area")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_flgvp"]
+size = Vector3(30.4476, 12.4602, 34.2333)
+
+[node name="world" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00804043, -0.0609179, -0.0632148)
 script = ExtResource("1_3jldd")
-start_area = NodePath("TriggerArea")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tvsks")
@@ -590,13 +589,6 @@ rise_per_sec = 0.6
 
 [node name="AudioManager" parent="." instance=ExtResource("15_uwbxw")]
 
-[node name="TriggerArea" parent="." instance=ExtResource("29_8ktjs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0851, -13.6789, -40.7422)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14806, 0.893707, -0.481873)
-shape = SubResource("BoxShape3D_kfi25")
-
 [node name="FallingRock" parent="." node_paths=PackedStringArray("trigger_area") instance=ExtResource("30_gmcew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9377, 30.634, -29.0428)
 falling_speed = 25
@@ -900,3 +892,12 @@ transform = Transform3D(0.337907, 0, 0, 0, 0.337907, 0, 0, 0, 0.337907, 22.915, 
 
 [node name="GreenMushroom6" parent="." instance=ExtResource("18_wrg5s")]
 transform = Transform3D(0.435733, 0, 0, 0, 0.435733, 0, 0, 0, 0.435733, 22.3223, -6.6524, -7.48858)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0191, -9.35233, -45.3552)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6931, 0.550171, -0.798889)
+shape = SubResource("BoxShape3D_flgvp")
+
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
