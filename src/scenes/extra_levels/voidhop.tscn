@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://ck8t0ptkkpays"]
+[gd_scene load_steps=55 format=4 uid="uid://ck8t0ptkkpays"]
 
 [ext_resource type="Script" path="res://src/scripts/world.gd" id="1_g254o"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_bcikk"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://blvdu6jx24qoa" path="res://src/scenes/rock_1.tscn" id="30_3ivhy"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="31_clmps"]
 [ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="32_wf886"]
+[ext_resource type="PackedScene" uid="uid://bwjc8lhq044v0" path="res://src/scenes/audio_manager.tscn" id="33_nrg1o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecknf"]
 texture_filter = 0
@@ -468,5 +469,7 @@ fov = 120.4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n53l7")
+
+[node name="AudioManager" parent="." instance=ExtResource("33_nrg1o")]
 
 [connection signal="body_exited" from="map/triggers/Area3D" to="." method="_on_area_3d_body_exited"]
