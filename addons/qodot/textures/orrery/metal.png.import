@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xkeao1d0hxcj"
 path.s3tc="res://.godot/imported/metal.png-0f506868deaffb55dccaef5aa735d501.s3tc.ctex"
+path.etc2="res://.godot/imported/metal.png-0f506868deaffb55dccaef5aa735d501.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/qodot/textures/orrery/metal.png"
-dest_files=["res://.godot/imported/metal.png-0f506868deaffb55dccaef5aa735d501.s3tc.ctex"]
+dest_files=["res://.godot/imported/metal.png-0f506868deaffb55dccaef5aa735d501.s3tc.ctex", "res://.godot/imported/metal.png-0f506868deaffb55dccaef5aa735d501.etc2.ctex"]
 
 [params]
 

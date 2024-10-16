@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://jasa6xvi4ctt"
 path.s3tc="res://.godot/imported/Floor_Torch_T_BaseColor.png-e39da639b092c0eb3dd7fb4a9c266970.s3tc.ctex"
+path.etc2="res://.godot/imported/Floor_Torch_T_BaseColor.png-e39da639b092c0eb3dd7fb4a9c266970.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/FloorTorch/Floor_Torch_T_BaseColor.png"
-dest_files=["res://.godot/imported/Floor_Torch_T_BaseColor.png-e39da639b092c0eb3dd7fb4a9c266970.s3tc.ctex"]
+dest_files=["res://.godot/imported/Floor_Torch_T_BaseColor.png-e39da639b092c0eb3dd7fb4a9c266970.s3tc.ctex", "res://.godot/imported/Floor_Torch_T_BaseColor.png-e39da639b092c0eb3dd7fb4a9c266970.etc2.ctex"]
 
 [params]
 

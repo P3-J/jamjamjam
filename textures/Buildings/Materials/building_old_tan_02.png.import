@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfmtvo6biju8t"
 path.s3tc="res://.godot/imported/building_old_tan_02.png-0ae6940c9ef7528012e6b5403a6a4fcf.s3tc.ctex"
+path.etc2="res://.godot/imported/building_old_tan_02.png-0ae6940c9ef7528012e6b5403a6a4fcf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Buildings/Materials/building_old_tan_02.png"
-dest_files=["res://.godot/imported/building_old_tan_02.png-0ae6940c9ef7528012e6b5403a6a4fcf.s3tc.ctex"]
+dest_files=["res://.godot/imported/building_old_tan_02.png-0ae6940c9ef7528012e6b5403a6a4fcf.s3tc.ctex", "res://.godot/imported/building_old_tan_02.png-0ae6940c9ef7528012e6b5403a6a4fcf.etc2.ctex"]
 
 [params]
 

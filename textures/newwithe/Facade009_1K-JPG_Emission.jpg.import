@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://de820dtxlutwc"
 path.s3tc="res://.godot/imported/Facade009_1K-JPG_Emission.jpg-1fa4acca582aeee0650fa2c1f1e865ba.s3tc.ctex"
+path.etc2="res://.godot/imported/Facade009_1K-JPG_Emission.jpg-1fa4acca582aeee0650fa2c1f1e865ba.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/newwithe/Facade009_1K-JPG_Emission.jpg"
-dest_files=["res://.godot/imported/Facade009_1K-JPG_Emission.jpg-1fa4acca582aeee0650fa2c1f1e865ba.s3tc.ctex"]
+dest_files=["res://.godot/imported/Facade009_1K-JPG_Emission.jpg-1fa4acca582aeee0650fa2c1f1e865ba.s3tc.ctex", "res://.godot/imported/Facade009_1K-JPG_Emission.jpg-1fa4acca582aeee0650fa2c1f1e865ba.etc2.ctex"]
 
 [params]
 

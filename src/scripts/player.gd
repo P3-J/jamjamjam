@@ -76,6 +76,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 
+		velocity.x = lerp(velocity.x, 0.0, 0.3)
+		velocity.z = lerp(velocity.z, 0.0, 0.3)
+
 		if velocity.x <= 0 and velocity.z <= 0:
 			player_anim.stop()
 
@@ -96,7 +99,7 @@ func _physics_process(delta: float) -> void:
 		if jump_timer.is_stopped():
 			jump_timer.start()
 
-	if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
+	if Input.is_action_pressed("jump") and not jumped and can_still_jump:
 		jumped = true
 		velocity.y = jump_speed
 		can_still_jump = false

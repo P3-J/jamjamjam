@@ -9,13 +9,10 @@ var max_height = 45
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var nodes = get_tree().get_root().get_node('world')
-	nodes = nodes.get_children()
-	for node in nodes:
-		if node.name == 'Lava':
-			lava = node 
-		if node.name == 'controllableCharacters':
-			player = node.get_node('player')
+	var base_scene = get_tree().current_scene 
+	lava = base_scene.find_child("Lava")
+	player = base_scene.find_child("player")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

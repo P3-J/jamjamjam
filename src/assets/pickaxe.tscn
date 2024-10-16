@@ -26,6 +26,8 @@ size = Vector3(0.203743, 0.355804, 0.0455933)
 surface_material_override/0 = SubResource("StandardMaterial3D_74138")
 
 [node name="PickaxeArea" type="Area3D" parent="." index="2"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickaxeArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230789, -0.00242615, 0.000213623)

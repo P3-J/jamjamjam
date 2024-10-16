@@ -299,13 +299,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 84.0
-offset_top = -92.0
-offset_right = 356.0
-offset_bottom = 248.0
+offset_left = 78.0
+offset_top = -137.0
+offset_right = 350.0
+offset_bottom = 323.0
 grow_vertical = 2
 theme = ExtResource("6_1dsjk")
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -313,6 +313,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vee6o")
 theme_override_font_sizes/font_size = 50
 text = "Play"
+
+[node name="play_extra" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vee6o")
+theme_override_font_sizes/font_size = 50
+text = "Extra
+"
 
 [node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -490,10 +498,11 @@ text = "Team Mõmmid"
 stream = ExtResource("18_ofngt")
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/play_extra" to="MainMenu" method="_on_play_extra_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Settings" to="MainMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
 [connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer/HSlider" to="SettingsMenu" method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer2/audioslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
 [connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer3/musicslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
-[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_back_pressed"]
 [connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_back_pressed"]

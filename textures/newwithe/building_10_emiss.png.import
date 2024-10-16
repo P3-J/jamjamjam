@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4f6d5wjas6u4"
 path.s3tc="res://.godot/imported/building_10_emiss.png-5f430f0d2fd4976a55e7bc3e5a83c0b1.s3tc.ctex"
+path.etc2="res://.godot/imported/building_10_emiss.png-5f430f0d2fd4976a55e7bc3e5a83c0b1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/newwithe/building_10_emiss.png"
-dest_files=["res://.godot/imported/building_10_emiss.png-5f430f0d2fd4976a55e7bc3e5a83c0b1.s3tc.ctex"]
+dest_files=["res://.godot/imported/building_10_emiss.png-5f430f0d2fd4976a55e7bc3e5a83c0b1.s3tc.ctex", "res://.godot/imported/building_10_emiss.png-5f430f0d2fd4976a55e7bc3e5a83c0b1.etc2.ctex"]
 
 [params]
 

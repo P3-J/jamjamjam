@@ -42,12 +42,12 @@ func int_to_time(total_mils: int):
 
 func submit():
 	print("sending_data")
-	SilentWolf.Scores.save_score(text_edit.text, -time_to_int(Signalbus.minutes, Signalbus.seconds, Signalbus.milliseconds))
+	SilentWolf.Scores.save_score(text_edit.text, -time_to_int(Signalbus.minutes, Signalbus.seconds, Signalbus.milliseconds), Globalsettings.on_level)
 	timer.start()
 
 func refresh():
 	print("getting")
-	var sw_result: Dictionary = await SilentWolf.Scores.get_scores().sw_get_scores_complete
+	var sw_result: Dictionary = await SilentWolf.Scores.get_scores(10,Globalsettings.on_level).sw_get_scores_complete
 	add_to_list(sw_result.scores)
 
 

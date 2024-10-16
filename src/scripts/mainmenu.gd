@@ -2,6 +2,7 @@ extends Control
 
 var settings_scene = ResourceLoader.load("res://src/scenes/settings_menu_main.tscn") as PackedScene
 var game_scene =  ResourceLoader.load("res://src/scenes/world.tscn") as PackedScene
+var extra_scene = ResourceLoader.load("res://src/scenes/extra_levels/voidhop.tscn") as PackedScene
 
 @onready var animation = $"../start"
 @onready var animation_colorect = $"../start/ColorRect"
@@ -52,3 +53,9 @@ func _on_play_pressed() -> void:
 func _on_settings_pressed() -> void:
 	hide()
 	settings.show()
+
+
+func _on_play_extra_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(extra_scene)
+

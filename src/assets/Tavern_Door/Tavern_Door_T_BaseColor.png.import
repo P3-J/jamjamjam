@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dynav6dpi1ws3"
 path.s3tc="res://.godot/imported/Tavern_Door_T_BaseColor.png-6e53e72c87f9f317751f84444c9f7b33.s3tc.ctex"
+path.etc2="res://.godot/imported/Tavern_Door_T_BaseColor.png-6e53e72c87f9f317751f84444c9f7b33.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/Tavern_Door/Tavern_Door_T_BaseColor.png"
-dest_files=["res://.godot/imported/Tavern_Door_T_BaseColor.png-6e53e72c87f9f317751f84444c9f7b33.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tavern_Door_T_BaseColor.png-6e53e72c87f9f317751f84444c9f7b33.s3tc.ctex", "res://.godot/imported/Tavern_Door_T_BaseColor.png-6e53e72c87f9f317751f84444c9f7b33.etc2.ctex"]
 
 [params]
 

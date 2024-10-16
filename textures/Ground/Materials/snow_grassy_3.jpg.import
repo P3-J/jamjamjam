@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd2uxyjcpedj7"
 path.s3tc="res://.godot/imported/snow_grassy_3.jpg-2f6d60df8629126665f9f1cf6c501a0f.s3tc.ctex"
+path.etc2="res://.godot/imported/snow_grassy_3.jpg-2f6d60df8629126665f9f1cf6c501a0f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Ground/Materials/snow_grassy_3.jpg"
-dest_files=["res://.godot/imported/snow_grassy_3.jpg-2f6d60df8629126665f9f1cf6c501a0f.s3tc.ctex"]
+dest_files=["res://.godot/imported/snow_grassy_3.jpg-2f6d60df8629126665f9f1cf6c501a0f.s3tc.ctex", "res://.godot/imported/snow_grassy_3.jpg-2f6d60df8629126665f9f1cf6c501a0f.etc2.ctex"]
 
 [params]
 

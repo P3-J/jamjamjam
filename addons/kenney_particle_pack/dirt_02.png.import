@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://by8lu41cycjmr"
 path.s3tc="res://.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.s3tc.ctex"
+path.etc2="res://.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/kenney_particle_pack/dirt_02.png"
-dest_files=["res://.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.s3tc.ctex"]
+dest_files=["res://.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.s3tc.ctex", "res://.godot/imported/dirt_02.png-a9eb45487bc447ad74cc4761331e9d85.etc2.ctex"]
 
 [params]
 

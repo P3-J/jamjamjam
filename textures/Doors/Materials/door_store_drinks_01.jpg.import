@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cma6nucolxfjh"
 path.s3tc="res://.godot/imported/door_store_drinks_01.jpg-7e80fff0e2f2d9d54c4f01fc2e0f7156.s3tc.ctex"
+path.etc2="res://.godot/imported/door_store_drinks_01.jpg-7e80fff0e2f2d9d54c4f01fc2e0f7156.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Doors/Materials/door_store_drinks_01.jpg"
-dest_files=["res://.godot/imported/door_store_drinks_01.jpg-7e80fff0e2f2d9d54c4f01fc2e0f7156.s3tc.ctex"]
+dest_files=["res://.godot/imported/door_store_drinks_01.jpg-7e80fff0e2f2d9d54c4f01fc2e0f7156.s3tc.ctex", "res://.godot/imported/door_store_drinks_01.jpg-7e80fff0e2f2d9d54c4f01fc2e0f7156.etc2.ctex"]
 
 [params]
 

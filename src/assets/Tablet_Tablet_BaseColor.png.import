@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn5gg3nh5n3hl"
 path.s3tc="res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.s3tc.ctex"
+path.etc2="res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/Tablet_Tablet_BaseColor.png"
-dest_files=["res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.s3tc.ctex", "res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.etc2.ctex"]
 
 [params]
 

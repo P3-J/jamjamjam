@@ -6,6 +6,8 @@ var splash_screen_called = false
 var audio_volume: float
 var music_volume: float
 
+var on_level: String
+
 # File path to save settings
 const SETTINGS_PATH = "user://settings.cfg"
 

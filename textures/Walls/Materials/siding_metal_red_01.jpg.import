@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnb0yv1os461a"
 path.s3tc="res://.godot/imported/siding_metal_red_01.jpg-76dd72d35abe2e3142d130d39851532b.s3tc.ctex"
+path.etc2="res://.godot/imported/siding_metal_red_01.jpg-76dd72d35abe2e3142d130d39851532b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Walls/Materials/siding_metal_red_01.jpg"
-dest_files=["res://.godot/imported/siding_metal_red_01.jpg-76dd72d35abe2e3142d130d39851532b.s3tc.ctex"]
+dest_files=["res://.godot/imported/siding_metal_red_01.jpg-76dd72d35abe2e3142d130d39851532b.s3tc.ctex", "res://.godot/imported/siding_metal_red_01.jpg-76dd72d35abe2e3142d130d39851532b.etc2.ctex"]
 
 [params]
 

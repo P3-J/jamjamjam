@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh631iak6ny34"
 path.s3tc="res://.godot/imported/Pickaxe_low_Pickaxe_Roughness.png-881a59175bdfc128f9fcd4a2c818f398.s3tc.ctex"
+path.etc2="res://.godot/imported/Pickaxe_low_Pickaxe_Roughness.png-881a59175bdfc128f9fcd4a2c818f398.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/Pickaxe_low_Pickaxe_Roughness.png"
-dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Roughness.png-881a59175bdfc128f9fcd4a2c818f398.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Roughness.png-881a59175bdfc128f9fcd4a2c818f398.s3tc.ctex", "res://.godot/imported/Pickaxe_low_Pickaxe_Roughness.png-881a59175bdfc128f9fcd4a2c818f398.etc2.ctex"]
 
 [params]
 

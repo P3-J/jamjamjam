@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxseguuhtmkx8"
 path.s3tc="res://.godot/imported/siding_white_02.jpg-46da2941789ef26e7b9d813ceb385e54.s3tc.ctex"
+path.etc2="res://.godot/imported/siding_white_02.jpg-46da2941789ef26e7b9d813ceb385e54.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Walls/Materials/siding_white_02.jpg"
-dest_files=["res://.godot/imported/siding_white_02.jpg-46da2941789ef26e7b9d813ceb385e54.s3tc.ctex"]
+dest_files=["res://.godot/imported/siding_white_02.jpg-46da2941789ef26e7b9d813ceb385e54.s3tc.ctex", "res://.godot/imported/siding_white_02.jpg-46da2941789ef26e7b9d813ceb385e54.etc2.ctex"]
 
 [params]
 

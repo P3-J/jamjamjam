@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfdykgu3cgb7q"
 path.s3tc="res://.godot/imported/generator_vent_01.jpg-c61a002f471830ffc0d1b670aa3f75cd.s3tc.ctex"
+path.etc2="res://.godot/imported/generator_vent_01.jpg-c61a002f471830ffc0d1b670aa3f75cd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Industrial/Materials/generator_vent_01.jpg"
-dest_files=["res://.godot/imported/generator_vent_01.jpg-c61a002f471830ffc0d1b670aa3f75cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/generator_vent_01.jpg-c61a002f471830ffc0d1b670aa3f75cd.s3tc.ctex", "res://.godot/imported/generator_vent_01.jpg-c61a002f471830ffc0d1b670aa3f75cd.etc2.ctex"]
 
 [params]
 

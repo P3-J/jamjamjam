@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0iqnq5n412hd"
 path.s3tc="res://.godot/imported/Flare00.PNG-6f2e7de84381ce51e18e5a438d255359.s3tc.ctex"
+path.etc2="res://.godot/imported/Flare00.PNG-6f2e7de84381ce51e18e5a438d255359.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/shaders/Flare00.PNG"
-dest_files=["res://.godot/imported/Flare00.PNG-6f2e7de84381ce51e18e5a438d255359.s3tc.ctex"]
+dest_files=["res://.godot/imported/Flare00.PNG-6f2e7de84381ce51e18e5a438d255359.s3tc.ctex", "res://.godot/imported/Flare00.PNG-6f2e7de84381ce51e18e5a438d255359.etc2.ctex"]
 
 [params]
 

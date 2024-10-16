@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://2cfnduue40bb"
+path="res://.godot/imported/resolutiontest.5.map-9ae00b646d5f8b1c7c377f2406c4c680.tres"
+
+[deps]
+
+source_file="res://trench_maps/autosave/resolutiontest.5.map"
+dest_files=["res://.godot/imported/resolutiontest.5.map-9ae00b646d5f8b1c7c377f2406c4c680.tres"]
+
+[params]
+

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxeg0vny36uu6" path="res://src/assets/FloorTorch/FloorTorch.fbx" id="1_1imc7"]
 [ext_resource type="Texture2D" uid="uid://jasa6xvi4ctt" path="res://src/assets/FloorTorch/Floor_Torch_T_BaseColor.png" id="2_umvxf"]
-[ext_resource type="PackedScene" path="res://src/scenes/fire_red.tscn" id="3_off8s"]
+[ext_resource type="PackedScene" uid="uid://cyxydyqne5ouo" path="res://src/scenes/fire_red.tscn" id="3_off8s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jyr4"]
 albedo_texture = ExtResource("2_umvxf")
@@ -22,6 +22,8 @@ transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, 0, 1.07888, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134105, 1.3883, 0.0721229)
 light_color = Color(0.854874, 0.82854, 0, 1)
+shadow_enabled = true
+omni_range = 7.033
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 

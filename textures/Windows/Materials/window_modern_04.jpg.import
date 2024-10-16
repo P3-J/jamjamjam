@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://raglg455vvq1"
 path.s3tc="res://.godot/imported/window_modern_04.jpg-38f4bb142a534e378f2dd704dce9c65f.s3tc.ctex"
+path.etc2="res://.godot/imported/window_modern_04.jpg-38f4bb142a534e378f2dd704dce9c65f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Windows/Materials/window_modern_04.jpg"
-dest_files=["res://.godot/imported/window_modern_04.jpg-38f4bb142a534e378f2dd704dce9c65f.s3tc.ctex"]
+dest_files=["res://.godot/imported/window_modern_04.jpg-38f4bb142a534e378f2dd704dce9c65f.s3tc.ctex", "res://.godot/imported/window_modern_04.jpg-38f4bb142a534e378f2dd704dce9c65f.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dta4asps2mjfy"
 path.s3tc="res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-b46347e8c1269db682c56ae2a5e9dee8.s3tc.ctex"
+path.etc2="res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-b46347e8c1269db682c56ae2a5e9dee8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/Pickaxe_low_Pickaxe_Height.png"
-dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-b46347e8c1269db682c56ae2a5e9dee8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-b46347e8c1269db682c56ae2a5e9dee8.s3tc.ctex", "res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-b46347e8c1269db682c56ae2a5e9dee8.etc2.ctex"]
 
 [params]
 

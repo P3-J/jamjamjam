@@ -236,9 +236,11 @@ radius = 5.28623
 [sub_resource type="BoxShape3D" id="BoxShape3D_flgvp"]
 size = Vector3(30.4476, 12.4602, 34.2333)
 
-[node name="world" type="Node3D"]
+[node name="world" type="Node3D" node_paths=PackedStringArray("start_area")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00804043, -0.0609179, -0.0632148)
 script = ExtResource("1_3jldd")
+start_area = NodePath("TriggerArea2")
+level_name = "main"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tvsks")

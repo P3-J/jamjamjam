@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://e2hmyqa0v386"
 path.s3tc="res://.godot/imported/carpet_blue_01.jpg-7140295f8b27584035a94a682af9cca2.s3tc.ctex"
+path.etc2="res://.godot/imported/carpet_blue_01.jpg-7140295f8b27584035a94a682af9cca2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Floor/Materials/carpet_blue_01.jpg"
-dest_files=["res://.godot/imported/carpet_blue_01.jpg-7140295f8b27584035a94a682af9cca2.s3tc.ctex"]
+dest_files=["res://.godot/imported/carpet_blue_01.jpg-7140295f8b27584035a94a682af9cca2.s3tc.ctex", "res://.godot/imported/carpet_blue_01.jpg-7140295f8b27584035a94a682af9cca2.etc2.ctex"]
 
 [params]
 

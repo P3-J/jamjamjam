@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddsnsdd6uqhro"
 path.s3tc="res://.godot/imported/concrete_tile_01.jpg-6096d361d11c8895ff9c9a6269e30fa3.s3tc.ctex"
+path.etc2="res://.godot/imported/concrete_tile_01.jpg-6096d361d11c8895ff9c9a6269e30fa3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Concrete/Materials/concrete_tile_01.jpg"
-dest_files=["res://.godot/imported/concrete_tile_01.jpg-6096d361d11c8895ff9c9a6269e30fa3.s3tc.ctex"]
+dest_files=["res://.godot/imported/concrete_tile_01.jpg-6096d361d11c8895ff9c9a6269e30fa3.s3tc.ctex", "res://.godot/imported/concrete_tile_01.jpg-6096d361d11c8895ff9c9a6269e30fa3.etc2.ctex"]
 
 [params]
 
