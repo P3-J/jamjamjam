@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0mv3xlcxb4q3"
 path.s3tc="res://.godot/imported/ice_09.jpg-e221c786b38b03db6b6541b5cbc7ae1d.s3tc.ctex"
-path.etc2="res://.godot/imported/ice_09.jpg-e221c786b38b03db6b6541b5cbc7ae1d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Ground/Materials/ice_09.jpg"
-dest_files=["res://.godot/imported/ice_09.jpg-e221c786b38b03db6b6541b5cbc7ae1d.s3tc.ctex", "res://.godot/imported/ice_09.jpg-e221c786b38b03db6b6541b5cbc7ae1d.etc2.ctex"]
+dest_files=["res://.godot/imported/ice_09.jpg-e221c786b38b03db6b6541b5cbc7ae1d.s3tc.ctex"]
 
 [params]
 

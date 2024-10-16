@@ -419,7 +419,7 @@ transform = Transform3D(0.942933, -0.321407, -0.0870505, -0.318679, -0.946843, 0
 [node name="world_assets" type="Node3D" parent="map"]
 
 [node name="Tavern_Door" parent="map/world_assets" instance=ExtResource("27_q8spj")]
-transform = Transform3D(-1.99707, 0, 0.108159, 0, 2, 0, -0.108159, 0, -1.99707, -98.2325, 28.0706, 88.8148)
+transform = Transform3D(-1.99707, 0, 0.108159, 0, 2, 0, -0.108159, 0, -1.99707, -98.2325, 26.8268, 88.8148)
 
 [node name="Crystall1" parent="map/world_assets" instance=ExtResource("28_cb6o4")]
 transform = Transform3D(11.36, 1.68173, -0.137003, 1.17101, -15.0753, -2.93574, -0.40573, 3.57679, -12.309, -65.9181, 48.9735, 67.8315)
@@ -433,7 +433,7 @@ omni_range = 28.74
 [node name="triggers" type="Node3D" parent="map"]
 
 [node name="WinningZone" parent="map/triggers" instance=ExtResource("29_n68nu")]
-transform = Transform3D(3.07248, 0, -0.197253, 0, 1, 0, 0.314587, 0, 1.92654, -99.0367, 29.7437, 90.6063)
+transform = Transform3D(1.20525, 0, -0.209527, 0, 1, 0, 0.123404, 0, 2.04642, -98.3651, 28.2033, 90.3646)
 
 [node name="Area3D" type="Area3D" parent="map/triggers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3478, -13.6431, -55.5953)

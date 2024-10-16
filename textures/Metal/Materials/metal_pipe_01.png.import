@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3luk15osb2ea"
 path.s3tc="res://.godot/imported/metal_pipe_01.png-7566d35920ae288a6d274a1b0afc02cc.s3tc.ctex"
-path.etc2="res://.godot/imported/metal_pipe_01.png-7566d35920ae288a6d274a1b0afc02cc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Metal/Materials/metal_pipe_01.png"
-dest_files=["res://.godot/imported/metal_pipe_01.png-7566d35920ae288a6d274a1b0afc02cc.s3tc.ctex", "res://.godot/imported/metal_pipe_01.png-7566d35920ae288a6d274a1b0afc02cc.etc2.ctex"]
+dest_files=["res://.godot/imported/metal_pipe_01.png-7566d35920ae288a6d274a1b0afc02cc.s3tc.ctex"]
 
 [params]
 

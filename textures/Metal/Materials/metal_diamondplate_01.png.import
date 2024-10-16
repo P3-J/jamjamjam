@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3oyyt0o53k64"
 path.s3tc="res://.godot/imported/metal_diamondplate_01.png-3fb14f1c4a9edcfbeb061a94497f6da5.s3tc.ctex"
-path.etc2="res://.godot/imported/metal_diamondplate_01.png-3fb14f1c4a9edcfbeb061a94497f6da5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Metal/Materials/metal_diamondplate_01.png"
-dest_files=["res://.godot/imported/metal_diamondplate_01.png-3fb14f1c4a9edcfbeb061a94497f6da5.s3tc.ctex", "res://.godot/imported/metal_diamondplate_01.png-3fb14f1c4a9edcfbeb061a94497f6da5.etc2.ctex"]
+dest_files=["res://.godot/imported/metal_diamondplate_01.png-3fb14f1c4a9edcfbeb061a94497f6da5.s3tc.ctex"]
 
 [params]
 

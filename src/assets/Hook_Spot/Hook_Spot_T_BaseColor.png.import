@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ppe0pa5i2312"
 path.s3tc="res://.godot/imported/Hook_Spot_T_BaseColor.png-6fb7553dbb28db04a8008f51ea9a53b5.s3tc.ctex"
-path.etc2="res://.godot/imported/Hook_Spot_T_BaseColor.png-6fb7553dbb28db04a8008f51ea9a53b5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/Hook_Spot/Hook_Spot_T_BaseColor.png"
-dest_files=["res://.godot/imported/Hook_Spot_T_BaseColor.png-6fb7553dbb28db04a8008f51ea9a53b5.s3tc.ctex", "res://.godot/imported/Hook_Spot_T_BaseColor.png-6fb7553dbb28db04a8008f51ea9a53b5.etc2.ctex"]
+dest_files=["res://.godot/imported/Hook_Spot_T_BaseColor.png-6fb7553dbb28db04a8008f51ea9a53b5.s3tc.ctex"]
 
 [params]
 

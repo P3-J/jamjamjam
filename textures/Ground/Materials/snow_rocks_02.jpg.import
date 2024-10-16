@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwjorsm8sikb1"
 path.s3tc="res://.godot/imported/snow_rocks_02.jpg-a0cb6f248287ccf4912ce0647d6620bd.s3tc.ctex"
-path.etc2="res://.godot/imported/snow_rocks_02.jpg-a0cb6f248287ccf4912ce0647d6620bd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Ground/Materials/snow_rocks_02.jpg"
-dest_files=["res://.godot/imported/snow_rocks_02.jpg-a0cb6f248287ccf4912ce0647d6620bd.s3tc.ctex", "res://.godot/imported/snow_rocks_02.jpg-a0cb6f248287ccf4912ce0647d6620bd.etc2.ctex"]
+dest_files=["res://.godot/imported/snow_rocks_02.jpg-a0cb6f248287ccf4912ce0647d6620bd.s3tc.ctex"]
 
 [params]
 

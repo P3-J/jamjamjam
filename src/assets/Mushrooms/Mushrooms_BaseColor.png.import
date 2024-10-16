@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgxibkouygwlb"
 path.s3tc="res://.godot/imported/Mushrooms_BaseColor.png-5899beff6cb39889bdbc982a014bbbe2.s3tc.ctex"
-path.etc2="res://.godot/imported/Mushrooms_BaseColor.png-5899beff6cb39889bdbc982a014bbbe2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://src/assets/Mushrooms/Mushrooms_BaseColor.png"
-dest_files=["res://.godot/imported/Mushrooms_BaseColor.png-5899beff6cb39889bdbc982a014bbbe2.s3tc.ctex", "res://.godot/imported/Mushrooms_BaseColor.png-5899beff6cb39889bdbc982a014bbbe2.etc2.ctex"]
+dest_files=["res://.godot/imported/Mushrooms_BaseColor.png-5899beff6cb39889bdbc982a014bbbe2.s3tc.ctex"]
 
 [params]
 

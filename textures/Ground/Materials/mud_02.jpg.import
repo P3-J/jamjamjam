@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7hcjjjt6jenc"
 path.s3tc="res://.godot/imported/mud_02.jpg-2aaf42f4fbd41eefbf163f17b46553fb.s3tc.ctex"
-path.etc2="res://.godot/imported/mud_02.jpg-2aaf42f4fbd41eefbf163f17b46553fb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Ground/Materials/mud_02.jpg"
-dest_files=["res://.godot/imported/mud_02.jpg-2aaf42f4fbd41eefbf163f17b46553fb.s3tc.ctex", "res://.godot/imported/mud_02.jpg-2aaf42f4fbd41eefbf163f17b46553fb.etc2.ctex"]
+dest_files=["res://.godot/imported/mud_02.jpg-2aaf42f4fbd41eefbf163f17b46553fb.s3tc.ctex"]
 
 [params]
 

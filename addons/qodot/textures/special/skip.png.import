@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi62fnfvufj8i"
 path.s3tc="res://.godot/imported/skip.png-1a1c7d3d5f4ec87cb77153ada41cdb8a.s3tc.ctex"
-path.etc2="res://.godot/imported/skip.png-1a1c7d3d5f4ec87cb77153ada41cdb8a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/qodot/textures/special/skip.png"
-dest_files=["res://.godot/imported/skip.png-1a1c7d3d5f4ec87cb77153ada41cdb8a.s3tc.ctex", "res://.godot/imported/skip.png-1a1c7d3d5f4ec87cb77153ada41cdb8a.etc2.ctex"]
+dest_files=["res://.godot/imported/skip.png-1a1c7d3d5f4ec87cb77153ada41cdb8a.s3tc.ctex"]
 
 [params]
 

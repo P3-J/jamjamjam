@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://t3rbryrfnly3"
 path.s3tc="res://.godot/imported/siding_wood_05.jpg-c405682ad9272ab85d2060bc4d6f9a72.s3tc.ctex"
-path.etc2="res://.godot/imported/siding_wood_05.jpg-c405682ad9272ab85d2060bc4d6f9a72.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Walls/Materials/siding_wood_05.jpg"
-dest_files=["res://.godot/imported/siding_wood_05.jpg-c405682ad9272ab85d2060bc4d6f9a72.s3tc.ctex", "res://.godot/imported/siding_wood_05.jpg-c405682ad9272ab85d2060bc4d6f9a72.etc2.ctex"]
+dest_files=["res://.godot/imported/siding_wood_05.jpg-c405682ad9272ab85d2060bc4d6f9a72.s3tc.ctex"]
 
 [params]
 

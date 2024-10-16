@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp4r7tfo4sqgs"
 path.s3tc="res://.godot/imported/misc_structure_01.jpg-e56a341d90a5205e10b1ef1a0883cbd0.s3tc.ctex"
-path.etc2="res://.godot/imported/misc_structure_01.jpg-e56a341d90a5205e10b1ef1a0883cbd0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Industrial/Materials/misc_structure_01.jpg"
-dest_files=["res://.godot/imported/misc_structure_01.jpg-e56a341d90a5205e10b1ef1a0883cbd0.s3tc.ctex", "res://.godot/imported/misc_structure_01.jpg-e56a341d90a5205e10b1ef1a0883cbd0.etc2.ctex"]
+dest_files=["res://.godot/imported/misc_structure_01.jpg-e56a341d90a5205e10b1ef1a0883cbd0.s3tc.ctex"]
 
 [params]
 

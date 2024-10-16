@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5n3jsg1g52qu"
 path.s3tc="res://.godot/imported/Dirt_03-128x128.png-bbc7757eedfd2982e9150a2684219eec.s3tc.ctex"
-path.etc2="res://.godot/imported/Dirt_03-128x128.png-bbc7757eedfd2982e9150a2684219eec.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/128x128/Dirt/Dirt_03-128x128.png"
-dest_files=["res://.godot/imported/Dirt_03-128x128.png-bbc7757eedfd2982e9150a2684219eec.s3tc.ctex", "res://.godot/imported/Dirt_03-128x128.png-bbc7757eedfd2982e9150a2684219eec.etc2.ctex"]
+dest_files=["res://.godot/imported/Dirt_03-128x128.png-bbc7757eedfd2982e9150a2684219eec.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7usphjcfna0n"
 path.s3tc="res://.godot/imported/metal_grunge_panel_01.png-d6d9d561f4f65d691ab872610b1d6b54.s3tc.ctex"
-path.etc2="res://.godot/imported/metal_grunge_panel_01.png-d6d9d561f4f65d691ab872610b1d6b54.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Metal/Materials/metal_grunge_panel_01.png"
-dest_files=["res://.godot/imported/metal_grunge_panel_01.png-d6d9d561f4f65d691ab872610b1d6b54.s3tc.ctex", "res://.godot/imported/metal_grunge_panel_01.png-d6d9d561f4f65d691ab872610b1d6b54.etc2.ctex"]
+dest_files=["res://.godot/imported/metal_grunge_panel_01.png-d6d9d561f4f65d691ab872610b1d6b54.s3tc.ctex"]
 
 [params]
 

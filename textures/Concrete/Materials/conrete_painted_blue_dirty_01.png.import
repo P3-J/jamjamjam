@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1f1rbmrnm45j"
 path.s3tc="res://.godot/imported/conrete_painted_blue_dirty_01.png-1b61a61b516e6e05ac42d4924bd0e005.s3tc.ctex"
-path.etc2="res://.godot/imported/conrete_painted_blue_dirty_01.png-1b61a61b516e6e05ac42d4924bd0e005.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Concrete/Materials/conrete_painted_blue_dirty_01.png"
-dest_files=["res://.godot/imported/conrete_painted_blue_dirty_01.png-1b61a61b516e6e05ac42d4924bd0e005.s3tc.ctex", "res://.godot/imported/conrete_painted_blue_dirty_01.png-1b61a61b516e6e05ac42d4924bd0e005.etc2.ctex"]
+dest_files=["res://.godot/imported/conrete_painted_blue_dirty_01.png-1b61a61b516e6e05ac42d4924bd0e005.s3tc.ctex"]
 
 [params]
 
