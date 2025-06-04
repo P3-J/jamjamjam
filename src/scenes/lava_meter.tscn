@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://52x5hn7dyfbu"]
 
-[ext_resource type="Script" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
+[ext_resource type="Script" uid="uid://cpxaiqos62cwk" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
 [ext_resource type="Texture2D" uid="uid://c1qc1d5dy2pml" path="res://src/assets/images/Player_Icon.png" id="2_3w4a4"]
 [ext_resource type="Texture2D" uid="uid://dp3mdqpbwfuug" path="res://src/assets/images/Lava_Meter.png" id="2_qgiuq"]
 

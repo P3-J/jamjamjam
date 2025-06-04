@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0ldonlcqy4fy"]
 
-[ext_resource type="Script" path="res://src/scripts/falling_rock.gd" id="1_r0c58"]
+[ext_resource type="Script" uid="uid://cgl1b7g224lbf" path="res://src/scripts/falling_rock.gd" id="1_r0c58"]
 [ext_resource type="PackedScene" uid="uid://b1p07ahgicyjf" path="res://src/scenes/rock_3.tscn" id="2_cagbp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l7tsv"]

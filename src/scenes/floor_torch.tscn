@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxeg0vny36uu6" path="res://src/assets/FloorTorch/FloorTorch.fbx" id="1_1imc7"]
 [ext_resource type="Texture2D" uid="uid://jasa6xvi4ctt" path="res://src/assets/FloorTorch/Floor_Torch_T_BaseColor.png" id="2_umvxf"]
-[ext_resource type="PackedScene" path="res://src/scenes/fire_red.tscn" id="3_off8s"]
+[ext_resource type="PackedScene" uid="uid://cyxydyqne5ouo" path="res://src/scenes/fire_red.tscn" id="3_off8s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jyr4"]
 albedo_texture = ExtResource("2_umvxf")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=3 format=3 uid="uid://b2e3g1fi8cec6"]
+
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_bx55p"]
+[ext_resource type="Script" uid="uid://d0w6sdhi0vr3y" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_vbn4f"]
+
+[resource]
+script = ExtResource("1_vbn4f")
+export_file = false
+target_map_editor = 1
+fgd_name = "DwarfEscape"
+base_fgd_files = Array[Resource]([ExtResource("1_bx55p")])
+entity_definitions = Array[Resource]([])
+metadata/_custom_type_script = "uid://d0w6sdhi0vr3y"

@@ -1,9 +1,9 @@
 [gd_scene load_steps=55 format=4 uid="uid://bkoasxvpq0gjv"]
 
-[ext_resource type="Script" path="res://src/scripts/world.gd" id="1_3jldd"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
+[ext_resource type="Script" uid="uid://c10qq3sfbdgex" path="res://src/scripts/world.gd" id="1_3jldd"]
+[ext_resource type="Script" uid="uid://cqmdxs22tlfs7" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_grcaj"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_feymb"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="4_bc7i7"]
+[ext_resource type="Script" uid="uid://346vd1yasn0w" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="4_bc7i7"]
 [ext_resource type="Texture2D" uid="uid://c1sh1fia2o4cu" path="res://textures/128x128/Dirt/Dirt_16-128x128.png" id="5_xdiha"]
 [ext_resource type="Texture2D" uid="uid://b0viuo120v8qw" path="res://textures/128x128/Dirt/Dirt_10-128x128.png" id="6_sndcr"]
 [ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="7_uv7ra"]

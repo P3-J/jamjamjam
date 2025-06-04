@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="2_xs0b2"]
 [ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="4"]
-[ext_resource type="Script" path="res://addons/silent_wolf/examples/CustomLeaderboards/TimeBasedLboards.gd" id="5"]
+[ext_resource type="Script" uid="uid://chifjk33wl0vt" path="res://addons/silent_wolf/examples/CustomLeaderboards/TimeBasedLboards.gd" id="5"]
 
 [sub_resource type="Theme" id="3"]
 

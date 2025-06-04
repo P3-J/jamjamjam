@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://b3h0soqrbaros"
+path="res://.godot/imported/lv1.map-609b6278bbaa400dca6c1a8011699eda.tres"
+
+[deps]
+
+source_file="res://trench_maps/lv1.map"
+dest_files=["res://.godot/imported/lv1.map-609b6278bbaa400dca6c1a8011699eda.tres"]
+
+[params]
+

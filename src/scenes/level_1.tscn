@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=4 uid="uid://brm4j744ke5p7"]
+
+[ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="1_fsauj"]
+[ext_resource type="Script" uid="uid://bcbws2s3vwwep" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_vebv7"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_43sfu"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="4_ym3ee"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/scenes/hookspot.tscn" id="5_1iuxc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vebv7"]
+albedo_texture = ExtResource("4_ym3ee")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_43sfu"]
+_surfaces = [{
+"aabb": AABB(-2, -0.5, -2, 4, 1, 4),
+"attribute_data": PackedByteArray("AACAPwAAgL4AAIA/AACAPgAAgL8AAIA+AACAvwAAgL4AAIC/AACAvgAAgD8AAIC+AACAPwAAgD4AAIC/AACAPgAAgD8AAIC/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAvwAAgD8AAIA/AACAvgAAgD8AAIA+AACAvwAAgD4AAIC/AACAvgAAgL8AAIC+AACAPwAAgL4AAIA/AACAPgAAgL8AAIA+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_vebv7"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAwAAAAD8AAADAAAAAwAAAAL8AAADAAAAAQAAAAL8AAADAAAAAQAAAAD8AAADAAAAAwAAAAD8AAADAAAAAwAAAAD8AAABAAAAAwAAAAL8AAABAAAAAwAAAAL8AAADAAAAAQAAAAL8AAADAAAAAwAAAAL8AAADAAAAAwAAAAL8AAABAAAAAQAAAAL8AAABAAAAAQAAAAD8AAADAAAAAQAAAAD8AAABAAAAAwAAAAD8AAABAAAAAwAAAAD8AAADAAAAAQAAAAD8AAADAAAAAQAAAAL8AAADAAAAAQAAAAL8AAABAAAAAQAAAAD8AAABAAAAAwAAAAD8AAABAAAAAQAAAAD8AAABAAAAAQAAAAL8AAABAAAAAwAAAAL8AAABA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_dkcl3"]
+vertices = PackedVector3Array(-2, 0.5, -2, -2, -0.5, -2, 2, -0.5, -2, 2, 0.5, -2, -2, 0.5, -2, -2, 0.5, 2, -2, -0.5, 2, -2, -0.5, -2, 2, -0.5, -2, -2, -0.5, -2, -2, -0.5, 2, 2, -0.5, 2, 2, 0.5, -2, 2, 0.5, 2, -2, 0.5, 2, -2, 0.5, -2, 2, 0.5, -2, 2, -0.5, -2, 2, -0.5, 2, 2, 0.5, 2, -2, 0.5, 2, 2, 0.5, 2, 2, -0.5, 2, -2, -0.5, 2)
+indices = PackedInt32Array(0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8gg4f"]
+points = PackedVector3Array(-2, 0.5, -2, -2, -0.5, -2, 2, -0.5, -2, 2, 0.5, -2, -2, 0.5, 2, -2, -0.5, 2, 2, -0.5, 2, 2, 0.5, 2)
+
+[node name="level1" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_fsauj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47175, 0.246383)
+
+[node name="FuncGodotMap" type="Node3D" parent="."]
+script = ExtResource("2_vebv7")
+local_map_file = "uid://b3h0soqrbaros"
+map_settings = ExtResource("3_43sfu")
+metadata/_custom_type_script = "uid://bcbws2s3vwwep"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap"]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_43sfu")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_dkcl3")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_8gg4f")
+
+[node name="entity_1_hookspot" parent="FuncGodotMap" instance=ExtResource("5_1iuxc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.5, 1.5, -4.5)

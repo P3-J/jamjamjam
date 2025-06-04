@@ -2,23 +2,27 @@ extends Control
 
 @onready var lava_meter = $LavaMeter
 @onready var player_indicator = $PlayerPos
+@export var world: Node2D
 var lava
 var player
 var min_height = -30
 var max_height = 45
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var nodes = get_tree().get_root().get_node('world')
-	nodes = nodes.get_children()
+	if (!world):
+		return
+		
+	var nodes = world.get_children()
 	for node in nodes:
 		if node.name == 'Lava':
 			lava = node 
 		if node.name == 'controllableCharacters':
 			player = node.get_node('player')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	if (!lava or !player):
+		return
 	var lava_height = lava.global_transform.origin.y - min_height
 	var player_height = player.global_transform.origin.y - min_height
 

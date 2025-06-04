@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b25o1440naild"]
 
-[ext_resource type="Script" path="res://src/scripts/death_screen.gd" id="1_fcakh"]
+[ext_resource type="Script" uid="uid://dyuhsux5eswm5" path="res://src/scripts/death_screen.gd" id="1_fcakh"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_rdkbb"]
 [ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="3_okqhk"]
 
@@ -109,8 +109,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t0o1x"]
 _data = {
-"DeathScreenAnimation": SubResource("Animation_nmefv"),
-"RESET": SubResource("Animation_l4ygc")
+&"DeathScreenAnimation": SubResource("Animation_nmefv"),
+&"RESET": SubResource("Animation_l4ygc")
 }
 
 [sub_resource type="Gradient" id="Gradient_ytq02"]

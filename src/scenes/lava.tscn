@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddk73t8n4ysd6"]
 
-[ext_resource type="Script" path="res://src/scripts/lava.gd" id="1_u7ucl"]
+[ext_resource type="Script" uid="uid://bnb42goqcvb3y" path="res://src/scripts/lava.gd" id="1_u7ucl"]
 [ext_resource type="Texture2D" uid="uid://6y6h8ab3lilh" path="res://textures/128x128/Elements/Elements_03-128x128.png" id="2_cgcns"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1kd7"]
