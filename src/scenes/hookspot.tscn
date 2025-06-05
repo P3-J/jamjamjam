@@ -36,11 +36,10 @@ size = Vector3(0.1, 0.1, 0.1)
 script = ExtResource("1_i0tbm")
 
 [node name="hookshape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317627, 0, 0)
 shape = SubResource("BoxShape3D_a70su")
 
 [node name="Hook_Spot" parent="." instance=ExtResource("2_dg221")]
-transform = Transform3D(-0.505044, 0, 19.9936, 0, 20, 0, -19.9936, 0, -0.505044, 0.183576, -0.249638, 0.601415)
+transform = Transform3D(-0.505044, 0, 19.9936, 0, 20, 0, -19.9936, 0, -0.505044, 0, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403494, 0)

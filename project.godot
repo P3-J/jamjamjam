@@ -11,10 +11,9 @@ config_version=5
 [application]
 
 config/name="jamjamjam"
-run/main_scene="res://src/scenes/main_menu.tscn"
+run/main_scene="uid://cbvgm61qw2giq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="res://src/end_screen_stuff/Game_Icon.png"
-config/icon="res://icon.svg"
 
 [autoload]
 

@@ -5,20 +5,30 @@
 "mapversion" "220"
 "wad" ""
 "classname" "worldspawn"
-"_tb_def" "external:FuncGodot.fgd"
-"_tb_textures" "textures"
+"_tb_def" "external:/home/p3/gd/Godot_v4.3-stable_mono_linux_x86_64/repos/jamjamjam/fgd/FuncGodot.fgd"
+"_tb_textures" "textures;textures/128x128/Brick;textures/128x128/Dirt;textures/128x128/Elements;textures/128x128/Metal;textures/128x128/Plaster;textures/128x128/Stone;textures/128x128/Tile;textures/128x128/Wood;textures/Art/Materials;textures/Books/Materials;textures/Buildings/Materials;textures/Concrete/Materials;textures/Doors/Materials;textures/Electrical/Materials;textures/Floor/Materials;textures/Ground/Materials;textures/Industrial/Materials;textures/Metal/Materials;textures/Nature/Materials;textures/Products/Materials;textures/Roof/Materials;textures/Tools/Materials;textures/Units/Materials;textures/Vehicles/Materials;textures/Walls/Materials;textures/Water;textures/Windows/Materials;textures/newwithe"
 // brush 0
 {
-( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) __TB_empty [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) __TB_empty [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) __TB_empty [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) __TB_empty [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) __TB_empty [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) __TB_empty [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) 128x128/Brick/Brick_07-128x128 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 -0.3 0.2
+( -64 -368 -16 ) ( -64 -368 -15 ) ( -63 -368 -16 ) 128x128/Brick/Brick_07-128x128 [ 1 0 0 0 ] [ 0 0 -1 0 ] 270 -0.3 0.2
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) 128x128/Brick/Brick_07-128x128 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 -0.3 0.2
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) 128x128/Brick/Brick_07-128x128 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 -0.3 0.2
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) 128x128/Brick/Brick_07-128x128 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 -0.3 0.2
+( 1104 64 16 ) ( 1104 64 17 ) ( 1104 65 16 ) 128x128/Brick/Brick_07-128x128 [ 0 1 0 0 ] [ 0 0 -1 0 ] 180 -0.3 0.2
 }
 }
 // entity 1
 {
+"classname" "startingzone"
+"origin" "8 -168 24"
+}
+// entity 2
+{
+"classname" "Winzone"
+"origin" "1064 -152 24"
+}
+// entity 3
+{
 "classname" "hookspot"
-"origin" "-144 -16 48"
+"origin" "504 -152 184"
 }

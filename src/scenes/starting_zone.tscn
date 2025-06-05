@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxd1p57fmrcaw"]
+
+[ext_resource type="Script" uid="uid://sr2r3cyhf5pg" path="res://src/scripts/starting_zone.gd" id="1_n813r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsmwd"]
+size = Vector3(16.1924, 3.33996, 11.1607)
+
+[node name="StartingZone" type="Area3D"]
+script = ExtResource("1_n813r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258607, -1.01505)
+shape = SubResource("BoxShape3D_jsmwd")
+debug_color = Color(0, 0.635294, 0.396078, 1)
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

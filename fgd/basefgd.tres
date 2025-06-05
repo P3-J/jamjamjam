@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=4 format=3 uid="uid://w5232gprfkyt"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=6 format=3 uid="uid://w5232gprfkyt"]
 
 [ext_resource type="Script" uid="uid://d0w6sdhi0vr3y" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_6bfck"]
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_nqogt"]
 [ext_resource type="Resource" uid="uid://bqwr6gw42jgdw" path="res://fgd/hookspot2.tres" id="2_0c5qo"]
+[ext_resource type="Resource" uid="uid://cthu2j43bm0s8" path="res://fgd/startingzone.tres" id="3_vwej8"]
+[ext_resource type="Resource" uid="uid://b2kdxgrd7e37p" path="res://fgd/winningzone.tres" id="4_4u84p"]
 
 [resource]
 script = ExtResource("1_6bfck")
@@ -10,5 +12,5 @@ export_file = false
 target_map_editor = 1
 fgd_name = "FuncGodot"
 base_fgd_files = Array[Resource]([ExtResource("1_nqogt")])
-entity_definitions = Array[Resource]([ExtResource("2_0c5qo")])
+entity_definitions = Array[Resource]([ExtResource("2_0c5qo"), ExtResource("3_vwej8"), ExtResource("4_4u84p")])
 metadata/_custom_type_script = "uid://d0w6sdhi0vr3y"

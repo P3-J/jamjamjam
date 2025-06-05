@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b25o1440naild"]
+[gd_scene load_steps=9 format=3 uid="uid://b25o1440naild"]
 
 [ext_resource type="Script" uid="uid://dyuhsux5eswm5" path="res://src/scripts/death_screen.gd" id="1_fcakh"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_rdkbb"]
-[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="3_okqhk"]
 
 [sub_resource type="Animation" id="Animation_nmefv"]
 resource_name = "DeathScreenAnimation"
@@ -136,7 +135,7 @@ script = ExtResource("1_fcakh")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 active = false
 libraries = {
-"": SubResource("AnimationLibrary_t0o1x")
+&"": SubResource("AnimationLibrary_t0o1x")
 }
 movie_quit_on_finish = true
 
@@ -184,5 +183,4 @@ offset_right = 73.5
 offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_okqhk")
 text = "Press ESC to cancel"

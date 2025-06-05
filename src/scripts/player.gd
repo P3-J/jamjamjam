@@ -246,7 +246,7 @@ func format_time(elapsed_time: float) -> String:
 	return minute_str + ":" + second_str + ":" + millisecond_str
 
 
-func reached_end():
+func 	reached_end():
 	Signalbus.minutes = minutes
 	Signalbus.milliseconds = milliseconds
 	Signalbus.seconds = seconds

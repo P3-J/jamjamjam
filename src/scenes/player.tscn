@@ -117,6 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
 fov = 80.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head"]
+visible = false
 light_color = Color(1, 1, 0.654902, 1)
 light_energy = 1.212
 shadow_enabled = true
@@ -130,7 +131,6 @@ transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
 target_position = Vector3(0, 0, -15)
 collide_with_areas = true
-collide_with_bodies = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="utils" type="Node" parent="."]

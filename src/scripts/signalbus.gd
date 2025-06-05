@@ -13,13 +13,8 @@ signal pickaxe_grab()
 # Others
 signal make_lava_rise()
 
-
-
-
 var final_time = 0
 # sorry these are not signals
-
-
 
 @onready var minutes : int = 0
 @onready var seconds : int = 0

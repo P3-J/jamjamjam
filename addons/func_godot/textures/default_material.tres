@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="1_ncj77"]
 
 [resource]
+shading_mode = 2
 albedo_texture = ExtResource("1_ncj77")
 metallic_specular = 0.0
 texture_filter = 2

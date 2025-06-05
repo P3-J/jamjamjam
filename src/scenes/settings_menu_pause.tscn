@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2wukaf1tyfjc"]
+[gd_scene load_steps=4 format=3 uid="uid://b2wukaf1tyfjc"]
 
 [ext_resource type="Script" uid="uid://r3otblhms68k" path="res://src/scripts/settings_menu_pause.gd" id="2_27s2d"]
-[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="2_74kox"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_p5swi"]
 [ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/Button.png" id="2_xosxj"]
 
@@ -34,23 +33,19 @@ offset_right = 40.0
 offset_bottom = 20.0
 grow_vertical = 2
 scale = Vector2(2, 2)
-theme = ExtResource("2_74kox")
 theme_override_constants/separation = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 theme_override_fonts/font = ExtResource("2_p5swi")
 text = "Mouse sensitivity"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme = ExtResource("2_74kox")
 min_value = 0.1
 max_value = 5.0
 step = 0.1
@@ -58,45 +53,36 @@ value = 1.1
 
 [node name="MouseValue" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 theme_override_fonts/font = ExtResource("2_p5swi")
 text = "Audio volume"
 
 [node name="audioslider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="Audiovalue" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 theme_override_fonts/font = ExtResource("2_p5swi")
 text = "Music volume"
 
 [node name="musicslider" type="HSlider" parent="VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="Musicvalue" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-theme = ExtResource("2_74kox")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -106,16 +92,14 @@ anchor_bottom = 1.0
 offset_top = -47.0
 offset_right = 105.0
 grow_vertical = 0
-theme = ExtResource("2_74kox")
 
 [node name="Back" type="Button" parent="VBoxContainer2"]
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
-theme = ExtResource("2_74kox")
 text = "Back"
 
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer2/audioslider" to="." method="_on_audioslider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer3/musicslider" to="." method="_on_audioslider_value_changed"]
-[connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]

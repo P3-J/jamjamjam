@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7nywv5gyuyjd"]
+[gd_scene load_steps=5 format=3 uid="uid://c7nywv5gyuyjd"]
 
-[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="1_1420b"]
 [ext_resource type="Script" uid="uid://cxv083h4rviqw" path="res://src/scripts/score_screen.gd" id="1_imtw2"]
 [ext_resource type="Texture2D" uid="uid://brc1dohjeg1f3" path="res://src/end_screen_stuff/Leaderboard.png" id="3_8ekpm"]
 [ext_resource type="Texture2D" uid="uid://cmm3d5trbe7c3" path="res://src/end_screen_stuff/Banner_Rendered.jpg" id="4_r7e2x"]
@@ -14,7 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_1420b")
 script = ExtResource("1_imtw2")
 
 [node name="timer_text" type="RichTextLabel" parent="."]

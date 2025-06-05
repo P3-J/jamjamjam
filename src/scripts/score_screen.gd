@@ -21,7 +21,7 @@ func _ready() -> void:
 	var second_str = str(Signalbus.seconds).pad_zeros(2)
 	var millisecond_str = str(Signalbus.milliseconds).pad_zeros(3)
 	time_text.text = minute_str + ":" + second_str + ":" + millisecond_str
-	refresh()
+	#refresh()
 
 
 
@@ -42,7 +42,7 @@ func int_to_time(total_mils: int):
 
 func submit():
 	print("sending_data")
-	SilentWolf.Scores.save_score(text_edit.text, -time_to_int(Signalbus.minutes, Signalbus.seconds, Signalbus.milliseconds))
+	#SilentWolf.Scores.save_score(text_edit.text, -time_to_int(Signalbus.minutes, Signalbus.seconds, Signalbus.milliseconds))
 	timer.start()
 
 func refresh():

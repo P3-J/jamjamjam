@@ -26,7 +26,7 @@ map_formats = Array[Dictionary]([{
 }])
 textures_root_folder = "textures"
 texture_exclusion_patterns = Array[String](["*_albedo", "*_ao", "*_emission", "*_height", "*_metallic", "*_normal", "*_orm", "*_roughness", "*_sss"])
-palette_path = "textures/palette.lmp"
+palette_path = ""
 fgd_file = ExtResource("4_4rf4d")
 entity_scale = "32"
 brush_tags = Array[Resource]([])
