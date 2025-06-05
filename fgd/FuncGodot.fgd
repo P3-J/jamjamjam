@@ -19,6 +19,8 @@
 @SolidClass color(204 204 204) base(Phong) = func_illusionary : "Static geometry with no collision. Builds a Node3D with a MeshInstance3D and an Occluder3D to aid in render culling of other VisualInstance3D nodes." []
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = hookspot : "hookspot" []
 
-@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) = startingzone : "startingzone" []
+@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = startingzone : "startingzone" []
 
-@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) = Winzone : "Winzone" []
+@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = Winzone : "Winzone" []
+
+@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) studio("models/.glb") model("models/hookstuff.glb") = hookstuff : "hookstuff" []
