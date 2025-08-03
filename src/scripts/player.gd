@@ -64,6 +64,7 @@ func _ready() -> void:
 	Signalbus.connect('kill_player', _on_player_kill)
 	Signalbus.connect('game_starts', _on_game_starts)
 	Signalbus.player_wins.connect(reached_end)
+	mouse_sensitivity = Globalsettings.mouse_sensitivity
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
@@ -131,7 +132,7 @@ func _process(_delta: float) -> void:
 
 
 	check_for_hook_collision()
-	mouse_sensitivity = Globalsettings.mouse_sensitivity
+	
 
 
 func _input(event: InputEvent) -> void:
@@ -152,24 +153,14 @@ func _input(event: InputEvent) -> void:
 	
 func check_for_hook_collision():
 	var collider = hookray.get_collider()
-
-	if (!hookray.is_colliding()):
-		dont_allow_to_hook()
-		return
-
-	if (!collider.is_in_group("hook")):
-		dont_allow_to_hook()
-		return
-
-	can_hook = true
-	crosshair.texture = highlighted_crosshair_texture
-
-
-func dont_allow_to_hook():
-	reset_pickaxe_position()
-	crosshair.texture = normal_crosshair_texture
 	can_hook = false
-	can_move_towards_hook = false
+	if (collider and collider.is_in_group("hook")):
+		can_hook = true
+		crosshair.texture = highlighted_crosshair_texture
+	else:
+		reset_pickaxe_position()
+		crosshair.texture = normal_crosshair_texture
+		can_move_towards_hook = false
 
 
 func reset_pickaxe_position():
@@ -178,7 +169,7 @@ func reset_pickaxe_position():
 
 func hook_towards(collider):
 	var direction = (collider.global_position - global_transform.origin).normalized() 
-	velocity = direction * hook_speed
+	velocity = direction * hook_speed	
 
 func send_hook_towards(collider, delta):
 	pickaxe.scale = Vector3(2,2,2)

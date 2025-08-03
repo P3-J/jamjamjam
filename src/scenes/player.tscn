@@ -53,7 +53,6 @@ _data = {
 }
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
-floor_max_angle = 1.22173
 script = ExtResource("1_ve44u")
 
 [node name="UI" type="Control" parent="."]
@@ -107,7 +106,7 @@ text = "00:00:00"
 mesh = SubResource("CapsuleMesh_cyvha")
 
 [node name="playershape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288002, -0.375598, 0.278954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288002, -0.375598, 0.0717641)
 shape = SubResource("SphereShape3D_a27d8")
 
 [node name="head" type="Node3D" parent="."]
@@ -117,7 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
 fov = 80.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head"]
-visible = false
 light_color = Color(1, 1, 0.654902, 1)
 light_energy = 1.212
 shadow_enabled = true
@@ -140,7 +138,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="hook_start_time" type="Timer" parent="utils"]
-wait_time = 0.3
+wait_time = 0.1
 one_shot = true
 
 [node name="game_time" type="Timer" parent="utils"]

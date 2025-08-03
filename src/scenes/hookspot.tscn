@@ -48,4 +48,10 @@ lifetime = 0.75
 process_material = SubResource("ParticleProcessMaterial_ff13n")
 draw_pass_1 = SubResource("BoxMesh_rnxxg")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.590156, 0.293521, 1.34766e-06, 1)
+light_energy = 3.891
+shadow_enabled = true
+omni_range = 14.553
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

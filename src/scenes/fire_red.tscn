@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://cyxydyqne5ouo"]
 
 [ext_resource type="Shader" uid="uid://cmagqip8lfvqt" path="res://src/shaders/fire_red.tres" id="1_nb0ta"]
-[ext_resource type="Texture2D" uid="uid://n3ss8mlytmt6" path="res://Flame01.png" id="2_2i1yw"]
-[ext_resource type="Texture2D" uid="uid://b1ew0ywjthnmv" path="res://Voronoi01.png" id="2_ytvr3"]
-[ext_resource type="Texture2D" uid="uid://cgbbfsymyvjg4" path="res://Flame02.png" id="4_e8wag"]
+[ext_resource type="Texture2D" uid="uid://dge62i8tu2n5p" path="res://addons/kenney_particle_pack/flame_01.png" id="2_2i1yw"]
+[ext_resource type="Texture2D" uid="uid://cjr3nmoi3uy3e" path="res://addons/kenney_particle_pack/flame_03.png" id="2_ytvr3"]
+[ext_resource type="Texture2D" uid="uid://cohwltypwjy13" path="res://addons/kenney_particle_pack/flame_02.png" id="4_e8wag"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u4jbm"]
 render_priority = 0
