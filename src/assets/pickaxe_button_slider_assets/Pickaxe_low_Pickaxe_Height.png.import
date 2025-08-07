@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq7lpl2xnylan"
-path.s3tc="res://.godot/imported/Button.png-08148eda25ffcdc20ece89644db995f6.s3tc.ctex"
+uid="uid://dta4asps2mjfy"
+path.s3tc="res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-91b68701499011afccc887f3f4fe0300.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/Button.png"
-dest_files=["res://.godot/imported/Button.png-08148eda25ffcdc20ece89644db995f6.s3tc.ctex"]
+source_file="res://src/assets/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Height.png"
+dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Height.png-91b68701499011afccc887f3f4fe0300.s3tc.ctex"]
 
 [params]
 

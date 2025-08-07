@@ -9,6 +9,7 @@ signal game_starts()
 signal kill_player()
 signal player_wins()
 signal pickaxe_grab()
+signal player_in_hook_area()
 
 # Others
 signal make_lava_rise()

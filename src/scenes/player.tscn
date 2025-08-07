@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
-[ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe.tscn" id="2_xatcm"]
+[ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
-[ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/crosshair_normal.png" id="4_lgdho"]
+[ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/pickaxe_button_slider_assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
 
@@ -11,9 +11,6 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a27d8"]
 margin = 0.08
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
-size = Vector3(0.75, 0.5, 0.75)
 
 [sub_resource type="Animation" id="Animation_vun55"]
 length = 0.001
@@ -51,6 +48,9 @@ _data = {
 &"RESET": SubResource("Animation_vun55"),
 &"head_sway": SubResource("Animation_5qs03")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
+size = Vector3(1.23432, 0.240234, 1.27756)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_ve44u")
@@ -127,7 +127,7 @@ transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729
 
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
-target_position = Vector3(0, 0, -15)
+target_position = Vector3(0, 0, -20)
 collide_with_areas = true
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
@@ -144,14 +144,14 @@ one_shot = true
 [node name="game_time" type="Timer" parent="utils"]
 wait_time = 4096.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04943, -0.0232038)
-shape = SubResource("BoxShape3D_vf6xc")
-
 [node name="player_anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_c70xo")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0338281, 0.931655, 0.00389639)
+shape = SubResource("BoxShape3D_vf6xc")
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]

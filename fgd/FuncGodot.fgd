@@ -23,4 +23,4 @@
 
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = Winzone : "Winzone" []
 
-@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) studio("models/.glb") model("models/hookstuff.glb") = hookstuff : "hookstuff" []
+@PointClass size(0.0 0.0 0.0, 0.0 0.0 0.0) color(204 204 204) model("models/hookspot2.glb") = hookspot2 : "tester" []

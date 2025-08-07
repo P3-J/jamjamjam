@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvovki06eqtnx"
-path="res://.godot/imported/crosshair_highlighted.png-2ab743cf919920f02bfb2f97784b3cf2.ctex"
+uid="uid://ckv1e3hmq4sc6"
+path="res://.godot/imported/slider_grabber.png-f5a6f126c57981791181e24cf332d6f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/crosshair_highlighted.png"
-dest_files=["res://.godot/imported/crosshair_highlighted.png-2ab743cf919920f02bfb2f97784b3cf2.ctex"]
+source_file="res://src/assets/pickaxe_button_slider_assets/slider_grabber.png"
+dest_files=["res://.godot/imported/slider_grabber.png-f5a6f126c57981791181e24cf332d6f0.ctex"]
 
 [params]
 

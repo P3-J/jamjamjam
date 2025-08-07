@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn5gg3nh5n3hl"
-path.s3tc="res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.s3tc.ctex"
+uid="uid://bjuus33a1hvcw"
+path.s3tc="res://.godot/imported/Pickaxe_low_Pickaxe_Metallic.png-5a6f2033418e9e74b4ddfcd618f60fe4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/Tablet_Tablet_BaseColor.png"
-dest_files=["res://.godot/imported/Tablet_Tablet_BaseColor.png-290d2fb89e078a522c0b3dc6c474e044.s3tc.ctex"]
+source_file="res://src/assets/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Metallic.png"
+dest_files=["res://.godot/imported/Pickaxe_low_Pickaxe_Metallic.png-5a6f2033418e9e74b4ddfcd618f60fe4.s3tc.ctex"]
 
 [params]
 

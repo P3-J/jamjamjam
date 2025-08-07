@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bye0ta7w3ov36" path="res://src/scripts/settingsmenu_main.gd" id="1_hpeub"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_nuf0f"]
-[ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/Button.png" id="2_x6ulg"]
+[ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/pickaxe_button_slider_assets/Button.png" id="2_x6ulg"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3

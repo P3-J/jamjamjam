@@ -17,13 +17,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.879367, 0, 0)
 material_override = SubResource("StandardMaterial3D_8jyr4")
 
 [node name="fire_red" parent="." index="1" instance=ExtResource("3_off8s")]
-transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, 0, 1.07888, 0)
+transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, 0, 0.823266, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134105, 1.3883, 0.0721229)
-light_color = Color(0.854902, 0.443137, 0, 1)
-light_energy = 1.399
-light_volumetric_fog_energy = 1.199
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0171174, 0.91277, -0.00278576)
+light_color = Color(1, 0.688116, 0.108807, 1)
+light_energy = 3.542
+light_indirect_energy = 1.797
+light_volumetric_fog_energy = 1.798
+omni_range = 3.219
+omni_attenuation = 2.184
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 

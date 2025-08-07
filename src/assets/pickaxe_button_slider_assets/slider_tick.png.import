@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2a61dh6ptnf8"
-path="res://.godot/imported/slider_disabled.png-893f649c4c87b0cf8e5faee7c28129b8.ctex"
+uid="uid://xw4psdh3ouhj"
+path="res://.godot/imported/slider_tick.png-3d9f57ba20b84285725f5f01f6f3ab8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/slider_disabled.png"
-dest_files=["res://.godot/imported/slider_disabled.png-893f649c4c87b0cf8e5faee7c28129b8.ctex"]
+source_file="res://src/assets/pickaxe_button_slider_assets/slider_tick.png"
+dest_files=["res://.godot/imported/slider_tick.png-3d9f57ba20b84285725f5f01f6f3ab8a.ctex"]
 
 [params]
 

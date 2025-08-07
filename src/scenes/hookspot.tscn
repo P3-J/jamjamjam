@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkfbtvxfwq2ov" path="res://src/scenes/hook_spot.tscn" id="2_dg221"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
-size = Vector3(3.63525, 5, 3)
+size = Vector3(3.63525, 2.8533, 1.89172)
 
 [sub_resource type="Curve" id="Curve_0wran"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -33,9 +33,11 @@ material = SubResource("StandardMaterial3D_5sn62")
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="hookspot" type="Area3D" groups=["hook"]]
+collision_mask = 3
 script = ExtResource("1_i0tbm")
 
 [node name="hookshape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.804489, 0.0957642)
 shape = SubResource("BoxShape3D_a70su")
 
 [node name="Hook_Spot" parent="." instance=ExtResource("2_dg221")]
@@ -50,8 +52,11 @@ draw_pass_1 = SubResource("BoxMesh_rnxxg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.590156, 0.293521, 1.34766e-06, 1)
-light_energy = 3.891
+light_energy = 3.492
 shadow_enabled = true
-omni_range = 14.553
+omni_range = 9.614
+omni_attenuation = 1.436
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,25 @@
-extends Area3D
+extends Area3D	
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready() -> void:		
+	print(global_rotation)
+	print(global_rotation_degrees)
+	global_rotation_degrees = Vector3(0, global_rotation_degrees.y -270, 0)
+
+	print(global_rotation)
+	print(global_rotation_degrees)
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.name == 'PickaxeArea':
-		Signalbus.emit_signal('pickaxe_grab')
+		Signalbus.emit_signal('pickaxe_grab', true)
+
+
+func _on_area_exited(area: Area3D) -> void:
+	if area.name == 'PickaxeArea':
+		Signalbus.emit_signal('pickaxe_grab', false)
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.name == 'player':
+		print('yttt')
+		Signalbus.emit_signal('player_in_hook_area')

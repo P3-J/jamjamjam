@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chfs3o0k4i13j"
-path="res://.godot/imported/Tablet.fbx-c52c829d0bd8c849abca517451f161da.scn"
+path="res://.godot/imported/Tablet.fbx-12d757e9688f47865594e2c90d89db8c.scn"
 
 [deps]
 
-source_file="res://src/assets/Tablet.fbx"
-dest_files=["res://.godot/imported/Tablet.fbx-c52c829d0bd8c849abca517451f161da.scn"]
+source_file="res://src/assets/pickaxe_button_slider_assets/Tablet.fbx"
+dest_files=["res://.godot/imported/Tablet.fbx-12d757e9688f47865594e2c90d89db8c.scn"]
 
 [params]
 

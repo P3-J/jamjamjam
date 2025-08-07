@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://f0xkekdj8xlb"
-path="res://.godot/imported/Pickaxe.fbx-65a8f8e25084dd5abdba9eb63a7ba1e7.scn"
+path="res://.godot/imported/Pickaxe.fbx-b19ecab908c2ce008be7f2b1f1902dc7.scn"
 
 [deps]
 
-source_file="res://src/assets/Pickaxe.fbx"
-dest_files=["res://.godot/imported/Pickaxe.fbx-65a8f8e25084dd5abdba9eb63a7ba1e7.scn"]
+source_file="res://src/assets/pickaxe_button_slider_assets/Pickaxe.fbx"
+dest_files=["res://.godot/imported/Pickaxe.fbx-b19ecab908c2ce008be7f2b1f1902dc7.scn"]
 
 [params]
 
