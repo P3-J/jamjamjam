@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cq546bnlxfyqx"]
+
+[ext_resource type="Texture2D" uid="uid://c0y2bptnys6ym" path="res://textures/Ground/Materials/dirt_0.png" id="1_vs8dl"]
+
+[resource]
+shading_mode = 2
+albedo_texture = ExtResource("1_vs8dl")
+metallic_specular = 0.0
+texture_filter = 2

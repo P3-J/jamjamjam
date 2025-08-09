@@ -11,10 +11,9 @@ config_version=5
 [application]
 
 config/name="jamjamjam"
-run/main_scene="res://src/scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="uid://cbvgm61qw2giq"
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="res://src/end_screen_stuff/Game_Icon.png"
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -28,11 +27,13 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
+window/size/viewport_width=1080
+window/size/viewport_height=540
 window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/qodot/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
+enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [filesystem]
 
@@ -80,3 +81,7 @@ hook={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

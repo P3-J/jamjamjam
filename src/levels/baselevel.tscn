@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://brm4j744ke5p7"]
+
+[ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="1_jxj5n"]
+[ext_resource type="Script" uid="uid://bcbws2s3vwwep" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_x25vq"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_wfat3"]
+[ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="6_0uiid"]
+
+[node name="baselevel" type="Node3D"]
+
+[node name="FuncGodotMap" type="Node3D" parent="."]
+script = ExtResource("2_x25vq")
+map_settings = ExtResource("3_wfat3")
+metadata/_custom_type_script = "uid://bcbws2s3vwwep"
+
+[node name="default_assets" type="Node3D" parent="."]
+
+[node name="Lava" parent="default_assets" instance=ExtResource("6_0uiid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.4386, 0)
+rise_per_sec = 0.6
+
+[node name="player" parent="default_assets" instance=ExtResource("1_jxj5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47175, 0.246383)

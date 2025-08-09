@@ -1,11 +1,10 @@
 extends CharacterBody3D
 
-var lava_meter_scene =  ResourceLoader.load("res://src/scenes/lava_meter.tscn") as PackedScene
+var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 
 @onready var head: Node3D
 @onready var jump_timer: Timer
 @onready var hookray: RayCast3D
-@onready var pickaxe: Node3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
 @onready var crosshair: TextureRect = $UI/Crosshair
@@ -14,15 +13,19 @@ var lava_meter_scene =  ResourceLoader.load("res://src/scenes/lava_meter.tscn") 
 @onready var timer_text: RichTextLabel
 @onready var running_audio_stream = AudioStreamPlayer.new()
 
-@onready var normal_crosshair_texture = load("res://src/assets/crosshair_normal.png")
-@onready var highlighted_crosshair_texture = load("res://src/assets/crosshair_highlighted.png")
+
+@onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
+@onready var highlighted_crosshair_texture = load("uid://dvovki06eqtnx")
+@export var rope_mesh: MeshInstance3D
+
+@export var pickaxe: Node3D
 
 var speed = 10.0
-var hook_speed = 15.0
-var air_speed = 10.0
+var hook_towards_speed = 20.0
+var air_speed = 8.0
 var jump_speed = 14.0  
-var gravity = -25.0  
-var max_fall_speed = -80.0  
+var gravity = -27.0  
+var max_fall_speed = -90.0  	
 
 var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
@@ -35,19 +38,137 @@ var can_hook: bool = false
 var holding_hook_button: bool = false
 var can_move_towards_hook: bool = false
 
+var current_hookspot = null;
+
 var start_time: int = 0
 var is_stopwatch_running: bool = false
 
 var minutes : int = 0
 var seconds : int = 0
 var milliseconds : int = 0
+var pickaxe_reset_pos: Vector3;
+var pickaxe_reset_rotation: Vector3;
 
-
-var pickaxe_reset_pos: Vector3
 
 func _ready() -> void:
 	setup_ui()
 	setup_sound_stream()
+	_get_nodes()
+	_signal_connect()
+
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	pickaxe_reset_pos = pickaxe.position;
+	pickaxe_reset_rotation = pickaxe.rotation;
+	mouse_sensitivity = Globalsettings.mouse_sensitivity
+
+
+func _physics_process(delta: float) -> void:
+	var direction := Vector3()
+	check_for_hook_collision()
+
+	direction = _player_movement(direction)
+
+	if direction != Vector3.ZERO:
+		if !running_audio_stream.playing:
+			running_audio_stream.playing = true
+	else:
+		running_audio_stream.playing = false
+
+	direction = direction.normalized()
+	direction = global_transform.basis * direction
+
+	if is_on_floor():
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+		jump_timer.stop()
+		can_still_jump = true
+		jumped = false
+
+	else:
+
+		player_anim.stop()
+		velocity.x = lerp(velocity.x, direction.x * air_speed, 0.05)
+		velocity.z = lerp(velocity.z, direction.z * air_speed, 0.05)
+		velocity.y += gravity * delta
+		
+		if velocity.y < max_fall_speed:
+			velocity.y = max_fall_speed
+
+		if jump_timer.is_stopped():
+			jump_timer.start()
+
+
+	if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
+		jumped = true
+		velocity.y = jump_speed
+		can_still_jump = false
+
+
+	hooking_process()
+
+	if is_on_floor() and velocity.y < 0:
+		velocity.y = 0
+	
+	move_and_slide()
+
+
+func _process(_delta: float) -> void:
+	update_time()
+
+	rope_checks()
+
+
+	
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		y_rotation = clamp(y_rotation - event.relative.y * mouse_sensitivity, -1.5, 1.4) 
+		head.rotation.x = y_rotation
+	
+	if Input.is_action_just_pressed("hook"):
+		holding_hook_button = true
+		rope_mesh.visible = true
+
+
+	if Input.is_action_just_released("hook"):
+		rope_mesh.visible = false
+		holding_hook_button = false
+		current_hookspot = null;
+		can_move_towards_hook = false
+		pickaxe.scale = Vector3(2,2,2)
+		pickaxe.get_parent().remove_child(pickaxe)
+		head.add_child(pickaxe)
+		reset_pickaxe_position()
+		
+		
+
+
+func hooking_process() -> void:
+	if (holding_hook_button and current_hookspot != null):
+		send_hook_towards(current_hookspot)
+		if can_move_towards_hook:
+			hook_towards(current_hookspot)
+
+func rope_checks() -> void:
+
+	var start = self.global_transform.origin
+	var end = pickaxe.global_transform.origin - Vector3(0, 0.3, 0)
+	var mid = (start + end) * 0.5
+	var dir = (end - start)
+	var length = dir.length()
+
+	rope_mesh.global_transform.origin = mid
+
+	rope_mesh.look_at(end, Vector3.UP)
+
+	rope_mesh.rotate_object_local(Vector3.RIGHT, deg_to_rad(90))
+	rope_mesh.scale = Vector3(0.05, length * 0.5, 0.05)
+
+
+func _get_nodes() -> void:
 	head = get_node("head")
 	jump_timer = get_node("utils/jump_timer")
 	hookray = get_node("head/hookray")
@@ -55,137 +176,59 @@ func _ready() -> void:
 	body = get_node("playermesh")
 	player_anim = get_node("player_anim")
 	timer_text = get_node("UI/timer_text")
-
 	pickaxe = get_node("head/Pickaxe")
-	pickaxe_reset_pos = pickaxe.position
 
 
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+func _signal_connect() -> void:
 	Signalbus.connect('kill_player', _on_player_kill)
 	Signalbus.connect('game_starts', _on_game_starts)
+	Signalbus.connect('pickaxe_grab', _hook_connected)
+	Signalbus.connect('player_in_hook_area', _player_in_hook)
 	Signalbus.player_wins.connect(reached_end)
-
-func _physics_process(delta: float) -> void:
-	var direction := Vector3()
-
-	direction = _player_movement(direction)
-	direction = direction.normalized()
-	direction = global_transform.basis * direction
-
-	if is_on_floor():
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-
-		if velocity.x <= 0 and velocity.z <= 0:
-			player_anim.stop()
-
-		jump_timer.stop()
-		can_still_jump = true
-		jumped = false
-
-	else:
-		velocity.x = lerp(velocity.x, direction.x * air_speed, 0.05)
-		velocity.z = lerp(velocity.z, direction.z * air_speed, 0.05)
-
-		player_anim.stop()
-
-		velocity.y += gravity * delta
-		if velocity.y < max_fall_speed:
-			velocity.y = max_fall_speed
-
-		if jump_timer.is_stopped():
-			jump_timer.start()
-
-	if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
-		jumped = true
-		velocity.y = jump_speed
-		can_still_jump = false
-
-	if (holding_hook_button and can_hook):
-
-		var collider: Node3D = hookray.get_collider()
-		send_hook_towards(collider, delta)
-
-		if (hook_start_time.is_stopped()):
-			hook_start_time.start()
-			return
-		
-		if (can_move_towards_hook):
-			hook_towards(collider)
-
-	move_and_slide()
-
-	if is_on_floor() and velocity.y < 0:
-		velocity.y = 0
-	
-	if is_on_floor() && velocity > Vector3.ZERO && !running_audio_stream.playing:
-		running_audio_stream.stream_paused = false
-		running_audio_stream.playing = true
-	
-	if velocity == Vector3.ZERO || not is_on_floor():
-		running_audio_stream.stream_paused = true
-
-
-func _process(_delta: float) -> void:
-	update_time()
-
-
-	check_for_hook_collision()
-	mouse_sensitivity = Globalsettings.mouse_sensitivity
-
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		if (can_hook and holding_hook_button and can_move_towards_hook):
-			return
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		y_rotation = clamp(y_rotation - event.relative.y * mouse_sensitivity, -1.5, 1.4) 
-		head.rotation.x = y_rotation
-	
-	if Input.is_action_just_pressed("hook"):
-		holding_hook_button = true
-	if Input.is_action_just_released("hook"):
-		holding_hook_button = false
-		pickaxe.scale = Vector3(2,2,2)
-		reset_pickaxe_position()
 
 	
 func check_for_hook_collision():
 	var collider = hookray.get_collider()
 
-	if (!hookray.is_colliding()):
-		dont_allow_to_hook()
-		return
+	if (collider and collider.is_in_group("hook")):
+		crosshair.texture = highlighted_crosshair_texture
+	else:		
+		crosshair.texture = normal_crosshair_texture
 
-	if (!collider.is_in_group("hook")):
-		dont_allow_to_hook()
-		return
+	if (holding_hook_button and !current_hookspot):
+		if (collider and collider.is_in_group("hook")):
+			current_hookspot = collider
+			var t = pickaxe.global_transform
+			pickaxe.get_parent().remove_child(pickaxe)
+			get_tree().current_scene.add_child(pickaxe)
+			pickaxe.global_transform = t
 
-	can_hook = true
-	crosshair.texture = highlighted_crosshair_texture
-
-
-func dont_allow_to_hook():
-	reset_pickaxe_position()
-	crosshair.texture = normal_crosshair_texture
-	can_hook = false
-	can_move_towards_hook = false
 
 
 func reset_pickaxe_position():
+	pickaxe.rotation = pickaxe_reset_rotation
 	pickaxe.position = pickaxe_reset_pos
 
 
 func hook_towards(collider):
 	var direction = (collider.global_position - global_transform.origin).normalized() 
-	velocity = direction * hook_speed
+	velocity = direction * hook_towards_speed
 
-func send_hook_towards(collider, delta):
+func send_hook_towards(collider):
 	pickaxe.scale = Vector3(2,2,2)
-	pickaxe.global_position = pickaxe.global_position.move_toward(collider.global_position, 15 * delta)
+	pickaxe.global_position = pickaxe.global_position.move_toward(collider.global_position, 0.5)
 
+func _hook_connected(state: bool) -> void:
+	can_move_towards_hook = state
 
-	
+func _player_in_hook():
+	can_move_towards_hook = false;
+	holding_hook_button = false;
+	current_hookspot = null;
+	pickaxe.get_parent().remove_child(pickaxe)
+	head.add_child(pickaxe)
+	reset_pickaxe_position()
+
 	
 func _player_movement(direction: Vector3) -> Vector3:
 	if Input.is_action_pressed("up"):
@@ -198,10 +241,14 @@ func _player_movement(direction: Vector3) -> Vector3:
 		direction.x -= 1
 	if Input.is_action_pressed("right"):
 		direction.x += 1
+
+	if direction.x == 0 and direction.z == 0:
+		player_anim.stop()
 	
 	return direction
 
 func _sway_head():
+	return
 	player_anim.play("head_sway")
 
 
@@ -209,10 +256,6 @@ func _on_jump_timer_timeout() -> void:
 	can_still_jump = false
 
 
-func _on_hook_start_time_timeout() -> void:
-	can_move_towards_hook = true
-	
-	
 func _on_player_kill() -> void:
 	if !has_died:
 		has_died = true

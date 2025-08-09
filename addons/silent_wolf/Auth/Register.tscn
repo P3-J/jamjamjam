@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://chxe78yjqftkl"]
 
-[ext_resource type="Script" path="res://addons/silent_wolf/Auth/Register.gd" id="1"]
+[ext_resource type="Script" uid="uid://dsjge8cnoyyel" path="res://addons/silent_wolf/Auth/Register.gd" id="1"]
 [ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="1_dsws8"]
 [ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://dh8fem1lgom04" path="res://addons/silent_wolf/assets/gfx/info_icon_small.png" id="5"]

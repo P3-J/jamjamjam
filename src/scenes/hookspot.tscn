@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2exdliucx2qg"]
 
-[ext_resource type="Script" path="res://src/scripts/hookspot.gd" id="1_i0tbm"]
+[ext_resource type="Script" uid="uid://bkfwk156dge2a" path="res://src/scripts/hookspot.gd" id="1_i0tbm"]
 [ext_resource type="PackedScene" uid="uid://dkfbtvxfwq2ov" path="res://src/scenes/hook_spot.tscn" id="2_dg221"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
-size = Vector3(3.63525, 5, 3)
+size = Vector3(3.63525, 4.88758, 1.89172)
 
 [sub_resource type="Curve" id="Curve_0wran"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -33,14 +33,15 @@ material = SubResource("StandardMaterial3D_5sn62")
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="hookspot" type="Area3D" groups=["hook"]]
+collision_mask = 3
 script = ExtResource("1_i0tbm")
 
 [node name="hookshape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317627, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596905, 0.0957642)
 shape = SubResource("BoxShape3D_a70su")
 
 [node name="Hook_Spot" parent="." instance=ExtResource("2_dg221")]
-transform = Transform3D(-0.505044, 0, 19.9936, 0, 20, 0, -19.9936, 0, -0.505044, 0.183576, -0.249638, 0.601415)
+transform = Transform3D(-0.505044, 0, 19.9936, 0, 20, 0, -19.9936, 0, -0.505044, 0, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403494, 0)
@@ -49,4 +50,13 @@ lifetime = 0.75
 process_material = SubResource("ParticleProcessMaterial_ff13n")
 draw_pass_1 = SubResource("BoxMesh_rnxxg")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.590156, 0.293521, 1.34766e-06, 1)
+light_energy = 3.492
+shadow_enabled = true
+omni_range = 9.614
+omni_attenuation = 1.436
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

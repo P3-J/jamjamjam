@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dg2mv8hcafymw"
+path="res://.godot/imported/lv1.4.map-d0b5b1375ade6ab9beb92864a31c2698.tres"
+
+[deps]
+
+source_file="res://trench_maps/autosave/lv1.4.map"
+dest_files=["res://.godot/imported/lv1.4.map-d0b5b1375ade6ab9beb92864a31c2698.tres"]
+
+[params]
+

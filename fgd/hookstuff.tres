@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" load_steps=3 format=3 uid="uid://dj3qohiwgdurm"]
+
+[ext_resource type="Script" uid="uid://blvdvv75tyajv" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="1_g1ndp"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/scenes/hookspot.tscn" id="1_wpik4"]
+
+[resource]
+script = ExtResource("1_g1ndp")
+target_map_editor = 1
+models_sub_folder = "models"
+scale_expression = ""
+generate_size_property = false
+generate_gd_ignore_file = false
+scene_file = ExtResource("1_wpik4")
+apply_rotation_on_map_build = true
+apply_scale_on_map_build = true
+classname = "hookstuff"
+description = ""
+func_godot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+auto_apply_to_matching_node_properties = false
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "\"models/hookstuff.glb\"",
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"models/.glb\""
+}
+node_class = ""
+name_property = ""
+metadata/_custom_type_script = "uid://blvdvv75tyajv"

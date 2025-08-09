@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn5kewb311n14"]
+[gd_scene load_steps=3 format=3 uid="uid://bn5kewb311n14"]
 
-[ext_resource type="Script" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
-[ext_resource type="Theme" uid="uid://6ghj1dyetu2b" path="res://addons/qodot/src/resources/UI_theme.tres" id="2_xjibs"]
+[ext_resource type="Script" uid="uid://b0ugnu1u8bit" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
 [ext_resource type="PackedScene" uid="uid://b2wukaf1tyfjc" path="res://src/scenes/settings_menu_pause.tscn" id="3_pjeeh"]
 
 [node name="PauseMenu" type="Control"]
@@ -12,7 +11,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_xjibs")
 script = ExtResource("1_ojub6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -29,35 +27,30 @@ offset_right = 130.5
 offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_xjibs")
 theme_override_constants/separation = 15
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_xjibs")
 text = "Resume"
 
 [node name="RespawnButton" type="Button" parent="VBoxContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_xjibs")
 text = "Respawn"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_xjibs")
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme = ExtResource("2_xjibs")
 text = "Quit"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("3_pjeeh")]

@@ -1,18 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddk73t8n4ysd6"]
 
-[ext_resource type="Script" path="res://src/scripts/lava.gd" id="1_u7ucl"]
-[ext_resource type="Texture2D" uid="uid://6y6h8ab3lilh" path="res://textures/128x128/Elements/Elements_03-128x128.png" id="2_cgcns"]
+[ext_resource type="Script" uid="uid://bnb42goqcvb3y" path="res://src/scripts/lava.gd" id="1_u7ucl"]
+[ext_resource type="Shader" uid="uid://77d7ml8amjt1" path="res://src/shaders/water.gdshader" id="3_8q6l0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1kd7"]
-albedo_texture = ExtResource("2_cgcns")
-emission_enabled = true
-emission = Color(0.788235, 0, 0, 1)
-emission_energy_multiplier = 1.15
-emission_texture = ExtResource("2_cgcns")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdre5"]
+render_priority = 0
+shader = ExtResource("3_8q6l0")
+shader_parameter/dark_lava_color = Color(0.85098, 0, 0, 1)
+shader_parameter/light_lava_color = Color(1, 0.866667, 0, 1)
+shader_parameter/speed = 0.415
+shader_parameter/scale = 39.574
+shader_parameter/sharpness = 2.582
+shader_parameter/emission_intensity = 8.051
+shader_parameter/pixel_size = 8.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_652k1"]
-material = SubResource("StandardMaterial3D_b1kd7")
-size = Vector2(500, 500)
+material = SubResource("ShaderMaterial_sdre5")
+size = Vector2(100, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2oyh"]
 size = Vector3(500, 1, 500)
