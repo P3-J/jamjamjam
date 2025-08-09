@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=14 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
@@ -49,11 +49,16 @@ _data = {
 &"head_sway": SubResource("Animation_5qs03")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vf6xc"]
-size = Vector3(1.23432, 0.240234, 1.27756)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qy4j"]
+albedo_color = Color(0.175578, 0.0066896, 0.001103, 1)
 
-[node name="player" type="CharacterBody3D" groups=["player"]]
+[sub_resource type="CylinderMesh" id="CylinderMesh_0qy4j"]
+material = SubResource("StandardMaterial3D_0qy4j")
+
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("rope_mesh", "pickaxe") groups=["player"]]
 script = ExtResource("1_ve44u")
+rope_mesh = NodePath("rope")
+pickaxe = NodePath("head/Pickaxe")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -122,14 +127,15 @@ shadow_enabled = true
 spot_range = 80.0
 spot_angle = 60.0
 
-[node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
-transform = Transform3D(-0.0639729, 0, -1.99898, 0, 2, 0, 1.99898, 0, -0.0639729, 0.281748, -0.384911, -0.574789)
-
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
-target_position = Vector3(0, 0, -20)
+target_position = Vector3(0, 0, -25)
+hit_back_faces = false
 collide_with_areas = true
 debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
+transform = Transform3D(0.102964, 0, 1.99735, 0, 2, 0, -1.99735, 0, 0.102964, 0.406099, -0.473924, -0.629603)
 
 [node name="utils" type="Node" parent="."]
 
@@ -149,9 +155,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_c70xo")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0338281, 0.931655, 0.00389639)
-shape = SubResource("BoxShape3D_vf6xc")
+[node name="rope" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27414, 0)
+mesh = SubResource("CylinderMesh_0qy4j")
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]

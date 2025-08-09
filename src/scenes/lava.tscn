@@ -8,10 +8,11 @@ render_priority = 0
 shader = ExtResource("3_8q6l0")
 shader_parameter/dark_lava_color = Color(0.85098, 0, 0, 1)
 shader_parameter/light_lava_color = Color(1, 0.866667, 0, 1)
-shader_parameter/speed = 0.576
-shader_parameter/scale = 26.36
-shader_parameter/sharpness = 2.684
-shader_parameter/emission_intensity = 10.0
+shader_parameter/speed = 0.415
+shader_parameter/scale = 39.574
+shader_parameter/sharpness = 2.582
+shader_parameter/emission_intensity = 8.051
+shader_parameter/pixel_size = 8.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_652k1"]
 material = SubResource("ShaderMaterial_sdre5")

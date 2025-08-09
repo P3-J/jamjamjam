@@ -5,7 +5,6 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var head: Node3D
 @onready var jump_timer: Timer
 @onready var hookray: RayCast3D
-@onready var pickaxe: Node3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
 @onready var crosshair: TextureRect = $UI/Crosshair
@@ -17,9 +16,12 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 
 @onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
 @onready var highlighted_crosshair_texture = load("uid://dvovki06eqtnx")
+@export var rope_mesh: MeshInstance3D
+
+@export var pickaxe: Node3D
 
 var speed = 10.0
-var hook_towards_speed = 25.0
+var hook_towards_speed = 20.0
 var air_speed = 8.0
 var jump_speed = 14.0  
 var gravity = -27.0  
@@ -45,7 +47,7 @@ var minutes : int = 0
 var seconds : int = 0
 var milliseconds : int = 0
 var pickaxe_reset_pos: Vector3;
-
+var pickaxe_reset_rotation: Vector3;
 
 
 func _ready() -> void:
@@ -57,11 +59,13 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	pickaxe_reset_pos = pickaxe.position;
+	pickaxe_reset_rotation = pickaxe.rotation;
 	mouse_sensitivity = Globalsettings.mouse_sensitivity
 
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
+	check_for_hook_collision()
 
 	direction = _player_movement(direction)
 
@@ -111,7 +115,10 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	update_time()
-	check_for_hook_collision()
+
+	rope_checks()
+
+
 	
 
 
@@ -123,18 +130,20 @@ func _input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("hook"):
 		holding_hook_button = true
-		var collider = hookray.get_collider()
-		if (collider and collider.is_in_group("hook")):
-			if (current_hookspot == null):
-				current_hookspot = collider
+		rope_mesh.visible = true
 
 
 	if Input.is_action_just_released("hook"):
+		rope_mesh.visible = false
 		holding_hook_button = false
 		current_hookspot = null;
 		can_move_towards_hook = false
 		pickaxe.scale = Vector3(2,2,2)
+		pickaxe.get_parent().remove_child(pickaxe)
+		head.add_child(pickaxe)
 		reset_pickaxe_position()
+		
+		
 
 
 func hooking_process() -> void:
@@ -142,6 +151,21 @@ func hooking_process() -> void:
 		send_hook_towards(current_hookspot)
 		if can_move_towards_hook:
 			hook_towards(current_hookspot)
+
+func rope_checks() -> void:
+
+	var start = self.global_transform.origin
+	var end = pickaxe.global_transform.origin - Vector3(0, 0.3, 0)
+	var mid = (start + end) * 0.5
+	var dir = (end - start)
+	var length = dir.length()
+
+	rope_mesh.global_transform.origin = mid
+
+	rope_mesh.look_at(end, Vector3.UP)
+
+	rope_mesh.rotate_object_local(Vector3.RIGHT, deg_to_rad(90))
+	rope_mesh.scale = Vector3(0.05, length * 0.5, 0.05)
 
 
 func _get_nodes() -> void:
@@ -168,14 +192,21 @@ func check_for_hook_collision():
 
 	if (collider and collider.is_in_group("hook")):
 		crosshair.texture = highlighted_crosshair_texture
-	else:
+	else:		
 		crosshair.texture = normal_crosshair_texture
 
-
+	if (holding_hook_button and !current_hookspot):
+		if (collider and collider.is_in_group("hook")):
+			current_hookspot = collider
+			var t = pickaxe.global_transform
+			pickaxe.get_parent().remove_child(pickaxe)
+			get_tree().current_scene.add_child(pickaxe)
+			pickaxe.global_transform = t
 
 
 
 func reset_pickaxe_position():
+	pickaxe.rotation = pickaxe_reset_rotation
 	pickaxe.position = pickaxe_reset_pos
 
 
@@ -185,15 +216,19 @@ func hook_towards(collider):
 
 func send_hook_towards(collider):
 	pickaxe.scale = Vector3(2,2,2)
-	pickaxe.global_position = pickaxe.global_position.move_toward(collider.global_position, 1)
+	pickaxe.global_position = pickaxe.global_position.move_toward(collider.global_position, 0.5)
 
 func _hook_connected(state: bool) -> void:
 	can_move_towards_hook = state
 
 func _player_in_hook():
 	can_move_towards_hook = false;
+	holding_hook_button = false;
 	current_hookspot = null;
+	pickaxe.get_parent().remove_child(pickaxe)
+	head.add_child(pickaxe)
 	reset_pickaxe_position()
+
 	
 func _player_movement(direction: Vector3) -> Vector3:
 	if Input.is_action_pressed("up"):
@@ -213,6 +248,7 @@ func _player_movement(direction: Vector3) -> Vector3:
 	return direction
 
 func _sway_head():
+	return
 	player_anim.play("head_sway")
 
 

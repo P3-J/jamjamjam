@@ -7,6 +7,7 @@ uniform float speed : hint_range(0.0, 5.0);
 uniform float scale : hint_range(0.1, 40.0) = 10;
 uniform float sharpness : hint_range(1.0, 100.0);
 uniform float emission_intensity : hint_range(0.0, 10.0);
+uniform float pixel_size : hint_range(1.0, 64.0) = 8.0; // NEW
 
 vec2 random2D(vec2 p) {
     return fract(sin(vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)))) * 43758.5453);
@@ -21,10 +22,8 @@ float voronoiIQ(vec2 _pos) {
     vec2 f = fract(_pos);
     float res = 0.0;
 
-    // Clamp the sharpness to avoid extreme behavior.
     float sharp = clamp(sharpness, 1.0, 50.0);
 
-    // Sum contributions from neighboring cells.
     for (int j = -1; j <= 1; j++) {
         for (int i = -1; i <= 1; i++) {
             vec2 b = vec2(float(i), float(j));
@@ -36,19 +35,18 @@ float voronoiIQ(vec2 _pos) {
         }
     }
 
-    // Ensure we never take the log of zero.
     res = max(res, 1e-6);
-
-    // Calculate the final value. Optionally, clamp the result.
     float result = -(1.0 / sharp) * log(res);
     return clamp(result, 0.0, 1.0);
 }
 
 void fragment() {
-    vec2 uv = UV * scale;
-    float voronoi_value = voronoiIQ(uv);
+    // Quantize UVs to simulate nearest-pixel look
+    vec2 uv = floor(UV * scale * pixel_size) / pixel_size;
 
+    float voronoi_value = voronoiIQ(uv);
     vec4 final_color = mix(dark_lava_color, light_lava_color, voronoi_value);
+
     ALBEDO = final_color.rgb;
-	EMISSION = final_color.rgb * emission_intensity;
+    EMISSION = final_color.rgb * emission_intensity;
 }

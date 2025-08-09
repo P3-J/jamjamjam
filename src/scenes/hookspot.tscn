@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkfbtvxfwq2ov" path="res://src/scenes/hook_spot.tscn" id="2_dg221"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
-size = Vector3(3.63525, 2.8533, 1.89172)
+size = Vector3(3.63525, 4.88758, 1.89172)
 
 [sub_resource type="Curve" id="Curve_0wran"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -37,7 +37,7 @@ collision_mask = 3
 script = ExtResource("1_i0tbm")
 
 [node name="hookshape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.804489, 0.0957642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596905, 0.0957642)
 shape = SubResource("BoxShape3D_a70su")
 
 [node name="Hook_Spot" parent="." instance=ExtResource("2_dg221")]
