@@ -53,7 +53,6 @@ draw_pass_1 = SubResource("BoxMesh_rnxxg")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.590156, 0.293521, 1.34766e-06, 1)
 light_energy = 3.492
-shadow_enabled = true
 omni_range = 9.614
 omni_attenuation = 1.436
 

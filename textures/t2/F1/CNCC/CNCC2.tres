@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7j6a0eyd7gbs"]
+
+[ext_resource type="Texture2D" uid="uid://b6bsl4lptykww" path="res://textures/t2/F1/CNCC/CNCC2.png" id="1_3whf1"]
+
+[resource]
+albedo_texture = ExtResource("1_3whf1")
+texture_filter = 0

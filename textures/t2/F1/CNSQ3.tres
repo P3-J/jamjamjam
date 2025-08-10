@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dxhp0ppmoa74l"]
+
+[ext_resource type="Texture2D" uid="uid://csm3hnbbqhwu8" path="res://textures/t2/F1/CNSQ3.png" id="1_1beem"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_1beem")
+texture_filter = 0
+shadow_to_opacity = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=17 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
@@ -9,8 +9,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_a27d8"]
-margin = 0.08
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0qy4j"]
 
 [sub_resource type="Animation" id="Animation_vun55"]
 length = 0.001
@@ -54,6 +53,18 @@ albedo_color = Color(0.175578, 0.0066896, 0.001103, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0qy4j"]
 material = SubResource("StandardMaterial3D_0qy4j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v6aa"]
+transparency = 1
+albedo_color = Color(0.01, 0.005, 0, 0.795)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0qy4j"]
+material = SubResource("StandardMaterial3D_8v6aa")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_4pcbe"]
+_data = [Vector2(0.00645161, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("rope_mesh", "pickaxe") groups=["player"]]
 script = ExtResource("1_ve44u")
@@ -111,8 +122,8 @@ text = "00:00:00"
 mesh = SubResource("CapsuleMesh_cyvha")
 
 [node name="playershape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288002, -0.375598, 0.0717641)
-shape = SubResource("SphereShape3D_a27d8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0288002, -0.0871788, -0.00873537)
+shape = SubResource("CapsuleShape3D_0qy4j")
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
@@ -120,12 +131,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
 [node name="Camera3D" type="Camera3D" parent="head"]
 fov = 80.0
 
-[node name="SpotLight3D" type="SpotLight3D" parent="head"]
-light_color = Color(1, 1, 0.654902, 1)
-light_energy = 1.212
+[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.990889, 0.134678, 0, -0.134678, 0.990889, 0.0692149, -0.0668199, -0.511655)
 shadow_enabled = true
-spot_range = 80.0
-spot_angle = 60.0
+spot_range = 37.867
+spot_angle = 56.21
 
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
@@ -135,7 +145,7 @@ collide_with_areas = true
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
-transform = Transform3D(0.102964, 0, 1.99735, 0, 2, 0, -1.99735, 0, 0.102964, 0.406099, -0.473924, -0.629603)
+transform = Transform3D(0.186387, 0, 0.982476, 0, 1, 0, -0.982476, 0, 0.186387, 0.407037, -0.391195, -0.559779)
 
 [node name="utils" type="Node" parent="."]
 
@@ -157,7 +167,21 @@ libraries = {
 
 [node name="rope" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27414, 0)
+visible = false
 mesh = SubResource("CylinderMesh_0qy4j")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0785469, -1.13536, 0.00383642)
+amount = 32
+lifetime = 0.5
+mesh = SubResource("PlaneMesh_0qy4j")
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector3(0, -1, 0)
+initial_velocity_max = 0.2
+angular_velocity_min = 1.0
+angular_velocity_max = 4.0
+scale_amount_curve = SubResource("Curve_4pcbe")
 
 [connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
