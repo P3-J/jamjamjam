@@ -37,6 +37,7 @@ var jumped: bool = false
 var can_hook: bool = false
 var holding_hook_button: bool = false
 var can_move_towards_hook: bool = false
+var in_boost_area: bool = false
 
 var current_hookspot = null;
 
@@ -79,37 +80,38 @@ func _physics_process(delta: float) -> void:
 	direction = global_transform.basis * direction
 
 	if is_on_floor():
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
+		var accel = 10.0
+		var friction = 6.0
+
+		if direction != Vector3.ZERO:
+			velocity.x = lerp(velocity.x, direction.x * speed, accel * delta)
+			velocity.z = lerp(velocity.z, direction.z * speed, accel * delta)
+		else:
+			velocity.x = lerp(velocity.x, 0.0, friction * delta)
+			velocity.z = lerp(velocity.z, 0.0, friction * delta)
+
 		jump_timer.stop()
 		can_still_jump = true
 		jumped = false
-
 	else:
-
-		player_anim.stop()
-		velocity.x = lerp(velocity.x, direction.x * air_speed, 0.05)
-		velocity.z = lerp(velocity.z, direction.z * air_speed, 0.05)
+		var air_accel = 5.0
+		velocity.x = lerp(velocity.x, direction.x * air_speed, air_accel * delta)
+		velocity.z = lerp(velocity.z, direction.z * air_speed, air_accel * delta)
 		velocity.y += gravity * delta
-		
+
 		if velocity.y < max_fall_speed:
 			velocity.y = max_fall_speed
 
-		if jump_timer.is_stopped():
+		if !jump_timer.is_stopped():
 			jump_timer.start()
 
-
-	if Input.is_action_just_pressed("jump") and not jumped and can_still_jump:
-		jumped = true
-		velocity.y = jump_speed
-		can_still_jump = false
-
-
-	hooking_process()
+	if in_boost_area:
+		velocity.y += 2
 
 	if is_on_floor() and velocity.y < 0:
 		velocity.y = 0
 	
+	hooking_process()
 	move_and_slide()
 
 
@@ -119,21 +121,24 @@ func _process(_delta: float) -> void:
 	rope_checks()
 
 
-	
-
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		y_rotation = clamp(y_rotation - event.relative.y * mouse_sensitivity, -1.5, 1.4) 
 		head.rotation.x = y_rotation
 	
-	if Input.is_action_just_pressed("hook"):
+	
+	if event.is_action_pressed("hook"):
 		holding_hook_button = true
 		rope_mesh.visible = true
+	
+	if event.is_action_pressed("jump") and not jumped and can_still_jump:
+		print(jumped, can_still_jump)
+		jumped = true
+		velocity.y = jump_speed
+		can_still_jump = false
 
-
-	if Input.is_action_just_released("hook"):
+	if event.is_action_released("hook"):
 		rope_mesh.visible = false
 		holding_hook_button = false
 		current_hookspot = null;
@@ -142,10 +147,7 @@ func _input(event: InputEvent) -> void:
 		pickaxe.get_parent().remove_child(pickaxe)
 		head.add_child(pickaxe)
 		reset_pickaxe_position()
-		
-		
-
-
+	
 func hooking_process() -> void:
 	if (holding_hook_button and current_hookspot != null):
 		send_hook_towards(current_hookspot)
@@ -184,6 +186,7 @@ func _signal_connect() -> void:
 	Signalbus.connect('game_starts', _on_game_starts)
 	Signalbus.connect('pickaxe_grab', _hook_connected)
 	Signalbus.connect('player_in_hook_area', _player_in_hook)
+	Signalbus.connect('player_in_boost', _player_in_boost)
 	Signalbus.player_wins.connect(reached_end)
 
 	
@@ -261,6 +264,10 @@ func _on_player_kill() -> void:
 		has_died = true
 		Signalbus.kill_player.emit()
 
+
+func _player_in_boost(state: bool) -> void:
+	in_boost_area = state
+
 func setup_ui() -> void:
 	var lava_meter = lava_meter_scene.instantiate()
 	ui_node.add_child(lava_meter)
@@ -298,6 +305,7 @@ func reached_end():
 
 
 func setup_sound_stream() -> void:
+	return
 	running_audio_stream.stream = load('res://src/assets/sounds/running.wav')
 	self.add_child(running_audio_stream)
 
