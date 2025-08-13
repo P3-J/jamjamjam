@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdt4d2q7r80rt"]
-
-[ext_resource type="Texture2D" uid="uid://b6uerhgcnnro" path="res://textures/t2/F1/CNSP6A.png" id="1_cpofs"]
-
-[resource]
-shading_mode = 2
-albedo_texture = ExtResource("1_cpofs")
-metallic_specular = 0.0
-texture_filter = 2

@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://sr054hhepvx5"]
-
-[ext_resource type="Texture2D" uid="uid://2vpx2thv5wj1" path="res://textures/t2/F1/CNBK6_1.png" id="1_goys0"]
-
-[resource]
-diffuse_mode = 3
-albedo_texture = ExtResource("1_goys0")
-texture_filter = 0

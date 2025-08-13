@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://psvh3cbr00em"]
-
-[ext_resource type="Texture2D" uid="uid://b77sh8xa3e5bv" path="res://textures/t2/F4/MBTT4_1.png" id="1_mu1hx"]
-
-[resource]
-albedo_texture = ExtResource("1_mu1hx")
-texture_filter = 0
