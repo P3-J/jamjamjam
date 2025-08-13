@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://8ggbaiu407jl" path="res://textures/128x128/Metal/Metal_05-128x128.png" id="1_v32bd"]
 
 [resource]
-shading_mode = 2
 albedo_texture = ExtResource("1_v32bd")
-metallic_specular = 0.0
+metallic = 1.0
+heightmap_enabled = true
+heightmap_scale = 1.411
 texture_filter = 2

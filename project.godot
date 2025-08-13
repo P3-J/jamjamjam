@@ -31,6 +31,10 @@ window/size/viewport_width=1080
 window/size/viewport_height=540
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="jamjamjam"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
