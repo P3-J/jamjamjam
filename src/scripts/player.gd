@@ -152,11 +152,35 @@ func _input(event: InputEvent) -> void:
 		
 	if Input.is_action_just_pressed("boost"):
 		if boostray.is_colliding() and boost_timer.is_stopped():
-			velocity.y += 15
+			var ray_origin = boostray.global_transform.origin
+			var ray_dir = (boostray.global_transform.basis * boostray.target_position).normalized()
+			var distance = 5.0  # how far behind player
+			var opposite_point = ray_origin - ray_dir * distance
 			boost_timer.start()
 			print("Velocity:", velocity)
+			var boost_vector = (opposite_point - global_transform.origin).normalized()
+			var boost_strength = 20.0  # adjust as needed
+			velocity = boost_vector * boost_strength  # replaces previous velocity
+			print("Velocity:", velocity)
 			print("Boosted")
-	
+			
+			### [DEBUG] ###
+			# Create sphere in code 
+			var sphere = MeshInstance3D.new()
+			var mesh = SphereMesh.new()
+			mesh.radius = 0.2  # make it small
+			mesh.height = 0.2
+			sphere.mesh = mesh
+
+			# Make it red
+			var mat = StandardMaterial3D.new()
+			mat.albedo_color = Color(1, 0, 0)  # pure red
+			sphere.material_override = mat
+
+			# Add to scene and position it at opposite direction of the boostray
+			get_tree().current_scene.add_child(sphere)
+			sphere.global_transform.origin = opposite_point
+		
 func hooking_process() -> void:
 	if (holding_hook_button and current_hookspot != null):
 		send_hook_towards(current_hookspot)
