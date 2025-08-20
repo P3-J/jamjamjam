@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=14 format=3 uid="uid://w5232gprfkyt"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=16 format=3 uid="uid://w5232gprfkyt"]
 
 [ext_resource type="Script" uid="uid://d0w6sdhi0vr3y" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_6bfck"]
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_nqogt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0ss5u1jg80pw" path="res://src/scenes/assetlightwhite.tscn" id="7_iywn8"]
 [ext_resource type="Script" uid="uid://b0tqbsaldubcf" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="8_o7nl0"]
 [ext_resource type="PackedScene" uid="uid://d2fflt0dmlqmk" path="res://src/scenes/boostspot.tscn" id="9_o7nl0"]
+[ext_resource type="PackedScene" uid="uid://daw58duiyn3qu" path="res://src/scenes/hookspot_variant.tscn" id="10_qnxrc"]
 
 [sub_resource type="Resource" id="Resource_iywn8"]
 script = ExtResource("6_d21nd")
@@ -77,11 +78,37 @@ node_class = ""
 name_property = ""
 metadata/_custom_type_script = "uid://b0tqbsaldubcf"
 
+[sub_resource type="Resource" id="Resource_chhai"]
+script = ExtResource("6_d21nd")
+target_map_editor = 0
+models_sub_folder = "models"
+scale_expression = ""
+generate_size_property = false
+generate_gd_ignore_file = false
+scene_file = ExtResource("10_qnxrc")
+apply_rotation_on_map_build = true
+apply_scale_on_map_build = true
+classname = "hookspotBoosted"
+description = ""
+func_godot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+auto_apply_to_matching_node_properties = false
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"models/hookspotBoosted.glb\""
+}
+node_class = ""
+name_property = ""
+metadata/_custom_type_script = "uid://blvdvv75tyajv"
+
 [resource]
 script = ExtResource("1_6bfck")
 export_file = false
 target_map_editor = 1
 fgd_name = "FuncGodot"
 base_fgd_files = Array[Resource]([ExtResource("1_nqogt")])
-entity_definitions = Array[Resource]([ExtResource("2_0c5qo"), ExtResource("3_vwej8"), ExtResource("4_4u84p"), SubResource("Resource_iywn8"), SubResource("Resource_qnxrc"), SubResource("Resource_o7nl0")])
+entity_definitions = Array[Resource]([ExtResource("2_0c5qo"), ExtResource("3_vwej8"), ExtResource("4_4u84p"), SubResource("Resource_iywn8"), SubResource("Resource_qnxrc"), SubResource("Resource_o7nl0"), SubResource("Resource_chhai")])
 metadata/_custom_type_script = "uid://d0w6sdhi0vr3y"

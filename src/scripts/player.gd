@@ -3,7 +3,6 @@ extends CharacterBody3D
 var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 
 @onready var head: Node3D
-@onready var jump_timer: Timer
 @onready var hookray: RayCast3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
@@ -33,7 +32,6 @@ var mouse_sensitivity: float = Globalsettings.mouse_sensitivity
 var y_rotation = 0.0  
 
 var has_died: bool = false
-var can_still_jump: bool = true
 var jumped: bool = false
 
 var can_hook: bool = false
@@ -92,11 +90,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lerp(velocity.x, 0.0, friction * delta)
 			velocity.z = lerp(velocity.z, 0.0, friction * delta)
 
-		jump_timer.stop()
-		can_still_jump = true
-		jumped = false
 	else:
-		var air_accel = 5.0
+		var air_accel = 10.0
 		velocity.x = lerp(velocity.x, direction.x * air_speed, air_accel * delta)
 		velocity.z = lerp(velocity.z, direction.z * air_speed, air_accel * delta)
 		velocity.y += gravity * delta
@@ -104,8 +99,6 @@ func _physics_process(delta: float) -> void:
 		if velocity.y < max_fall_speed:
 			velocity.y = max_fall_speed
 
-		if !jump_timer.is_stopped():
-			jump_timer.start()
 
 	if in_boost_area:
 		velocity.y += 2
@@ -116,10 +109,12 @@ func _physics_process(delta: float) -> void:
 	hooking_process()
 	move_and_slide()
 
+	if is_on_floor():
+		jumped = false
+
 
 func _process(_delta: float) -> void:
 	update_time()
-
 	rope_checks()
 
 
@@ -134,11 +129,9 @@ func _input(event: InputEvent) -> void:
 		holding_hook_button = true
 		rope_mesh.visible = true
 	
-	if event.is_action_pressed("jump") and not jumped and can_still_jump:
-		print(jumped, can_still_jump)
+	if Input.is_action_just_pressed("jump") and not jumped:
 		jumped = true
 		velocity.y = jump_speed
-		can_still_jump = false
 
 	if event.is_action_released("hook"):
 		rope_mesh.visible = false
@@ -205,7 +198,6 @@ func rope_checks() -> void:
 
 func _get_nodes() -> void:
 	head = get_node("head")
-	jump_timer = get_node("utils/jump_timer")
 	hookray = get_node("head/hookray")
 	hook_start_time = get_node("utils/hook_start_time")
 	body = get_node("playermesh")
@@ -257,13 +249,21 @@ func send_hook_towards(collider):
 func _hook_connected(state: bool) -> void:
 	can_move_towards_hook = state
 
-func _player_in_hook():
+func _player_in_hook(boosted_hook: bool):
+	if boosted_hook and current_hookspot:
+		velocity.x += velocity.x * 5
+		velocity.z += velocity.z * 5
+		velocity.y += 10
+
 	can_move_towards_hook = false;
 	holding_hook_button = false;
 	current_hookspot = null;
 	pickaxe.get_parent().remove_child(pickaxe)
 	head.add_child(pickaxe)
 	reset_pickaxe_position()
+
+	
+		
 
 	
 func _player_movement(direction: Vector3) -> Vector3:
@@ -288,10 +288,6 @@ func _sway_head():
 	player_anim.play("head_sway")
 
 
-func _on_jump_timer_timeout() -> void:
-	can_still_jump = false
-
-
 func _on_player_kill() -> void:
 	if !has_died:
 		has_died = true
@@ -302,10 +298,9 @@ func _player_in_boost(state: bool) -> void:
 	in_boost_area = state
 
 func setup_ui() -> void:
-	var lava_meter = lava_meter_scene.instantiate()
-	ui_node.add_child(lava_meter)
-
-
+	return
+	#var lava_meter = lava_meter_scene.instantiate()
+	#ui_node.add_child(lava_meter)
 
 func update_time():
 	if is_stopwatch_running:

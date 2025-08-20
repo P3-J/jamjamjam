@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxd1p57fmrcaw"]
+[gd_scene load_steps=4 format=3 uid="uid://cxd1p57fmrcaw"]
 
 [ext_resource type="Script" uid="uid://sr2r3cyhf5pg" path="res://src/scripts/starting_zone.gd" id="1_n813r"]
+[ext_resource type="PackedScene" uid="uid://2dspr6xg6ey" path="res://src/scenes/crystall_1.tscn" id="2_gh1nf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsmwd"]
-size = Vector3(16.1924, 3.33996, 11.1607)
+size = Vector3(0.476525, 3.33996, 0.667284)
 
 [node name="StartingZone" type="Area3D"]
 script = ExtResource("1_n813r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258607, -1.01505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0926539, 0.254981, -0.111449)
 shape = SubResource("BoxShape3D_jsmwd")
 debug_color = Color(0, 0.635294, 0.396078, 1)
 
+[node name="Crystall1" parent="." instance=ExtResource("2_gh1nf")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0.659598, -0.0648116)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
