@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b1tq4np2hj6n3"]
+
+[ext_resource type="Texture2D" uid="uid://bidd8qw3r20ol" path="res://textures/t2/F1/CNSP7E.png" id="1_ipjbv"]
+
+[resource]
+diffuse_mode = 3
+albedo_texture = ExtResource("1_ipjbv")
+texture_filter = 0
+shadow_to_opacity = true
