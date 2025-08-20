@@ -1247,3 +1247,18 @@
 "classname" "boostspot"
 "origin" "1688 -1336 680"
 }
+// entity 9
+{
+"classname" "hookspotBoosted"
+"origin" "1240 -792 920"
+}
+// entity 10
+{
+"classname" "hookspotBoosted"
+"origin" "1720 56 2264"
+}
+// entity 11
+{
+"classname" "hookspotBoosted"
+"origin" "520 88 2920"
+}

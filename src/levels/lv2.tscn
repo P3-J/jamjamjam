@@ -1009,6 +1009,15 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27.83
 [node name="entity_8_boostspot" parent="FuncGodotMap" instance=ExtResource("11_2uoo7")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27.8333, 14.1667, 35.1667)
 
+[node name="entity_9_hookspotBoosted" parent="FuncGodotMap" instance=ExtResource("39_t546b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.5, 19.1667, 25.8333)
+
+[node name="entity_10_hookspotBoosted" parent="FuncGodotMap" instance=ExtResource("39_t546b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.16667, 47.1667, 35.8333)
+
+[node name="entity_11_hookspotBoosted" parent="FuncGodotMap" instance=ExtResource("39_t546b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83333, 60.8333, 10.8333)
+
 [node name="default_assets" type="Node3D" parent="."]
 
 [node name="Lava" parent="default_assets" instance=ExtResource("7_2uoo7")]
