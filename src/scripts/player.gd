@@ -24,7 +24,7 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 var speed = 10.0
 var hook_towards_speed = 20.0
 var air_speed = 8.0
-var jump_speed = 14.0  
+var jump_speed = 10.0  
 var gravity = -27.0  
 var max_fall_speed = -90.0  	
 
@@ -38,6 +38,7 @@ var can_hook: bool = false
 var holding_hook_button: bool = false
 var can_move_towards_hook: bool = false
 var in_boost_area: bool = false
+var pickaxe_boosted: bool = false
 
 var current_hookspot = null;
 
@@ -91,11 +92,22 @@ func _physics_process(delta: float) -> void:
 			velocity.z = lerp(velocity.z, 0.0, friction * delta)
 
 	else:
-		var air_accel = 10.0
-		velocity.x = lerp(velocity.x, direction.x * air_speed, air_accel * delta)
-		velocity.z = lerp(velocity.z, direction.z * air_speed, air_accel * delta)
-		velocity.y += gravity * delta
+		var air_accel = 30.0 
+		var max_air_speed = air_speed
 
+		var horiz_vel = Vector3(velocity.x, 0, velocity.z)
+		var desired = direction * max_air_speed
+
+		var add_vel = desired - horiz_vel
+		var add_len = add_vel.length()
+		if add_len > air_accel * delta:
+			add_vel = add_vel.normalized() * air_accel * delta
+
+		horiz_vel += add_vel
+		velocity.x = horiz_vel.x
+		velocity.z = horiz_vel.z
+
+		velocity.y += gravity * delta
 		if velocity.y < max_fall_speed:
 			velocity.y = max_fall_speed
 
@@ -111,6 +123,7 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		jumped = false
+		pickaxe_boosted = false
 
 
 func _process(_delta: float) -> void:
@@ -144,41 +157,29 @@ func _input(event: InputEvent) -> void:
 		reset_pickaxe_position()
 		
 	if Input.is_action_just_pressed("boost"):
-		if boostray.is_colliding() and boost_timer.is_stopped():
-			var ray_origin = boostray.global_transform.origin
-			var ray_dir = (boostray.global_transform.basis * boostray.target_position).normalized()
-			var distance = 5.0  # how far behind player
-			var opposite_point = ray_origin - ray_dir * distance
-			boost_timer.start()
-			print("Velocity:", velocity)
-			var boost_vector = (opposite_point - global_transform.origin).normalized()
-			var boost_strength = 20.0  # adjust as needed
-			velocity = boost_vector * boost_strength  # replaces previous velocity
-			print("Velocity:", velocity)
-			print("Boosted")
-			
-			### [DEBUG] ###
-			# Create sphere in code 
-			var sphere = MeshInstance3D.new()
-			var mesh = SphereMesh.new()
-			mesh.radius = 0.2  # make it small
-			mesh.height = 0.2
-			sphere.mesh = mesh
+		if boostray.is_colliding() and !pickaxe_boosted:
+			_pickaxe_boost()
+	
 
-			# Make it red
-			var mat = StandardMaterial3D.new()
-			mat.albedo_color = Color(1, 0, 0)  # pure red
-			sphere.material_override = mat
-
-			# Add to scene and position it at opposite direction of the boostray
-			get_tree().current_scene.add_child(sphere)
-			sphere.global_transform.origin = opposite_point
-		
 func hooking_process() -> void:
 	if (holding_hook_button and current_hookspot != null):
 		send_hook_towards(current_hookspot)
 		if can_move_towards_hook:
 			hook_towards(current_hookspot)
+
+
+func _pickaxe_boost() -> void:
+	pickaxe_boosted = true
+	var ray_origin = boostray.global_transform.origin
+	var ray_dir = (boostray.global_transform.basis * boostray.target_position).normalized()
+
+	var distance = 5.0  
+	var opposite_point = ray_origin - ray_dir * distance
+
+	var boost_vector = (opposite_point - global_transform.origin).normalized()
+	boost_vector.y *= 0.5  
+	var boost_strength = 30.0  
+	velocity = boost_vector * boost_strength  
 
 func rope_checks() -> void:
 
