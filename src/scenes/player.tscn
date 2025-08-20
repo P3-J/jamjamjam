@@ -67,6 +67,8 @@ _data = [Vector2(0.00645161, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("rope_mesh", "pickaxe") groups=["player"]]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ve44u")
 rope_mesh = NodePath("rope")
 pickaxe = NodePath("head/Pickaxe")
@@ -147,6 +149,9 @@ debug_shape_custom_color = Color(1, 0, 0, 1)
 [node name="Pickaxe" parent="head" instance=ExtResource("2_xatcm")]
 transform = Transform3D(0.186387, 0, 0.982476, 0, 1, 0, -0.982476, 0, 0.186387, 0.407037, -0.391195, -0.559779)
 
+[node name="boostray" type="RayCast3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, -9.07011e-08, -1, 0, 2.075, -4.37114e-08, 0, 0, -0.990139)
+
 [node name="utils" type="Node" parent="."]
 
 [node name="jump_timer" type="Timer" parent="utils"]
@@ -159,6 +164,9 @@ one_shot = true
 
 [node name="game_time" type="Timer" parent="utils"]
 wait_time = 4096.0
+
+[node name="boost_timer" type="Timer" parent="utils"]
+one_shot = true
 
 [node name="player_anim" type="AnimationPlayer" parent="."]
 libraries = {

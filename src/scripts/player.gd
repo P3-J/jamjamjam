@@ -12,6 +12,8 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var player_anim: AnimationPlayer
 @onready var timer_text: RichTextLabel
 @onready var running_audio_stream = AudioStreamPlayer.new()
+@onready var boostray = $head/boostray
+@onready var boost_timer = $utils/boost_timer
 
 
 @onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
@@ -147,6 +149,13 @@ func _input(event: InputEvent) -> void:
 		pickaxe.get_parent().remove_child(pickaxe)
 		head.add_child(pickaxe)
 		reset_pickaxe_position()
+		
+	if Input.is_action_just_pressed("boost"):
+		if boostray.is_colliding() and boost_timer.is_stopped():
+			velocity.y += 15
+			boost_timer.start()
+			print("Velocity:", velocity)
+			print("Boosted")
 	
 func hooking_process() -> void:
 	if (holding_hook_button and current_hookspot != null):

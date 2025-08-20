@@ -22,6 +22,7 @@ size = Vector2(100, 100)
 size = Vector3(500, 1, 500)
 
 [node name="Lava" type="Area3D"]
+collision_mask = 3
 script = ExtResource("1_u7ucl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
