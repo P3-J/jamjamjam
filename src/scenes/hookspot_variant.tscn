@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://daw58duiyn3qu"]
+
+[ext_resource type="Script" uid="uid://bkfwk156dge2a" path="res://src/scripts/hookspot.gd" id="1_evpdx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
+size = Vector3(3.63525, 4.88758, 1.89172)
+
+[sub_resource type="Curve" id="Curve_0wran"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_54g7f"]
+curve = SubResource("Curve_0wran")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ff13n"]
+emission_shape = 1
+emission_sphere_radius = 3.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 7.0
+linear_accel_max = 7.0
+radial_accel_min = 0.999998
+radial_accel_max = 2.0
+scale_curve = SubResource("CurveTexture_54g7f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sn62"]
+albedo_color = Color(0.602287, 0.30545, 0.0495513, 1)
+emission_enabled = true
+emission = Color(0.596078, 0.360784, 0.690196, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rnxxg"]
+material = SubResource("StandardMaterial3D_5sn62")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myar2"]
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 4.37
+
+[sub_resource type="TorusMesh" id="TorusMesh_myar2"]
+material = SubResource("StandardMaterial3D_myar2")
+
+[node name="hookspot" type="Area3D" groups=["hook"]]
+collision_mask = 3
+script = ExtResource("1_evpdx")
+boosts = true
+
+[node name="hookshape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596905, 0.0957642)
+shape = SubResource("BoxShape3D_a70su")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403494, 0)
+amount = 16
+lifetime = 0.75
+process_material = SubResource("ParticleProcessMaterial_ff13n")
+draw_pass_1 = SubResource("BoxMesh_rnxxg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.278792, 0.154304, 1, 1)
+light_energy = 4.14
+omni_range = 21.697
+omni_attenuation = 1.436
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.112544, -0.993647, 0, 0.993647, 0.112544, 0, 0, 0)
+mesh = SubResource("TorusMesh_myar2")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

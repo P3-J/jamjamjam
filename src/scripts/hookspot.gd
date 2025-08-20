@@ -1,5 +1,6 @@
 extends Area3D	
 
+@export var boosts: bool = false
 
 func _ready() -> void:		
 	print(global_rotation)
@@ -21,5 +22,6 @@ func _on_area_exited(area: Area3D) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == 'player':
-		print('yttt')
-		Signalbus.emit_signal('player_in_hook_area')
+		Signalbus.emit_signal('player_in_hook_area', boosts)
+		if boosts:
+			self.queue_free()

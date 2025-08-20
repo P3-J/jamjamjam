@@ -119,6 +119,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "00:00:00"
 
 [node name="playermesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.069225, 0)
 mesh = SubResource("CapsuleMesh_cyvha")
 
 [node name="playershape" type="CollisionShape3D" parent="."]
@@ -132,8 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818411, 0.239081)
 fov = 80.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.990889, 0.134678, 0, -0.134678, 0.990889, 0.0692149, -0.0668199, -0.511655)
-shadow_enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0.000994906, 0, -0.000994906, 1, 0.0692149, 0.672473, -0.0515243)
+light_color = Color(1, 1, 0.466667, 1)
+light_energy = 3.692
 spot_range = 37.867
 spot_angle = 56.21
 
@@ -148,10 +150,6 @@ debug_shape_custom_color = Color(1, 0, 0, 1)
 transform = Transform3D(0.186387, 0, 0.982476, 0, 1, 0, -0.982476, 0, 0.186387, 0.407037, -0.391195, -0.559779)
 
 [node name="utils" type="Node" parent="."]
-
-[node name="jump_timer" type="Timer" parent="utils"]
-wait_time = 0.4
-one_shot = true
 
 [node name="hook_start_time" type="Timer" parent="utils"]
 wait_time = 0.1
@@ -183,5 +181,4 @@ angular_velocity_min = 1.0
 angular_velocity_max = 4.0
 scale_amount_curve = SubResource("Curve_4pcbe")
 
-[connection signal="timeout" from="utils/jump_timer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
