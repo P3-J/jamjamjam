@@ -680,6 +680,7 @@ shape = SubResource("ConvexPolygonShape3D_ityal")
 shape = SubResource("ConvexPolygonShape3D_owc14")
 
 [node name="entity_0_brush_30_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.57608795)
 shape = SubResource("ConvexPolygonShape3D_1yjyq")
 
 [node name="entity_0_brush_31_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]

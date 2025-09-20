@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cexupgirc26l1"]
+
+[ext_resource type="Shader" uid="uid://bl1h157mxffiw" path="res://src/assets/Hook_Spot/HookSpotOutline.gdshader" id="1_kp2gd"]
+[ext_resource type="Shader" uid="uid://drnoxscombe3u" path="res://src/assets/Hook_Spot/Hook Spot.gdshader" id="2_ifd2d"]
+[ext_resource type="Texture2D" uid="uid://ppe0pa5i2312" path="res://src/assets/Hook_Spot/Hook_Spot_T_BaseColor.png" id="3_hmqrk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkpin"]
+render_priority = 0
+shader = ExtResource("1_kp2gd")
+shader_parameter/color = Color(0.813667, 0.467363, 0.0497019, 1)
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_kkpin")
+shader = ExtResource("2_ifd2d")
+shader_parameter/normal_scale = 1.0
+shader_parameter/anisotropy_ratio = 0.0
+shader_parameter/anisotropy_direction = Vector3(0, -1, 0)
+shader_parameter/aniso_map_dir_ratio = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/base_texture = ExtResource("3_hmqrk")
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
