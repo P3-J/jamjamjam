@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds736jf3fbywk"]
+
+[ext_resource type="PackedScene" uid="uid://c2p71723a74is" path="res://src/assets/objects/chain/Chain.fbx" id="1_hqa31"]
+
+[node name="Chain" instance=ExtResource("1_hqa31")]
+
+[node name="Chain" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

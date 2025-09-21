@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3npq0g2ouom0"]
+
+[ext_resource type="PackedScene" uid="uid://x57ue754gfxr" path="res://src/assets/objects/rope_bridge/RopeBridgeEnterance.fbx" id="1_f4ld4"]
+
+[node name="RopeBridgeEnterance" instance=ExtResource("1_f4ld4")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

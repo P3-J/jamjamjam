@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkfbtvxfwq2ov"]
+
+[ext_resource type="PackedScene" uid="uid://cb6nxc6hamo61" path="res://src/assets/objects/hook_spots/Hook_Spot.fbx" id="1_xyjpx"]
+[ext_resource type="Texture2D" uid="uid://ppe0pa5i2312" path="res://src/assets/objects/hook_spots/Hook_Spot_T_BaseColor.png" id="2_3lgxc"]
+[ext_resource type="Material" uid="uid://cexupgirc26l1" path="res://src/assets/objects/hook_spots/HookSpot.tres" id="2_adn13"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3071o"]
+albedo_texture = ExtResource("2_3lgxc")
+metallic_specular = 0.0
+emission = Color(0.177896, 0.0701795, 0.000686435, 1)
+emission_energy_multiplier = 6.87
+
+[node name="Hook_Spot" instance=ExtResource("1_xyjpx")]
+
+[node name="group2" parent="." index="0"]
+visible = false
+
+[node name="Hook_Spot" parent="." index="1"]
+material_override = ExtResource("2_adn13")
+surface_material_override/0 = SubResource("StandardMaterial3D_3071o")

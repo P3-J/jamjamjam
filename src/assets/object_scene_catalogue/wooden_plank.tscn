@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wccl2vr3oknw"]
+
+[ext_resource type="PackedScene" uid="uid://b58wew0xamm81" path="res://src/assets/objects/wooden_plank/WoodenPlank.fbx" id="1_oty5q"]
+
+[node name="WoodenPlank" instance=ExtResource("1_oty5q")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

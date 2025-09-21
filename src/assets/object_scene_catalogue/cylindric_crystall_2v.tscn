@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp3q0hwm0pd1o"]
+
+[ext_resource type="PackedScene" uid="uid://dqfx6v4bw87p" path="res://src/assets/objects/crystalls/cylindric_crystalls/v2/CylindricCrystall2V.fbx" id="1_bjs7x"]
+
+[node name="CylindricCrystall2V" instance=ExtResource("1_bjs7x")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" load_steps=3 format=3 uid="uid://dj3qohiwgdurm"]
 
 [ext_resource type="Script" uid="uid://blvdvv75tyajv" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="1_g1ndp"]
-[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/scenes/hookspot.tscn" id="1_wpik4"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/assets/object_scene_catalogue/hookspot.tscn" id="1_wpik4"]
 
 [resource]
 script = ExtResource("1_g1ndp")

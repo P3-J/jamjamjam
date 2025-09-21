@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://21syprig18vl"]
+
+[ext_resource type="PackedScene" uid="uid://cpsqdfa77bqom" path="res://src/assets/objects/pillar_rocks/v1/PillarRock1V.fbx" id="1_3fe3y"]
+
+[node name="PillarRock1V" instance=ExtResource("1_3fe3y")]
+
+[node name="PillarRock1V" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0.6043937, 0)

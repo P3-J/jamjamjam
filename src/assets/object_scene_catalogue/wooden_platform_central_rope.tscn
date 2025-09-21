@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckqhnqud0ppq8"]
+
+[ext_resource type="PackedScene" uid="uid://h3gfi3a8it55" path="res://src/assets/objects/wooden_platform_central_rope/WoodenPlatformCentralRope.fbx" id="1_ymrcs"]
+
+[node name="WoodenPlatformCentralRope" instance=ExtResource("1_ymrcs")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

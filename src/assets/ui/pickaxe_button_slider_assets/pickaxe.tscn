@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://c088naefj5my"]
+
+[ext_resource type="PackedScene" uid="uid://f0xkekdj8xlb" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe.fbx" id="1_ebfh5"]
+[ext_resource type="Texture2D" uid="uid://bjejefux2s17x" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_BaseColor.png" id="2_tf1kf"]
+[ext_resource type="Texture2D" uid="uid://bjuus33a1hvcw" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Metallic.png" id="4_lq5vf"]
+[ext_resource type="Texture2D" uid="uid://cgrss1cuq5x3p" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Normal.png" id="5_5eope"]
+[ext_resource type="Texture2D" uid="uid://dh631iak6ny34" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Roughness.png" id="6_hexcp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f21gr"]
+albedo_texture = ExtResource("2_tf1kf")
+metallic = 1.0
+metallic_texture = ExtResource("4_lq5vf")
+roughness_texture = ExtResource("6_hexcp")
+normal_enabled = true
+normal_texture = ExtResource("5_5eope")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aebuv"]
+size = Vector3(0.203743, 0.355804, 0.0455933)
+
+[node name="Pickaxe" instance=ExtResource("1_ebfh5")]
+
+[node name="Pickaxe" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_f21gr")
+
+[node name="PickaxeArea" type="Area3D" parent="." index="2"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickaxeArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230789, -0.00242615, 0.000213623)
+shape = SubResource("BoxShape3D_aebuv")

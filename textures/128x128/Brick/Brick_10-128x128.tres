@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b7d0fcse0v6c3" path="res://textures/128x128/Brick/Brick_10-128x128.png" id="1_oitbd"]
 
 [resource]
+albedo_color = Color(0.9019608, 0.6313726, 0.22352941, 1)
 albedo_texture = ExtResource("1_oitbd")
 texture_filter = 0

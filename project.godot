@@ -12,8 +12,8 @@ config_version=5
 
 config/name="jamjamjam"
 run/main_scene="uid://cbvgm61qw2giq"
-config/features=PackedStringArray("4.4", "Forward Plus")
-boot_splash/image="res://src/end_screen_stuff/Game_Icon.png"
+config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
 
 [autoload]
 
@@ -27,8 +27,9 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=540
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -104,3 +105,26 @@ boost={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[shader_globals]
+
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}
+outline_width={
+"type": "float",
+"value": 8.0
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.05
+}
+diffuse_curve={
+"type": "sampler2D",
+"value": ""
+}
+specular_smoothness={
+"type": "float",
+"value": 0.0
+}

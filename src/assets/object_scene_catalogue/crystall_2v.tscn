@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxsk0t13fnja5"]
+
+[ext_resource type="PackedScene" uid="uid://srhn46y8abxq" path="res://src/assets/objects/crystalls/v2/Crystall2V.fbx" id="1_3j1vx"]
+
+[node name="Crystall2V" instance=ExtResource("1_3j1vx")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

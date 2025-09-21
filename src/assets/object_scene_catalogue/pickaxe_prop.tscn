@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b40104e2nwgj5"]
+
+[ext_resource type="PackedScene" uid="uid://eixvvcniferr" path="res://src/assets/objects/pickaxe_prop/PickaxeProp.fbx" id="1_trrbj"]
+
+[node name="PickaxeProp" instance=ExtResource("1_trrbj")]
+
+[node name="PickaxeProp" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf1atwf2qrqdy"]
+
+[ext_resource type="PackedScene" uid="uid://chfs3o0k4i13j" path="res://src/assets/ui/pickaxe_button_slider_assets/Tablet.fbx" id="1_h2ldq"]
+[ext_resource type="Texture2D" uid="uid://cn5gg3nh5n3hl" path="res://src/assets/ui/pickaxe_button_slider_assets/Tablet_Tablet_BaseColor.png" id="2_2f0im"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvmwb"]
+albedo_texture = ExtResource("2_2f0im")
+
+[node name="tablet" instance=ExtResource("1_h2ldq")]
+
+[node name="Tablet" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_qvmwb")

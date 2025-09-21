@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pwr4nbe56bbq"]
+
+[ext_resource type="PackedScene" uid="uid://civly5hop8qn4" path="res://src/assets/objects/bucket/Bucket.fbx" id="1_sveyt"]
+
+[node name="Bucket" instance=ExtResource("1_sveyt")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

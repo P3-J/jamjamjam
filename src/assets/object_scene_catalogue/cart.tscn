@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccyobeqin2nea"]
+
+[ext_resource type="PackedScene" uid="uid://b6g2fxi40rgnu" path="res://src/assets/objects/cart/Cart.fbx" id="1_x07oj"]
+
+[node name="Cart" instance=ExtResource("1_x07oj")]
+
+[node name="Cart" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
