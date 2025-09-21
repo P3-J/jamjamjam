@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu5thp5x7c3ks"]
+
+[ext_resource type="PackedScene" uid="uid://c1f3cx0vkhl4c" path="res://src/assets/objects/steam_vent/SteamVent.fbx" id="1_0wlah"]
+
+[node name="SteamVent" instance=ExtResource("1_0wlah")]
+
+[node name="SteamVent" parent="." index="0"]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)

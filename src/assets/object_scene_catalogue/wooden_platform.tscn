@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://coimg6xysalxu"]
+
+[ext_resource type="PackedScene" uid="uid://be7uo1wmv70bs" path="res://src/assets/objects/wooden_platform/WoodenPlatform.fbx" id="1_lkdrf"]
+
+[node name="WoodenPlatform" instance=ExtResource("1_lkdrf")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

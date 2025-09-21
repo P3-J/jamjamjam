@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cefelf8kq8pit"]
+
+[ext_resource type="PackedScene" uid="uid://dh52gsfnud4id" path="res://src/assets/objects/wooden_passage_small/WoodenPassageSmall.fbx" id="1_rd8xq"]
+
+[node name="WoodenPassageSmall" instance=ExtResource("1_rd8xq")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

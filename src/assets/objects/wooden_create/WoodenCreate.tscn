@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvx62u6rexty8"]
+
+[ext_resource type="PackedScene" uid="uid://dmybyhnv3nva7" path="res://src/assets/objects/wooden_create/WoodenCreate.fbx" id="1_2bqu2"]
+[ext_resource type="Material" uid="uid://uxxcd6ttx1g" path="res://src/assets/objects/wooden_create/WoodenCreate.tres" id="2_tjby5"]
+
+[node name="WoodenCreate" instance=ExtResource("1_2bqu2")]
+
+[node name="pCube65_001" parent="group13" index="0"]
+transform = Transform3D(0.524625, 2.23536e-08, 3.55776e-15, 9.17284e-08, -0.127848, -1.88124e-08, 2.91572e-15, 4.97858e-08, -0.0483094, -0.00783752, 0.00666565, -0.00276327)
+material_override = ExtResource("2_tjby5")

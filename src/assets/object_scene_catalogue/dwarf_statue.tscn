@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cys8x4y7y5fkm"]
+
+[ext_resource type="PackedScene" uid="uid://dprjpmdrdvm6t" path="res://src/assets/objects/dwarf_statue/DwarfStatue.fbx" id="1_jc4vj"]
+
+[node name="DwarfStatue" instance=ExtResource("1_jc4vj")]
+
+[node name="DwarfStatue" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

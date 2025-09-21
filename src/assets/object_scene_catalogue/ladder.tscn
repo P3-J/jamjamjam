@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhs67ys81v5aj"]
+
+[ext_resource type="PackedScene" uid="uid://be3lbnf5dg2hx" path="res://src/assets/objects/ladder/Ladder.fbx" id="1_bjoxn"]
+
+[node name="Ladder" instance=ExtResource("1_bjoxn")]
+
+[node name="Ladder" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

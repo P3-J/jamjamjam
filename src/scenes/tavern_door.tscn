@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgobv856rt6fb"]
 
-[ext_resource type="PackedScene" uid="uid://cvl2iuhkdiqhk" path="res://src/assets/Tavern_Door/Tavern_Door.fbx" id="1_ox2q5"]
-[ext_resource type="Texture2D" uid="uid://dynav6dpi1ws3" path="res://src/assets/Tavern_Door/Tavern_Door_T_BaseColor.png" id="2_hlkng"]
-[ext_resource type="Texture2D" uid="uid://ctg3lr6rahyg6" path="res://src/assets/Tavern_Door/Tavern_Door_T_Emissive.png" id="3_5ktg4"]
+[ext_resource type="PackedScene" uid="uid://cvl2iuhkdiqhk" path="res://src/assets/objects/tavern_door/Tavern_Door.fbx" id="1_ox2q5"]
+[ext_resource type="Texture2D" uid="uid://dynav6dpi1ws3" path="res://src/assets/objects/tavern_door/Tavern_Door_T_BaseColor.png" id="2_hlkng"]
+[ext_resource type="Texture2D" uid="uid://ctg3lr6rahyg6" path="res://src/assets/objects/tavern_door/Tavern_Door_T_Emissive.png" id="3_5ktg4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq1wt"]
 albedo_texture = ExtResource("2_hlkng")

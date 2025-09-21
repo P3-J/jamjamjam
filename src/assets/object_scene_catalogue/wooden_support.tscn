@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvo4d4a51b2en"]
+
+[ext_resource type="PackedScene" uid="uid://cs35gdau2ty1d" path="res://src/assets/objects/wooden_support/WoodenSupport.fbx" id="1_5lm7b"]
+
+[node name="WoodenSupport" instance=ExtResource("1_5lm7b")]
+
+[node name="WoodenSupport" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0.016186807, 0)

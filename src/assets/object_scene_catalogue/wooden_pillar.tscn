@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfy30eogbpqfa"]
+
+[ext_resource type="PackedScene" uid="uid://dyurcmng7s4fw" path="res://src/assets/objects/wooden_pillar/WoodenPillar.fbx" id="1_0ydo2"]
+
+[node name="WoodenPillar" instance=ExtResource("1_0ydo2")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

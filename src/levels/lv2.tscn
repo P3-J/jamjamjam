@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cxd1p57fmrcaw" path="res://src/scenes/starting_zone.tscn" id="6_uiafs"]
 [ext_resource type="PackedScene" uid="uid://ddk73t8n4ysd6" path="res://src/scenes/lava.tscn" id="7_2uoo7"]
 [ext_resource type="Material" uid="uid://recj1j6chn5r" path="res://textures/Floor/Materials/carpet_black_01.tres" id="7_7pomr"]
-[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/scenes/hookspot.tscn" id="7_diq4t"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/assets/object_scene_catalogue/hookspot.tscn" id="7_diq4t"]
 [ext_resource type="Material" uid="uid://xadjd0biy810" path="res://textures/128x128/Brick/Brick_16-128x128.tres" id="7_waoxj"]
 [ext_resource type="Material" uid="uid://bbdsdbfp2xlhq" path="res://textures/128x128/Wood/Wood_06-128x128.tres" id="8_c8l7t"]
 [ext_resource type="PackedScene" uid="uid://cwdgh5qpr51w6" path="res://src/scenes/player.tscn" id="8_diq4t"]

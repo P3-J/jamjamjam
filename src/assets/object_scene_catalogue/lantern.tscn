@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yshqy18a4a58"]
+
+[ext_resource type="PackedScene" uid="uid://dug06qmknat6q" path="res://src/assets/objects/lantern/Lantern.fbx" id="1_50dx0"]
+
+[node name="Lantern" instance=ExtResource("1_50dx0")]
+
+[node name="Lantern" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

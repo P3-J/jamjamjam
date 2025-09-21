@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bqwr6gw42jgdw" path="res://fgd/hookspot2.tres" id="2_0c5qo"]
 [ext_resource type="Resource" uid="uid://cthu2j43bm0s8" path="res://fgd/startingzone.tres" id="3_vwej8"]
 [ext_resource type="Resource" uid="uid://b2kdxgrd7e37p" path="res://fgd/winningzone.tres" id="4_4u84p"]
-[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/scenes/hookspot.tscn" id="5_7vu2w"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/assets/object_scene_catalogue/hookspot.tscn" id="5_7vu2w"]
 [ext_resource type="Script" uid="uid://blvdvv75tyajv" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="6_d21nd"]
 [ext_resource type="PackedScene" uid="uid://b0ss5u1jg80pw" path="res://src/scenes/assetlightwhite.tscn" id="7_iywn8"]
 [ext_resource type="Script" uid="uid://b0tqbsaldubcf" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="8_o7nl0"]

@@ -13,7 +13,7 @@ config_version=5
 config/name="jamjamjam"
 run/main_scene="uid://cbvgm61qw2giq"
 config/features=PackedStringArray("4.5", "Forward Plus")
-boot_splash/image="res://src/end_screen_stuff/Game_Icon.png"
+boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
 
 [autoload]
 

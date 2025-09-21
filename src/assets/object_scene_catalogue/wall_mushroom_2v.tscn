@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1kx5gdwewijg"]
+
+[ext_resource type="PackedScene" uid="uid://c8pqf2b0nxbee" path="res://src/assets/objects/wall_mushrooms/v2/WallMushroom2V.fbx" id="1_ouo6t"]
+
+[node name="WallMushroom2V" instance=ExtResource("1_ouo6t")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

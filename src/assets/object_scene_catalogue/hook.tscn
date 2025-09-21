@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vtnij47baem1"]
+
+[ext_resource type="PackedScene" uid="uid://bannju0iyx47s" path="res://src/assets/objects/hook/Hook.fbx" id="1_p7vqr"]
+
+[node name="Hook" instance=ExtResource("1_p7vqr")]
+
+[node name="Hook" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

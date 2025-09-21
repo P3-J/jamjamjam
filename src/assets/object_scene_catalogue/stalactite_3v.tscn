@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce5nkueanr6el"]
+
+[ext_resource type="PackedScene" uid="uid://d2nasboge6fyk" path="res://src/assets/objects/stalactites/v3/3V.fbx" id="1_6ftrm"]
+
+[node name="3V" instance=ExtResource("1_6ftrm")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

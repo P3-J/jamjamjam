@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk5vqvmwunv6h"]
+
+[ext_resource type="PackedScene" uid="uid://0snwdlxducqq" path="res://src/assets/objects/crystall_cage/CrystallCage.fbx" id="1_h7qln"]
+
+[node name="CrystallCage" instance=ExtResource("1_h7qln")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
