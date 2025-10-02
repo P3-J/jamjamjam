@@ -299,9 +299,9 @@ func _player_in_boost(state: bool) -> void:
 	in_boost_area = state
 
 func setup_ui() -> void:
-	return
-	#var lava_meter = lava_meter_scene.instantiate()
-	#ui_node.add_child(lava_meter)
+	var lava_meter = lava_meter_scene.instantiate()
+	lava_meter.player = self
+	ui_node.add_child(lava_meter)
 
 func update_time():
 	if is_stopwatch_running:

@@ -47,6 +47,8 @@ import/blender/enabled=false
 [global_group]
 
 player=""
+lava=""
+exit=""
 
 [input]
 
