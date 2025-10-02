@@ -9,7 +9,7 @@ albedo_texture = ExtResource("2_hlkng")
 emission_enabled = true
 emission_texture = ExtResource("3_5ktg4")
 
-[node name="Tavern_Door" instance=ExtResource("1_ox2q5")]
+[node name="Tavern_Door" groups=["exit"] instance=ExtResource("1_ox2q5")]
 
 [node name="group1_polySurface8" parent="For_UV" index="0"]
 material_override = SubResource("StandardMaterial3D_qq1wt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=4 uid="uid://di0b7f1sssq12"]
+[gd_scene load_steps=161 format=4 uid="uid://di0b7f1sssq12"]
 
 [ext_resource type="Script" uid="uid://bcbws2s3vwwep" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_1d1ob"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_12sve"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dwxvhy22682vs" path="res://textures/Water/water_waves.png" id="16_c8l7t"]
 [ext_resource type="Texture2D" uid="uid://ccgucumpho3ws" path="res://textures/Water/water_foamy_01.jpg" id="17_6xrld"]
 [ext_resource type="VoxelGIData" uid="uid://ckkqb4aey47oh" path="res://src/levels/lv2.VoxelGI_data.res" id="20_3bxdw"]
+[ext_resource type="PackedScene" uid="uid://dgobv856rt6fb" path="res://src/scenes/tavern_door.tscn" id="21_npuh4"]
 [ext_resource type="PackedScene" uid="uid://daw58duiyn3qu" path="res://src/scenes/hookspot_variant.tscn" id="39_t546b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xi5yr"]
@@ -1043,3 +1044,6 @@ mesh = SubResource("PlaneMesh_c8l7t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78322, 196.116, 9.60542)
 size = Vector3(139.884, 437.015, 157.236)
 data = ExtResource("20_3bxdw")
+
+[node name="Tavern_Door" parent="." instance=ExtResource("21_npuh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0991592, 85.3387, -6.3734684)

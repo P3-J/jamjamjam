@@ -2,27 +2,26 @@ extends Control
 
 @onready var lava_meter = $LavaMeter
 @onready var player_indicator = $PlayerPos
-@export var world: Node2D
-var lava
+var exit: Node3D
+var lava: Node3D
 var player
-var min_height = -30
-var max_height = 45
+var min_height = 0
+var min_height_offset = -10
+var max_height = 85
 
 func _ready() -> void:
-	if (!world):
-		return
-		
-	var nodes = world.get_children()
-	for node in nodes:
-		if node.name == 'Lava':
-			lava = node 
-		if node.name == 'controllableCharacters':
-			player = node.get_node('player')
+	lava = get_tree().get_first_node_in_group("lava")
+	exit = get_tree().get_first_node_in_group("exit")
+
+	min_height = lava.global_transform.origin.y + min_height_offset
+	max_height = exit.global_transform.origin.y
 
 func _process(_delta: float) -> void:
 	
-	if (!lava or !player):
+	if (!lava or !player or !exit):
+		print("Missing lava, exit or player for the lava meter to function")
 		return
+
 	var lava_height = lava.global_transform.origin.y - min_height
 	var player_height = player.global_transform.origin.y - min_height
 
