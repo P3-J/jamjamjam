@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c088naefj5my"]
+[gd_scene load_steps=20 format=3 uid="uid://c088naefj5my"]
 
 [ext_resource type="PackedScene" uid="uid://f0xkekdj8xlb" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe.fbx" id="1_ebfh5"]
+[ext_resource type="Script" uid="uid://c8x252382t3k5" path="res://src/scripts/pickaxe.gd" id="2_57ko0"]
 [ext_resource type="Texture2D" uid="uid://bjejefux2s17x" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_BaseColor.png" id="2_tf1kf"]
 [ext_resource type="Texture2D" uid="uid://bjuus33a1hvcw" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Metallic.png" id="4_lq5vf"]
 [ext_resource type="Texture2D" uid="uid://cgrss1cuq5x3p" path="res://src/assets/ui/pickaxe_button_slider_assets/Pickaxe_low_Pickaxe_Normal.png" id="5_5eope"]
@@ -17,9 +18,189 @@ normal_texture = ExtResource("5_5eope")
 [sub_resource type="BoxShape3D" id="BoxShape3D_aebuv"]
 size = Vector3(0.203743, 0.355804, 0.0455933)
 
+[sub_resource type="Animation" id="Animation_qqjiu"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickaxe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.002, 0.03, 0), Vector3(0.002, -0.03, 0), Vector3(0.002, 0.03, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.17453292), Vector3(0, 0, -0.17453292), Vector3(0, 0, 0.17453292)]
+}
+
+[sub_resource type="Animation" id="Animation_57ko0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickaxe:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.17453292)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pickaxe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.002, 0.07, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qmmoj"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickaxe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1.2, 0.8, 1.2, 0.8),
+"update": 0,
+"values": [Vector3(0.0017879009, -0.000987997, 0), Vector3(0.002, 0.05, -0.05), Vector3(0.0017879009, -0.000987997, 0), Vector3(0.002, 0.05, 0.05), Vector3(0.0017879009, -0.000987997, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.17453292)]
+}
+
+[sub_resource type="Animation" id="Animation_c6wbi"]
+resource_name = "jump"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickaxe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1.5, 3, 1.5),
+"update": 0,
+"values": [Vector3(0.0017879009, -0.000987997, 0), Vector3(0.002, 0.1, 0), Vector3(0.0017879009, -0.000987997, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1.5, 3, 1.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.34906584), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jpi8w"]
+resource_name = "boost"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pickaxe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 2, 0.5),
+"update": 0,
+"values": [Vector3(0.0017879009, -0.000987997, 0), Vector3(0.002, 0.08, 0), Vector3(0.002, -0.125, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.2617994), Vector3(0.2268928, 0.16580628, -2.3561945)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmmoj"]
+_data = {
+&"RESET": SubResource("Animation_57ko0"),
+&"boost": SubResource("Animation_jpi8w"),
+&"idle": SubResource("Animation_qqjiu"),
+&"jump": SubResource("Animation_c6wbi"),
+&"run": SubResource("Animation_qmmoj")
+}
+
+[sub_resource type="Curve" id="Curve_57ko0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qmmoj"]
+curve = SubResource("Curve_57ko0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c6wbi"]
+lifetime_randomness = 1.0
+direction = Vector3(1, 1, 1)
+initial_velocity_min = 0.19999999
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_qmmoj")
+color = Color(1, 0.79607844, 0, 1)
+hue_variation_min = -0.20000002
+hue_variation_max = 0.19999997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpi8w"]
+albedo_color = Color(1, 0.6, 0, 1)
+metallic = 0.54
+
+[sub_resource type="SphereMesh" id="SphereMesh_0mdok"]
+material = SubResource("StandardMaterial3D_jpi8w")
+
 [node name="Pickaxe" instance=ExtResource("1_ebfh5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("2_57ko0")
 
 [node name="Pickaxe" parent="." index="0"]
+transform = Transform3D(0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0, 1, 0.002, 0.07, 0)
 material_override = SubResource("StandardMaterial3D_f21gr")
 
 [node name="PickaxeArea" type="Area3D" parent="." index="2"]
@@ -29,3 +210,24 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickaxeArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00230789, -0.00242615, 0.000213623)
 shape = SubResource("BoxShape3D_aebuv")
+
+[node name="PickaxeAnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_qmmoj")
+}
+playback_default_blend_time = 0.2
+blend_times = [&"jump", &"idle", 0.2, &"jump", &"run", 0.2]
+
+[node name="BoostParticles" type="GPUParticles3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15991701, -0.14573276, -0.032957435)
+emitting = false
+amount = 30
+lifetime = 0.6
+one_shot = true
+speed_scale = 1.55
+explosiveness = 1.0
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_c6wbi")
+draw_pass_1 = SubResource("SphereMesh_0mdok")
+
+[connection signal="animation_finished" from="PickaxeAnimationPlayer" to="." method="_on_pickaxe_animation_player_animation_finished"]
