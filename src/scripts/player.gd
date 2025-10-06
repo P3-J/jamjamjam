@@ -63,19 +63,15 @@ func _ready() -> void:
 	pickaxe_reset_pos = pickaxe.position;
 	pickaxe_reset_rotation = pickaxe.rotation;
 	mouse_sensitivity = Globalsettings.mouse_sensitivity
-
+	pickaxe.get_parent().remove_child(pickaxe)
+	head.add_child(pickaxe)
+	reset_pickaxe_position()
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector3()
 	check_for_hook_collision()
 
 	direction = _player_movement(direction)
-
-	if direction != Vector3.ZERO:
-		if !running_audio_stream.playing:
-			running_audio_stream.playing = true
-	else:
-		running_audio_stream.playing = false
 
 	direction = direction.normalized()
 	direction = global_transform.basis * direction
@@ -124,12 +120,19 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jumped = false
 		pickaxe_boosted = false
-
+		if direction != Vector3.ZERO:
+			if !running_audio_stream.playing:
+				running_audio_stream.playing = true
+				_sway_head()
+				pickaxe.play_run_animation()
+		else:
+			running_audio_stream.playing = false
+			pickaxe.play_idle_animation()
 
 func _process(_delta: float) -> void:
 	update_time()
 	rope_checks()
-
+		
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -140,11 +143,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("hook"):
 		holding_hook_button = true
-		rope_mesh.visible = true
 	
 	if Input.is_action_just_pressed("jump") and not jumped:
 		jumped = true
 		velocity.y = jump_speed
+		pickaxe.play_jump_animation()
 
 	if event.is_action_released("hook"):
 		rope_mesh.visible = false
@@ -163,12 +166,15 @@ func _input(event: InputEvent) -> void:
 
 func hooking_process() -> void:
 	if (holding_hook_button and current_hookspot != null):
+		rope_mesh.visible = true
 		send_hook_towards(current_hookspot)
 		if can_move_towards_hook:
 			hook_towards(current_hookspot)
 
 
 func _pickaxe_boost() -> void:
+	pickaxe.play_boost_animation()
+	await get_tree().create_timer(0.2).timeout
 	pickaxe_boosted = true
 	var ray_origin = boostray.global_transform.origin
 	var ray_dir = (boostray.global_transform.basis * boostray.target_position).normalized()
@@ -285,7 +291,7 @@ func _player_movement(direction: Vector3) -> Vector3:
 	return direction
 
 func _sway_head():
-	return
+	# return
 	player_anim.play("head_sway")
 
 
