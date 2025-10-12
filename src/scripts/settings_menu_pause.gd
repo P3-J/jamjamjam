@@ -3,7 +3,7 @@ extends Control
 var main_menu_scene =  ResourceLoader.load("res://src/scenes/main_menu.tscn") as PackedScene
 @onready var mouse_slider = $VBoxContainer/HBoxContainer/HSlider
 @onready var mouse_value = $VBoxContainer/HBoxContainer/MouseValue
-@onready var pause_menu_buttons = $"VBoxContainer"
+@onready var pause_menu_buttons = $"../VBoxContainer"
 @onready var settings = $"."
 
 @onready var audio_slider = $VBoxContainer/HBoxContainer2/audioslider

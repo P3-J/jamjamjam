@@ -1,14 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://br8ugoivcgshj"]
+[gd_scene load_steps=26 format=3 uid="uid://br8ugoivcgshj"]
 
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="1_vee6o"]
 [ext_resource type="Script" uid="uid://c4edoenb2k3e1" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
 [ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/ui/pickaxe_button_slider_assets/Button.png" id="3_805p8"]
 [ext_resource type="Texture2D" uid="uid://ckv1e3hmq4sc6" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_grabber.png" id="4_1fbjp"]
-[ext_resource type="Script" uid="uid://bye0ta7w3ov36" path="res://src/scripts/settingsmenu_main.gd" id="4_c8xin"]
+[ext_resource type="Script" uid="uid://caljefo6khcwo" path="res://src/scripts/settingsmenu_main.gd" id="4_c8xin"]
 [ext_resource type="Texture2D" uid="uid://2a61dh6ptnf8" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_disabled.png" id="5_5sj7r"]
 [ext_resource type="Texture2D" uid="uid://dg0bwa1ayfexn" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_highlight.png" id="6_qboab"]
 [ext_resource type="Texture2D" uid="uid://xw4psdh3ouhj" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_tick.png" id="7_6208y"]
+[ext_resource type="Theme" uid="uid://dur0kdrxfeoev" path="res://src/assets/ui/theme.tres" id="8_6wcb6"]
 [ext_resource type="PackedScene" uid="uid://cbvgm61qw2giq" path="res://src/scenes/levelselector.tscn" id="8_ubq7q"]
 [ext_resource type="AudioStream" uid="uid://b8w7o1biiuvv2" path="res://src/assets/sounds/chillin_at_the_cave.mp3" id="18_ofngt"]
 
@@ -188,7 +189,7 @@ theme_override_font_sizes/font_size = 100
 text = "   warf Escape"
 
 [node name="Label" type="Label" parent="MainMenu"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 72.0
 offset_top = 48.0
 offset_right = 720.0
@@ -200,13 +201,13 @@ text = "d"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 84.0
-offset_top = -92.0
-offset_right = 356.0
-offset_bottom = 248.0
+offset_top = 628.0
+offset_right = -2204.0
+offset_bottom = -472.0
 grow_vertical = 2
 theme = SubResource("Theme_ri8ns")
 theme_override_constants/separation = 20
@@ -221,13 +222,13 @@ text = "Play"
 [node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_vee6o")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("8_6wcb6")
 text = "Settings"
 
 [node name="Quit" type="Button" parent="MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme = ExtResource("8_6wcb6")
 theme_override_fonts/font = ExtResource("1_vee6o")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
@@ -345,22 +346,34 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="start"]
-modulate = Color(1, 1, 1, 0)
-offset_right = 1160.0
-offset_bottom = 656.0
+modulate = Color(1, 1, 1, 0.9030624)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="start/ColorRect"]
-layout_mode = 0
-offset_left = 232.0
-offset_top = 232.0
-offset_right = 933.0
-offset_bottom = 432.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 9.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_asv1t")
 theme_override_font_sizes/font_size = 120
 text = "Team Mõmmid"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_ofngt")
