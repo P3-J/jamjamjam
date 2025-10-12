@@ -17,16 +17,22 @@
 @SolidClass color(204 204 204) base(Phong) = func_detail_illusionary : "Static geometry with no collision. Builds a Node3D with a MeshInstance3D. Does not occlude other VisualInstance3D nodes." []
 
 @SolidClass color(204 204 204) base(Phong) = func_illusionary : "Static geometry with no collision. Builds a Node3D with a MeshInstance3D and an Occluder3D to aid in render culling of other VisualInstance3D nodes." []
-@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = hookspot : "hookspot" []
 
+@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) = boostspot : "boostspot" []
+
+@PointClass color(204 204 204) model("models/hookspot2.glb") size(0.0 0.0 0.0, 0.0 0.0 0.0) = hookspot2 : "tester" []
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = startingzone : "startingzone" []
 
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = Winzone : "Winzone" []
 
 @PointClass color(204 204 204) model("models/hookspot2.glb") size(0.0 0.0 0.0, 0.0 0.0 0.0) = hookspot2 : "tester" []
 
-@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = light_white : "light_white" []
+@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) = light_white : "light_white" []
 
-@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = boostspot : "boostspot" []
+@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) = boostspot : "boostspot" []
 
-@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) studio("models/hookspotBoosted.glb") = hookspotBoosted : "hookspotBoosted" []
+@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) studio("models/hookspotBoosted.glb") = hookspotBoosted : "hookspotBoosted" []
+
+@PointClass color(204 204 204) model("models/mapmesh.glb") size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = mapmesh : "mapmesh" []
+
+@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) studio("models/realspothook.glb") = realspothook : "realspothook" []

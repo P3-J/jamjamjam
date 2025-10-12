@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=16 format=3 uid="uid://w5232gprfkyt"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=17 format=3 uid="uid://w5232gprfkyt"]
 
 [ext_resource type="Script" uid="uid://d0w6sdhi0vr3y" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_6bfck"]
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_nqogt"]
-[ext_resource type="Resource" uid="uid://bqwr6gw42jgdw" path="res://fgd/hookspot2.tres" id="2_0c5qo"]
 [ext_resource type="Resource" uid="uid://cthu2j43bm0s8" path="res://fgd/startingzone.tres" id="3_vwej8"]
 [ext_resource type="Resource" uid="uid://b2kdxgrd7e37p" path="res://fgd/winningzone.tres" id="4_4u84p"]
 [ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/assets/object_scene_catalogue/hookspot.tscn" id="5_7vu2w"]
@@ -11,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b0tqbsaldubcf" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="8_o7nl0"]
 [ext_resource type="PackedScene" uid="uid://d2fflt0dmlqmk" path="res://src/scenes/boostspot.tscn" id="9_o7nl0"]
 [ext_resource type="PackedScene" uid="uid://daw58duiyn3qu" path="res://src/scenes/hookspot_variant.tscn" id="10_qnxrc"]
+[ext_resource type="Resource" uid="uid://d1d4k3xtpgdwr" path="res://fgd/mapmesh.tres" id="11_chhai"]
 
 [sub_resource type="Resource" id="Resource_iywn8"]
 script = ExtResource("6_d21nd")
@@ -24,6 +24,7 @@ meta_properties = {
 "model": "\"models/hookspot2.glb\"",
 "size": AABB(0, 0, 0, 0, 0, 0)
 }
+node_class = "Area3D"
 metadata/_custom_type_script = "uid://blvdvv75tyajv"
 
 [sub_resource type="Resource" id="Resource_qnxrc"]
@@ -50,8 +51,21 @@ meta_properties = {
 }
 metadata/_custom_type_script = "uid://blvdvv75tyajv"
 
+[sub_resource type="Resource" id="Resource_vu18i"]
+script = ExtResource("6_d21nd")
+models_sub_folder = "models"
+scene_file = ExtResource("5_7vu2w")
+classname = "realspothook"
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8),
+"studio": "\"models/realspothook.glb\""
+}
+node_class = "Area3D"
+metadata/_custom_type_script = "uid://blvdvv75tyajv"
+
 [resource]
 script = ExtResource("1_6bfck")
 base_fgd_files = Array[Resource]([ExtResource("1_nqogt")])
-entity_definitions = Array[Resource]([ExtResource("2_0c5qo"), ExtResource("3_vwej8"), ExtResource("4_4u84p"), SubResource("Resource_iywn8"), SubResource("Resource_qnxrc"), SubResource("Resource_o7nl0"), SubResource("Resource_chhai")])
+entity_definitions = Array[Resource]([ExtResource("3_vwej8"), ExtResource("4_4u84p"), SubResource("Resource_iywn8"), SubResource("Resource_qnxrc"), SubResource("Resource_o7nl0"), SubResource("Resource_chhai"), ExtResource("11_chhai"), SubResource("Resource_vu18i")])
 metadata/_custom_type_script = "uid://d0w6sdhi0vr3y"

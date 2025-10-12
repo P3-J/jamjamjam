@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dkm5vcbrxh5ud"]
-
-[ext_resource type="Texture2D" uid="uid://bnb0yv1os461a" path="res://textures/Walls/Materials/siding_metal_red_01.jpg" id="1_x8mkw"]
-
-[resource]
-shading_mode = 2
-albedo_texture = ExtResource("1_x8mkw")
-metallic_specular = 0.0
-texture_filter = 2

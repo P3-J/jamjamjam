@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bwlhk7eyubo68"]
-
-[ext_resource type="Texture2D" uid="uid://dumji4v0tqgdq" path="res://textures/Floor/Materials/carpet_darkgray_02.jpg" id="1_inkmf"]
-
-[resource]
-shading_mode = 2
-albedo_texture = ExtResource("1_inkmf")
-metallic_specular = 0.0
-texture_filter = 2
