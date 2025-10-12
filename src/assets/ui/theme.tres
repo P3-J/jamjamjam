@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dur0kdrxfeoev"]
+
+[ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/ui/pickaxe_button_slider_assets/Button.png" id="1_smn8j"]
+[ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_d6ttd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2aivh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3dh3t"]
+texture = ExtResource("1_smn8j")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(1, 0.786415, 0.615043, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x31ag"]
+texture = ExtResource("1_smn8j")
+modulate_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8qip"]
+texture = ExtResource("1_smn8j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_io5f3"]
+texture = ExtResource("1_smn8j")
+modulate_color = Color(0.650128, 0.650128, 0.650128, 1)
+
+[resource]
+default_font = ExtResource("2_d6ttd")
+default_font_size = 50
+Button/styles/disabled = SubResource("StyleBoxFlat_2aivh")
+Button/styles/focus = SubResource("StyleBoxTexture_3dh3t")
+Button/styles/hover = SubResource("StyleBoxTexture_x31ag")
+Button/styles/normal = SubResource("StyleBoxTexture_s8qip")
+Button/styles/pressed = SubResource("StyleBoxTexture_io5f3")
