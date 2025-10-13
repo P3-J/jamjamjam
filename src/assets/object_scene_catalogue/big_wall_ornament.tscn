@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7ockki2sj44x"]
+
+[ext_resource type="PackedScene" uid="uid://kln8ikvx1yd6" path="res://src/assets/objects/BigWallOrnament/BigWallOrnament.fbx" id="1_avkuq"]
+
+[node name="BigWallOrnament" instance=ExtResource("1_avkuq")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
