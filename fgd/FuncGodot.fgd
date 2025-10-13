@@ -21,6 +21,8 @@
 @PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) = boostspot : "boostspot" []
 
 @PointClass color(204 204 204) model("models/hookspot2.glb") size(0.0 0.0 0.0, 0.0 0.0 0.0) = hookspot2 : "tester" []
+
+@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = startingzone : "startingzone" []
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = startingzone : "startingzone" []
 
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = Winzone : "Winzone" []
@@ -35,4 +37,4 @@
 
 @PointClass color(204 204 204) model("models/mapmesh.glb") size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = mapmesh : "mapmesh" []
 
-@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) studio("models/realspothook.glb") = realspothook : "realspothook" []
+@PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) studio("models/realspothook.glb") = realspothook : "realspothook" []

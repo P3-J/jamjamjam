@@ -12,5 +12,5 @@ func start_game():
 func _on_body_entered(body: Node3D) -> void:
 	if (body.name != "player"):
 		return
-	crystal.queue_free()
+	#crystal.queue_free()
 	start_game()
