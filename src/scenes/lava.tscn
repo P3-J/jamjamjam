@@ -12,13 +12,11 @@ shader_parameter/speed = 0.335
 shader_parameter/scale = 100.0
 shader_parameter/sharpness = 2.898
 shader_parameter/emission_intensity = 0.1
-shader_parameter/pixel_size = 5.0
+shader_parameter/pixel_size = 5.00000019
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_652k1"]
 material = SubResource("ShaderMaterial_sdre5")
-size = Vector2(1000, 1000)
-subdivide_width = 10
-subdivide_depth = 10
+size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2oyh"]
 size = Vector3(500, 1, 500)
