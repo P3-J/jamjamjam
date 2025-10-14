@@ -14,12 +14,18 @@ grow_vertical = 2
 script = ExtResource("2_27s2d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.37254903)
 layout_direction = 1
-layout_mode = 0
-offset_left = 2.0
-offset_top = 142.0
-offset_right = 1846.0
-offset_bottom = 978.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 456.0
+offset_right = 1698.9995
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.6, 0.5)
 texture = ExtResource("2_xosxj")
 
