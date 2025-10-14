@@ -13,6 +13,9 @@ func _ready() -> void:
 	lava = get_tree().get_first_node_in_group("lava")
 	exit = get_tree().get_first_node_in_group("exit")
 
+	assert(lava, "there is no node in group 'lava' in this level")
+	assert(exit, "there is no node in group 'exit' in this level")
+
 	min_height = lava.global_transform.origin.y + min_height_offset
 	max_height = exit.global_transform.origin.y
 
