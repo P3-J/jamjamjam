@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhkyvfd474ydp"]
+
+[ext_resource type="PackedScene" uid="uid://beh16q8vfcmpj" path="res://src/assets/objects/Banner/Banner.fbx" id="1_b5xtf"]
+
+[node name="Banner" instance=ExtResource("1_b5xtf")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)

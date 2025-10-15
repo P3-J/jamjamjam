@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwadnqid2us03"]
+
+[ext_resource type="PackedScene" uid="uid://d0ifpnf7qo5y3" path="res://src/assets/objects/GroundOrnament/GroundOrnament.fbx" id="1_krnb2"]
+
+[node name="GroundOrnament" instance=ExtResource("1_krnb2")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://df2gm67qnw8o2"]
+
+[ext_resource type="PackedScene" uid="uid://dgetr4yeekhgc" path="res://src/assets/objects/GiantBridgePiece/GiantBridgePiece.fbx" id="1_pgcdx"]
+
+[node name="GiantBridgePiece" instance=ExtResource("1_pgcdx")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
