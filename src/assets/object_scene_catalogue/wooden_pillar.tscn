@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfy30eogbpqfa"]
+[gd_scene load_steps=3 format=3 uid="uid://cfy30eogbpqfa"]
 
 [ext_resource type="PackedScene" uid="uid://dyurcmng7s4fw" path="res://src/assets/objects/wooden_pillar/WoodenPillar.fbx" id="1_0ydo2"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ydo2"]
+size = Vector3(0.01, 0.050290525, 0.008725585)
+
 [node name="WoodenPillar" instance=ExtResource("1_0ydo2")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.023560792, -3.173859e-05)
+shape = SubResource("BoxShape3D_0ydo2")

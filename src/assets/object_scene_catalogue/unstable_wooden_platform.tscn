@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://beh50ltnr00up"]
+[gd_scene load_steps=3 format=3 uid="uid://beh50ltnr00up"]
 
 [ext_resource type="PackedScene" uid="uid://bnrd6hxou42gy" path="res://src/assets/objects/unstable_wooden_platform/UnstableWoodenPlatform.fbx" id="1_ga2vp"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ga2vp"]
+size = Vector3(0.05450195, 0.0027441406, 0.040097654)
+
 [node name="UnstableWoodenPlatform" instance=ExtResource("1_ga2vp")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013720724, 0.0008837891, 0.00149414)
+shape = SubResource("BoxShape3D_ga2vp")

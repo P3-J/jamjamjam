@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://blldrkxun5642"]
+[gd_scene load_steps=3 format=3 uid="uid://blldrkxun5642"]
 
 [ext_resource type="PackedScene" uid="uid://bejaasjr5f7st" path="res://src/assets/objects/stalactites/v2/Stalactite2V.fbx" id="1_prgic"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_prgic"]
+size = Vector3(0.00842041, 0.067685544, 0.008481445)
+
 [node name="Stalactite2V" instance=ExtResource("1_prgic")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018188445, -0.03402832, 0.0003344724)
+shape = SubResource("BoxShape3D_prgic")

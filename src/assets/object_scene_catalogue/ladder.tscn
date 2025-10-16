@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhs67ys81v5aj"]
+[gd_scene load_steps=3 format=3 uid="uid://dhs67ys81v5aj"]
 
 [ext_resource type="PackedScene" uid="uid://be3lbnf5dg2hx" path="res://src/assets/objects/ladder/Ladder.fbx" id="1_bjoxn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjoxn"]
+size = Vector3(1.2946777, 5.837158, 0.22802734)
 
 [node name="Ladder" instance=ExtResource("1_bjoxn")]
 
 [node name="Ladder" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032958984, 0.006713867, 0.013427734)
+shape = SubResource("BoxShape3D_bjoxn")

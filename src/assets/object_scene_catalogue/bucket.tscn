@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://pwr4nbe56bbq"]
+[gd_scene load_steps=3 format=3 uid="uid://pwr4nbe56bbq"]
 
 [ext_resource type="PackedScene" uid="uid://civly5hop8qn4" path="res://src/assets/objects/bucket/Bucket.fbx" id="1_sveyt"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sveyt"]
+height = 0.005378723
+radius = 0.0029296875
+
 [node name="Bucket" instance=ExtResource("1_sveyt")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0026359558, 0)
+shape = SubResource("CylinderShape3D_sveyt")

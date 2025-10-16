@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://blgc67a6bx76w"]
+[gd_scene load_steps=4 format=3 uid="uid://blgc67a6bx76w"]
 
 [ext_resource type="PackedScene" uid="uid://bb33boi4t6vsn" path="res://src/assets/objects/wooden_passage_big/WoodenPassageBig.fbx" id="1_2lce6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2lce6"]
+size = Vector3(0.008146972, 0.05565918, 0.012631835)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uehra"]
+size = Vector3(0.06453674, 0.012022705, 0.0102380365)
+
 [node name="WoodenPassageBig" instance=ExtResource("1_2lce6")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027009275, 0.02282959, -3.1738535e-05)
+shape = SubResource("BoxShape3D_2lce6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.9994536, 0.033050515, 0, -0.033050515, 0.9994536, 0, 0, 0, 1, -0.028474959, 0.022851257, -3.1738535e-05)
+shape = SubResource("BoxShape3D_2lce6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, -0.00044679112, 0.04466949, -0.00028381404)
+shape = SubResource("BoxShape3D_uehra")

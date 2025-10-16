@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://wccl2vr3oknw"]
+[gd_scene load_steps=3 format=3 uid="uid://wccl2vr3oknw"]
 
 [ext_resource type="PackedScene" uid="uid://b58wew0xamm81" path="res://src/assets/objects/wooden_plank/WoodenPlank.fbx" id="1_oty5q"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oty5q"]
+size = Vector3(0.007871093, 0.0012792968, 0.043669432)
+
 [node name="WoodenPlank" instance=ExtResource("1_oty5q")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9296622e-05, 0.00015136732, 7.4462645e-05)
+shape = SubResource("BoxShape3D_oty5q")
