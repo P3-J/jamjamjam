@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fgat2mowdsy"]
+
+[ext_resource type="PackedScene" uid="uid://cbl1go4ss1ipw" path="res://src/assets/objects/AchitectureFencePillar/AchitectureFencePillar.fbx" id="1_6lic4"]
+
+[node name="AchitectureFencePillar" instance=ExtResource("1_6lic4")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

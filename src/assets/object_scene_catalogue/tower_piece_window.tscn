@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgibhgvxxppum"]
+
+[ext_resource type="PackedScene" uid="uid://dp03m5ki4on24" path="res://src/assets/objects/TowerPieceWindow/TowerPieceWindow.fbx" id="1_osb5o"]
+
+[node name="TowerPieceWindow" instance=ExtResource("1_osb5o")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

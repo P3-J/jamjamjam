@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djhp683wygffw"]
+
+[ext_resource type="PackedScene" uid="uid://cl13y7c776y2l" path="res://src/assets/objects/SmallPassage/SmallPassage.fbx" id="1_fejat"]
+
+[node name="SmallPassage" instance=ExtResource("1_fejat")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

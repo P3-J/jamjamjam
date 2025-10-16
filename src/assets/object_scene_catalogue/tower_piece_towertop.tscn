@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv2med0237jsx"]
+
+[ext_resource type="PackedScene" uid="uid://bkrge4nlep7eb" path="res://src/assets/objects/TowerPieceTowertop/TowerPieceTowertop.fbx" id="1_4ditx"]
+
+[node name="TowerPieceTowertop" instance=ExtResource("1_4ditx")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clbhpekmie8hv"]
+
+[ext_resource type="PackedScene" uid="uid://2f4v431rn2mh" path="res://src/assets/objects/architecture_fence_middle_part/AchitectureFenceMiddlePart.fbx" id="1_tjulc"]
+
+[node name="AchitectureFenceMiddlePart" instance=ExtResource("1_tjulc")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0.5780241, 0)

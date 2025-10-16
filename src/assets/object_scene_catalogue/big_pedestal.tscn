@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://q3bgwym60omg"]
+
+[ext_resource type="PackedScene" uid="uid://sr14j7it81mu" path="res://src/assets/objects/BigPedestal/BigPedestal.fbx" id="1_v2efx"]
+
+[node name="BigPedestal" instance=ExtResource("1_v2efx")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
