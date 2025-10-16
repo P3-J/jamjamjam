@@ -27,9 +27,6 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=2560
-window/size/viewport_height=1440
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -38,7 +35,7 @@ project/assembly_name="jamjamjam"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
+enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/silent_wolf/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [filesystem]
 

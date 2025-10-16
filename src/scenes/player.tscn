@@ -154,7 +154,7 @@ debug_shape_custom_color = Color(1, 0, 0, 1)
 transform = Transform3D(0.37277418, 0, 1.9649528, 0, 2, 0, -1.9649528, 0, 0.37277418, 0.407037, -0.391195, -0.559779)
 
 [node name="boostray" type="RayCast3D" parent="head"]
-transform = Transform3D(1, 0, 0, 0, -9.07011e-08, -1, 0, 2.075, -4.37114e-08, 0, 0, -0.990139)
+transform = Transform3D(1, 0, 0, 0, 0.7327488, -0.9355735, 0, 1.941315, 0.35313195, 0, 0, -0.5558119)
 
 [node name="utils" type="Node" parent="."]
 

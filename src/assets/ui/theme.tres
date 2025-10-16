@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dur0kdrxfeoev"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ys24hk4rb1xo"]
 
 [ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/ui/pickaxe_button_slider_assets/Button.png" id="1_smn8j"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="2_d6ttd"]

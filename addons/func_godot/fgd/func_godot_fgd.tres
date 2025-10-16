@@ -1,17 +1,40 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=8 format=3 uid="uid://crgpdahjaj"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=16 format=3 uid="uid://crgpdahjaj"]
 
 [ext_resource type="Script" uid="uid://d0w6sdhi0vr3y" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_axt3h"]
 [ext_resource type="Resource" uid="uid://nayxb8n7see2" path="res://addons/func_godot/fgd/phong_base.tres" id="1_ehab8"]
 [ext_resource type="Resource" uid="uid://bdji3873bg32h" path="res://addons/func_godot/fgd/worldspawn.tres" id="2_ri2rx"]
 [ext_resource type="Resource" uid="uid://b70vf4t5dc70t" path="res://addons/func_godot/fgd/func_geo.tres" id="3_7jigp"]
+[ext_resource type="PackedScene" uid="uid://b2exdliucx2qg" path="res://src/assets/object_scene_catalogue/hookspot.tscn" id="3_7vn57"]
 [ext_resource type="Resource" uid="uid://cxy7jnh6d7msn" path="res://addons/func_godot/fgd/func_detail.tres" id="3_fqfww"]
+[ext_resource type="Script" uid="uid://blvdvv75tyajv" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="4_8sdf2"]
 [ext_resource type="Resource" uid="uid://dg5x44cc7flew" path="res://addons/func_godot/fgd/func_illusionary.tres" id="4_c4ucw"]
 [ext_resource type="Resource" uid="uid://ch3e0dix85uhb" path="res://addons/func_godot/fgd/func_detail_illusionary.tres" id="5_b2q3p"]
+[ext_resource type="Script" uid="uid://b0tqbsaldubcf" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="6_5i82v"]
+[ext_resource type="PackedScene" uid="uid://d2fflt0dmlqmk" path="res://src/scenes/boostspot.tscn" id="7_2evh0"]
+[ext_resource type="Resource" uid="uid://cthu2j43bm0s8" path="res://fgd/startingzone.tres" id="11_7vn57"]
+[ext_resource type="Resource" uid="uid://weuvkeyd577s" path="res://fgd/hook_var2.tres" id="12_8sdf2"]
+
+[sub_resource type="Resource" id="Resource_a2pra"]
+script = ExtResource("6_5i82v")
+scene_file = ExtResource("7_2evh0")
+classname = "boostspot"
+metadata/_custom_type_script = "uid://b0tqbsaldubcf"
+
+[sub_resource type="Resource" id="Resource_7vn57"]
+script = ExtResource("4_8sdf2")
+target_map_editor = 1
+models_sub_folder = "models"
+scene_file = ExtResource("3_7vn57")
+classname = "hookspot2"
+description = "tester"
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "\"models/hookspot2.glb\"",
+"size": AABB(0, 0, 0, 0, 0, 0)
+}
+node_class = "Area3D"
+metadata/_custom_type_script = "uid://blvdvv75tyajv"
 
 [resource]
 script = ExtResource("1_axt3h")
-export_file = false
-target_map_editor = 1
-fgd_name = "FuncGodot"
-base_fgd_files = Array[Resource]([])
-entity_definitions = Array[Resource]([ExtResource("1_ehab8"), ExtResource("2_ri2rx"), ExtResource("3_7jigp"), ExtResource("3_fqfww"), ExtResource("5_b2q3p"), ExtResource("4_c4ucw")])
+entity_definitions = Array[Resource]([ExtResource("1_ehab8"), ExtResource("2_ri2rx"), ExtResource("3_7jigp"), ExtResource("3_fqfww"), ExtResource("5_b2q3p"), ExtResource("4_c4ucw"), SubResource("Resource_a2pra"), SubResource("Resource_7vn57"), ExtResource("11_7vn57"), ExtResource("12_8sdf2")])
