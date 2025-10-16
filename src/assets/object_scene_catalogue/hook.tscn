@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://vtnij47baem1"]
+[gd_scene load_steps=3 format=3 uid="uid://vtnij47baem1"]
 
 [ext_resource type="PackedScene" uid="uid://bannju0iyx47s" path="res://src/assets/objects/hook/Hook.fbx" id="1_p7vqr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7vqr"]
+albedo_color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+metallic = 0.45
 
 [node name="Hook" instance=ExtResource("1_p7vqr")]
 
 [node name="Hook" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pTorus10" parent="Hook" index="0"]
+material_override = SubResource("StandardMaterial3D_p7vqr")
+
+[node name="pCube146" parent="Hook" index="1"]
+material_override = SubResource("StandardMaterial3D_p7vqr")
+
+[node name="pCube147" parent="Hook" index="2"]
+material_override = SubResource("StandardMaterial3D_p7vqr")

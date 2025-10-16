@@ -38,3 +38,5 @@
 @PointClass color(204 204 204) model("models/mapmesh.glb") size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) = mapmesh : "mapmesh" []
 
 @PointClass color(204 204 204) size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) studio("models/realspothook.glb") = realspothook : "realspothook" []
+
+@PointClass size(-8.0 -8.0 -8.0, 8.0 8.0 8.0) color(204 204 204) studio("models/hookspot_var2.glb") = hookspot_var2 : "hookspot_var2" []

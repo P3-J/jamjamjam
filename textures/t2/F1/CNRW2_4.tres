@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d0y3hsyqcbsok"]
+
+[ext_resource type="Texture2D" uid="uid://dt2ca2snnifuf" path="res://textures/t2/F1/CNRW2_4.png" id="1_ukdku"]
+
+[resource]
+albedo_color = Color(1, 1, 0.13725491, 1)
+albedo_texture = ExtResource("1_ukdku")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission_energy_multiplier = 0.52
+emission_texture = ExtResource("1_ukdku")

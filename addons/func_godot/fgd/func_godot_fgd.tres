@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=15 format=3 uid="uid://crgpdahjaj"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=16 format=3 uid="uid://crgpdahjaj"]
 
 [ext_resource type="Script" uid="uid://d0w6sdhi0vr3y" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_axt3h"]
 [ext_resource type="Resource" uid="uid://nayxb8n7see2" path="res://addons/func_godot/fgd/phong_base.tres" id="1_ehab8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b0tqbsaldubcf" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="6_5i82v"]
 [ext_resource type="PackedScene" uid="uid://d2fflt0dmlqmk" path="res://src/scenes/boostspot.tscn" id="7_2evh0"]
 [ext_resource type="Resource" uid="uid://cthu2j43bm0s8" path="res://fgd/startingzone.tres" id="11_7vn57"]
+[ext_resource type="Resource" uid="uid://weuvkeyd577s" path="res://fgd/hook_var2.tres" id="12_8sdf2"]
 
 [sub_resource type="Resource" id="Resource_a2pra"]
 script = ExtResource("6_5i82v")
@@ -36,4 +37,4 @@ metadata/_custom_type_script = "uid://blvdvv75tyajv"
 
 [resource]
 script = ExtResource("1_axt3h")
-entity_definitions = Array[Resource]([ExtResource("1_ehab8"), ExtResource("2_ri2rx"), ExtResource("3_7jigp"), ExtResource("3_fqfww"), ExtResource("5_b2q3p"), ExtResource("4_c4ucw"), SubResource("Resource_a2pra"), SubResource("Resource_7vn57"), ExtResource("11_7vn57")])
+entity_definitions = Array[Resource]([ExtResource("1_ehab8"), ExtResource("2_ri2rx"), ExtResource("3_7jigp"), ExtResource("3_fqfww"), ExtResource("5_b2q3p"), ExtResource("4_c4ucw"), SubResource("Resource_a2pra"), SubResource("Resource_7vn57"), ExtResource("11_7vn57"), ExtResource("12_8sdf2")])
