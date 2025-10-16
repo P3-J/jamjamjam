@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds736jf3fbywk"]
+[gd_scene load_steps=3 format=3 uid="uid://ds736jf3fbywk"]
 
 [ext_resource type="PackedScene" uid="uid://c2p71723a74is" path="res://src/assets/objects/chain/Chain.fbx" id="1_hqa31"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hqa31"]
+height = 0.44873047
+radius = 0.057617188
 
 [node name="Chain" instance=ExtResource("1_hqa31")]
 
 [node name="Chain" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9030762, 0)
+shape = SubResource("CylinderShape3D_hqa31")

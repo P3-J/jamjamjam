@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccyobeqin2nea"]
+[gd_scene load_steps=3 format=3 uid="uid://ccyobeqin2nea"]
 
 [ext_resource type="PackedScene" uid="uid://b6g2fxi40rgnu" path="res://src/assets/objects/cart/Cart.fbx" id="1_x07oj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x07oj"]
+size = Vector3(2.5078735, 1.5820313, 1.4268799)
 
 [node name="Cart" instance=ExtResource("1_x07oj")]
 
 [node name="Cart" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0057678223, 0.78515625, -0.011657715)
+shape = SubResource("BoxShape3D_x07oj")

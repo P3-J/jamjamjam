@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckqhnqud0ppq8"]
+[gd_scene load_steps=3 format=3 uid="uid://ckqhnqud0ppq8"]
 
 [ext_resource type="PackedScene" uid="uid://h3gfi3a8it55" path="res://src/assets/objects/wooden_platform_central_rope/WoodenPlatformCentralRope.fbx" id="1_ymrcs"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ymrcs"]
+size = Vector3(0.039182127, 0.0022558593, 0.040952146)
+
 [node name="WoodenPlatformCentralRope" instance=ExtResource("1_ymrcs")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.225683e-05, -0.00063964847, -3.173881e-05)
+shape = SubResource("BoxShape3D_ymrcs")

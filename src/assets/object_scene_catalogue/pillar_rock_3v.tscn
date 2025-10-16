@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://smb20ivxtses"]
+[gd_scene load_steps=3 format=3 uid="uid://smb20ivxtses"]
 
 [ext_resource type="PackedScene" uid="uid://cnd2j6grkxgrw" path="res://src/assets/objects/pillar_rocks/v3/PillarRock3V.fbx" id="1_tj1x3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tj1x3"]
+height = 1.6623535
+radius = 0.35107422
 
 [node name="PillarRock3V" instance=ExtResource("1_tj1x3")]
 
 [node name="PillarRock3V" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 1.0524354, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8138428, 0)
+shape = SubResource("CylinderShape3D_tj1x3")
