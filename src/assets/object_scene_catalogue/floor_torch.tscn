@@ -25,7 +25,7 @@ light_color = Color(1, 0.688116, 0.108807, 1)
 light_energy = 3.542
 light_indirect_energy = 1.797
 light_volumetric_fog_energy = 1.798
-omni_range = 3.219
+omni_range = 2.514683
 omni_attenuation = 2.184
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
