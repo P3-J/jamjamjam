@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var onoff_timer = $onoff
-@onready var particles = $particles
+@onready var particles = $GPUParticles3D
 
 var player_body: Node3D;
 var working = false;

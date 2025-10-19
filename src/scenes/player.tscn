@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=21 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/ui/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
@@ -6,10 +6,31 @@
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/ui/pickaxe_button_slider_assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
+[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/scenes/speed_lines.gdshader" id="6_8v6aa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0qy4j"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8v6aa"]
+noise_type = 3
+frequency = 0.9
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4pcbe"]
+noise = SubResource("FastNoiseLite_8v6aa")
+seamless = true
+in_3d_space = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8v6aa"]
+shader = ExtResource("6_8v6aa")
+shader_parameter/noise = SubResource("NoiseTexture2D_4pcbe")
+shader_parameter/line_color = Color(0.8047426, 0.80474263, 0.8047425, 1)
+shader_parameter/line_count = 0.70000001043084
+shader_parameter/line_density = 0.50000002375
+shader_parameter/line_faloff = 0.70000003325
+shader_parameter/mask_size = 0.0
+shader_parameter/mask_edge = 0.450000021375
+shader_parameter/animation_speed = 11.000000475
 
 [sub_resource type="Animation" id="Animation_vun55"]
 length = 0.001
@@ -143,6 +164,24 @@ light_energy = 3.692
 spot_range = 37.867
 spot_angle = 56.21
 
+[node name="Control" type="Control" parent="head/Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpeedLinesShader" type="ColorRect" parent="head/Camera3D/Control"]
+visible = false
+material = SubResource("ShaderMaterial_8v6aa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
 target_position = Vector3(0, 0, -25)
@@ -172,7 +211,8 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_c70xo")
 }
-playback_default_blend_time = 0.2
+playback_default_blend_time = 1.0
+blend_times = [&"head_sway", &"RESET", 1.0, &"head_sway", &"head_sway", 1.0]
 
 [node name="rope" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27414, 0)

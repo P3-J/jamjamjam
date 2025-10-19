@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddk73t8n4ysd6"]
+[gd_scene load_steps=10 format=3 uid="uid://ddk73t8n4ysd6"]
 
 [ext_resource type="Script" uid="uid://bnb42goqcvb3y" path="res://src/scripts/lava.gd" id="1_u7ucl"]
 [ext_resource type="Shader" uid="uid://77d7ml8amjt1" path="res://src/shaders/water.gdshader" id="3_8q6l0"]
+[ext_resource type="QuadMesh" uid="uid://cfbdof6t2j1g1" path="res://src/textures/lava_particles_material.tres" id="3_sdre5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdre5"]
 render_priority = 0
@@ -21,6 +22,36 @@ size = Vector2(10, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2oyh"]
 size = Vector3(500, 1, 500)
 
+[sub_resource type="Curve" id="Curve_lrb6e"]
+_data = [Vector2(0, 0.3146068), 0.0, 0.0, 0, 0, Vector2(0.49382722, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_x0kyh"]
+curve = SubResource("Curve_lrb6e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iwrnh"]
+emission_shape_scale = Vector3(5, 0, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -9.9999895
+angle_max = 10.0000105
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 0.02
+initial_velocity_max = 0.19999999
+gravity = Vector3(0, 1, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+scale_curve = SubResource("CurveTexture_x0kyh")
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 5.0
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
+turbulence_noise_speed = Vector3(0, 20, 0)
+turbulence_influence_min = 0.030000001
+
 [node name="Lava" type="Area3D" groups=["lava"]]
 collision_mask = 3
 script = ExtResource("1_u7ucl")
@@ -33,5 +64,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_k2oyh")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="ParticleEffects" type="Node3D" parent="."]
+
+[node name="LavaPE" type="GPUParticles3D" parent="ParticleEffects"]
+amount = 3000
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_iwrnh")
+draw_pass_1 = ExtResource("3_sdre5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
