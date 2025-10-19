@@ -1,0 +1,22 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://chiwt1b2w84yj"]
+
+[sub_resource type="Curve" id="Curve_0wran"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25102884, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_54g7f"]
+curve = SubResource("Curve_0wran")
+
+[resource]
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 7.0
+linear_accel_max = 7.0
+radial_accel_min = 0.999998
+radial_accel_max = 2.0
+scale_min = 0.02
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_54g7f")
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
