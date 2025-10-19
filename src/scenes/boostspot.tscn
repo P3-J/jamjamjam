@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2fflt0dmlqmk"]
 
 [ext_resource type="Script" uid="uid://dm4tk202tw7ex" path="res://src/scripts/boostspot.gd" id="1_wftyx"]
-[ext_resource type="Material" uid="uid://dyp16uocp5por" path="res://src/scenes/geyser_particles_material.tres" id="2_ga4yo"]
+[ext_resource type="Material" uid="uid://dyp16uocp5por" path="res://src/materials/geyser_particles_material.tres" id="2_ga4yo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_lkie2"]
 height = 3.63086

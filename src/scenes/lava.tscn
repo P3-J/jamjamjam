@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnb42goqcvb3y" path="res://src/scripts/lava.gd" id="1_u7ucl"]
 [ext_resource type="Shader" uid="uid://77d7ml8amjt1" path="res://src/shaders/water.gdshader" id="3_8q6l0"]
-[ext_resource type="QuadMesh" uid="uid://cfbdof6t2j1g1" path="res://src/textures/lava_particles_material.tres" id="3_sdre5"]
+[ext_resource type="QuadMesh" uid="uid://cfbdof6t2j1g1" path="res://src/materials/lava_particles_material.tres" id="3_sdre5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdre5"]
 render_priority = 0

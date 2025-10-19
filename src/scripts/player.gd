@@ -129,7 +129,6 @@ func _physics_process(delta: float) -> void:
 			running_audio_stream.playing = false
 			pickaxe.play_idle_animation()
 
-	print(velocity.length())
 	# if speed high show speed lines
 	if velocity.length() > 17:
 		speed_lines_shader.visible = true

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/ui/pickaxe_button_slider_assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
-[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/scenes/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 

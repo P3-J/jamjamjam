@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqw0ccga86fo2"]
 
 [ext_resource type="Script" uid="uid://bkfwk156dge2a" path="res://src/scripts/hookspot.gd" id="1_hsqni"]
-[ext_resource type="Material" uid="uid://chiwt1b2w84yj" path="res://src/textures/hookspot_particle_effects.tres" id="2_h2ycr"]
-[ext_resource type="Material" uid="uid://d1l67dwjc7yfp" path="res://src/textures/hookspot_particles_mat.tres" id="3_73ken"]
+[ext_resource type="Material" uid="uid://chiwt1b2w84yj" path="res://src/materials/hookspot_particle_effects.tres" id="2_h2ycr"]
+[ext_resource type="Material" uid="uid://d1l67dwjc7yfp" path="res://src/materials/hookspot_particles_mat.tres" id="3_73ken"]
 [ext_resource type="PackedScene" uid="uid://vtnij47baem1" path="res://src/assets/object_scene_catalogue/hook.tscn" id="3_h2ycr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
