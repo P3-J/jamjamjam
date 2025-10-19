@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b3hm1f4xr8low"]
-
-[ext_resource type="Texture2D" uid="uid://dyjk5idujymlx" path="res://textures/Ground/Materials/brush_01.jpg" id="1_ol0la"]
-
-[resource]
-shading_mode = 2
-albedo_texture = ExtResource("1_ol0la")
-metallic_specular = 0.0
-texture_filter = 2

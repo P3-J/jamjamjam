@@ -13,7 +13,7 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var running_audio_stream = AudioStreamPlayer.new()
 @onready var boostray = $head/boostray
 @onready var boost_timer = $utils/boost_timer
-
+@onready var speed_lines_shader: ColorRect = $head/Camera3D/Control/SpeedLinesShader
 
 @onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
 @onready var highlighted_crosshair_texture = load("uid://dvovki06eqtnx")
@@ -129,6 +129,12 @@ func _physics_process(delta: float) -> void:
 			running_audio_stream.playing = false
 			pickaxe.play_idle_animation()
 
+	# if speed high show speed lines
+	if velocity.length() > 17:
+		speed_lines_shader.visible = true
+	else:
+		speed_lines_shader.visible = false
+
 func _process(_delta: float) -> void:
 	update_time()
 	rope_checks()
@@ -143,6 +149,9 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("hook"):
 		holding_hook_button = true
+		
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("jump") and not jumped:
 		jumped = true

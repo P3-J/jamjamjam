@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp3q0hwm0pd1o"]
+[gd_scene load_steps=3 format=3 uid="uid://cp3q0hwm0pd1o"]
 
 [ext_resource type="PackedScene" uid="uid://dqfx6v4bw87p" path="res://src/assets/objects/crystalls/cylindric_crystalls/v2/CylindricCrystall2V.fbx" id="1_bjs7x"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bjs7x"]
+height = 0.009428711
+radius = 0.001953125
+
 [node name="CylindricCrystall2V" instance=ExtResource("1_bjs7x")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004899902, 0)
+shape = SubResource("CylinderShape3D_bjs7x")

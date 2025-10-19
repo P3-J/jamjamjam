@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3ctinwbgwee6"]
+[gd_scene load_steps=3 format=3 uid="uid://d3ctinwbgwee6"]
 
 [ext_resource type="PackedScene" uid="uid://c4se8rxeyud5d" path="res://src/assets/objects/rope_bridge/RopeBridgePiece.fbx" id="1_pg4dd"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pg4dd"]
+size = Vector3(0.017636718, 0.0025, 0.04684326)
+
 [node name="RopeBridgePiece" instance=ExtResource("1_pg4dd")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9297007e-05, -0.00070312497, -1.5867308e-05)
+shape = SubResource("BoxShape3D_pg4dd")

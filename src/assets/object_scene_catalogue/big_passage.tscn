@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq8tywvi0bbfh"]
+
+[ext_resource type="PackedScene" uid="uid://bwxcyjyxr45n5" path="res://src/assets/objects/BigPassage/BigPassage.fbx" id="1_m34jv"]
+
+[node name="BigPassage" instance=ExtResource("1_m34jv")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)

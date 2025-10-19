@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://do1e7k51502jm"]
+[gd_scene load_steps=3 format=3 uid="uid://do1e7k51502jm"]
 
 [ext_resource type="PackedScene" uid="uid://jstmdmqlgd7i" path="res://src/assets/objects/rail_road/RailroadPiece.fbx" id="1_fgn11"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fgn11"]
+size = Vector3(4.2512207, 0.18408203, 1.7429199)
 
 [node name="RailroadPiece" instance=ExtResource("1_fgn11")]
 
 [node name="RailroadPiece" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0.062572, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028076172, 0.034423828, 0.0028076172)
+shape = SubResource("BoxShape3D_fgn11")

@@ -1,8 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://vtnij47baem1"]
+[gd_scene load_steps=4 format=3 uid="uid://vtnij47baem1"]
 
 [ext_resource type="PackedScene" uid="uid://bannju0iyx47s" path="res://src/assets/objects/hook/Hook.fbx" id="1_p7vqr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7vqr"]
+albedo_color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+metallic = 0.45
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7vqr"]
+size = Vector3(0.29925537, 0.64453125, 0.08081055)
 
 [node name="Hook" instance=ExtResource("1_p7vqr")]
 
 [node name="Hook" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pTorus10" parent="Hook" index="0"]
+material_override = SubResource("StandardMaterial3D_p7vqr")
+
+[node name="pCube146" parent="Hook" index="1"]
+material_override = SubResource("StandardMaterial3D_p7vqr")
+
+[node name="pCube147" parent="Hook" index="2"]
+material_override = SubResource("StandardMaterial3D_p7vqr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1552734e-05, 0.31054688, 0.0057373047)
+shape = SubResource("BoxShape3D_p7vqr")

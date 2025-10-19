@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://yshqy18a4a58"]
+[gd_scene load_steps=3 format=3 uid="uid://yshqy18a4a58"]
 
 [ext_resource type="PackedScene" uid="uid://dug06qmknat6q" path="res://src/assets/objects/lantern/Lantern.fbx" id="1_50dx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50dx0"]
+size = Vector3(0.38549805, 0.55236816, 0.38000488)
 
 [node name="Lantern" instance=ExtResource("1_50dx0")]
 
 [node name="Lantern" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 0.13800049, -0.00579834)
+shape = SubResource("BoxShape3D_50dx0")

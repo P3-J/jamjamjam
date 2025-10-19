@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bn8m32x7wohcg"]
-
-[ext_resource type="Texture2D" uid="uid://ch5y662vcn4m0" path="res://textures/Roof/Materials/shingles_wood_02.jpg" id="1_mx21i"]
-
-[resource]
-albedo_texture = ExtResource("1_mx21i")
-texture_filter = 0

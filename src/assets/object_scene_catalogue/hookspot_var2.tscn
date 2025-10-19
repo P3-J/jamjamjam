@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqw0ccga86fo2"]
+
+[ext_resource type="Script" uid="uid://bkfwk156dge2a" path="res://src/scripts/hookspot.gd" id="1_hsqni"]
+[ext_resource type="Material" uid="uid://chiwt1b2w84yj" path="res://src/materials/hookspot_particle_effects.tres" id="2_h2ycr"]
+[ext_resource type="Material" uid="uid://d1l67dwjc7yfp" path="res://src/materials/hookspot_particles_mat.tres" id="3_73ken"]
+[ext_resource type="PackedScene" uid="uid://vtnij47baem1" path="res://src/assets/object_scene_catalogue/hook.tscn" id="3_h2ycr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
+size = Vector3(3.5221548, 3.5785556, 1.89172)
+
+[sub_resource type="QuadMesh" id="QuadMesh_h2ycr"]
+material = ExtResource("3_73ken")
+
+[node name="hookspot" type="Area3D" groups=["hook"]]
+collision_mask = 3
+script = ExtResource("1_hsqni")
+
+[node name="hookshape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008025646, 1.2514172, 0.0957642)
+shape = SubResource("BoxShape3D_a70su")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403494, 0)
+amount = 16
+lifetime = 0.5
+process_material = ExtResource("2_h2ycr")
+draw_pass_1 = SubResource("QuadMesh_h2ycr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09397495, 0.68424404, 0.40150666)
+light_color = Color(0.46350068, 0.7188459, 0.9049404, 1)
+light_energy = 1.372
+omni_range = 120.738
+
+[node name="Hook" parent="." instance=ExtResource("3_h2ycr")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.07692003, 0)
+
+[node name="StaticBody3D" parent="Hook" index="2"]
+collision_layer = 0
+collision_mask = 0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Hook"]
