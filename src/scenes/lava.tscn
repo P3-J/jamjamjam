@@ -8,9 +8,9 @@
 render_priority = 0
 shader = ExtResource("3_8q6l0")
 shader_parameter/dark_lava_color = Color(7.182, 0, 0, 1)
-shader_parameter/light_lava_color = Color(16.574, 13.812, 3, 1)
+shader_parameter/light_lava_color = Color(15.676548, 14.075557, 1.3614633, 1)
 shader_parameter/speed = 0.335
-shader_parameter/scale = 100.0
+shader_parameter/scale = 300.00001424674014
 shader_parameter/sharpness = 2.898
 shader_parameter/emission_intensity = 0.1
 shader_parameter/pixel_size = 5.00000019

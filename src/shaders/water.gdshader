@@ -4,7 +4,7 @@ render_mode shadows_disabled;
 uniform vec4 dark_lava_color : source_color;
 uniform vec4 light_lava_color : source_color;
 uniform float speed : hint_range(0.0, 5.0);
-uniform float scale : hint_range(0.1, 100.0) = 10;
+uniform float scale : hint_range(0.1, 500.0) = 10;
 uniform float sharpness : hint_range(1.0, 100.0);
 uniform float emission_intensity : hint_range(0.0, 10.0);
 uniform float pixel_size : hint_range(1.0, 64.0) = 8.0; // NEW

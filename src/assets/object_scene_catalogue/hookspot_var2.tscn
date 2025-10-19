@@ -27,15 +27,20 @@ process_material = ExtResource("2_h2ycr")
 draw_pass_1 = SubResource("QuadMesh_h2ycr")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0866034, 1.221031, 0.044331074)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09397495, 0.68424404, 0.40150666)
 light_color = Color(0.46350068, 0.7188459, 0.9049404, 1)
-light_energy = 3.492
-omni_range = 9.614
-omni_attenuation = 1.436
+light_energy = 1.372
+omni_range = 120.738
 
 [node name="Hook" parent="." instance=ExtResource("3_h2ycr")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.07692003, 0)
 
+[node name="StaticBody3D" parent="Hook" index="2"]
+collision_layer = 0
+collision_mask = 0
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Hook"]
