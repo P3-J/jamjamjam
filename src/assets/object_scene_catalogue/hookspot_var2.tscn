@@ -47,11 +47,10 @@ process_material = SubResource("ParticleProcessMaterial_ff13n")
 draw_pass_1 = SubResource("BoxMesh_rnxxg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0866034, 0.68424404, 0.40150666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09397495, 0.68424404, 0.40150666)
 light_color = Color(0.46350068, 0.7188459, 0.9049404, 1)
-light_energy = 3.492
+light_energy = 1.372
 omni_range = 120.738
-omni_attenuation = 1.436
 
 [node name="Hook" parent="." instance=ExtResource("3_h2ycr")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.07692003, 0)

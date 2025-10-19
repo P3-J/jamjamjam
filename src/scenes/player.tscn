@@ -75,7 +75,6 @@ rope_mesh = NodePath("rope")
 pickaxe = NodePath("head/Pickaxe")
 
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,7 +108,6 @@ mouse_filter = 2
 texture = ExtResource("4_lgdho")
 
 [node name="timer_text" type="RichTextLabel" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -140,11 +138,9 @@ fov = 80.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0.000994906, 0, -0.000994906, 1, 0.0692149, 0.672473, -0.0515243)
-visible = false
-light_color = Color(1, 1, 0.466667, 1)
-light_energy = 3.692
-spot_range = 37.867
-spot_angle = 56.21
+light_energy = 1.14
+spot_range = 6.852
+spot_angle = 28.6
 
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
