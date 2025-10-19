@@ -1,12 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=22 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/ui/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
-[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/pause_menu.tscn" id="3_vvjmd"]
+[ext_resource type="PackedScene" uid="uid://bn5kewb311n14" path="res://src/scenes/UI/pause_menu.tscn" id="3_vvjmd"]
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/ui/pickaxe_button_slider_assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
-[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="PackedScene" uid="uid://warhew8lnevm" path="res://src/scenes/UI/settings_menu.tscn" id="6_4pcbe"]
+[ext_resource type="Shader" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
@@ -95,23 +96,28 @@ script = ExtResource("1_ve44u")
 rope_mesh = NodePath("rope")
 pickaxe = NodePath("head/Pickaxe")
 
-[node name="UI" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="DeathScreen" parent="UI" instance=ExtResource("4_wjl4f")]
+[node name="PauseMenu" parent="CanvasLayer/UI" instance=ExtResource("3_vvjmd")]
 visible = false
 layout_mode = 1
 
-[node name="PauseMenu" parent="UI" instance=ExtResource("3_vvjmd")]
+[node name="DeathScreen" parent="CanvasLayer/UI" instance=ExtResource("4_wjl4f")]
 visible = false
 layout_mode = 1
+mouse_filter = 2
 
-[node name="Crosshair" type="TextureRect" parent="UI"]
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/UI"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -128,7 +134,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_lgdho")
 
-[node name="timer_text" type="RichTextLabel" parent="UI"]
+[node name="timer_text" type="RichTextLabel" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -141,6 +147,9 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/normal_font = ExtResource("5_sjss2")
 theme_override_font_sizes/normal_font_size = 20
 text = "00:00:00"
+
+[node name="SettingsMenu" parent="CanvasLayer/UI" instance=ExtResource("6_4pcbe")]
+layout_mode = 1
 
 [node name="playermesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.069225, 0)

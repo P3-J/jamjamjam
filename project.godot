@@ -20,6 +20,7 @@ boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
 Signalbus="*res://src/scripts/signalbus.gd"
 Globalsettings="*res://src/scripts/globalsettings.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+MenuManager="*res://src/scenes/UI/menu_manager.gd"
 
 [debug]
 
@@ -27,6 +28,7 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]

@@ -6,8 +6,8 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var hookray: RayCast3D
 @onready var hook_start_time: Timer
 @onready var body: MeshInstance3D
-@onready var crosshair: TextureRect = $UI/Crosshair
-@onready var ui_node = $UI
+@onready var crosshair: TextureRect = $CanvasLayer/UI/Crosshair
+@onready var ui_node = $CanvasLayer/UI
 @onready var player_anim: AnimationPlayer
 @onready var timer_text: RichTextLabel
 @onready var running_audio_stream = AudioStreamPlayer.new()
@@ -218,7 +218,7 @@ func _get_nodes() -> void:
 	hook_start_time = get_node("utils/hook_start_time")
 	body = get_node("playermesh")
 	player_anim = get_node("player_anim")
-	timer_text = get_node("UI/timer_text")
+	timer_text = get_node("CanvasLayer/UI/timer_text")
 	pickaxe = get_node("head/Pickaxe")
 
 

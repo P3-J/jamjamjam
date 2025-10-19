@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn5kewb311n14"]
+[gd_scene load_steps=3 format=3 uid="uid://bn5kewb311n14"]
 
-[ext_resource type="Script" uid="uid://0xps4efuioor" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
-[ext_resource type="Theme" uid="uid://dur0kdrxfeoev" path="res://src/assets/ui/theme.tres" id="2_lhlp2"]
-[ext_resource type="PackedScene" uid="uid://b2wukaf1tyfjc" path="res://src/scenes/settings_menu_pause.tscn" id="3_pjeeh"]
+[ext_resource type="Script" uid="uid://b0ugnu1u8bit" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
+[ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="2_lhlp2"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -57,11 +56,6 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_lhlp2")
 text = "Quit"
-
-[node name="SettingsMenu" parent="." instance=ExtResource("3_pjeeh")]
-process_mode = 3
-visible = false
-layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/RespawnButton" to="." method="_on_respawn_button_pressed"]

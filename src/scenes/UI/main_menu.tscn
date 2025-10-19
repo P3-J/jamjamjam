@@ -5,12 +5,12 @@
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
 [ext_resource type="Texture2D" uid="uid://bq7lpl2xnylan" path="res://src/assets/ui/pickaxe_button_slider_assets/Button.png" id="3_805p8"]
 [ext_resource type="Texture2D" uid="uid://ckv1e3hmq4sc6" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_grabber.png" id="4_1fbjp"]
-[ext_resource type="Script" uid="uid://caljefo6khcwo" path="res://src/scripts/settingsmenu_main.gd" id="4_c8xin"]
 [ext_resource type="Texture2D" uid="uid://2a61dh6ptnf8" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_disabled.png" id="5_5sj7r"]
 [ext_resource type="Texture2D" uid="uid://dg0bwa1ayfexn" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_highlight.png" id="6_qboab"]
 [ext_resource type="Texture2D" uid="uid://xw4psdh3ouhj" path="res://src/assets/ui/pickaxe_button_slider_assets/slider_tick.png" id="7_6208y"]
-[ext_resource type="Theme" uid="uid://dur0kdrxfeoev" path="res://src/assets/ui/theme.tres" id="8_6wcb6"]
+[ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="8_6wcb6"]
 [ext_resource type="PackedScene" uid="uid://cbvgm61qw2giq" path="res://src/scenes/levelselector.tscn" id="8_ubq7q"]
+[ext_resource type="PackedScene" uid="uid://warhew8lnevm" path="res://src/scenes/UI/settings_menu.tscn" id="10_5dsdd"]
 [ext_resource type="AudioStream" uid="uid://b8w7o1biiuvv2" path="res://src/assets/sounds/chillin_at_the_cave.mp3" id="18_ofngt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2aivh"]
@@ -239,105 +239,7 @@ layout_mode = 1
 offset_top = 2.0
 offset_bottom = 2.0
 
-[node name="SettingsMenu" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_c8xin")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
-scale = Vector2(2, 2)
-theme = SubResource("Theme_ri8ns")
-theme_override_constants/separation = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-theme_override_fonts/font = ExtResource("1_vee6o")
-text = "Mouse sensitivity"
-
-[node name="HSlider" type="HSlider" parent="SettingsMenu/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-min_value = 0.1
-max_value = 5.0
-step = 0.1
-value = 1.1
-
-[node name="MouseValue" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-theme_override_fonts/font = ExtResource("1_vee6o")
-text = "Audio volume"
-
-[node name="audioslider" type="HSlider" parent="SettingsMenu/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="Audiovalue" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="Label" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-theme_override_fonts/font = ExtResource("1_vee6o")
-text = "Music volume"
-
-[node name="musicslider" type="HSlider" parent="SettingsMenu/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="Musicvalue" type="Label" parent="SettingsMenu/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="SettingsMenu"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -47.0
-offset_right = 105.0
-grow_vertical = 0
-theme = SubResource("Theme_ri8ns")
-
-[node name="Back" type="Button" parent="SettingsMenu/VBoxContainer2"]
-custom_minimum_size = Vector2(150, 70)
-layout_mode = 2
-theme = SubResource("Theme_ri8ns")
-text = "Back"
+[node name="SettingsMenu" parent="." instance=ExtResource("10_5dsdd")]
 
 [node name="start" type="AnimationPlayer" parent="."]
 active = false
@@ -381,8 +283,3 @@ stream = ExtResource("18_ofngt")
 [connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Settings" to="MainMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
-[connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer/HSlider" to="SettingsMenu" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer2/audioslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
-[connection signal="value_changed" from="SettingsMenu/VBoxContainer/HBoxContainer3/musicslider" to="SettingsMenu" method="_on_audioslider_value_changed"]
-[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_button_pressed"]
-[connection signal="pressed" from="SettingsMenu/VBoxContainer2/Back" to="SettingsMenu" method="_on_back_pressed"]
