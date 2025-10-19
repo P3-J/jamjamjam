@@ -1,0 +1,20 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://cfbdof6t2j1g1"]
+
+[ext_resource type="Texture2D" uid="uid://b1ee6otxdf5hv" path="res://textures/128x128/Elements/Elements_03-128x128.png" id="1_x7xl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o2xm"]
+albedo_texture = ExtResource("1_x7xl2")
+emission_enabled = true
+emission = Color(0.478431, 0, 0, 1)
+emission_energy_multiplier = 12.0
+emission_texture = ExtResource("1_x7xl2")
+ao_enabled = true
+uv1_scale = Vector3(-0.235, -0.235, -0.235)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[resource]
+material = SubResource("StandardMaterial3D_2o2xm")

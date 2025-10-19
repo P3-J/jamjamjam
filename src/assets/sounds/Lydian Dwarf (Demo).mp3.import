@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://desk1w7k6ldg3"
+path="res://.godot/imported/Lydian Dwarf (Demo).mp3-0762652867866890fb23d8c703bc8a1f.mp3str"
+
+[deps]
+
+source_file="res://src/assets/sounds/Lydian Dwarf (Demo).mp3"
+dest_files=["res://.godot/imported/Lydian Dwarf (Demo).mp3-0762652867866890fb23d8c703bc8a1f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
