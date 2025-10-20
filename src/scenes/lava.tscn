@@ -20,7 +20,7 @@ material = SubResource("ShaderMaterial_sdre5")
 size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2oyh"]
-size = Vector3(500, 1, 500)
+size = Vector3(25, 5, 25)
 
 [sub_resource type="Curve" id="Curve_lrb6e"]
 _data = [Vector2(0, 0.3146068), 0.0, 0.0, 0, 0, Vector2(0.49382722, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -60,8 +60,9 @@ script = ExtResource("1_u7ucl")
 mesh = SubResource("PlaneMesh_652k1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8987186, 0)
 shape = SubResource("BoxShape3D_k2oyh")
+disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 

@@ -14,8 +14,9 @@ func _process(delta: float) -> void:
 		global_transform.origin.y += rise_per_sec * delta
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group('player'):
-		Signalbus.emit_signal('kill_player')
+	return;
+	#if body.is_in_group('player'):
+		#Signalbus.emit_signal('kill_player')
 
 func _on_lava_start_rising() -> void:
 	is_rising = true
