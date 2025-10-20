@@ -307,6 +307,7 @@ func _sway_head():
 func _on_player_kill() -> void:
 	if !has_died:
 		has_died = true
+		#get_tree().reload_current_scene()
 		Signalbus.kill_player.emit()
 
 
