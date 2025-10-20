@@ -10,17 +10,18 @@ var has_submit: bool
 @onready var timer = $Timer2
 
 func _ready() -> void:
-	time_text = get_node("timer_text")
-	list = get_node("ItemList")
-	text_edit = get_node("TextEdit")
+	return
+	#time_text = get_node("timer_text")
+	#list = get_node("ItemList")
+	#text_edit = get_node("TextEdit")
 
 	#get_tree().paused = false
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	var minute_str = str(Signalbus.minutes).pad_zeros(2)
-	var second_str = str(Signalbus.seconds).pad_zeros(2)
-	var millisecond_str = str(Signalbus.milliseconds).pad_zeros(3)
-	time_text.text = minute_str + ":" + second_str + ":" + millisecond_str
+	#var minute_str = str(Signalbus.minutes).pad_zeros(2)
+	#var second_str = str(Signalbus.seconds).pad_zeros(2)
+	#var millisecond_str = str(Signalbus.milliseconds).pad_zeros(3)
+	#time_text.text = minute_str + ":" + second_str + ":" + millisecond_str
 	#refresh()
 
 
