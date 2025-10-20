@@ -18,6 +18,7 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
 @onready var highlighted_crosshair_texture = load("uid://dvovki06eqtnx")
 @export var rope_mesh: MeshInstance3D
+@export var lava: Area3D
 
 @export var pickaxe: Node3D
 
@@ -50,6 +51,7 @@ var seconds : int = 0
 var milliseconds : int = 0
 var pickaxe_reset_pos: Vector3;
 var pickaxe_reset_rotation: Vector3;
+var player_frozen : bool = true;
 
 
 func _ready() -> void:
@@ -68,6 +70,9 @@ func _ready() -> void:
 	reset_pickaxe_position()
 
 func _physics_process(delta: float) -> void:
+	if (player_frozen): 
+		return
+
 	var direction := Vector3()
 	check_for_hook_collision()
 
@@ -138,9 +143,12 @@ func _physics_process(delta: float) -> void:
 func _process(_delta: float) -> void:
 	update_time()
 	rope_checks()
+	check_lava_level()
 		
 
 func _input(event: InputEvent) -> void:
+	if (player_frozen): return
+
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		y_rotation = clamp(y_rotation - event.relative.y * mouse_sensitivity, -1.5, 1.4) 
@@ -307,6 +315,7 @@ func _sway_head():
 func _on_player_kill() -> void:
 	if !has_died:
 		has_died = true
+		#get_tree().reload_current_scene()
 		Signalbus.kill_player.emit()
 
 
@@ -355,3 +364,13 @@ func setup_sound_stream() -> void:
 
 func _on_game_starts() -> void:
 	start_speedrun_timer()
+
+
+func unfreeze_player() -> void:
+	player_frozen = false;
+	start_speedrun_timer();
+	Signalbus.emit_signal('make_lava_rise')
+
+func check_lava_level():
+	if (lava.global_position.y > global_position.y):
+		Signalbus.emit_signal('kill_player');

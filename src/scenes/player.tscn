@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=25 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/ui/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
@@ -6,7 +6,107 @@
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/ui/pickaxe_button_slider_assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
-[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="6_4pcbe"]
+[ext_resource type="Shader" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+
+[sub_resource type="Animation" id="Animation_xvyn7"]
+resource_name = "countdown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9666667, 2, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1", "GO!"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"unfreeze_player"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Crosshair:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4pcbe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Crosshair:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hlw3"]
+_data = {
+&"RESET": SubResource("Animation_4pcbe"),
+&"countdown": SubResource("Animation_xvyn7")
+}
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyvha"]
 
@@ -142,6 +242,26 @@ theme_override_fonts/normal_font = ExtResource("5_sjss2")
 theme_override_font_sizes/normal_font_size = 20
 text = "00:00:00"
 
+[node name="countdownlabel" type="RichTextLabel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 192.0
+offset_top = 120.0
+offset_right = 576.0
+offset_bottom = 376.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_4pcbe")
+theme_override_font_sizes/normal_font_size = 128
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="countdownanim" type="AnimationPlayer" parent="UI/countdownlabel"]
+libraries = {
+&"": SubResource("AnimationLibrary_0hlw3")
+}
+autoplay = "countdown"
+
 [node name="playermesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.069225, 0)
 visible = false
@@ -183,7 +303,7 @@ grow_vertical = 2
 
 [node name="hookray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.241377)
-target_position = Vector3(0, 0, -25)
+target_position = Vector3(0, 0, -19)
 hit_back_faces = false
 collide_with_areas = true
 debug_shape_custom_color = Color(1, 0, 0, 1)
@@ -193,6 +313,7 @@ transform = Transform3D(0.37277418, 0, 1.9649528, 0, 2, 0, -1.9649528, 0, 0.3727
 
 [node name="boostray" type="RayCast3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 0.7327488, -0.9355735, 0, 1.941315, 0.35313195, 0, 0, -0.5558119)
+target_position = Vector3(0, -1.25, 0)
 
 [node name="utils" type="Node" parent="."]
 
