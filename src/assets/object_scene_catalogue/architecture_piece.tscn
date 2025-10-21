@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbs0f6r0p8ewy"]
+[gd_scene load_steps=3 format=3 uid="uid://bbs0f6r0p8ewy"]
 
 [ext_resource type="PackedScene" uid="uid://c0j8ggj6ic7kh" path="res://src/assets/objects/ArchitecturePiece/ArchitecturePiece.fbx" id="1_xbyev"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_flwik"]
 
 [node name="ArchitecturePiece" instance=ExtResource("1_xbyev")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="ArchitecturePiece" parent="." index="0"]
+material_override = ExtResource("2_flwik")

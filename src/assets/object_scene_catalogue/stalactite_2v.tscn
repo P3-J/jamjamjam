@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://blldrkxun5642"]
+[gd_scene load_steps=4 format=3 uid="uid://blldrkxun5642"]
 
 [ext_resource type="PackedScene" uid="uid://bejaasjr5f7st" path="res://src/assets/objects/stalactites/v2/Stalactite2V.fbx" id="1_prgic"]
+[ext_resource type="Material" uid="uid://c8cnmm8vr7j6j" path="res://src/assets/shaders/TilableShaderBase/Rock.tres" id="2_52ihk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_prgic"]
 size = Vector3(0.00842041, 0.067685544, 0.008481445)
 
 [node name="Stalactite2V" instance=ExtResource("1_prgic")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="Stalactite2V" parent="." index="0"]
+material_override = ExtResource("2_52ihk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 

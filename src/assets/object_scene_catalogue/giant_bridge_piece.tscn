@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://2qrqrspuggqb"]
+[gd_scene load_steps=37 format=3 uid="uid://2qrqrspuggqb"]
 
 [ext_resource type="PackedScene" uid="uid://dgetr4yeekhgc" path="res://src/assets/objects/GiantBridgePiece/GiantBridgePiece.fbx" id="1_pgcdx"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_x6gib"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pgcdx"]
 points = PackedVector3Array(0.020933436, 0.086603716, 0.0145, -0.021599999, -0.022271223, -0.014419073, -0.02051439, -0.019492336, 0.0145, -0.021599999, 0.089382604, -0.014419073, 0.018294828, -0.021565286, -0.019399999, 0.019289654, -0.024597347, 0.019489653, -0.015236932, 0.09170873, 0.023127776, 0.013291822, 0.089382604, -0.021399999, -0.015236932, -0.024597347, -0.02230873, -0.015236932, -0.024597347, 0.023127776, 0.021599999, 0.08830995, -0.014134158, -0.015236932, 0.09170873, -0.02230873, 0.018991496, 0.090799995, 0.019191496, 0.021599999, -0.021198569, -0.014134158, -0.02051439, 0.086603716, 0.0145, 0.012800522, 0.087286055, 0.021399999, 0.013291822, -0.022271223, -0.021399999, 0.020933436, -0.019492336, 0.0145, 0.012800522, -0.020174671, 0.021399999, -0.019199999, 0.08756365, -0.019, 0.018294828, 0.08867667, -0.019399999, -0.019199999, 0.08756365, 0.018129645, -0.019199999, -0.020452268, -0.019, -0.019199999, -0.020452268, 0.018129645)
@@ -132,10 +133,16 @@ shape = SubResource("ConvexPolygonShape3D_6dl6i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube18/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_ses0q")
 
+[node name="pCube19" parent="GiantBridgePiece" index="5"]
+material_override = ExtResource("2_x6gib")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube19" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube19/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_sh8lo")
+
+[node name="pCube25" parent="GiantBridgePiece" index="6"]
+material_override = ExtResource("2_x6gib")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube25" index="0"]
 
@@ -152,15 +159,24 @@ shape = SubResource("ConvexPolygonShape3D_ukmku")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube143/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_is58w")
 
+[node name="pCube121" parent="GiantBridgePiece" index="9"]
+material_override = ExtResource("2_x6gib")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube121" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube121/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_v2rx4")
 
+[node name="pCube120" parent="GiantBridgePiece" index="10"]
+material_override = ExtResource("2_x6gib")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube120" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube120/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_7crm0")
+
+[node name="pCube119" parent="GiantBridgePiece" index="11"]
+material_override = ExtResource("2_x6gib")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube119" index="0"]
 
@@ -172,15 +188,24 @@ shape = SubResource("ConvexPolygonShape3D_pbpbl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/PlaceholderNameBecauseOfTheBecauses/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_mud7r")
 
+[node name="pCube111" parent="GiantBridgePiece" index="13"]
+material_override = ExtResource("2_x6gib")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube111" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube111/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_qebpi")
 
+[node name="pCube109" parent="GiantBridgePiece" index="14"]
+material_override = ExtResource("2_x6gib")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube109" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GiantBridgePiece/pCube109/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_vtd2s")
+
+[node name="pCube112" parent="GiantBridgePiece" index="15"]
+material_override = ExtResource("2_x6gib")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GiantBridgePiece/pCube112" index="0"]
 
