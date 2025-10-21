@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bltub7y7a5rww"]
+
+[ext_resource type="PackedScene" uid="uid://b5abp7achqyqy" path="res://src/assets/objects/cave_assest/platform_1v.fbx" id="1_q7ybj"]
+[ext_resource type="Material" uid="uid://dkjivxa5udktf" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.tres" id="2_x82cs"]
+
+[node name="platform_1v" instance=ExtResource("1_q7ybj")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_x82cs")

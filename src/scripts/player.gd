@@ -196,7 +196,7 @@ func _pickaxe_boost() -> void:
 	var ray_origin = boostray.global_transform.origin
 	var ray_dir = (boostray.global_transform.basis * boostray.target_position).normalized()
 
-	var distance = 5.0  
+	var distance = 10.0  
 	var opposite_point = ray_origin - ray_dir * distance
 
 	var boost_vector = (opposite_point - global_transform.origin).normalized()

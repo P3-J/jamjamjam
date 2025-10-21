@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bop6o05w6yod6"]
+[gd_scene load_steps=6 format=3 uid="uid://bop6o05w6yod6"]
 
 [ext_resource type="PackedScene" uid="uid://dfyb4iood3idp" path="res://src/assets/objects/rocks/Rock2.fbx" id="1_1gnen"]
 [ext_resource type="Texture2D" uid="uid://4blj27frwamb" path="res://src/assets/objects/rocks/Rocks_T_BaseColor.png" id="2_2axpm"]
+[ext_resource type="Material" uid="uid://c8cnmm8vr7j6j" path="res://src/assets/shaders/TilableShaderBase/Rock.tres" id="2_nn8qb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pywvh"]
 albedo_texture = ExtResource("2_2axpm")
@@ -12,6 +13,7 @@ data = PackedVector3Array(-0.0008, -0.0093, -0.0028, 0.0013, -0.009, -0.006, 0.0
 [node name="Rock2" instance=ExtResource("1_1gnen")]
 
 [node name="Rock2" parent="." index="0"]
+material_override = ExtResource("2_nn8qb")
 surface_material_override/0 = SubResource("StandardMaterial3D_pywvh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]

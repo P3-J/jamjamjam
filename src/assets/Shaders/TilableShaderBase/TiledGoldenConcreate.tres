@@ -1,0 +1,45 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://jqe0tyfl832g"]
+
+[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.gdshader" id="1_uueh1"]
+[ext_resource type="Texture2D" uid="uid://bjrwfoq5y12sg" path="res://src/assets/shaders/TilableShaderBase/golden_concreate_tilable_Base_color.png" id="2_uueh1"]
+
+[sub_resource type="Shader" id="Shader_m6krq"]
+code = "shader_type spatial;
+
+render_mode cull_front, unshaded, depth_draw_never;
+
+global uniform vec4 outline_color;
+global uniform float outline_width;
+
+void vertex() {
+	vec4 clip_position =
+			PROJECTION_MATRIX *
+			(MODELVIEW_MATRIX * vec4(VERTEX, 1.0));
+	vec3 clip_normal =
+			mat3(PROJECTION_MATRIX) *
+			(mat3(MODELVIEW_MATRIX) * NORMAL);
+	clip_position.xy +=
+			normalize(clip_normal.xy) /
+			VIEWPORT_SIZE *
+			clip_position.w *
+			outline_width;
+	POSITION = clip_position;
+}
+
+void fragment() {
+	ALBEDO = outline_color.rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_11nbd"]
+render_priority = 0
+shader = SubResource("Shader_m6krq")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_11nbd")
+shader = ExtResource("1_uueh1")
+shader_parameter/color = Color(0.7501969, 0.70994246, 0.611103, 1)
+shader_parameter/base_texture = ExtResource("2_uueh1")
+shader_parameter/uv_scale = Vector2(0.25, 0.25)
+shader_parameter/uv_offset = Vector2(0, 0)

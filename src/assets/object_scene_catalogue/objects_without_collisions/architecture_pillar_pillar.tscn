@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0jjmnpr5srh1"]
+
+[ext_resource type="PackedScene" uid="uid://1l8lguujybhg" path="res://src/assets/objects/architecture_pillar/architecture_pillar_pillar.fbx" id="1_g0411"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_ly1ug"]
+
+[node name="architecture_pillar_pillar" instance=ExtResource("1_g0411")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="polySurface10" parent="architecture_pillar_pillar" index="1"]
+material_override = ExtResource("2_ly1ug")

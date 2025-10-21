@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7r4uno5lkx4d"]
+
+[ext_resource type="PackedScene" uid="uid://bmlwryduq3e6o" path="res://src/assets/objects/architecture_pillar/architecture_pillar_cap.fbx" id="1_e7nrc"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_7msgs"]
+[ext_resource type="Material" uid="uid://2niggerenxom" path="res://src/assets/shaders/TilableShaderBase/Bricks.tres" id="3_7msgs"]
+
+[node name="architecture_pillar_cap" instance=ExtResource("1_e7nrc")]
+
+[node name="architecture_pillar_cap" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube523" parent="architecture_pillar_cap/group133" index="0"]
+material_override = ExtResource("2_7msgs")
+
+[node name="polySurface1" parent="architecture_pillar_cap/group133" index="1"]
+material_override = ExtResource("3_7msgs")
+
+[node name="pCube521" parent="architecture_pillar_cap/group133" index="2"]
+material_override = ExtResource("2_7msgs")
+
+[node name="pCube525" parent="architecture_pillar_cap/group133" index="3"]
+material_override = ExtResource("2_7msgs")
+
+[node name="pCube524" parent="architecture_pillar_cap/group133" index="4"]
+material_override = ExtResource("2_7msgs")
+
+[node name="polySurface2" parent="architecture_pillar_cap/group133" index="5"]
+material_override = ExtResource("2_7msgs")
+
+[node name="pCube526" parent="architecture_pillar_cap/group133" index="6"]
+material_override = ExtResource("3_7msgs")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://blvdu6jx24qoa"]
+[gd_scene load_steps=6 format=3 uid="uid://blvdu6jx24qoa"]
 
 [ext_resource type="PackedScene" uid="uid://dws1l8skhnv3" path="res://src/assets/objects/rocks/Rock1.fbx" id="1_du02w"]
+[ext_resource type="Material" uid="uid://c8cnmm8vr7j6j" path="res://src/assets/shaders/TilableShaderBase/Rock.tres" id="2_6h60p"]
 [ext_resource type="Texture2D" uid="uid://4blj27frwamb" path="res://src/assets/objects/rocks/Rocks_T_BaseColor.png" id="2_hasa0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vioub"]
@@ -12,6 +13,7 @@ data = PackedVector3Array(-0.0008, -0.0093, -0.0016, 0.0013, -0.009, -0.0036, 0.
 [node name="Rock1" instance=ExtResource("1_du02w")]
 
 [node name="Rock1" parent="." index="0"]
+material_override = ExtResource("2_6h60p")
 surface_material_override/0 = SubResource("StandardMaterial3D_vioub")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]

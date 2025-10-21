@@ -1,6 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://2vv3l1wbeqv4"]
+[gd_scene load_steps=3 format=3 uid="uid://2vv3l1wbeqv4"]
 
 [ext_resource type="PackedScene" uid="uid://b6wannie2ckm3" path="res://src/assets/objects/GiantBridgePillar/GiantBridgePillar.fbx" id="1_268wu"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_aaf2q"]
 
 [node name="GiantBridgePillar" instance=ExtResource("1_268wu")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube135" parent="GiantBridgePillar/group27" index="0"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube136" parent="GiantBridgePillar/group27" index="1"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube138" parent="GiantBridgePillar/group27" index="2"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube137" parent="GiantBridgePillar/group27" index="3"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube142" parent="GiantBridgePillar/group27" index="4"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube139" parent="GiantBridgePillar/group27" index="5"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube141" parent="GiantBridgePillar/group27" index="6"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube140" parent="GiantBridgePillar/group27" index="7"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube134" parent="GiantBridgePillar/group27" index="8"]
+surface_material_override/0 = ExtResource("2_aaf2q")
+
+[node name="pCube1352" parent="GiantBridgePillar/group28" index="0"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1362" parent="GiantBridgePillar/group28" index="1"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1382" parent="GiantBridgePillar/group28" index="2"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1372" parent="GiantBridgePillar/group28" index="3"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1422" parent="GiantBridgePillar/group28" index="4"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1392" parent="GiantBridgePillar/group28" index="5"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1412" parent="GiantBridgePillar/group28" index="6"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1402" parent="GiantBridgePillar/group28" index="7"]
+material_override = ExtResource("2_aaf2q")
+
+[node name="pCube1342" parent="GiantBridgePillar/group28" index="8"]
+material_override = ExtResource("2_aaf2q")

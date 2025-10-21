@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://rd6heeb8m70n"]
+
+[ext_resource type="PackedScene" uid="uid://678ovwy73jxi" path="res://src/assets/objects/beveled_cube/BeveledCube.fbx" id="1_wd5un"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_whr58"]
+
+[node name="BeveledCube" instance=ExtResource("1_wd5un")]
+
+[node name="pCube527" parent="." index="0"]
+material_override = ExtResource("2_whr58")
