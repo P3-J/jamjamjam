@@ -89,6 +89,7 @@ func _on_timer_2_timeout() -> void:
 	refresh()
 
 func _on_dwarf_laugh_win_sound() -> void:
+	print("Should play laugh?")
 	win_laugh.pitch_scale = randf_range(0.8, 1.2)
 	win_laugh.play()
 
