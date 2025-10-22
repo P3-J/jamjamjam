@@ -5,31 +5,41 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
 size = Vector3(3.63525, 4.88758, 1.89172)
 
-[sub_resource type="Curve" id="Curve_0wran"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Curve" id="Curve_myar2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25102884, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_54g7f"]
-curve = SubResource("Curve_0wran")
+[sub_resource type="CurveTexture" id="CurveTexture_evpdx"]
+curve = SubResource("Curve_myar2")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ff13n"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s2h4k"]
 emission_shape = 1
-emission_sphere_radius = 3.0
+emission_sphere_radius = 2.0
 gravity = Vector3(0, 0, 0)
 linear_accel_min = 7.0
 linear_accel_max = 7.0
 radial_accel_min = 0.999998
 radial_accel_max = 2.0
-scale_curve = SubResource("CurveTexture_54g7f")
+scale_min = 0.02
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_evpdx")
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sn62"]
-albedo_color = Color(0.602287, 0.30545, 0.0495513, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxvq8"]
+transparency = 1
+albedo_color = Color(0.2784314, 0.15294118, 1, 0.78431374)
 emission_enabled = true
-emission = Color(0.596078, 0.360784, 0.690196, 1)
+emission = Color(0.2784314, 0.15294118, 1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_repeat = false
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_rnxxg"]
-material = SubResource("StandardMaterial3D_5sn62")
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="QuadMesh" id="QuadMesh_akrrd"]
+material = SubResource("StandardMaterial3D_sxvq8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myar2"]
 emission_enabled = true
@@ -49,11 +59,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.596905, 0.0957642)
 shape = SubResource("BoxShape3D_a70su")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403494, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013160348, 0)
 amount = 16
 lifetime = 0.75
-process_material = SubResource("ParticleProcessMaterial_ff13n")
-draw_pass_1 = SubResource("BoxMesh_rnxxg")
+process_material = SubResource("ParticleProcessMaterial_s2h4k")
+draw_pass_1 = SubResource("QuadMesh_akrrd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.278792, 0.154304, 1, 1)

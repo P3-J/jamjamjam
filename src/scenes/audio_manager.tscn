@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwjc8lhq044v0"]
+[gd_scene load_steps=15 format=3 uid="uid://bwjc8lhq044v0"]
 
 [ext_resource type="Script" uid="uid://c7yks3tsro0xy" path="res://src/scripts/audio_manager.gd" id="1_wdger"]
-[ext_resource type="AudioStream" uid="uid://vnymgvhcn2wt" path="res://src/assets/sounds/oudukas_cut.wav" id="2_nvaun"]
-[ext_resource type="AudioStream" uid="uid://bew6psjny45fs" path="res://src/assets/sounds/burning_match.wav" id="3_ckoot"]
-[ext_resource type="AudioStream" uid="uid://b5coce87hl0u" path="res://src/assets/sounds/picaxe_in_wood.wav" id="4_1xe7u"]
+[ext_resource type="AudioStream" uid="uid://vnymgvhcn2wt" path="res://src/assets/sounds/SFX/oudukas_cut.wav" id="2_nvaun"]
+[ext_resource type="AudioStream" uid="uid://bew6psjny45fs" path="res://src/assets/sounds/SFX/burning_match.wav" id="3_ckoot"]
+[ext_resource type="AudioStream" uid="uid://b5coce87hl0u" path="res://src/assets/sounds/SFX/picaxe_in_wood.wav" id="4_1xe7u"]
+[ext_resource type="AudioStream" uid="uid://dcnmuv5virrms" path="res://src/assets/sounds/SFX/pickaxe_throw_woosh.wav" id="5_0d3i6"]
+[ext_resource type="AudioStream" uid="uid://dnfph0w1ts244" path="res://src/assets/sounds/SFX/pickaxe_hooked.wav" id="6_1nd4j"]
+[ext_resource type="AudioStream" uid="uid://dtcd38ehybao4" path="res://src/assets/sounds/SFX/pickaxe_boost_hit.wav" id="7_ccaga"]
+[ext_resource type="AudioStream" uid="uid://dbmjhwrcmp8nt" path="res://src/assets/sounds/SFX/rope_pull.wav" id="8_hwudm"]
+[ext_resource type="AudioStream" uid="uid://dg6odr4uc3njd" path="res://src/assets/sounds/SFX/boiling_water.wav" id="10_ccaga"]
+[ext_resource type="AudioStream" uid="uid://cg4sthcwame3l" path="res://src/assets/sounds/SFX/geyser_woosh.wav" id="10_hwudm"]
+[ext_resource type="AudioStream" uid="uid://bq44gemq7wn2h" path="res://src/assets/sounds/SFX/hiss.mp3" id="12_cldsc"]
+[ext_resource type="AudioStream" uid="uid://byrd4m2tsyrub" path="res://src/assets/sounds/SFX/death.wav" id="12_upv5m"]
+[ext_resource type="AudioStream" uid="uid://b2x0otrtyjdc7" path="res://src/assets/sounds/SFX/jump.wav" id="13_vt8aq"]
+[ext_resource type="AudioStream" uid="uid://dqo6vpmv3jb8p" path="res://src/assets/sounds/SFX/ring_woosh.wav" id="14_ojpeg"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_wdger")
@@ -17,3 +27,43 @@ stream = ExtResource("3_ckoot")
 
 [node name="PickAxeGrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_1xe7u")
+
+[node name="PickaxeThrow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0d3i6")
+
+[node name="PickaxeHooked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1nd4j")
+pitch_scale = 2.56
+
+[node name="PickaxeBoostHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ccaga")
+
+[node name="RopePull" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hwudm")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nvaun")
+volume_db = -10.0
+
+[node name="GeyserWoosh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hwudm")
+volume_db = -5.0
+pitch_scale = 2.0
+
+[node name="BoilingLava" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ccaga")
+autoplay = true
+
+[node name="LavaHiss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_cldsc")
+
+[node name="DwarfDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_upv5m")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_vt8aq")
+
+[node name="RingBoost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ojpeg")
+
+[connection signal="finished" from="RopePull" to="." method="_on_rope_pull_finished"]
