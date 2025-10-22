@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://vb62kl8lneth"]
 
-[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.gdshader" id="1_uhyeb"]
-[ext_resource type="Texture2D" uid="uid://c8tqdjwdnxp60" path="res://src/assets/shaders/TilableShaderBase/crag_tilable_128_Base_color.png" id="2_uhyeb"]
+[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/Shaders/TilableShaderBase/TiledDirt.gdshader" id="1_uhyeb"]
+[ext_resource type="Texture2D" uid="uid://c8tqdjwdnxp60" path="res://src/assets/Shaders/TilableShaderBase/crag_tilable_128_Base_color.png" id="2_uhyeb"]
 
 [sub_resource type="Shader" id="Shader_m6krq"]
 code = "shader_type spatial;

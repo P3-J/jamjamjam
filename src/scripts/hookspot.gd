@@ -3,12 +3,8 @@ extends Area3D
 @export var boosts: bool = false
 
 func _ready() -> void:		
-	print(global_rotation)
-	print(global_rotation_degrees)
 	global_rotation_degrees = Vector3(0, global_rotation_degrees.y -270, 0)
 
-	print(global_rotation)
-	print(global_rotation_degrees)
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.name == 'PickaxeArea':

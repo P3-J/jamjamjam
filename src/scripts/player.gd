@@ -275,8 +275,8 @@ func _hook_connected(state: bool) -> void:
 
 func _player_in_hook(boosted_hook: bool):
 	if boosted_hook and current_hookspot:
-		velocity.x += velocity.x * 5
-		velocity.z += velocity.z * 5
+		velocity.x += velocity.x * 2
+		velocity.z += velocity.z * 2
 		velocity.y += 10
 
 	can_move_towards_hook = false;
