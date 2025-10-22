@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8wbgwjall6e4"]
+[gd_scene load_steps=4 format=3 uid="uid://c8wbgwjall6e4"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjmnpr5srh1" path="res://src/assets/object_scene_catalogue/objects_without_collisions/architecture_pillar_pillar.tscn" id="1_8hb32"]
 [ext_resource type="PackedScene" uid="uid://b7r4uno5lkx4d" path="res://src/assets/object_scene_catalogue/objects_without_collisions/architecture_pillar_cap.tscn" id="2_ppj55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6ede"]
 
 [node name="architecture_pillar" type="Node3D"]
 transform = Transform3D(2.9693213, 0, 0, 0, 2.9693213, 0, 0, 0, 2.9693213, 0, 0, 0)
@@ -12,3 +14,13 @@ transform = Transform3D(2.9693213, 0, 0, 0, 2.9693213, 0, 0, 0, 2.9693213, 0, 0,
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, -4.153651, 0)
 
 [node name="architecture_pillar_cap" parent="." instance=ExtResource("2_ppj55")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(2.017237, 0, 0, 0, 1.192011, 0, 0, 0, 2.017237, 0, -0.19621082, 0)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_s6ede")

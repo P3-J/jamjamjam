@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://2vv3l1wbeqv4"]
+[gd_scene load_steps=4 format=3 uid="uid://2vv3l1wbeqv4"]
 
 [ext_resource type="PackedScene" uid="uid://b6wannie2ckm3" path="res://src/assets/objects/GiantBridgePillar/GiantBridgePillar.fbx" id="1_268wu"]
 [ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_aaf2q"]
+[ext_resource type="Material" uid="uid://cgnc3wako16yd" path="res://src/assets/shaders/TilableShaderBase/DarkBricks.tres" id="2_m04gy"]
 
 [node name="GiantBridgePillar" instance=ExtResource("1_268wu")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube154" parent="GiantBridgePillar" index="0"]
+material_override = ExtResource("2_m04gy")
 
 [node name="pCube135" parent="GiantBridgePillar/group27" index="0"]
 material_override = ExtResource("2_aaf2q")
