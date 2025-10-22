@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn5kewb311n14"]
+[gd_scene load_steps=3 format=3 uid="uid://bn5kewb311n14"]
 
-[ext_resource type="Script" uid="uid://0xps4efuioor" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
-[ext_resource type="Theme" uid="uid://dur0kdrxfeoev" path="res://src/assets/ui/theme.tres" id="2_lhlp2"]
-[ext_resource type="PackedScene" uid="uid://b2wukaf1tyfjc" path="res://src/scenes/settings_menu_pause.tscn" id="3_pjeeh"]
+[ext_resource type="Script" uid="uid://b0ugnu1u8bit" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
+[ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="2_lhlp2"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -14,20 +13,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ojub6")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -130.5
-offset_top = -124.0
-offset_right = 130.5
-offset_bottom = 124.0
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.19100001
+anchor_right = 0.60200006
+anchor_bottom = 0.809
+offset_left = 0.05996704
+offset_top = 98.479996
+offset_right = -0.060058594
+offset_bottom = -98.47998
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_lhlp2")
 theme_override_constants/separation = 15
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
@@ -57,11 +62,6 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_lhlp2")
 text = "Quit"
-
-[node name="SettingsMenu" parent="." instance=ExtResource("3_pjeeh")]
-process_mode = 3
-visible = false
-layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/RespawnButton" to="." method="_on_respawn_button_pressed"]

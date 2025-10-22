@@ -1,6 +1,7 @@
 extends Node3D
 
 #DONT DELETE
+signal settings_changed()
 
 # Game specific
 signal game_starts()

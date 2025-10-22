@@ -33,3 +33,4 @@ func add_names_to_list(names: Array[String]):
 		
 func _on_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
 	get_tree().change_scene_to_file("res://src/levels/" + id_and_name[index] + ".tscn")
+	MenuManager.reset()

@@ -1,57 +1,53 @@
 extends Control
 
-var main_menu_scene =  ResourceLoader.load("res://src/scenes/main_menu.tscn") as PackedScene
+var main_menu_scene = ResourceLoader.load("res://src/scenes/UI/main_menu.tscn") as PackedScene
 
-@onready var settings = $SettingsMenu
+@onready var settings = $"../SettingsMenu"
 @onready var pause_menu_buttons = $VBoxContainer
-@onready var crosshair = $"../Crosshair"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	hide()  # Start hidden
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if !Globalsettings.input_disabled:
 		if Input.is_action_just_pressed("pause"):
 			if visible:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-				crosshair.show()
-				hide()
-				get_tree().paused = false
+				_close_pause_menu()
 			else:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				get_tree().paused = true
-				crosshair.hide()
-				show()
-	if Globalsettings.input_disabled:
+				_open_pause_menu()
+	else:
 		if Input.is_action_just_pressed("pause"):
-				crosshair.show()
-				Globalsettings.input_disabled = false
-				get_tree().paused = false
-				get_tree().reload_current_scene()
+			_reset_game_state()
 
+func _open_pause_menu() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().paused = true
+	MenuManager.open(self)
 
-func _on_quit_button_pressed() -> void:
-	crosshair.show()
+func _close_pause_menu() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(main_menu_scene)
+	MenuManager.reset()
 
-
-func _on_respawn_button_pressed() -> void:
-	crosshair.show()
+func _reset_game_state() -> void:
+	Globalsettings.input_disabled = false
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
+# BUTTON CALLBACKS
 func _on_start_button_pressed() -> void:
-	crosshair.show()
-	hide()
-	get_tree().paused = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	_close_pause_menu()
 
 func _on_settings_button_pressed() -> void:
-	pause_menu_buttons.hide()
-	settings.show()
+	MenuManager.open(settings)
+
+func _on_quit_button_pressed() -> void:
+	get_tree().paused = false
+	MenuManager.reset()
+	get_tree().change_scene_to_packed(main_menu_scene)
+
+func _on_respawn_button_pressed() -> void:
+	get_tree().paused = false
+	MenuManager.reset()
+	get_tree().reload_current_scene()

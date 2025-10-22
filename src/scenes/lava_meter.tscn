@@ -1,32 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://52x5hn7dyfbu"]
+[gd_scene load_steps=5 format=3 uid="uid://52x5hn7dyfbu"]
 
 [ext_resource type="Script" uid="uid://cpxaiqos62cwk" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
-[ext_resource type="Texture2D" uid="uid://c1qc1d5dy2pml" path="res://src/assets/ui/images/Player_Icon.png" id="2_3w4a4"]
+[ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="2_mxx8k"]
 [ext_resource type="Texture2D" uid="uid://dp3mdqpbwfuug" path="res://src/assets/ui/images/Lava_Meter.png" id="2_qgiuq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slkrb"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkr2h"]
-bg_color = Color(0.714902, 0.311203, 0.156468, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-
-[sub_resource type="Theme" id="Theme_g0pmd"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_slkrb")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_wkr2h")
+[ext_resource type="Texture2D" uid="uid://c7wrw8h1e6gsy" path="res://src/assets/ui/basic/LavaMeterDwarfIndicator.png" id="4_mxx8k"]
 
 [node name="LavaMeterScene" type="Control"]
 layout_mode = 3
-anchors_preset = 11
-anchor_left = 1.0
+anchor_left = 0.896
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -152.0
+offset_left = -18.880005
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_c1dsj")
@@ -45,12 +29,13 @@ offset_right = -17.0
 offset_bottom = 200.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = SubResource("Theme_g0pmd")
+theme = ExtResource("2_mxx8k")
 value = 30.0
 fill_mode = 3
 show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="LavaMeter"]
+visible = false
 z_index = -1
 layout_mode = 0
 offset_left = -5.0
@@ -75,6 +60,6 @@ offset_bottom = 124.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_3w4a4")
+texture = ExtResource("4_mxx8k")
 expand_mode = 1
 stretch_mode = 5

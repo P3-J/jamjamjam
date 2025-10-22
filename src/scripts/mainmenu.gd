@@ -6,11 +6,12 @@ var settings_scene = ResourceLoader.load("res://src/scenes/settings_menu_main.ts
 @onready var animation_colorect = $"../start/ColorRect"
 @onready var animation_label = $"../start/ColorRect/Label"
 @onready var settings = $"../SettingsMenu"
-@onready var level_selector: Control = $levelselector
+@onready var level_selector: Control = $"../levelselector"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MenuManager.open(self)
 	while !Globalsettings.splash_screen_called:
 		Globalsettings.splash_screen_called = true
 		animation.active = true
@@ -32,9 +33,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_play_pressed() -> void:
-	level_selector.visible = true
+	MenuManager.open(level_selector)
 
 
 func _on_settings_pressed() -> void:
-	hide()
-	settings.show()
+	MenuManager.open(settings)
