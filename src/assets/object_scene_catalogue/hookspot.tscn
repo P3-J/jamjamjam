@@ -1,36 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2exdliucx2qg"]
+[gd_scene load_steps=7 format=3 uid="uid://b2exdliucx2qg"]
 
 [ext_resource type="Script" uid="uid://bkfwk156dge2a" path="res://src/scripts/hookspot.gd" id="1_i0tbm"]
 [ext_resource type="PackedScene" uid="uid://dkfbtvxfwq2ov" path="res://src/assets/object_scene_catalogue/hook_spot.tscn" id="2_dg221"]
+[ext_resource type="Material" uid="uid://chiwt1b2w84yj" path="res://src/materials/hookspot_particle_effects.tres" id="3_11os5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a70su"]
 size = Vector3(3.63525, 4.88758, 1.89172)
 
-[sub_resource type="Curve" id="Curve_0wran"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_54g7f"]
-curve = SubResource("Curve_0wran")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ff13n"]
-emission_shape = 1
-emission_sphere_radius = 3.0
-gravity = Vector3(0, 0, 0)
-linear_accel_min = 7.0
-linear_accel_max = 7.0
-radial_accel_min = 0.999998
-radial_accel_max = 2.0
-scale_curve = SubResource("CurveTexture_54g7f")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sn62"]
-albedo_color = Color(0.602287, 0.30545, 0.0495513, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plgsd"]
+transparency = 1
+albedo_color = Color(0.5882353, 0.29411766, 0, 0.78431374)
 emission_enabled = true
-emission = Color(0.596346, 0.322207, 5.77569e-07, 1)
+emission = Color(0.5882353, 0.29411766, 0, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_repeat = false
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_rnxxg"]
-material = SubResource("StandardMaterial3D_5sn62")
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="QuadMesh" id="QuadMesh_osvxt"]
+material = SubResource("StandardMaterial3D_plgsd")
 
 [node name="hookspot" type="Area3D" groups=["hook"]]
 collision_mask = 3
@@ -47,8 +37,8 @@ transform = Transform3D(-0.505044, 0, 19.9936, 0, 20, 0, -19.9936, 0, -0.505044,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403494, 0)
 amount = 16
 lifetime = 0.75
-process_material = SubResource("ParticleProcessMaterial_ff13n")
-draw_pass_1 = SubResource("BoxMesh_rnxxg")
+process_material = ExtResource("3_11os5")
+draw_pass_1 = SubResource("QuadMesh_osvxt")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.590156, 0.293521, 1.34766e-06, 1)
