@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8tqdjwdnxp60"
-path.s3tc="res://.godot/imported/crag_tilable_128_Base_color.png-a3af6ec96851a2e5fa63852947e01ba7.s3tc.ctex"
+path.s3tc="res://.godot/imported/crag_tilable_128_Base_color.png-d80e2031464e8a2bd97e35bf0bd00b66.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/Shaders/TilableShaderBase/crag_tilable_128_Base_color.png"
-dest_files=["res://.godot/imported/crag_tilable_128_Base_color.png-a3af6ec96851a2e5fa63852947e01ba7.s3tc.ctex"]
+source_file="res://src/assets/shaders/TilableShaderBase/crag_tilable_128_Base_color.png"
+dest_files=["res://.godot/imported/crag_tilable_128_Base_color.png-d80e2031464e8a2bd97e35bf0bd00b66.s3tc.ctex"]
 
 [params]
 
