@@ -15,6 +15,11 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var boost_timer = $utils/boost_timer
 @onready var speed_lines_shader: ColorRect = $head/Camera3D/Control/SpeedLinesShader
 
+#region SFX
+@onready var walk_sfx: AudioStreamPlayer3D = $Audio/Walk
+var hooked_sfx_played: bool = false
+#endregion
+
 @onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
 @onready var highlighted_crosshair_texture = load("uid://dvovki06eqtnx")
 @export var rope_mesh: MeshInstance3D
@@ -91,6 +96,11 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = lerp(velocity.x, 0.0, friction * delta)
 			velocity.z = lerp(velocity.z, 0.0, friction * delta)
+		if velocity.length() > 4 and not walk_sfx.playing:
+			walk_sfx.play()
+		else:
+			if velocity.length() < 1:
+				walk_sfx.stop()
 
 	else:
 		var air_accel = 30.0 
@@ -111,9 +121,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 		if velocity.y < max_fall_speed:
 			velocity.y = max_fall_speed
+		walk_sfx.stop()	
 
 
 	if in_boost_area:
+		Signalbus.emit_signal('play_geyser_woosh')
 		velocity.y += 2
 
 	if is_on_floor() and velocity.y < 0:
@@ -162,6 +174,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("jump") and not jumped:
+		Signalbus.emit_signal('play_jump_sound')
 		jumped = true
 		velocity.y = jump_speed
 		pickaxe.play_jump_animation()
@@ -187,10 +200,13 @@ func hooking_process() -> void:
 		send_hook_towards(current_hookspot)
 		if can_move_towards_hook:
 			hook_towards(current_hookspot)
+		else:
+			Signalbus.emit_signal('play_rope_pull_sound', false)
 
 
 func _pickaxe_boost() -> void:
 	pickaxe.play_boost_animation()
+	Signalbus.emit_signal('play_pickaxe_boost_sound')
 	await get_tree().create_timer(0.2).timeout
 	pickaxe_boosted = true
 	var ray_origin = boostray.global_transform.origin
@@ -249,6 +265,7 @@ func check_for_hook_collision():
 
 	if (holding_hook_button and !current_hookspot):
 		if (collider and collider.is_in_group("hook")):
+			Signalbus.emit_signal('play_pickaxe_throw_sound')
 			current_hookspot = collider
 			var t = pickaxe.global_transform
 			pickaxe.get_parent().remove_child(pickaxe)
@@ -265,6 +282,7 @@ func reset_pickaxe_position():
 func hook_towards(collider):
 	var direction = (collider.global_position - global_transform.origin).normalized() 
 	velocity = direction * hook_towards_speed
+	Signalbus.emit_signal('play_rope_pull_sound', true)
 
 func send_hook_towards(collider):
 	pickaxe.scale = Vector3(2,2,2)
@@ -372,5 +390,8 @@ func unfreeze_player() -> void:
 	Signalbus.emit_signal('make_lava_rise')
 
 func check_lava_level():
+	Signalbus.emit_signal('play_lava_rise_sound', global_position.y - lava.global_position.y)
+	Signalbus.emit_signal('play_lava_hiss_sound', global_position.y - lava.global_position.y)
 	if (lava.global_position.y > global_position.y):
 		Signalbus.emit_signal('kill_player');
+		Signalbus.emit_signal('play_dwarf_death_sound')

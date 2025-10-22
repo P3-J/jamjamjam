@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=26 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/ui/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="FontFile" uid="uid://ficbuvq5hqkl" path="res://font/UncialAntiqua-Regular.ttf" id="5_sjss2"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="6_4pcbe"]
-[ext_resource type="Shader" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="AudioStream" uid="uid://dsept5vtv4vvo" path="res://src/assets/sounds/SFX/walk_on_stone.wav" id="8_4pcbe"]
 
 [sub_resource type="Animation" id="Animation_4pcbe"]
 length = 0.001
@@ -351,5 +352,16 @@ initial_velocity_max = 0.2
 angular_velocity_min = 1.0
 angular_velocity_max = 4.0
 scale_amount_curve = SubResource("Curve_4pcbe")
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Audio"]
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.96358967, 0)
+stream = ExtResource("8_4pcbe")
+volume_db = -20.0
+unit_size = 4.0
+pitch_scale = 1.5
 
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
