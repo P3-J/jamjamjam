@@ -8,6 +8,7 @@ var text_edit: TextEdit
 var has_submit: bool
 
 @onready var timer = $Timer2
+@onready var win_laugh: AudioStreamPlayer = $WinLaugh
 
 func _ready() -> void:
 	time_text = get_node("timer_text")
@@ -21,6 +22,7 @@ func _ready() -> void:
 	var second_str = str(Signalbus.seconds).pad_zeros(2)
 	var millisecond_str = str(Signalbus.milliseconds).pad_zeros(3)
 	time_text.text = minute_str + ":" + second_str + ":" + millisecond_str
+	Signalbus.connect("play_dwarf_laugh_win_sound", _on_dwarf_laugh_win_sound)
 	refresh()
 
 
@@ -85,7 +87,9 @@ func _on_button_pressed() -> void:
 func _on_timer_2_timeout() -> void:
 	refresh()
 
-
+func _on_dwarf_laugh_win_sound() -> void:
+	win_laugh.pitch_scale = randf_range(0.8, 1.2)
+	win_laugh.play()
 
 const SAVE_FILE_PATH := "user://scores.txt"
 func save_score(username: String, time_sec: float) -> void:

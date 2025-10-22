@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7nywv5gyuyjd"]
+[gd_scene load_steps=6 format=3 uid="uid://c7nywv5gyuyjd"]
 
 [ext_resource type="Script" uid="uid://cxv083h4rviqw" path="res://src/scripts/score_screen.gd" id="1_imtw2"]
 [ext_resource type="Texture2D" uid="uid://brc1dohjeg1f3" path="res://src/assets/ui/end_screen_stuff/Leaderboard.png" id="3_8ekpm"]
 [ext_resource type="Texture2D" uid="uid://cmm3d5trbe7c3" path="res://src/assets/ui/end_screen_stuff/Banner_Rendered.jpg" id="4_r7e2x"]
+[ext_resource type="AudioStream" uid="uid://dq8a5os7fmqnm" path="res://src/assets/sounds/SFX/win_laugh.wav" id="4_xiqta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gy6jf"]
 
@@ -109,6 +110,12 @@ metadata/_edit_group_ = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="WinLaugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xiqta")
+autoplay = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
