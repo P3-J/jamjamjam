@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="jamjamjam"
-run/main_scene="uid://dmbwsy38esgng"
+run/main_scene="uid://br8ugoivcgshj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
 boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
@@ -21,6 +21,7 @@ boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
 Signalbus="*res://src/scripts/signalbus.gd"
 Globalsettings="*res://src/scripts/globalsettings.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+MenuManager="*res://src/scenes/UI/menu_manager.gd"
 
 [debug]
 

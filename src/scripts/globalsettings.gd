@@ -41,4 +41,3 @@ func load_settings() -> void:
 		mouse_sensitivity = config.get_value("Settings", "mouse_sensitivity", 0.001)
 		audio_volume = config.get_value("Settings", "audio_volume", 100)
 		music_volume = config.get_value("Settings", "music_volume", 100)
-

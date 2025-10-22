@@ -119,8 +119,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0.194805, 0.194805, 0.194805, 0.805195, 1,
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mmrv1"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4574f"]
-color_ramp = SubResource("Gradient_ytq02")
 noise = SubResource("FastNoiseLite_mmrv1")
+color_ramp = SubResource("Gradient_ytq02")
 
 [node name="DeathScreen" type="Control"]
 process_mode = 3
