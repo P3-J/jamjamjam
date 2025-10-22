@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chiyr6bwkuttc"
-path.s3tc="res://.godot/imported/rock_tilable_Base_color.png-4f8a8038f0a5e1425b3b9c4085dfcc81.s3tc.ctex"
+path.s3tc="res://.godot/imported/rock_tilable_Base_color.png-a39f817f0a6abf557d2f9acb05095e15.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/Shaders/TilableShaderBase/rock_tilable_Base_color.png"
-dest_files=["res://.godot/imported/rock_tilable_Base_color.png-4f8a8038f0a5e1425b3b9c4085dfcc81.s3tc.ctex"]
+source_file="res://src/assets/shaders/TilableShaderBase/rock_tilable_Base_color.png"
+dest_files=["res://.godot/imported/rock_tilable_Base_color.png-a39f817f0a6abf557d2f9acb05095e15.s3tc.ctex"]
 
 [params]
 

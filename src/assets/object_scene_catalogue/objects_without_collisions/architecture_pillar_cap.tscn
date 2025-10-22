@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bmlwryduq3e6o" path="res://src/assets/objects/architecture_pillar/architecture_pillar_cap.fbx" id="1_e7nrc"]
 [ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_7msgs"]
-[ext_resource type="Material" uid="uid://2niggerenxom" path="res://src/assets/shaders/TilableShaderBase/Bricks.tres" id="3_7msgs"]
+[ext_resource type="Material" uid="uid://1snuwym130ej" path="res://src/assets/shaders/TilableShaderBase/RockSlate.tres" id="3_7msgs"]
 
 [node name="architecture_pillar_cap" instance=ExtResource("1_e7nrc")]
 
@@ -10,15 +10,18 @@
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
 
 [node name="pCube523" parent="architecture_pillar_cap/group133" index="0"]
+transform = Transform3D(-0.24617685, 0, -0.24617681, 0, 0.24319366, 0, 0.24617681, 0, -0.24617685, 0.006109004, 0.0018395596, -0.0061091483)
 material_override = ExtResource("2_7msgs")
 
 [node name="polySurface1" parent="architecture_pillar_cap/group133" index="1"]
 material_override = ExtResource("3_7msgs")
 
 [node name="pCube521" parent="architecture_pillar_cap/group133" index="2"]
+transform = Transform3D(0.24617676, 0, -0.24617681, 0, 0.24319366, 0, 0.24617681, 0, 0.24617676, -0.006262621, 0.001392463, -0.0062624766)
 material_override = ExtResource("2_7msgs")
 
 [node name="pCube525" parent="architecture_pillar_cap/group133" index="3"]
+transform = Transform3D(0.24617676, 0, 0.2461768, 0, 0.24319364, 0, -0.2461768, 0, 0.24617676, -0.0064751687, 0.0012389356, 0.006561538)
 material_override = ExtResource("2_7msgs")
 
 [node name="pCube524" parent="architecture_pillar_cap/group133" index="4"]

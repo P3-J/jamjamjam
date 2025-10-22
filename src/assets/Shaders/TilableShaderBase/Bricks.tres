@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://2niggerenxom"]
 
-[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/Shaders/TilableShaderBase/TiledDirt.gdshader" id="1_7nf6j"]
+[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.gdshader" id="1_7nf6j"]
 [ext_resource type="Texture2D" uid="uid://ds33muogueqdi" path="res://textures/t2/F2/STWS1_1.png" id="2_7nf6j"]
 
 [sub_resource type="Shader" id="Shader_m6krq"]

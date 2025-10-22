@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq8tywvi0bbfh"]
+[gd_scene load_steps=4 format=3 uid="uid://cq8tywvi0bbfh"]
 
 [ext_resource type="PackedScene" uid="uid://bwxcyjyxr45n5" path="res://src/assets/objects/BigPassage/BigPassage.fbx" id="1_m34jv"]
 [ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_bxs4e"]
+[ext_resource type="Material" uid="uid://bl1nqa56gvw5f" path="res://src/assets/shaders/TilableShaderBase/RockSlateBright.tres" id="3_ay6rp"]
 
 [node name="BigPassage" instance=ExtResource("1_m34jv")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
 
 [node name="pCube123" parent="BigPassage" index="0"]
+material_override = ExtResource("2_bxs4e")
+
+[node name="pCube124" parent="BigPassage" index="1"]
+material_override = ExtResource("2_bxs4e")
+
+[node name="pCube125" parent="BigPassage" index="2"]
 material_override = ExtResource("2_bxs4e")
 
 [node name="pCube126" parent="BigPassage" index="3"]
@@ -17,6 +24,9 @@ material_override = ExtResource("2_bxs4e")
 
 [node name="pCube128" parent="BigPassage" index="5"]
 material_override = ExtResource("2_bxs4e")
+
+[node name="pCube129" parent="BigPassage" index="6"]
+material_override = ExtResource("3_ay6rp")
 
 [node name="pCube130" parent="BigPassage" index="7"]
 material_override = ExtResource("2_bxs4e")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b7r4uno5lkx4d" path="res://src/assets/object_scene_catalogue/objects_without_collisions/architecture_pillar_cap.tscn" id="2_ppj55"]
 
 [node name="architecture_pillar" type="Node3D"]
-transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 0, 0, 0)
+transform = Transform3D(2.9693213, 0, 0, 0, 2.9693213, 0, 0, 0, 2.9693213, 0, 0, 0)
 
 [node name="architecture_pillar_pillar" parent="." instance=ExtResource("1_8hb32")]
 
