@@ -1,6 +1,7 @@
 extends Control
 
-var main_menu_scene =  ResourceLoader.load("res://src/scenes/main_menu.tscn") as PackedScene
+var main_menu_scene =  ResourceLoader.load("res://src/scenes/UI/main_menu.tscn") as PackedScene
+var lv2 = ResourceLoader.load("res://src/levels/lv2.tscn") as PackedScene
 
 var time_text: RichTextLabel
 var list: ItemList
@@ -10,9 +11,9 @@ var has_submit: bool
 @onready var timer = $Timer2
 
 func _ready() -> void:
-	time_text = get_node("timer_text")
-	list = get_node("ItemList")
-	text_edit = get_node("TextEdit")
+	time_text = get_node("TextureRect/banner/timer_text")
+	list = get_node("TextureRect/ItemList")
+	text_edit = get_node("TextureRect/VBoxContainer/TextEdit")
 
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -96,3 +97,7 @@ func save_score(username: String, time_sec: float) -> void:
 		file.close()
 	else:
 		push_error("no file boohoo: %s" % SAVE_FILE_PATH)
+
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_packed(lv2)

@@ -1,0 +1,253 @@
+[gd_scene load_steps=15 format=3 uid="uid://br8ugoivcgshj"]
+
+[ext_resource type="Texture2D" uid="uid://pl3m6lqs3330" path="res://src/assets/ui/basic/ControlsLeftClick.png" id="1_q5ok3"]
+[ext_resource type="Script" uid="uid://c4edoenb2k3e1" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
+[ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
+[ext_resource type="LabelSettings" uid="uid://chm1kbifypcv4" path="res://src/assets/ui/header.tres" id="2_p8thm"]
+[ext_resource type="Texture2D" uid="uid://mn0dd71so87r" path="res://src/assets/ui/basic/ControlsRightClick.png" id="3_4xweg"]
+[ext_resource type="Texture2D" uid="uid://cvvjol7rjlqvx" path="res://src/assets/ui/basic/MainMenu.png" id="3_54dtw"]
+[ext_resource type="Texture2D" uid="uid://dp57w4k18uqq3" path="res://src/assets/ui/basic/ControlsEmpty.png" id="4_4v121"]
+[ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="8_6wcb6"]
+[ext_resource type="PackedScene" uid="uid://cbvgm61qw2giq" path="res://src/scenes/UI/levelselector.tscn" id="8_ubq7q"]
+[ext_resource type="PackedScene" uid="uid://xsckw4ti5dgv" path="res://src/scenes/UI/settings_menu.tscn" id="10_5dsdd"]
+[ext_resource type="AudioStream" uid="uid://b8w7o1biiuvv2" path="res://src/assets/sounds/chillin_at_the_cave.mp3" id="18_ofngt"]
+
+[sub_resource type="Animation" id="Animation_y0iw5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i48r3"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.1, 4.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p88j"]
+_data = {
+&"RESET": SubResource("Animation_y0iw5"),
+&"fade_in": SubResource("Animation_i48r3")
+}
+
+[node name="main_menu" type="Control"]
+custom_minimum_size = Vector2(1080, 500)
+layout_mode = 3
+anchor_right = 1.0015625
+anchor_bottom = 1.0069444
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.8065523
+anchor_top = 0.0055172415
+anchor_right = 0.9906396
+anchor_bottom = 0.9737931
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_q5ok3")
+expand_mode = 1
+
+[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(182.38, 0)
+layout_mode = 2
+theme = ExtResource("8_6wcb6")
+text = "Pickaxe Jump"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_4xweg")
+expand_mode = 1
+
+[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(182.38, 0)
+layout_mode = 2
+theme = ExtResource("8_6wcb6")
+text = "Hook"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_4v121")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/TextureRect"]
+layout_mode = 0
+anchor_left = 0.28
+anchor_top = 0.12
+anchor_right = 0.72
+anchor_bottom = 0.82
+theme = ExtResource("8_6wcb6")
+theme_override_font_sizes/font_size = 30
+text = "R"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(182.38, 0)
+layout_mode = 2
+theme = ExtResource("8_6wcb6")
+text = "Restart"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.097
+anchor_right = 0.57000005
+anchor_bottom = 0.275
+offset_left = -42.0
+offset_top = 0.15999603
+offset_right = 0.39990234
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 100
+text = "   Dwarf Escape"
+label_settings = ExtResource("2_p8thm")
+
+[node name="MainMenu" type="Control" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vmwyx")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.046000004
+anchor_top = 0.26200002
+anchor_right = 0.266
+anchor_bottom = 0.841
+offset_left = -17.880005
+offset_top = 0.35998535
+offset_right = -0.480011
+offset_bottom = 17.47998
+texture = ExtResource("3_54dtw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.245
+anchor_right = 0.906
+anchor_bottom = 0.75500005
+offset_left = 0.0814991
+offset_top = 0.16999817
+offset_right = -0.08151245
+offset_bottom = -0.17001343
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_6wcb6")
+
+[node name="Play" type="Button" parent="MainMenu/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_6wcb6")
+text = "Play"
+
+[node name="Settings" type="Button" parent="MainMenu/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_6wcb6")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MainMenu/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_6wcb6")
+text = "Quit"
+
+[node name="levelselector" parent="." instance=ExtResource("8_ubq7q")]
+visible = false
+layout_mode = 1
+offset_top = 2.0
+offset_bottom = 2.0
+
+[node name="SettingsMenu" parent="." instance=ExtResource("10_5dsdd")]
+visible = false
+layout_mode = 1
+
+[node name="start" type="AnimationPlayer" parent="."]
+active = false
+libraries = {
+&"": SubResource("AnimationLibrary_7p88j")
+}
+
+[node name="ColorRect" type="ColorRect" parent="start"]
+visible = false
+modulate = Color(1, 1, 1, 0.9030624)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="start/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 9.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_asv1t")
+theme_override_font_sizes/font_size = 120
+text = "Team Mõmmid"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_ofngt")
+
+[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Settings" to="MainMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]

@@ -15,8 +15,8 @@ var lava_meter_scene =  ResourceLoader.load("uid://52x5hn7dyfbu") as PackedScene
 @onready var boost_timer = $utils/boost_timer
 @onready var speed_lines_shader: ColorRect = $head/Camera3D/Control/SpeedLinesShader
 
-@onready var normal_crosshair_texture = load("uid://dqd3fuoa1qmde")
-@onready var highlighted_crosshair_texture = load("uid://dvovki06eqtnx")
+@onready var normal_crosshair_texture = load("res://src/assets/ui/basic/Crosshair.png")
+@onready var highlighted_crosshair_texture = load("res://src/assets/ui/basic/CrosshairFacingHook.png")
 @export var rope_mesh: MeshInstance3D
 @export var lava: Area3D
 
@@ -68,6 +68,9 @@ func _ready() -> void:
 	pickaxe.get_parent().remove_child(pickaxe)
 	head.add_child(pickaxe)
 	reset_pickaxe_position()
+	
+	
+	Signalbus.settings_changed.connect(_on_settings_changed)
 
 func _physics_process(delta: float) -> void:
 	if (player_frozen): 
@@ -226,7 +229,7 @@ func _get_nodes() -> void:
 	hook_start_time = get_node("utils/hook_start_time")
 	body = get_node("playermesh")
 	player_anim = get_node("player_anim")
-	timer_text = get_node("UI/timer_text")
+	timer_text = get_node("UI/timer/timer_text")
 	pickaxe = get_node("head/Pickaxe")
 
 
@@ -374,3 +377,6 @@ func unfreeze_player() -> void:
 func check_lava_level():
 	if (lava.global_position.y > global_position.y):
 		Signalbus.emit_signal('kill_player');
+		
+func _on_settings_changed() -> void:
+	mouse_sensitivity = Globalsettings.mouse_sensitivity
