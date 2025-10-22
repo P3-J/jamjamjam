@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://pl3m6lqs3330" path="res://src/assets/ui/basic/ControlsLeftClick.png" id="1_q5ok3"]
 [ext_resource type="Script" uid="uid://c4edoenb2k3e1" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
-[ext_resource type="LabelSettings" uid="uid://chm1kbifypcv4" path="res://src/assets/ui/header.tres" id="2_p8thm"]
+[ext_resource type="LabelSettings" uid="uid://i6f1lmycuxws" path="res://src/assets/ui/header.tres" id="2_p8thm"]
 [ext_resource type="Texture2D" uid="uid://mn0dd71so87r" path="res://src/assets/ui/basic/ControlsRightClick.png" id="3_4xweg"]
 [ext_resource type="Texture2D" uid="uid://cvvjol7rjlqvx" path="res://src/assets/ui/basic/MainMenu.png" id="3_54dtw"]
 [ext_resource type="Texture2D" uid="uid://dp57w4k18uqq3" path="res://src/assets/ui/basic/ControlsEmpty.png" id="4_4v121"]
