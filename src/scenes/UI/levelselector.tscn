@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbvgm61qw2giq"]
 
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="1_0s7kf"]
-[ext_resource type="Texture2D" uid="uid://w2n3vax2obxf" path="res://datamap/color.png" id="3_rb5t1"]
+[ext_resource type="Texture2D" uid="uid://cw1u02xxef24" path="res://src/assets/ui/level_selection/MainButton.png" id="3_877dj"]
 [ext_resource type="PackedScene" uid="uid://dusgog1jtdc0d" path="res://src/scenes/UI/loading_screen.tscn" id="6_y6hlq"]
 [ext_resource type="Texture2D" uid="uid://bmoyx51oqubng" path="res://src/assets/ui/level_selection/LevelSelectionBackground.png" id="8_ca0it"]
 [ext_resource type="Texture2D" uid="uid://r7tsp40vuiuk" path="res://src/assets/ui/leaderboard/LeaderboardMainLabel.png" id="11_58i10"]
@@ -66,21 +66,45 @@ texture_normal = ExtResource("11_eou63")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="Label2" type="Label" parent="TextureRect2/VBoxContainer2/tutorial?"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 59.0
+offset_right = 129.0
+offset_bottom = 83.0
+theme = ExtResource("1_0s7kf")
+text = "TUTORIAL?"
+
 [node name="lvl2" type="TextureButton" parent="TextureRect2/VBoxContainer2"]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture_normal = ExtResource("11_eou63")
-texture_pressed = ExtResource("3_rb5t1")
+texture_normal = ExtResource("3_877dj")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="TextureRect2/VBoxContainer2"]
+[node name="Label" type="Label" parent="TextureRect2/VBoxContainer2/lvl2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 60.0
+offset_right = 62.0
+offset_bottom = 84.0
+theme = ExtResource("1_0s7kf")
+text = "Main"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="TextureRect2/VBoxContainer2"]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+ratio = 3.4
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="TextureRect2/VBoxContainer2/AspectRatioContainer"]
+layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("1_0s7kf")
+theme_override_font_sizes/font_size = 25
 text = "Back"
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect2"]
@@ -101,10 +125,8 @@ anchor_left = 0.07857143
 anchor_top = 0.29347825
 anchor_right = 0.92142856
 anchor_bottom = 0.70652175
-offset_left = 106.0
-offset_top = 16.5
-offset_right = -106.0
-offset_bottom = -16.5
+offset_right = 16.857178
+offset_bottom = 15.695648
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_0s7kf")
@@ -119,24 +141,6 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 378.0
-offset_top = 461.0
-offset_right = 429.0
-offset_bottom = 485.0
-theme = ExtResource("1_0s7kf")
-text = "LVL2"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 378.0
-offset_top = 356.0
-offset_right = 429.0
-offset_bottom = 380.0
-theme = ExtResource("1_0s7kf")
-text = "TUTORIAL?"
-
 [connection signal="pressed" from="TextureRect2/VBoxContainer2/tutorial?" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="TextureRect2/VBoxContainer2/lvl2" to="." method="_on_lvl_2_pressed"]
-[connection signal="pressed" from="TextureRect2/VBoxContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect2/VBoxContainer2/AspectRatioContainer/Button" to="." method="_on_button_pressed"]

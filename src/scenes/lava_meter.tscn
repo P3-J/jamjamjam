@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://52x5hn7dyfbu"]
 
 [ext_resource type="Script" uid="uid://cpxaiqos62cwk" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
-[ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="2_mxx8k"]
-[ext_resource type="Texture2D" uid="uid://dp3mdqpbwfuug" path="res://src/assets/ui/images/Lava_Meter.png" id="2_qgiuq"]
+[ext_resource type="Texture2D" uid="uid://ccwdljdkm1hne" path="res://src/assets/ui/basic/LavaMeterEmpty.png" id="2_qwq4a"]
+[ext_resource type="Texture2D" uid="uid://ddbkffjryuvuf" path="res://src/assets/ui/basic/LavameterFilled.png" id="3_tleod"]
 [ext_resource type="Texture2D" uid="uid://c7wrw8h1e6gsy" path="res://src/assets/ui/basic/LavaMeterDwarfIndicator.png" id="4_mxx8k"]
 
 [node name="LavaMeterScene" type="Control"]
@@ -15,51 +15,38 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_c1dsj")
 
-[node name="LavaMeter" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(16, 400)
+[node name="LavaMeter" type="TextureProgressBar" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -37.0
-offset_top = -200.0
-offset_right = -17.0
-offset_bottom = 200.0
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("2_mxx8k")
-value = 30.0
-fill_mode = 3
-show_percentage = false
-
-[node name="TextureRect" type="TextureRect" parent="LavaMeter"]
-visible = false
-z_index = -1
-layout_mode = 0
-offset_left = -5.0
-offset_top = 411.0
-offset_right = 414.0
-offset_bottom = 441.0
-rotation = -1.5708
-texture = ExtResource("2_qgiuq")
-expand_mode = 1
-
-[node name="PlayerPos" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -96.0
-offset_right = 194.0
-offset_bottom = 124.0
+anchors_preset = -1
+anchor_left = 0.67763114
+anchor_top = 0.33194444
+anchor_right = 0.85657865
+anchor_bottom = 0.6733333
+offset_right = 108.800026
+offset_bottom = 983.2
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
+step = 0.1
+value = 30.0
+fill_mode = 3
+texture_under = ExtResource("2_qwq4a")
+texture_progress = ExtResource("3_tleod")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerPos" type="TextureRect" parent="LavaMeter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.99988
+offset_top = 425.5
+offset_right = 122.00012
+offset_bottom = 645.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_mxx8k")
 expand_mode = 1
 stretch_mode = 5

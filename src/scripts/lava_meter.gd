@@ -1,7 +1,7 @@
 extends Control
 
 @onready var lava_meter = $LavaMeter
-@onready var player_indicator = $PlayerPos
+@onready var player_indicator = $LavaMeter/PlayerPos
 var exit: Node3D
 var lava: Node3D
 var player
@@ -35,5 +35,5 @@ func _process(_delta: float) -> void:
 
 	var max_pos = lava_meter.position.y
 	var min_pos = max_pos + lava_meter.size.y
-	player_indicator.position.y = min_pos - (((min_pos - max_pos) / 100) * (player_percentage))
+	player_indicator.position.y = min_pos - (((min_pos - max_pos) / 100) * player_percentage)
 	player_indicator.position.y -= 26
