@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=27 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/ui/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="5_xvyn7"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="6_4pcbe"]
-[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="Shader" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
 [ext_resource type="AudioStream" uid="uid://dsept5vtv4vvo" path="res://src/assets/sounds/SFX/walk_on_stone.wav" id="8_4pcbe"]
 
 [sub_resource type="Animation" id="Animation_4pcbe"]
@@ -189,11 +189,14 @@ size = Vector2(0.1, 0.1)
 _data = [Vector2(0.00645161, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("rope_mesh", "pickaxe") groups=["player"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvyn7"]
+
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("rope_mesh", "hookcol", "pickaxe") groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ve44u")
 rope_mesh = NodePath("rope")
+hookcol = NodePath("hookcol")
 pickaxe = NodePath("head/Pickaxe")
 
 [node name="UI" type="Control" parent="."]
@@ -211,11 +214,15 @@ layout_mode = 1
 [node name="Crosshair" type="TextureRect" parent="UI"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.475
-anchor_top = 0.45555556
-anchor_right = 0.525
-anchor_bottom = 0.54444444
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -330,8 +337,6 @@ target_position = Vector3(0, -1.25, 0)
 [node name="utils" type="Node" parent="."]
 
 [node name="hook_start_time" type="Timer" parent="utils"]
-wait_time = 0.1
-one_shot = true
 
 [node name="game_time" type="Timer" parent="utils"]
 wait_time = 4096.0
@@ -376,4 +381,11 @@ unit_size = 4.0
 pitch_scale = 1.5
 bus = &"SFX"
 
+[node name="hookcol" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hookcol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07726976, 0)
+shape = SubResource("BoxShape3D_xvyn7")
+
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]
+[connection signal="timeout" from="utils/boost_timer" to="." method="_on_boost_timer_timeout"]
