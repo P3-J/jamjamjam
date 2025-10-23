@@ -1,11 +1,11 @@
 extends Control
 
-@onready var mouse_slider = $HBoxContainer/HBoxContainer/HBoxContainer/HSlider
-@onready var mouse_value = $HBoxContainer/HBoxContainer/HBoxContainer/MouseValue
-@onready var audio_slider = $HBoxContainer/HBoxContainer/HBoxContainer2/audioslider
-@onready var audio_value = $HBoxContainer/HBoxContainer/HBoxContainer2/Audiovalue
-@onready var music_slider = $HBoxContainer/HBoxContainer/HBoxContainer3/musicslider
-@onready var music_value = $HBoxContainer/HBoxContainer/HBoxContainer3/Musicvalue
+@onready var mouse_slider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer/HSlider
+@onready var mouse_value = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer/MouseValue
+@onready var audio_slider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2/audioslider
+@onready var audio_value = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2/Audiovalue
+@onready var music_slider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3/musicslider
+@onready var music_value = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3/Musicvalue
 
 signal settings_changed()
 

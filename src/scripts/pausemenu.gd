@@ -2,11 +2,13 @@ extends Control
 
 var main_menu_scene = ResourceLoader.load("res://src/scenes/UI/main_menu.tscn") as PackedScene
 
-@onready var settings = $"../SettingsMenu"
-@onready var pause_menu_buttons = $VBoxContainer
+var settings: Node
+var pause_menu_buttons: VBoxContainer
 
 func _ready() -> void:
-	hide()  # Start hidden
+	pause_menu_buttons = $VBoxContainer
+	settings = get_parent().get_node("SettingsMenu")
+	hide()
 
 func _process(_delta: float) -> void:
 	if !Globalsettings.input_disabled:
