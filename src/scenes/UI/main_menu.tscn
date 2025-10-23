@@ -132,16 +132,14 @@ grow_vertical = 2
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.097
-anchor_right = 0.57000005
-anchor_bottom = 0.275
-offset_left = -42.0
-offset_top = 0.15999603
-offset_right = 0.39990234
-offset_bottom = 5.0
+anchor_left = -0.031201247
+anchor_top = 0.04137931
+anchor_right = 0.57187206
+anchor_bottom = 0.22605518
 theme_override_font_sizes/font_size = 100
 text = "   Dwarf Escape"
 label_settings = ExtResource("2_p8thm")
+metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" type="Control" parent="."]
 process_mode = 3

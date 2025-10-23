@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=3 uid="uid://ys24hk4rb1xo"]
+[gd_resource type="Theme" load_steps=32 format=3 uid="uid://ys24hk4rb1xo"]
 
 [ext_resource type="FontFile" uid="uid://crcvk11dlvyuo" path="res://font/Sunantara.ttf" id="1_me7jw"]
 [ext_resource type="Texture2D" uid="uid://cepdomtjvle48" path="res://src/assets/ui/buttons/MenuButton1Clicked.png" id="2_b06wh"]
@@ -17,6 +17,8 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fb32"]
 content_margin_bottom = 10.0
 texture = ExtResource("2_b06wh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6mre"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x31ag"]
 content_margin_bottom = 10.0
@@ -92,6 +94,7 @@ Button/constants/outline_size = 5
 Button/font_sizes/font_size = 50
 Button/fonts/font = ExtResource("1_me7jw")
 Button/styles/disabled = SubResource("StyleBoxTexture_1fb32")
+Button/styles/focus = SubResource("StyleBoxTexture_x6mre")
 Button/styles/hover = SubResource("StyleBoxTexture_x31ag")
 Button/styles/normal = SubResource("StyleBoxTexture_s8qip")
 Button/styles/pressed = SubResource("StyleBoxTexture_io5f3")
