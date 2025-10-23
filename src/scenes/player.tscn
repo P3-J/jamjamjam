@@ -374,5 +374,6 @@ stream = ExtResource("8_4pcbe")
 volume_db = -20.0
 unit_size = 4.0
 pitch_scale = 1.5
+bus = &"SFX"
 
 [connection signal="timeout" from="utils/hook_start_time" to="." method="_on_hook_start_time_timeout"]

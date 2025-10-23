@@ -26,7 +26,7 @@ signal play_ring_boost_sound()
 signal play_jump_sound()
 signal play_dwarf_death_sound()
 signal play_dwarf_laugh_win_sound()
-signal _dont_play_sounds_on_reload()
+signal dont_play_sounds_on_reload()
 #endregion
 
 # Others

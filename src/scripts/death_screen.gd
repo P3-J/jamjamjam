@@ -16,7 +16,7 @@ func _death_called():
 
 func _on_animation_finished(anim_name: String):
 	if anim_name == "DeathScreenAnimation":
-		Signalbus.emit_signal("_dont_play_sounds_on_reload")
+		Signalbus.emit_signal("dont_play_sounds_on_reload")
 		Globalsettings.input_disabled = false
 		get_tree().paused = false
 		get_tree().reload_current_scene()
