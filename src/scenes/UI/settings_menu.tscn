@@ -225,24 +225,24 @@ theme = SubResource("Theme_ri8ns")
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="audioslider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="MusicSlider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 
-[node name="Audiovalue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="MusicValue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_ri8ns")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="musicslider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3"]
+[node name="AudioSlider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 
-[node name="Musicvalue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3"]
+[node name="AudioValue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme = SubResource("Theme_ri8ns")
 

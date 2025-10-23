@@ -2,10 +2,10 @@ extends Control
 
 @onready var mouse_slider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer/HSlider
 @onready var mouse_value = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer/MouseValue
-@onready var audio_slider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2/audioslider
-@onready var audio_value = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2/Audiovalue
-@onready var music_slider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3/musicslider
-@onready var music_value = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3/Musicvalue
+@onready var music_slider: HSlider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2/MusicSlider
+@onready var audio_slider: HSlider = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3/AudioSlider
+@onready var music_value: Label = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2/MusicValue
+@onready var audio_value: Label = $TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3/AudioValue
 
 signal settings_changed()
 
@@ -44,7 +44,6 @@ func _on_music_changed(value: float) -> void:
 	Globalsettings.music_volume = value
 	music_value.text = str(value)
 	Signalbus.settings_changed.emit()
-
 
 # BACK BUTTON
 func _on_back_pressed() -> void:

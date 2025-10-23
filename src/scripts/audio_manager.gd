@@ -36,7 +36,11 @@ func _ready() -> void:
 	Signalbus.connect('play_dwarf_death_sound', _play_dwarf_death_sound)
 	Signalbus.connect('play_jump_sound', _play_jump_sound)
 	Signalbus.connect('play_ring_boost_sound', _play_ring_boost_sound)
-	Signalbus.connect('_dont_play_sounds_on_reload', _on_dont_play_sounds_on_reload)
+	Signalbus.connect('dont_play_sounds_on_reload', _on_dont_play_sounds_on_reload)
+	Signalbus.connect('settings_changed', _on_settings_changed)
+
+	# initialize audio settings
+	_on_settings_changed()
 	# seed RNG so randi() is different each run
 	randomize()
 
@@ -88,11 +92,12 @@ func _play_geyser_woosh() -> void:
 
 func _play_lava_rise_sound(distance: float) -> void:
 	var volume_db = clamp(-distance, -40, 0)
-	boiling_lava.volume_db = volume_db
+	boiling_lava.volume_db = map_0_100_to_minus50_0(Globalsettings.audio_volume) + volume_db
 
 func _play_lava_hiss_sound(distance: float) -> void:
 	var volume_db = clamp(-distance * 1.5, -40, 0)
-	lava_hiss.volume_db = volume_db
+	lava_hiss.volume_db = map_0_100_to_minus50_0(Globalsettings.audio_volume) + volume_db
+	lava_hiss.pitch_scale = randf_range(0.8, 1.2)
 
 func _play_dwarf_death_sound() -> void:
 	dwarf_death.pitch_scale = randf_range(0.8, 1.2)
@@ -105,6 +110,20 @@ func _play_jump_sound() -> void:
 func _play_ring_boost_sound() -> void:
 	ring_boost.pitch_scale = randf_range(0.8, 1.2)
 	ring_boost.play()
+
+func map_0_100_to_minus50_0(v: float) -> float:
+	var clamped = clamp(v, 0.0, 100.0)
+	if clamped <= 0.0:
+		return -100.0
+	return lerp(-25.0, 0.0, clamped / 100.0)
+
+func _on_settings_changed() -> void:
+	var audio_volume = map_0_100_to_minus50_0(Globalsettings.audio_volume)
+	var music_volume = map_0_100_to_minus50_0(Globalsettings.music_volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), audio_volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), music_volume)
+	print("Bus Music volume set to: ", AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	print("Bus SFX volume set to: ", AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
 
 func _on_dont_play_sounds_on_reload() -> void:
 	# Stop all sounds to prevent them from playing on scene reload
