@@ -13,8 +13,12 @@ config_version=5
 config/name="jamjamjam"
 run/main_scene="uid://br8ugoivcgshj"
 config/features=PackedStringArray("4.5", "Forward Plus")
-run/max_fps=60
+run/max_fps=144
 boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
+
+[audio]
+
+buses/default_bus_layout="uid://2nqeonjpcl5u"
 
 [autoload]
 

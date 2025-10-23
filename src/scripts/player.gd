@@ -23,6 +23,7 @@ var hooked_sfx_played: bool = false
 #endregion
 @export var rope_mesh: MeshInstance3D
 @export var lava: Area3D
+@export var hookcol: Area3D
 
 @export var pickaxe: Node3D
 
@@ -56,6 +57,7 @@ var milliseconds : int = 0
 var pickaxe_reset_pos: Vector3;
 var pickaxe_reset_rotation: Vector3;
 var player_frozen : bool = true;
+var boost_timer_running : bool = false;
 
 
 func _ready() -> void:
@@ -169,7 +171,7 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = y_rotation
 	
 	
-	if event.is_action_pressed("hook"):
+	if Input.is_action_just_pressed("hook"):
 		holding_hook_button = true
 		
 	if event.is_action_pressed("restart"):
@@ -182,21 +184,26 @@ func _input(event: InputEvent) -> void:
 		pickaxe.play_jump_animation()
 
 	if event.is_action_released("hook"):
-		rope_mesh.visible = false
-		holding_hook_button = false
-		current_hookspot = null;
+		rope_mesh.visible     = false
+		holding_hook_button   = false
+		current_hookspot      = null;
 		can_move_towards_hook = false
+
 		pickaxe.scale = Vector3(2,2,2)
 		pickaxe.get_parent().remove_child(pickaxe)
 		head.add_child(pickaxe)
 		reset_pickaxe_position()
 		
-	if Input.is_action_just_pressed("boost"):
-		if boostray.is_colliding() and !pickaxe_boosted:
+	if Input.is_action_pressed("boost"):
+		if boostray.is_colliding() and !pickaxe_boosted and !boost_timer_running:
+			pickaxe_boosted = true
+			boost_timer_running = true
+			boost_timer.start()
 			_pickaxe_boost()
 	
 
 func hooking_process() -> void:
+
 	if (holding_hook_button and current_hookspot != null):
 		rope_mesh.visible = true
 		send_hook_towards(current_hookspot)
@@ -206,11 +213,13 @@ func hooking_process() -> void:
 			Signalbus.emit_signal('play_rope_pull_sound', false)
 
 
+
 func _pickaxe_boost() -> void:
+	
 	pickaxe.play_boost_animation()
 	Signalbus.emit_signal('play_pickaxe_boost_sound')
 	await get_tree().create_timer(0.2).timeout
-	pickaxe_boosted = true
+
 	var ray_origin = boostray.global_transform.origin
 	var ray_dir = (boostray.global_transform.basis * boostray.target_position).normalized()
 
@@ -265,7 +274,10 @@ func check_for_hook_collision():
 	else:		
 		crosshair.texture = normal_crosshair_texture
 
-	if (holding_hook_button and !current_hookspot):
+	if (holding_hook_button and !current_hookspot) and !hook_on_cooldown:
+
+		hook_start_time.start();
+		hook_on_cooldown = true;
 		if (collider and collider.is_in_group("hook")):
 			Signalbus.emit_signal('play_pickaxe_throw_sound')
 			current_hookspot = collider
@@ -273,7 +285,9 @@ func check_for_hook_collision():
 			pickaxe.get_parent().remove_child(pickaxe)
 			get_tree().current_scene.add_child(pickaxe)
 			pickaxe.global_transform = t
+		return;
 
+	rope_mesh.visible = false
 
 
 func reset_pickaxe_position():
@@ -283,6 +297,10 @@ func reset_pickaxe_position():
 
 func hook_towards(collider):
 	var direction = (collider.global_position - global_transform.origin).normalized() 
+
+	if (hookcol.get_overlapping_areas().has(collider)):
+		_player_in_hook(false)
+
 	velocity = direction * hook_towards_speed
 	Signalbus.emit_signal('play_rope_pull_sound', true)
 
@@ -295,9 +313,9 @@ func _hook_connected(state: bool) -> void:
 
 func _player_in_hook(boosted_hook: bool):
 	if boosted_hook and current_hookspot:
-		velocity.x += velocity.x * 2
-		velocity.z += velocity.z * 2
-		velocity.y += 10
+		velocity.x += velocity.x
+		velocity.z += velocity.z 
+		velocity.y += 5
 
 	can_move_towards_hook = false;
 	holding_hook_button = false;
@@ -334,6 +352,7 @@ func _sway_head():
 
 func _on_player_kill() -> void:
 	if !has_died:
+		speed_lines_shader.visible = false
 		has_died = true
 		#get_tree().reload_current_scene()
 		Signalbus.kill_player.emit()
@@ -401,3 +420,11 @@ func check_lava_level():
 func _on_settings_changed() -> void:
 	mouse_sensitivity = Globalsettings.mouse_sensitivity
 		
+
+var hook_on_cooldown: bool = false;
+func _on_hook_start_time_timeout() -> void:
+	hook_on_cooldown = false;
+
+
+func _on_boost_timer_timeout() -> void:
+	boost_timer_running = false;

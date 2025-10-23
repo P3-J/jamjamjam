@@ -19,51 +19,64 @@
 script = ExtResource("1_wdger")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
-process_mode = 3
 stream = ExtResource("2_nvaun")
+bus = &"Music"
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ckoot")
+bus = &"SFX"
 
 [node name="PickAxeGrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_1xe7u")
+bus = &"SFX"
 
 [node name="PickaxeThrow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0d3i6")
+bus = &"SFX"
 
 [node name="PickaxeHooked" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1nd4j")
 pitch_scale = 2.56
+bus = &"SFX"
 
 [node name="PickaxeBoostHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ccaga")
+bus = &"SFX"
 
 [node name="RopePull" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_hwudm")
+bus = &"SFX"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nvaun")
 volume_db = -10.0
+bus = &"Music"
 
 [node name="GeyserWoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_hwudm")
 volume_db = -5.0
 pitch_scale = 2.0
+bus = &"SFX"
 
 [node name="BoilingLava" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ccaga")
 autoplay = true
+bus = &"SFX"
 
 [node name="LavaHiss" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_cldsc")
+bus = &"SFX"
 
 [node name="DwarfDeath" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_upv5m")
+bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_vt8aq")
+bus = &"SFX"
 
 [node name="RingBoost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_ojpeg")
+bus = &"SFX"
 
 [connection signal="finished" from="RopePull" to="." method="_on_rope_pull_finished"]

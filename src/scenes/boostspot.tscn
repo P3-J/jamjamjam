@@ -61,6 +61,7 @@ stream = ExtResource("3_ea5tw")
 volume_db = -10.0
 autoplay = true
 max_distance = 10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="boostarea" to="." method="_on_boostarea_body_entered"]
 [connection signal="body_exited" from="boostarea" to="." method="_on_boostarea_body_exited"]
