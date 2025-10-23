@@ -65,6 +65,9 @@ texture = ExtResource("9_xhd47")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hwtoi"]
 texture = ExtResource("10_1fb32")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 136, 1229)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b06wh"]
 texture = ExtResource("6_me7jw")

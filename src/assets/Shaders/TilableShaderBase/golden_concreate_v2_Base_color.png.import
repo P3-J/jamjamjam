@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt1aao5kwwdem"
-path.s3tc="res://.godot/imported/golden_concreate_v2_Base_color.png-2146508feea60d888ed9a3e6e98640df.s3tc.ctex"
+path.s3tc="res://.godot/imported/golden_concreate_v2_Base_color.png-ea2884a037a6685101c77d6d49b9b1be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/Shaders/TilableShaderBase/golden_concreate_v2_Base_color.png"
-dest_files=["res://.godot/imported/golden_concreate_v2_Base_color.png-2146508feea60d888ed9a3e6e98640df.s3tc.ctex"]
+source_file="res://src/assets/shaders/TilableShaderBase/golden_concreate_v2_Base_color.png"
+dest_files=["res://.godot/imported/golden_concreate_v2_Base_color.png-ea2884a037a6685101c77d6d49b9b1be.s3tc.ctex"]
 
 [params]
 

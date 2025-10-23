@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cgnc3wako16yd"]
 
-[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/Shaders/TilableShaderBase/TiledDirt.gdshader" id="1_6vdmm"]
-[ext_resource type="Texture2D" uid="uid://dmpsc7xnodfu4" path="res://src/assets/Shaders/TilableShaderBase/dark_bricks_Base_color.png" id="2_6vdmm"]
+[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.gdshader" id="1_6vdmm"]
+[ext_resource type="Texture2D" uid="uid://dmpsc7xnodfu4" path="res://src/assets/shaders/TilableShaderBase/dark_bricks_Base_color.png" id="2_6vdmm"]
 
 [sub_resource type="Shader" id="Shader_m6krq"]
 code = "shader_type spatial;

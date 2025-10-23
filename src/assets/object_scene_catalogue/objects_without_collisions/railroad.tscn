@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dexq3ss0kux4w"]
+
+[ext_resource type="PackedScene" uid="uid://do1e7k51502jm" path="res://src/assets/object_scene_catalogue/railroad_piece.tscn" id="1_2bprf"]
+
+[node name="Railroad" type="Node3D"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="RailroadPiece" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, 0.015114909, 0.0040795743, -0.0001748539)
+
+[node name="RailroadPiece3" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, -0.009797426, 0.0040795743, -0.0001748539)
+
+[node name="RailroadPiece5" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, -0.034737714, 0.0040795743, -0.0001748539)
+
+[node name="RailroadPiece6" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, -0.059623074, 0.0040795743, -0.0001748539)
+
+[node name="RailroadPiece7" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, -0.059623074, 0.0040795743, -0.0001748539)
+
+[node name="RailroadPiece2" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, 0.03979185, 0.0040795743, -0.0001748539)
+
+[node name="RailroadPiece4" parent="." instance=ExtResource("1_2bprf")]
+transform = Transform3D(0.0067662033, 0, 0, 0, 0.0067662033, 0, 0, 0, 0.0067662033, 0.064799316, 0.0040795743, -0.0001748539)

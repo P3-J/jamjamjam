@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://br8ugoivcgshj"]
+[gd_scene load_steps=16 format=3 uid="uid://br8ugoivcgshj"]
 
 [ext_resource type="Texture2D" uid="uid://pl3m6lqs3330" path="res://src/assets/ui/basic/ControlsLeftClick.png" id="1_q5ok3"]
 [ext_resource type="Script" uid="uid://c4edoenb2k3e1" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="8_6wcb6"]
 [ext_resource type="PackedScene" uid="uid://cbvgm61qw2giq" path="res://src/scenes/UI/levelselector.tscn" id="8_ubq7q"]
 [ext_resource type="PackedScene" uid="uid://xsckw4ti5dgv" path="res://src/scenes/UI/settings_menu.tscn" id="10_5dsdd"]
+[ext_resource type="Texture2D" uid="uid://dtqpxmd45wy4" path="res://src/assets/ui/layout_references/LevelSelectionShowcase.png" id="12_5dsdd"]
 [ext_resource type="AudioStream" uid="uid://b8w7o1biiuvv2" path="res://src/assets/sounds/chillin_at_the_cave.mp3" id="18_ofngt"]
 
 [sub_resource type="Animation" id="Animation_y0iw5"]
@@ -154,10 +155,10 @@ script = ExtResource("1_vmwyx")
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.046000004
-anchor_top = 0.26200002
-anchor_right = 0.266
-anchor_bottom = 0.841
+anchor_left = 0.093
+anchor_top = 0.383
+anchor_right = 0.289
+anchor_bottom = 0.899
 offset_left = -17.880005
 offset_top = 0.35998535
 offset_right = -0.480011
@@ -170,13 +171,13 @@ stretch_mode = 4
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.094000004
-anchor_top = 0.245
+anchor_top = 0.205
 anchor_right = 0.906
 anchor_bottom = 0.75500005
-offset_left = 0.0814991
-offset_top = 0.16999817
-offset_right = -0.08151245
-offset_bottom = -0.17001343
+offset_left = 11.0
+offset_top = -6.0
+offset_right = -11.0
+offset_bottom = 6.177887
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_6wcb6")
@@ -245,6 +246,14 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_ofngt")
+
+[node name="LevelSelectionShowcase" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = -1
+position = Vector2(638.78, 360.4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_5dsdd")
 
 [connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Settings" to="MainMenu" method="_on_settings_pressed"]

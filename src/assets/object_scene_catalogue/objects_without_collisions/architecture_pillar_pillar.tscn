@@ -17,6 +17,7 @@ transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
 material_override = ExtResource("2_xd6pk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="architecture_pillar_pillar/polySurface3" index="0"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="architecture_pillar_pillar/polySurface3/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_xd6pk")
@@ -25,6 +26,7 @@ shape = SubResource("ConcavePolygonShape3D_xd6pk")
 material_override = ExtResource("2_ly1ug")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="architecture_pillar_pillar/polySurface10" index="0"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="architecture_pillar_pillar/polySurface10/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_v3bhs")
