@@ -1,111 +1,32 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbvgm61qw2giq"]
+[gd_scene load_steps=8 format=3 uid="uid://cbvgm61qw2giq"]
 
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="1_0s7kf"]
-[ext_resource type="Script" uid="uid://di1mdwfoq0xhp" path="res://src/scripts/levelselector.gd" id="1_jcf8x"]
-[ext_resource type="Script" uid="uid://dcodin8sl4ydx" path="res://src/scripts/item_list.gd" id="1_lpiyd"]
-[ext_resource type="FontFile" uid="uid://crcvk11dlvyuo" path="res://font/Sunantara.ttf" id="3_tdq0l"]
-[ext_resource type="Texture2D" uid="uid://cepdomtjvle48" path="res://src/assets/ui/buttons/MenuButton1Clicked.png" id="4_58i10"]
-[ext_resource type="Texture2D" uid="uid://dowirk5166mvt" path="res://src/assets/ui/buttons/MenuButton1.png" id="5_eou63"]
-[ext_resource type="Texture2D" uid="uid://kgj7rby47ays" path="res://src/assets/ui/settings/SliderPointerDisabled.png" id="6_n32c8"]
-[ext_resource type="Texture2D" uid="uid://brgq0gi6exh2s" path="res://src/assets/ui/settings/SliderPointerHighlighted.png" id="7_6g3xv"]
+[ext_resource type="Texture2D" uid="uid://w2n3vax2obxf" path="res://datamap/color.png" id="3_rb5t1"]
+[ext_resource type="PackedScene" uid="uid://dusgog1jtdc0d" path="res://src/scenes/UI/loading_screen.tscn" id="6_y6hlq"]
 [ext_resource type="Texture2D" uid="uid://bmoyx51oqubng" path="res://src/assets/ui/level_selection/LevelSelectionBackground.png" id="8_ca0it"]
-[ext_resource type="Texture2D" uid="uid://hopphwhipqsv" path="res://src/assets/ui/leaderboard/NameInput.png" id="9_105ca"]
+[ext_resource type="Texture2D" uid="uid://r7tsp40vuiuk" path="res://src/assets/ui/leaderboard/LeaderboardMainLabel.png" id="11_58i10"]
+[ext_resource type="Texture2D" uid="uid://ced0pbitmeo0t" path="res://src/assets/ui/level_selection/LevelButton.png" id="11_eou63"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fb32"]
-content_margin_bottom = 10.0
-texture = ExtResource("4_58i10")
+[sub_resource type="GDScript" id="GDScript_8ya1i"]
+script/source = "extends Control
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x31ag"]
-content_margin_bottom = 10.0
-texture = ExtResource("4_58i10")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8qip"]
-content_margin_bottom = 10.0
-texture = ExtResource("5_eou63")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_io5f3"]
-content_margin_bottom = 10.0
-texture = ExtResource("4_58i10")
-modulate_color = Color(0.41, 0.41, 0.41, 1)
+func _on_button_pressed() -> void:
+	MenuManager.back()
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sr1kd"]
-content_margin_left = 40.0
-content_margin_top = 20.0
-texture = ExtResource("8_ca0it")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b06wh"]
-texture = ExtResource("9_105ca")
+func _on_tutorial_pressed() -> void:
+	# Implement!
+	pass
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0so4u"]
-content_margin_left = 25.0
-content_margin_top = 30.0
-texture = ExtResource("9_105ca")
 
-[sub_resource type="Theme" id="Theme_x7qtf"]
-Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0.44677722, 0.446777, 0.44677705, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 300
-Button/constants/outline_size = 5
-Button/font_sizes/font_size = 50
-Button/fonts/font = ExtResource("3_tdq0l")
-Button/styles/disabled = SubResource("StyleBoxTexture_1fb32")
-Button/styles/hover = SubResource("StyleBoxTexture_x31ag")
-Button/styles/normal = SubResource("StyleBoxTexture_s8qip")
-Button/styles/pressed = SubResource("StyleBoxTexture_io5f3")
-HSlider/icons/grabber = ExtResource("6_n32c8")
-HSlider/icons/grabber_disabled = ExtResource("6_n32c8")
-HSlider/icons/grabber_highlight = ExtResource("7_6g3xv")
-ItemList/colors/font_color = Color(1, 1, 1, 1)
-ItemList/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
-ItemList/colors/font_hovered_selected_color = Color(1, 1, 1, 1)
-ItemList/colors/font_outline_color = Color(0, 0, 0, 1)
-ItemList/colors/font_selected_color = Color(1, 1, 1, 1)
-ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0.25)
-ItemList/constants/outline_size = 5
-ItemList/font_sizes/font_size = 16
-ItemList/fonts/font = ExtResource("3_tdq0l")
-ItemList/styles/panel = SubResource("StyleBoxTexture_sr1kd")
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/outline_size = 2
-Label/font_sizes/font_size = 20
-Label/fonts/font = ExtResource("3_tdq0l")
-RichTextLabel/constants/outline_size = 5
-RichTextLabel/font_sizes/normal_font_size = 60
-RichTextLabel/fonts/normal_font = ExtResource("3_tdq0l")
-TextEdit/colors/background_color = Color(0, 0, 0, 0)
-TextEdit/colors/caret_background_color = Color(0, 0, 0, 1)
-TextEdit/colors/caret_color = Color(0.875, 0.875, 0.875, 1)
-TextEdit/colors/current_line_color = Color(0.25, 0.25, 0.26, 0.8)
-TextEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-TextEdit/colors/font_outline_color = Color(0, 0, 0, 1)
-TextEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
-TextEdit/colors/font_readonly_color = Color(0.875, 0.875, 0.875, 0.5)
-TextEdit/colors/font_selected_color = Color(0, 0, 0, 0)
-TextEdit/colors/search_result_border_color = Color(0.3, 0.3, 0.3, 0.4)
-TextEdit/colors/search_result_color = Color(0.3, 0.3, 0.3, 1)
-TextEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
-TextEdit/colors/word_highlighted_color = Color(0.5, 0.5, 0.5, 0.25)
-TextEdit/constants/outline_size = 4
-TextEdit/font_sizes/font_size = 30
-TextEdit/fonts/font = ExtResource("3_tdq0l")
-TextEdit/styles/focus = SubResource("StyleBoxTexture_b06wh")
-TextEdit/styles/normal = SubResource("StyleBoxTexture_0so4u")
-TextEdit/styles/read_only = null
-VBoxContainer/constants/separation = 25
+func _on_lvl_2_pressed() -> void:
+	var loading_screen = load(\"res://src/scenes/UI/loading_screen.tscn\").instantiate()
+	loading_screen.next_scene_path = \"res://src/levels/lv2.tscn\"
+	get_tree().root.add_child(loading_screen)
+	hide()
+"
 
 [node name="levelselector" type="Control"]
 layout_mode = 3
@@ -114,33 +35,108 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jcf8x")
+script = SubResource("GDScript_8ya1i")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(500, 500)
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.25234374
+anchor_top = 0.18611111
+anchor_right = 0.7515625
+anchor_bottom = 0.99444443
+texture = ExtResource("8_ca0it")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3046875
-anchor_top = 0.25138888
-anchor_right = 0.6953125
-anchor_bottom = 0.9458333
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_0s7kf")
+anchor_left = 0.06885759
+anchor_top = 0.28006873
+anchor_right = 0.85602504
+anchor_bottom = 0.7525773
 metadata/_edit_use_anchors_ = true
 
-[node name="ItemList" type="ItemList" parent="VBoxContainer"]
-custom_minimum_size = Vector2(400, 400)
+[node name="tutorial?" type="TextureButton" parent="TextureRect2/VBoxContainer2"]
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-theme = SubResource("Theme_x7qtf")
-theme_override_font_sizes/font_size = 50
-script = ExtResource("1_lpiyd")
-metadata/_edit_use_anchors_ = true
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("11_eou63")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="lvl2" type="TextureButton" parent="TextureRect2/VBoxContainer2"]
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("11_eou63")
+texture_pressed = ExtResource("3_rb5t1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="TextureRect2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource("1_0s7kf")
 text = "Back"
 
-[connection signal="item_clicked" from="VBoxContainer/ItemList" to="VBoxContainer/ItemList" method="_on_item_clicked"]
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+anchor_left = 0.16744915
+anchor_top = 0.024054984
+anchor_right = 0.82472616
+anchor_bottom = 0.2611684
+texture = ExtResource("11_58i10")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07857143
+anchor_top = 0.29347825
+anchor_right = 0.92142856
+anchor_bottom = 0.70652175
+offset_left = 106.0
+offset_top = 16.5
+offset_right = -106.0
+offset_bottom = -16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0s7kf")
+theme_override_font_sizes/font_size = 50
+text = "Choose a level"
+metadata/_edit_use_anchors_ = true
+
+[node name="loading_screen" parent="." instance=ExtResource("6_y6hlq")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 461.0
+offset_right = 429.0
+offset_bottom = 485.0
+theme = ExtResource("1_0s7kf")
+text = "LVL2"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 356.0
+offset_right = 429.0
+offset_bottom = 380.0
+theme = ExtResource("1_0s7kf")
+text = "TUTORIAL?"
+
+[connection signal="pressed" from="TextureRect2/VBoxContainer2/tutorial?" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="TextureRect2/VBoxContainer2/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="TextureRect2/VBoxContainer2/Button" to="." method="_on_button_pressed"]

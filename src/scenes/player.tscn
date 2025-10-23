@@ -256,16 +256,17 @@ vertical_alignment = 1
 [node name="countdownlabel" type="RichTextLabel" parent="UI"]
 visible = false
 layout_mode = 0
-offset_left = 448.0
-offset_top = 248.0
-offset_right = 832.0
-offset_bottom = 504.0
+anchor_left = 0.35
+anchor_top = 0.34444445
+anchor_right = 0.65
+anchor_bottom = 0.7
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_4pcbe")
 theme_override_font_sizes/normal_font_size = 128
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="countdownanim" type="AnimationPlayer" parent="UI/countdownlabel"]
 libraries = {

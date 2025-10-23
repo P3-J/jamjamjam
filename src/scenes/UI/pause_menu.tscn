@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn5kewb311n14"]
+[gd_scene load_steps=4 format=3 uid="uid://bn5kewb311n14"]
 
 [ext_resource type="Script" uid="uid://b0ugnu1u8bit" path="res://src/scripts/pausemenu.gd" id="1_ojub6"]
+[ext_resource type="Texture2D" uid="uid://cvvjol7rjlqvx" path="res://src/assets/ui/basic/MainMenu.png" id="2_540rc"]
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="2_lhlp2"]
 
 [node name="PauseMenu" type="Control"]
@@ -14,56 +15,83 @@ grow_vertical = 2
 script = ExtResource("1_ojub6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-process_mode = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.39800003
-anchor_top = 0.19100001
-anchor_right = 0.60200006
-anchor_bottom = 0.809
-offset_left = 0.05996704
-offset_top = 98.479996
-offset_right = -0.060058594
-offset_bottom = -98.47998
+anchor_left = 0.02890625
+anchor_top = 0.49444443
+anchor_right = 0.1875
+anchor_bottom = 0.9013889
+texture = ExtResource("2_540rc")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -106.0
+offset_right = 66.5
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_lhlp2")
 theme_override_constants/separation = 15
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="StartButton" type="Button" parent="TextureRect/VBoxContainer/AspectRatioContainer"]
 process_mode = 3
-custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_lhlp2")
+theme_override_font_sizes/font_size = 25
 text = "Resume"
 
-[node name="RespawnButton" type="Button" parent="VBoxContainer"]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="RespawnButton" type="Button" parent="TextureRect/VBoxContainer/AspectRatioContainer3"]
 process_mode = 3
-custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_lhlp2")
+theme_override_font_sizes/font_size = 25
 text = "Respawn"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="SettingsButton" type="Button" parent="TextureRect/VBoxContainer/AspectRatioContainer2"]
 process_mode = 3
-custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_lhlp2")
+theme_override_font_sizes/font_size = 25
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="QuitButton" type="Button" parent="TextureRect/VBoxContainer/AspectRatioContainer4"]
 process_mode = 3
-custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("2_lhlp2")
+theme_override_font_sizes/font_size = 25
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/RespawnButton" to="." method="_on_respawn_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/AspectRatioContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/AspectRatioContainer3/RespawnButton" to="." method="_on_respawn_button_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/AspectRatioContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/AspectRatioContainer4/QuitButton" to="." method="_on_quit_button_pressed"]

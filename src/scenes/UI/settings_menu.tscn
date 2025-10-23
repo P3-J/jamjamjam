@@ -139,70 +139,77 @@ script = ExtResource("1_5htdh")
 custom_minimum_size = Vector2(700, 300)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.265625
-anchor_top = 0.29166666
-anchor_right = 0.734375
-anchor_bottom = 0.7083333
+anchor_left = 0.21100001
+anchor_top = 0.24300002
+anchor_right = 0.758
+anchor_bottom = 0.9310001
+offset_left = -0.08001709
+offset_top = 0.039993286
+offset_right = -0.23999023
+offset_bottom = -0.32006836
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_k7k4c")
 expand_mode = 1
+stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 13.0
-offset_bottom = 59.0
+anchors_preset = -1
+anchor_left = 0.032857142
+anchor_top = 0.09090909
+anchor_right = 0.9114286
+anchor_bottom = 0.2
 grow_horizontal = 2
 theme = ExtResource("8_fxfkc")
 theme_override_font_sizes/font_size = 40
 text = "SETTINGS MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29101563
-anchor_top = 0.41111112
-anchor_right = 0.7089844
-anchor_bottom = 0.5888889
+anchor_left = 0.11785714
+anchor_top = 0.3272727
+anchor_right = 0.88214284
+anchor_bottom = 0.6727273
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 
-[node name="mouse" type="Label" parent="HBoxContainer/VBoxContainer3"]
+[node name="mouse" type="Label" parent="TextureRect/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 text = "Mouse sensitivity"
 
-[node name="music" type="Label" parent="HBoxContainer/VBoxContainer3"]
+[node name="music" type="Label" parent="TextureRect/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 text = "Music volume"
 
-[node name="audio" type="Label" parent="HBoxContainer/VBoxContainer3"]
+[node name="audio" type="Label" parent="TextureRect/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 text = "Audio volume"
 
-[node name="fullscreen" type="Label" parent="HBoxContainer/VBoxContainer3"]
+[node name="fullscreen" type="Label" parent="TextureRect/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 text = "Fullscreen"
 
-[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="HSlider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
@@ -211,65 +218,65 @@ max_value = 5.0
 step = 0.1
 value = 1.1
 
-[node name="MouseValue" type="Label" parent="HBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="MouseValue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_ri8ns")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="audioslider" type="HSlider" parent="HBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="audioslider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 
-[node name="Audiovalue" type="Label" parent="HBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="Audiovalue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_ri8ns")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/HBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="musicslider" type="HSlider" parent="HBoxContainer/HBoxContainer/HBoxContainer3"]
+[node name="musicslider" type="HSlider" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 
-[node name="Musicvalue" type="Label" parent="HBoxContainer/HBoxContainer/HBoxContainer3"]
+[node name="Musicvalue" type="Label" parent="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme = SubResource("Theme_ri8ns")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.22890624
-anchor_top = 0.73333335
-anchor_right = 0.34609374
-anchor_bottom = 0.83055556
+anchor_left = 0.032857142
+anchor_top = 0.7878788
+anchor_right = 0.24714285
+anchor_bottom = 0.9292929
 grow_vertical = 0
 theme = ExtResource("8_fxfkc")
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="Button" parent="VBoxContainer2"]
+[node name="Back" type="Button" parent="TextureRect/VBoxContainer2"]
 custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
 theme = ExtResource("8_fxfkc")
 text = "Back"
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="CheckButton" type="CheckButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29140624
-anchor_top = 0.57222223
-anchor_right = 0.4609375
-anchor_bottom = 0.62916666
-offset_right = 217.0
+anchor_left = 0.36833706
+anchor_top = 0.6242424
+anchor_right = 0.4211942
+anchor_bottom = 0.7070707
+offset_right = 37.0
 offset_bottom = 41.0
 scale = Vector2(0.5, 0.5)
 theme = ExtResource("8_fxfkc")
 button_pressed = true
 metadata/_edit_use_anchors_ = true
 
-[connection signal="value_changed" from="HBoxContainer/HBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="VBoxContainer2/Back" to="." method="_on_back_pressed"]
-[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="TextureRect/HBoxContainer/HBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="TextureRect/CheckButton" to="." method="_on_check_button_toggled"]
