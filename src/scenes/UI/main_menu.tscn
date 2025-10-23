@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://br8ugoivcgshj"]
+[gd_scene load_steps=16 format=3 uid="uid://br8ugoivcgshj"]
 
+[ext_resource type="VideoStream" uid="uid://b516dep8oca2r" path="res://src/assets/ui/mainmenu_back.ogv" id="1_5dsdd"]
 [ext_resource type="Texture2D" uid="uid://pl3m6lqs3330" path="res://src/assets/ui/basic/ControlsLeftClick.png" id="1_q5ok3"]
 [ext_resource type="Script" uid="uid://c4edoenb2k3e1" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
@@ -55,6 +56,21 @@ layout_mode = 3
 anchor_right = 1.0015625
 anchor_bottom = 1.0069444
 metadata/_edit_use_anchors_ = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.000001
+offset_right = 638.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.665, 0.665)
+stream = ExtResource("1_5dsdd")
+autoplay = true
+loop = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -121,14 +137,6 @@ layout_mode = 2
 theme = ExtResource("8_6wcb6")
 text = "Restart"
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -181,17 +189,32 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_6wcb6")
 
-[node name="Play" type="Button" parent="MainMenu/TextureRect/VBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainMenu/TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="Play" type="Button" parent="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer"]
 layout_mode = 2
 theme = ExtResource("8_6wcb6")
 text = "Play"
 
-[node name="Settings" type="Button" parent="MainMenu/TextureRect/VBoxContainer"]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MainMenu/TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="Settings" type="Button" parent="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer2"]
 layout_mode = 2
 theme = ExtResource("8_6wcb6")
 text = "Settings"
 
-[node name="Quit" type="Button" parent="MainMenu/TextureRect/VBoxContainer"]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="MainMenu/TextureRect/VBoxContainer"]
+layout_mode = 2
+ratio = 3.4
+stretch_mode = 1
+
+[node name="Quit" type="Button" parent="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer3"]
 layout_mode = 2
 theme = ExtResource("8_6wcb6")
 text = "Quit"
@@ -246,6 +269,6 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_ofngt")
 
-[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Settings" to="MainMenu" method="_on_settings_pressed"]
-[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer2/Settings" to="MainMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer3/Quit" to="MainMenu" method="_on_quit_pressed"]
