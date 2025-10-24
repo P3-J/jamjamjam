@@ -275,10 +275,9 @@ func check_for_hook_collision():
 		crosshair.texture = normal_crosshair_texture
 
 	if (holding_hook_button and !current_hookspot) and !hook_on_cooldown:
-
-		hook_start_time.start();
-		hook_on_cooldown = true;
 		if (collider and collider.is_in_group("hook")):
+			hook_start_time.start();
+			hook_on_cooldown = true;
 			Signalbus.emit_signal('play_pickaxe_throw_sound')
 			current_hookspot = collider
 			var t = pickaxe.global_transform
