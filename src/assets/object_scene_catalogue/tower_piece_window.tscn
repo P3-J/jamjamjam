@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgibhgvxxppum"]
+[gd_scene load_steps=5 format=3 uid="uid://dgibhgvxxppum"]
 
 [ext_resource type="PackedScene" uid="uid://dp03m5ki4on24" path="res://src/assets/objects/TowerPieceWindow/TowerPieceWindow.fbx" id="1_osb5o"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_abi3p"]
+[ext_resource type="Material" uid="uid://cgnc3wako16yd" path="res://src/assets/shaders/TilableShaderBase/DarkBricks.tres" id="3_v8guy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abi3p"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="TowerPieceWindow" instance=ExtResource("1_osb5o")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCylinder23" parent="TowerPieceWindow" index="0"]
+material_override = ExtResource("2_abi3p")
+
+[node name="pCylinder24" parent="TowerPieceWindow" index="1"]
+material_override = ExtResource("3_v8guy")
+
+[node name="pCube196" parent="TowerPieceWindow" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.883382e-17, -0.0032749542, 4.440892e-18)
+material_override = ExtResource("2_abi3p")
+
+[node name="pCube197" parent="TowerPieceWindow" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013039776, 0.034793183, 0.031023236)
+material_override = ExtResource("2_abi3p")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(0.019068932, 0, 0, 0, 0.04030307, 0, 0, 0, 0.019068932, 0, 0.02108179, 0.019934766)
+material_override = SubResource("StandardMaterial3D_abi3p")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ksy510vy6jrd"]
+
+[ext_resource type="PackedScene" uid="uid://cjscerrghb7t0" path="res://src/assets/objects/small_passage_door/angle.fbx" id="1_cvadm"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="2_lgn4s"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j3bd8"]
+data = PackedVector3Array(-0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5)
+
+[node name="angle" instance=ExtResource("1_cvadm")]
+
+[node name="group135" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube544" parent="group135" index="0"]
+material_override = ExtResource("2_lgn4s")
+
+[node name="pCube547" parent="group135" index="1"]
+material_override = ExtResource("2_lgn4s")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(1.7658446, 0, 0, 0, 1.7468523, 0, 0, 0, 1.8781543, 0, 0, 0)
+layers = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" index="0"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_j3bd8")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2nxfwcsg685m"]
+
+[ext_resource type="PackedScene" uid="uid://depk1420bjqgr" path="res://src/assets/objects/small_passage_door/crystall_hook.fbx" id="1_0rcmn"]
+[ext_resource type="Material" uid="uid://b32u2jwbk1hs8" path="res://src/assets/shaders/CelShader/GoldCementHook.tres" id="2_70g30"]
+[ext_resource type="Material" uid="uid://d2c2ewl7amych" path="res://src/assets/shaders/CelShader/CrystallHook3.tres" id="3_0rcmn"]
+
+[node name="crystall_hook" instance=ExtResource("1_0rcmn")]
+
+[node name="CrystallHook" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube553" parent="CrystallHook" index="0"]
+material_override = ExtResource("2_70g30")
+
+[node name="pCube554" parent="CrystallHook" index="1"]
+material_override = ExtResource("3_0rcmn")

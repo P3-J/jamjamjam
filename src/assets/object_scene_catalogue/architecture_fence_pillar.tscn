@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://fgat2mowdsy"]
+[gd_scene load_steps=5 format=3 uid="uid://fgat2mowdsy"]
 
 [ext_resource type="PackedScene" uid="uid://cbl1go4ss1ipw" path="res://src/assets/objects/AchitectureFencePillar/AchitectureFencePillar.fbx" id="1_6lic4"]
+[ext_resource type="Material" uid="uid://1snuwym130ej" path="res://src/assets/shaders/TilableShaderBase/RockSlate.tres" id="2_6t572"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="3_yb123"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mw67m"]
+data = PackedVector3Array(-0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5)
 
 [node name="AchitectureFencePillar" instance=ExtResource("1_6lic4")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube107" parent="AchitectureFencePillar" index="0"]
+material_override = ExtResource("2_6t572")
+
+[node name="pCube115" parent="AchitectureFencePillar" index="1"]
+material_override = ExtResource("2_6t572")
+
+[node name="pCube113" parent="AchitectureFencePillar" index="2"]
+material_override = ExtResource("3_yb123")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(0.006699295, 0, 0, 0, 0.01285231, 0, 0, 0, 0.006699295, 0, 0.0056751496, 0)
+layers = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" index="0"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_mw67m")

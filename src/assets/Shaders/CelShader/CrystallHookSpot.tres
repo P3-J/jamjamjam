@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://brujqs8b6rkmv"]
+
+[ext_resource type="Shader" uid="uid://bl1h157mxffiw" path="res://src/assets/objects/hook_spots/HookSpotOutline.gdshader" id="1_q5l2a"]
+[ext_resource type="Shader" uid="uid://drnoxscombe3u" path="res://src/assets/objects/hook_spots/Hook Spot.gdshader" id="2_tt2y1"]
+[ext_resource type="Texture2D" uid="uid://cjgg1jvflbn82" path="res://src/assets/shaders/TilableShaderBase/crystall_tilable_Base_color.png" id="3_q5l2a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkpin"]
+render_priority = 0
+shader = ExtResource("1_q5l2a")
+shader_parameter/color = Color(0.2999961, 0.7654512, 0.90079784, 1)
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_kkpin")
+shader = ExtResource("2_tt2y1")
+shader_parameter/normal_scale = 1.0
+shader_parameter/anisotropy_ratio = 0.0
+shader_parameter/anisotropy_direction = Vector3(0, -1, 0)
+shader_parameter/aniso_map_dir_ratio = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/base_texture = ExtResource("3_q5l2a")
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

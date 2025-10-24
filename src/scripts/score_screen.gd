@@ -14,7 +14,7 @@ var has_submit: bool
 func _ready() -> void:
 	time_text = get_node("TextureRect/banner/timer_text")
 	list = get_node("TextureRect/ItemList")
-	text_edit = get_node("TextureRect/VBoxContainer/TextEdit")
+	text_edit = get_node("TextureRect/TextEdit")
 
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

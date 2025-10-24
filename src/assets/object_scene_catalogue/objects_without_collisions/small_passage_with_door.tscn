@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqodwaik10rm5"]
+
+[ext_resource type="PackedScene" uid="uid://djhp683wygffw" path="res://src/assets/object_scene_catalogue/small_passage.tscn" id="1_l8uwp"]
+[ext_resource type="PackedScene" uid="uid://hgi7nfe2lmbn" path="res://src/assets/object_scene_catalogue/objects_without_collisions/small_passage_door.tscn" id="2_2y888"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SmallPassage" parent="." instance=ExtResource("1_l8uwp")]
+
+[node name="small_passage_door" parent="." instance=ExtResource("2_2y888")]

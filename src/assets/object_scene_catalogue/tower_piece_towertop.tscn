@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv2med0237jsx"]
+[gd_scene load_steps=3 format=3 uid="uid://bv2med0237jsx"]
 
 [ext_resource type="PackedScene" uid="uid://bkrge4nlep7eb" path="res://src/assets/objects/TowerPieceTowertop/TowerPieceTowertop.fbx" id="1_4ditx"]
+[ext_resource type="PackedScene" uid="uid://c3x6gcvl5mhx2" path="res://src/assets/object_scene_catalogue/objects_without_collisions/angle.tscn" id="2_8cx28"]
 
 [node name="TowerPieceTowertop" instance=ExtResource("1_4ditx")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="group53" parent="TowerPieceTowertop" index="2" instance=ExtResource("2_8cx28")]
+transform = Transform3D(-1, -8.742278e-08, 8.742278e-08, -8.742278e-08, 1, 0, 8.742278e-08, 7.642742e-15, 1, -1.7263606e-09, -0.074031636, 0.16763002)

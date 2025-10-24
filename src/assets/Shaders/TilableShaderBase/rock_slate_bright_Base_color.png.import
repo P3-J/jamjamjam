@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://udreyr6auiyo"
-path.s3tc="res://.godot/imported/rock_slate_bright_Base_color.png-54a0255539f0d601f9ecb81ee167ea56.s3tc.ctex"
+path.s3tc="res://.godot/imported/rock_slate_bright_Base_color.png-a05c5698a1cb844bd6b14d19ee37863c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://src/assets/Shaders/TilableShaderBase/rock_slate_bright_Base_color.png"
-dest_files=["res://.godot/imported/rock_slate_bright_Base_color.png-54a0255539f0d601f9ecb81ee167ea56.s3tc.ctex"]
+source_file="res://src/assets/shaders/TilableShaderBase/rock_slate_bright_Base_color.png"
+dest_files=["res://.godot/imported/rock_slate_bright_Base_color.png-a05c5698a1cb844bd6b14d19ee37863c.s3tc.ctex"]
 
 [params]
 

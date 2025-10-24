@@ -1,32 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://52x5hn7dyfbu"]
+[gd_scene load_steps=6 format=3 uid="uid://52x5hn7dyfbu"]
 
 [ext_resource type="Script" uid="uid://cpxaiqos62cwk" path="res://src/scripts/lava_meter.gd" id="1_c1dsj"]
 [ext_resource type="Texture2D" uid="uid://ccwdljdkm1hne" path="res://src/assets/ui/basic/LavaMeterEmpty.png" id="2_qwq4a"]
 [ext_resource type="Texture2D" uid="uid://ddbkffjryuvuf" path="res://src/assets/ui/basic/LavameterFilled.png" id="3_tleod"]
 [ext_resource type="Texture2D" uid="uid://c7wrw8h1e6gsy" path="res://src/assets/ui/basic/LavaMeterDwarfIndicator.png" id="4_mxx8k"]
+[ext_resource type="Texture2D" uid="uid://dstbjbw1cbvrw" path="res://src/assets/ui/layout_references/MainMenuUIPrototo.png" id="5_qwq4a"]
 
 [node name="LavaMeterScene" type="Control"]
 layout_mode = 3
-anchor_left = 0.896
+anchor_left = 0.965
+anchor_top = 0.32
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -18.880005
+anchor_bottom = 0.652
+offset_left = -17.399902
+offset_top = -0.7999878
+offset_right = 1.4799805
+offset_bottom = -0.7999878
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_c1dsj")
 
 [node name="LavaMeter" type="TextureProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.67763114
-anchor_top = 0.33194444
-anchor_right = 0.85657865
-anchor_bottom = 0.6733333
-offset_right = 108.800026
-offset_bottom = 983.2
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.2, 0.2)
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 1229.0
+scale = Vector2(0.395, 0.395)
 step = 0.1
 value = 30.0
 fill_mode = 3
@@ -41,12 +39,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -122.99988
-offset_top = 425.5
-offset_right = 122.00012
-offset_bottom = 645.5
+offset_left = -123.69646
+offset_top = -19.563416
+offset_right = 121.30354
+offset_bottom = 200.43658
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_mxx8k")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="MainMenuUiPrototo" type="Sprite2D" parent="."]
+visible = false
+light_mask = 0
+visibility_layer = 0
+z_index = -1
+position = Vector2(-1000, 720)
+texture = ExtResource("5_qwq4a")

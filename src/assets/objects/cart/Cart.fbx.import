@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6g2fxi40rgnu"
-path="res://.godot/imported/Cart.fbx-b7087f654994cdb2c435cc5d1523e4e3.scn"
+uid="uid://xrc0trn0jwmr"
+path="res://.godot/imported/cart.fbx-d5e6331507fee425ce0afdec02d23b60.scn"
 
 [deps]
 
-source_file="res://src/assets/objects/cart/Cart.fbx"
-dest_files=["res://.godot/imported/Cart.fbx-b7087f654994cdb2c435cc5d1523e4e3.scn"]
+source_file="res://src/assets/objects/cart/cart.fbx"
+dest_files=["res://.godot/imported/cart.fbx-d5e6331507fee425ce0afdec02d23b60.scn"]
 
 [params]
 

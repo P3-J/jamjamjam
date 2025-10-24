@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://b32u2jwbk1hs8"]
+
+[ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.gdshader" id="1_l0a3v"]
+[ext_resource type="Shader" uid="uid://bro8yeu7i6xui" path="res://src/assets/shaders/CelShader/HookSpotOutline.gdshader" id="1_p55sn"]
+[ext_resource type="Texture2D" uid="uid://dt1aao5kwwdem" path="res://src/assets/shaders/TilableShaderBase/golden_concreate_v2_Base_color.png" id="3_rhyhm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_11nbd"]
+render_priority = 0
+shader = ExtResource("1_p55sn")
+shader_parameter/color = Color(0.42770612, 0.30385667, 0.082260214, 1)
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_11nbd")
+shader = ExtResource("1_l0a3v")
+shader_parameter/color = Color(0.99753064, 0.8620292, 0.6335472, 1)
+shader_parameter/base_texture = ExtResource("3_rhyhm")
+shader_parameter/uv_scale = Vector2(0.5, 0.5)
+shader_parameter/uv_offset = Vector2(0, 0)

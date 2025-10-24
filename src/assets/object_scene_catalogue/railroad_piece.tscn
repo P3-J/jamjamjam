@@ -1,17 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://do1e7k51502jm"]
+[gd_scene load_steps=4 format=3 uid="uid://do1e7k51502jm"]
 
 [ext_resource type="PackedScene" uid="uid://jstmdmqlgd7i" path="res://src/assets/objects/rail_road/RailroadPiece.fbx" id="1_fgn11"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fgn11"]
-size = Vector3(4.2512207, 0.18408203, 1.7429199)
+[ext_resource type="Material" uid="uid://bwpi2mo12dghj" path="res://src/assets/shaders/TilableShaderBase/Wood.tres" id="2_trg8w"]
+[ext_resource type="Material" uid="uid://di2y8ybgpy0he" path="res://src/assets/shaders/TilableShaderBase/MetalTest.tres" id="2_y6l5h"]
 
 [node name="RailroadPiece" instance=ExtResource("1_fgn11")]
 
 [node name="RailroadPiece" parent="." index="0"]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0.062572, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="pCube109" parent="RailroadPiece" index="0"]
+material_override = ExtResource("2_y6l5h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028076172, 0.034423828, 0.0028076172)
-shape = SubResource("BoxShape3D_fgn11")
+[node name="pCube104" parent="RailroadPiece" index="1"]
+material_override = ExtResource("2_y6l5h")
+
+[node name="pCube106" parent="RailroadPiece" index="2"]
+material_override = ExtResource("2_trg8w")
+
+[node name="pCube111" parent="RailroadPiece" index="3"]
+material_override = ExtResource("2_trg8w")
+
+[node name="pCube107" parent="RailroadPiece" index="4"]
+material_override = ExtResource("2_trg8w")
+
+[node name="pCube108" parent="RailroadPiece" index="5"]
+material_override = ExtResource("2_trg8w")
+
+[node name="pCube110" parent="RailroadPiece" index="6"]
+material_override = ExtResource("2_trg8w")

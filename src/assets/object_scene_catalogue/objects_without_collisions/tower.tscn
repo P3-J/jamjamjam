@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://32xdv0pvyqmg"]
+
+[ext_resource type="PackedScene" uid="uid://dgibhgvxxppum" path="res://src/assets/object_scene_catalogue/tower_piece_window.tscn" id="1_wb84p"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wb84p"]
+data = PackedVector3Array(-0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5)
+
+[node name="Tower" type="Node3D"]
+
+[node name="TowerPieceWindow" parent="." instance=ExtResource("1_wb84p")]
+
+[node name="TowerPieceWindow2" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(-5.9010376e-06, 0, 135, 0, 135, 0, -135, 0, -5.9010376e-06, 0, 0, 0)
+
+[node name="TowerPieceWindow3" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(-135, 0, -1.1802075e-05, 0, 135, 0, 1.1802075e-05, 0, -135, 0, 0, 0)
+
+[node name="TowerPieceWindow4" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(1.7703112e-05, 0, -135, 0, 135, 0, 135, 0, 1.7703112e-05, 0, 0, 0)
+
+[node name="TowerPieceWindow5" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 10.382766, 0)
+
+[node name="TowerPieceWindow6" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(-5.9010376e-06, 0, 135, 0, 135, 0, -135, 0, -5.9010376e-06, 0, 10.382766, 0)
+
+[node name="TowerPieceWindow7" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(-135, 0, -1.1802075e-05, 0, 135, 0, 1.1802075e-05, 0, -135, 0, 10.382766, 0)
+
+[node name="TowerPieceWindow8" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(1.7703112e-05, 0, -135, 0, 135, 0, 135, 0, 1.7703112e-05, 0, 10.382766, 0)
+
+[node name="TowerPieceWindow9" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 20.811808, 0)
+
+[node name="TowerPieceWindow10" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(-5.9010376e-06, 0, 135, 0, 135, 0, -135, 0, -5.9010376e-06, 0, 20.811808, 0)
+
+[node name="TowerPieceWindow11" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(-135, 0, -1.1802075e-05, 0, 135, 0, 1.1802075e-05, 0, -135, 0, 20.811808, 0)
+
+[node name="TowerPieceWindow12" parent="." instance=ExtResource("1_wb84p")]
+transform = Transform3D(1.7703112e-05, 0, -135, 0, 135, 0, 135, 0, 1.7703112e-05, 0, 20.811808, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(9.565508, 0, 0, 0, 31.953485, 0, 0, 0, 3.983474, 0, 15.419416, 0)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wb84p")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(6.7638354, 0, 2.8167415, 0, 31.953485, 0, -6.7638354, 0, 2.8167415, 0, 15.419416, 0)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D2"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wb84p")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0, 0, 3.983474, 0, 31.953485, 0, -9.565508, 0, 0, 0, 15.419416, 0)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D3"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wb84p")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-6.7638354, 0, 2.8167415, 0, 31.953485, 0, -6.7638354, 0, -2.8167415, 0, 15.419416, 0)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D4"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wb84p")

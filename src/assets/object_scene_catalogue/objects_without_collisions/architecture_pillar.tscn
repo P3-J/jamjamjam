@@ -24,3 +24,13 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_s6ede")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1.5133531, 0, 0, 0, 8.03216, 0, 0, 0, 1.5133531, 0, -4.2149854, 0)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/StaticBody3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_s6ede")

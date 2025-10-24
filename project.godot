@@ -14,7 +14,8 @@ config/name="jamjamjam"
 run/main_scene="uid://br8ugoivcgshj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=144
-boot_splash/image="res://src/assets/ui/end_screen_stuff/Game_Icon.png"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://bd2wcfpk55v83"
 
 [audio]
 
@@ -33,8 +34,8 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=2560
+window/size/viewport_height=1440
 window/size/mode=3
 window/stretch/mode="viewport"
 
