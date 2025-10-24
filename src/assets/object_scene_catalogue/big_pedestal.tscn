@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://q3bgwym60omg"]
+[gd_scene load_steps=5 format=3 uid="uid://q3bgwym60omg"]
 
 [ext_resource type="PackedScene" uid="uid://sr14j7it81mu" path="res://src/assets/objects/BigPedestal/BigPedestal.fbx" id="1_v2efx"]
+[ext_resource type="Material" uid="uid://1snuwym130ej" path="res://src/assets/shaders/TilableShaderBase/RockSlate.tres" id="2_qbjpv"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="3_lpnri"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v2efx"]
+data = PackedVector3Array(-0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5)
 
 [node name="BigPedestal" instance=ExtResource("1_v2efx")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 0)
+
+[node name="pCube107" parent="BigPedestal" index="0"]
+material_override = ExtResource("2_qbjpv")
+
+[node name="pCube115" parent="BigPedestal" index="1"]
+material_override = ExtResource("2_qbjpv")
+
+[node name="pCube113" parent="BigPedestal" index="2"]
+material_override = ExtResource("3_lpnri")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(0.009275928, 0, 0, 0, 0.024253303, 0, 0, 0, 0.009275928, 0, 0.010930903, 0)
+layers = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" index="0"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_v2efx")
