@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://djagjk7fko652"]
+
+[ext_resource type="PackedScene" uid="uid://b4mm3w56lp5y4" path="res://src/assets/objects/small_passage_door/beveled_cube_number2.fbx" id="1_rithl"]
+[ext_resource type="Material" uid="uid://1snuwym130ej" path="res://src/assets/shaders/TilableShaderBase/RockSlate.tres" id="2_rithl"]
+
+[node name="beveled_cube_number2" instance=ExtResource("1_rithl")]
+
+[node name="pCube556" parent="." index="0"]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0, 8.604384e-18)
+material_override = ExtResource("2_rithl")

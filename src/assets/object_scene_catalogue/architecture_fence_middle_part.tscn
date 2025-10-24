@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://clbhpekmie8hv"]
+[gd_scene load_steps=6 format=3 uid="uid://clbhpekmie8hv"]
 
 [ext_resource type="PackedScene" uid="uid://2f4v431rn2mh" path="res://src/assets/objects/architecture_fence_middle_part/AchitectureFenceMiddlePart.fbx" id="1_tjulc"]
+[ext_resource type="Material" uid="uid://1snuwym130ej" path="res://src/assets/shaders/TilableShaderBase/RockSlate.tres" id="2_mumy5"]
+[ext_resource type="Material" uid="uid://bl1nqa56gvw5f" path="res://src/assets/shaders/TilableShaderBase/RockSlateBright.tres" id="3_y1ma7"]
+[ext_resource type="Material" uid="uid://jqe0tyfl832g" path="res://src/assets/shaders/TilableShaderBase/TiledGoldenConcreate.tres" id="4_72a7g"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3v4fb"]
+data = PackedVector3Array(-0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5)
 
 [node name="AchitectureFenceMiddlePart" instance=ExtResource("1_tjulc")]
 transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 0, 0.5780241, 0)
+
+[node name="pCube192" parent="AchitectureFenceMiddlePart" index="0"]
+material_override = ExtResource("2_mumy5")
+
+[node name="pCube190" parent="AchitectureFenceMiddlePart" index="1"]
+material_override = ExtResource("3_y1ma7")
+
+[node name="pCube195" parent="AchitectureFenceMiddlePart" index="2"]
+material_override = ExtResource("4_72a7g")
+
+[node name="pCube193" parent="AchitectureFenceMiddlePart" index="3"]
+material_override = ExtResource("4_72a7g")
+
+[node name="pCube194" parent="AchitectureFenceMiddlePart" index="4"]
+material_override = ExtResource("4_72a7g")
+
+[node name="pCube191" parent="AchitectureFenceMiddlePart" index="5"]
+material_override = ExtResource("3_y1ma7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(0.018689897, 0, 0, 0, 0.009125916, 0, 0, 0, 0.0026393125, 0, 0, 0)
+layers = 0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" index="0"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_3v4fb")

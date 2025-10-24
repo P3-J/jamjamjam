@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbvgm61qw2giq"]
+[gd_scene load_steps=9 format=3 uid="uid://cbvgm61qw2giq"]
 
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="1_0s7kf"]
+[ext_resource type="Texture2D" uid="uid://cyutfnr4ol5x" path="res://src/assets/ui/settings/CloseButton.png" id="2_purqi"]
 [ext_resource type="Texture2D" uid="uid://cw1u02xxef24" path="res://src/assets/ui/level_selection/MainButton.png" id="3_877dj"]
 [ext_resource type="PackedScene" uid="uid://dusgog1jtdc0d" path="res://src/scenes/UI/loading_screen.tscn" id="6_y6hlq"]
+[ext_resource type="Texture2D" uid="uid://dtqpxmd45wy4" path="res://src/assets/ui/layout_references/LevelSelectionShowcase.png" id="7_877dj"]
 [ext_resource type="Texture2D" uid="uid://bmoyx51oqubng" path="res://src/assets/ui/level_selection/LevelSelectionBackground.png" id="8_ca0it"]
-[ext_resource type="Texture2D" uid="uid://r7tsp40vuiuk" path="res://src/assets/ui/leaderboard/LeaderboardMainLabel.png" id="11_58i10"]
-[ext_resource type="Texture2D" uid="uid://ced0pbitmeo0t" path="res://src/assets/ui/level_selection/LevelButton.png" id="11_eou63"]
 
 [sub_resource type="GDScript" id="GDScript_8ya1i"]
 script/source = "extends Control
@@ -26,7 +26,14 @@ func _on_lvl_2_pressed() -> void:
 	loading_screen.next_scene_path = \"res://src/levels/lv2.tscn\"
 	get_tree().root.add_child(loading_screen)
 	hide()
+
+
+func _on_texture_button_pressed() -> void:
+	MenuManager.back()
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6hlq"]
+atlas = ExtResource("2_purqi")
 
 [node name="levelselector" type="Control"]
 layout_mode = 3
@@ -38,101 +45,96 @@ grow_vertical = 2
 script = SubResource("GDScript_8ya1i")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-anchor_left = 0.25234374
-anchor_top = 0.18611111
-anchor_right = 0.7515625
-anchor_bottom = 0.99444443
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30273438
+anchor_top = 0.21388888
+anchor_right = 0.6972656
+anchor_bottom = 0.73680556
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_ca0it")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect2"]
+[node name="TextureButton" type="TextureButton" parent="TextureRect2"]
+z_index = 1
+layout_mode = 0
+offset_left = 894.0001
+offset_top = -45.0
+offset_right = 1077.0001
+offset_bottom = 137.0
+scale = Vector2(0.83, 0.83)
+texture_normal = SubResource("AtlasTexture_y6hlq")
+texture_pressed = ExtResource("2_purqi")
+texture_hover = ExtResource("2_purqi")
+texture_disabled = ExtResource("2_purqi")
+texture_focused = ExtResource("2_purqi")
+
+[node name="Button" type="Button" parent="TextureRect2"]
+visible = false
+light_mask = 0
+visibility_layer = 0
+layout_mode = 0
+offset_left = 39.0
+offset_top = 230.0
+offset_right = 171.6
+offset_bottom = 269.0
+size_flags_vertical = 0
+theme = ExtResource("1_0s7kf")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[node name="Label" type="Label" parent="TextureRect2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.06885759
-anchor_top = 0.28006873
-anchor_right = 0.85602504
-anchor_bottom = 0.7525773
+anchor_left = 0.037623763
+anchor_top = 0.13280213
+anchor_right = 0.9643564
+anchor_bottom = 0.28286853
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0s7kf")
+theme_override_font_sizes/font_size = 60
+text = "CHOOSE A LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="tutorial?" type="TextureButton" parent="TextureRect2/VBoxContainer2"]
+[node name="lvl2" type="TextureButton" parent="TextureRect2"]
 custom_minimum_size = Vector2(400, 100)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture_normal = ExtResource("11_eou63")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Label2" type="Label" parent="TextureRect2/VBoxContainer2/tutorial?"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 59.0
-offset_right = 129.0
-offset_bottom = 83.0
-theme = ExtResource("1_0s7kf")
-text = "TUTORIAL?"
-
-[node name="lvl2" type="TextureButton" parent="TextureRect2/VBoxContainer2"]
-custom_minimum_size = Vector2(400, 100)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 79.0
+offset_top = 261.0
+offset_right = -61.0
+offset_bottom = -291.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture_normal = ExtResource("3_877dj")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="TextureRect2/VBoxContainer2/lvl2"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 60.0
-offset_right = 62.0
-offset_bottom = 84.0
-theme = ExtResource("1_0s7kf")
-text = "Main"
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="TextureRect2/VBoxContainer2"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-ratio = 3.4
-stretch_mode = 1
-
-[node name="Button" type="Button" parent="TextureRect2/VBoxContainer2/AspectRatioContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("1_0s7kf")
-theme_override_font_sizes/font_size = 25
-text = "Back"
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
-layout_mode = 0
-anchor_left = 0.16744915
-anchor_top = 0.024054984
-anchor_right = 0.82472616
-anchor_bottom = 0.2611684
-texture = ExtResource("11_58i10")
-expand_mode = 1
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="TextureRect2/TextureRect"]
+[node name="Label" type="Label" parent="TextureRect2/lvl2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.07857143
-anchor_top = 0.29347825
-anchor_right = 0.92142856
-anchor_bottom = 0.70652175
-offset_right = 16.857178
-offset_bottom = 15.695648
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 126.0
+offset_right = -31.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_0s7kf")
-theme_override_font_sizes/font_size = 50
-text = "Choose a level"
-metadata/_edit_use_anchors_ = true
+theme_override_font_sizes/font_size = 40
+text = "CASTLE"
+vertical_alignment = 1
 
 [node name="loading_screen" parent="." instance=ExtResource("6_y6hlq")]
 visible = false
@@ -141,6 +143,11 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 
-[connection signal="pressed" from="TextureRect2/VBoxContainer2/tutorial?" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="TextureRect2/VBoxContainer2/lvl2" to="." method="_on_lvl_2_pressed"]
-[connection signal="pressed" from="TextureRect2/VBoxContainer2/AspectRatioContainer/Button" to="." method="_on_button_pressed"]
+[node name="LevelSelectionShowcase" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(1280, 720)
+texture = ExtResource("7_877dj")
+
+[connection signal="pressed" from="TextureRect2/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect2/lvl2" to="." method="_on_lvl_2_pressed"]

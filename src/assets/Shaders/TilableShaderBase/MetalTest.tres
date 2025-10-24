@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://di2y8ybgpy0he"]
 
 [ext_resource type="Shader" uid="uid://cmh7q3wu6sxl1" path="res://src/assets/shaders/TilableShaderBase/TiledDirt.gdshader" id="1_p44vl"]
-[ext_resource type="Texture2D" uid="uid://cc0oyyj5vh1mh" path="res://src/assets/shaders/TilableShaderBase/wood_Base_color.png" id="2_ta2yc"]
+[ext_resource type="Texture2D" uid="uid://b7uymwk11u4p4" path="res://src/assets/shaders/TilableShaderBase/metal_test_Base_color.png" id="2_p44vl"]
 
 [sub_resource type="Shader" id="Shader_m6krq"]
 code = "shader_type spatial;
@@ -40,6 +40,6 @@ render_priority = 0
 next_pass = SubResource("ShaderMaterial_11nbd")
 shader = ExtResource("1_p44vl")
 shader_parameter/color = Color(0.649252, 0.679597, 0.61871, 1)
-shader_parameter/base_texture = ExtResource("2_ta2yc")
+shader_parameter/base_texture = ExtResource("2_p44vl")
 shader_parameter/uv_scale = Vector2(0.25, 0.25)
 shader_parameter/uv_offset = Vector2(0, 0)

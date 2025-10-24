@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c32vk5eobxw7"]
+
+[ext_resource type="PackedScene" uid="uid://clbhpekmie8hv" path="res://src/assets/object_scene_catalogue/architecture_fence_middle_part.tscn" id="1_3fsy1"]
+[ext_resource type="PackedScene" uid="uid://fgat2mowdsy" path="res://src/assets/object_scene_catalogue/architecture_fence_pillar.tscn" id="2_qa6ih"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="AchitectureFenceMiddlePart" parent="." instance=ExtResource("1_3fsy1")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 3.494281, 0.5404124, 0)
+
+[node name="AchitectureFencePillar" parent="." instance=ExtResource("2_qa6ih")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 5.2128854, -0.010763258, 0)
+
+[node name="AchitectureFencePillar2" parent="." instance=ExtResource("2_qa6ih")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, 1.7250241, -0.010763258, 0)
+
+[node name="AchitectureFenceMiddlePart2" parent="." instance=ExtResource("1_3fsy1")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, -0.029315233, 0.5404124, 0)
+
+[node name="AchitectureFencePillar3" parent="." instance=ExtResource("2_qa6ih")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, -1.7985723, -0.010763258, 0)
+
+[node name="AchitectureFenceMiddlePart3" parent="." instance=ExtResource("1_3fsy1")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, -3.5660326, 0.5404124, 0)
+
+[node name="AchitectureFencePillar4" parent="." instance=ExtResource("2_qa6ih")]
+transform = Transform3D(135, 0, 0, 0, 135, 0, 0, 0, 135, -5.33529, -0.010763258, 0)

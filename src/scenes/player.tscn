@@ -1,14 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://cwdgh5qpr51w6"]
+[gd_scene load_steps=31 format=3 uid="uid://cwdgh5qpr51w6"]
 
 [ext_resource type="Script" uid="uid://cuxl7gpnlclld" path="res://src/scripts/player.gd" id="1_ve44u"]
+[ext_resource type="Texture2D" uid="uid://pl3m6lqs3330" path="res://src/assets/ui/basic/ControlsLeftClick.png" id="2_lsi8j"]
 [ext_resource type="PackedScene" uid="uid://c088naefj5my" path="res://src/assets/ui/pickaxe_button_slider_assets/pickaxe.tscn" id="2_xatcm"]
 [ext_resource type="Texture2D" uid="uid://c45gl6ohmoxd8" path="res://src/assets/ui/basic/Timer.png" id="4_4pcbe"]
+[ext_resource type="Texture2D" uid="uid://mn0dd71so87r" path="res://src/assets/ui/basic/ControlsRightClick.png" id="4_hhiii"]
 [ext_resource type="Texture2D" uid="uid://dqd3fuoa1qmde" path="res://src/assets/ui/pickaxe_button_slider_assets/crosshair_normal.png" id="4_lgdho"]
 [ext_resource type="PackedScene" uid="uid://b25o1440naild" path="res://src/scenes/death_screen.tscn" id="4_wjl4f"]
+[ext_resource type="Texture2D" uid="uid://dp57w4k18uqq3" path="res://src/assets/ui/basic/ControlsEmpty.png" id="5_wpkk7"]
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="5_xvyn7"]
-[ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="6_4pcbe"]
-[ext_resource type="Shader" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="Shader" uid="uid://3gvkchg2vp3b" path="res://src/shaders/speed_lines.gdshader" id="6_8v6aa"]
+[ext_resource type="Texture2D" uid="uid://dstbjbw1cbvrw" path="res://src/assets/ui/layout_references/MainMenuUIPrototo.png" id="7_0hlw3"]
 [ext_resource type="AudioStream" uid="uid://dsept5vtv4vvo" path="res://src/assets/sounds/SFX/walk_on_stone.wav" id="8_4pcbe"]
+[ext_resource type="FontFile" uid="uid://crcvk11dlvyuo" path="res://font/Sunantara.ttf" id="9_lsi8j"]
 
 [sub_resource type="Animation" id="Animation_4pcbe"]
 length = 0.001
@@ -207,6 +211,76 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32049355
+anchor_top = -0.016313218
+anchor_right = 0.50458086
+anchor_bottom = 0.9519626
+offset_left = -723.4635
+offset_top = -1.508966
+offset_right = -723.4635
+offset_bottom = -1.5089111
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_lsi8j")
+expand_mode = 1
+
+[node name="RichTextLabel" type="Label" parent="UI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(182.38, 0)
+layout_mode = 2
+theme = ExtResource("5_xvyn7")
+text = "Pickaxe Jump"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_hhiii")
+expand_mode = 1
+
+[node name="RichTextLabel" type="Label" parent="UI/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(182.38, 0)
+layout_mode = 2
+theme = ExtResource("5_xvyn7")
+text = "Hook"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_wpkk7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/HBoxContainer3/TextureRect"]
+layout_mode = 0
+anchor_left = 0.28
+anchor_top = 0.12
+anchor_right = 0.72
+anchor_bottom = 0.82
+theme = ExtResource("5_xvyn7")
+theme_override_font_sizes/font_size = 30
+text = "R"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="Label" parent="UI/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(182.38, 0)
+layout_mode = 2
+theme = ExtResource("5_xvyn7")
+text = "Restart"
+
 [node name="DeathScreen" parent="UI" instance=ExtResource("4_wjl4f")]
 visible = false
 layout_mode = 1
@@ -225,19 +299,19 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9, 0.9)
 mouse_filter = 2
 texture = ExtResource("4_lgdho")
 metadata/_edit_use_anchors_ = true
 
 [node name="timer" type="TextureRect" parent="UI"]
-custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_left = 0.43
+anchor_right = 0.57
+anchor_bottom = 0.063
+offset_top = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 texture = ExtResource("4_4pcbe")
 expand_mode = 1
@@ -250,12 +324,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_right = 0.5
+offset_left = -100.0
+offset_top = -23.2
+offset_right = 100.0
+offset_bottom = 26.8
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_xvyn7")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 32
 text = "00:00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -267,8 +343,8 @@ anchor_left = 0.35
 anchor_top = 0.34444445
 anchor_right = 0.65
 anchor_bottom = 0.7
-theme_override_colors/default_color = Color(1, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("6_4pcbe")
+theme_override_colors/default_color = Color(0.85895056, 0.5216262, 0.18049765, 1)
+theme_override_fonts/normal_font = ExtResource("9_lsi8j")
 theme_override_font_sizes/normal_font_size = 128
 text = "3"
 horizontal_alignment = 1
@@ -280,6 +356,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_0hlw3")
 }
 autoplay = "countdown"
+
+[node name="MainMenuUiPrototo" type="Sprite2D" parent="UI"]
+light_mask = 0
+visibility_layer = 0
+z_index = -2
+position = Vector2(1280, 720)
+texture = ExtResource("7_0hlw3")
 
 [node name="playermesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.069225, 0)

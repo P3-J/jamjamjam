@@ -1,17 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://br8ugoivcgshj"]
+[gd_scene load_steps=14 format=3 uid="uid://br8ugoivcgshj"]
 
 [ext_resource type="VideoStream" uid="uid://b516dep8oca2r" path="res://src/assets/ui/mainmenu_back.ogv" id="1_5dsdd"]
-[ext_resource type="Texture2D" uid="uid://pl3m6lqs3330" path="res://src/assets/ui/basic/ControlsLeftClick.png" id="1_q5ok3"]
 [ext_resource type="Script" uid="uid://c4edoenb2k3e1" path="res://src/scripts/mainmenu.gd" id="1_vmwyx"]
 [ext_resource type="FontFile" uid="uid://d4emxlewlrqaf" path="res://font/Karma Future.otf" id="2_asv1t"]
 [ext_resource type="LabelSettings" uid="uid://i6f1lmycuxws" path="res://src/assets/ui/header.tres" id="2_p8thm"]
-[ext_resource type="Texture2D" uid="uid://mn0dd71so87r" path="res://src/assets/ui/basic/ControlsRightClick.png" id="3_4xweg"]
 [ext_resource type="Texture2D" uid="uid://cvvjol7rjlqvx" path="res://src/assets/ui/basic/MainMenu.png" id="3_54dtw"]
-[ext_resource type="Texture2D" uid="uid://dp57w4k18uqq3" path="res://src/assets/ui/basic/ControlsEmpty.png" id="4_4v121"]
+[ext_resource type="Texture2D" uid="uid://bd2wcfpk55v83" path="res://src/assets/ui/basic/Game Logo.png" id="7_6r18w"]
 [ext_resource type="Theme" uid="uid://ys24hk4rb1xo" path="res://src/assets/ui/theme.tres" id="8_6wcb6"]
 [ext_resource type="PackedScene" uid="uid://cbvgm61qw2giq" path="res://src/scenes/UI/levelselector.tscn" id="8_ubq7q"]
 [ext_resource type="PackedScene" uid="uid://xsckw4ti5dgv" path="res://src/scenes/UI/settings_menu.tscn" id="10_5dsdd"]
-[ext_resource type="Texture2D" uid="uid://dtqpxmd45wy4" path="res://src/assets/ui/layout_references/LevelSelectionShowcase.png" id="12_5dsdd"]
 [ext_resource type="AudioStream" uid="uid://b8w7o1biiuvv2" path="res://src/assets/sounds/chillin_at_the_cave.mp3" id="18_ofngt"]
 
 [sub_resource type="Animation" id="Animation_y0iw5"]
@@ -60,84 +57,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 638.0
-offset_bottom = 355.0
+offset_right = 1249.4326
+offset_bottom = 700.7461
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.67, 0.67)
+scale = Vector2(1.4, 1.4)
 stream = ExtResource("1_5dsdd")
 autoplay = true
 loop = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-anchor_left = 0.8065523
-anchor_top = 0.0055172415
-anchor_right = 0.9906396
-anchor_bottom = 0.9737931
-alignment = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("1_q5ok3")
-expand_mode = 1
-
-[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(182.38, 0)
-layout_mode = 2
-theme = ExtResource("8_6wcb6")
-text = "Pickaxe Jump"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("3_4xweg")
-expand_mode = 1
-
-[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(182.38, 0)
-layout_mode = 2
-theme = ExtResource("8_6wcb6")
-text = "Hook"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("4_4v121")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/TextureRect"]
-layout_mode = 0
-anchor_left = 0.28
-anchor_top = 0.12
-anchor_right = 0.72
-anchor_bottom = 0.82
-theme = ExtResource("8_6wcb6")
-theme_override_font_sizes/font_size = 30
-text = "R"
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(182.38, 0)
-layout_mode = 2
-theme = ExtResource("8_6wcb6")
-text = "Restart"
-
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.031201247
@@ -148,6 +81,19 @@ theme_override_font_sizes/font_size = 100
 text = "   Dwarf Escape"
 label_settings = ExtResource("2_p8thm")
 metadata/_edit_use_anchors_ = true
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_right = 0.314
+anchor_bottom = 0.44200003
+offset_left = 49.771996
+offset_top = -103.0
+offset_right = 1823.688
+offset_bottom = 1576.1
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("7_6r18w")
 
 [node name="MainMenu" type="Control" parent="."]
 process_mode = 3
@@ -166,58 +112,42 @@ anchor_left = 0.093
 anchor_top = 0.383
 anchor_right = 0.289
 anchor_bottom = 0.899
-offset_left = -17.880005
+offset_left = -33.45201
 offset_top = 0.35998535
-offset_right = -0.480011
-offset_bottom = 17.47998
+offset_right = 18.003967
+offset_bottom = 35.450073
 texture = ExtResource("3_54dtw")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/TextureRect"]
+[node name="Play" type="Button" parent="MainMenu/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.205
-anchor_right = 0.906
-anchor_bottom = 0.75500005
-offset_left = 11.0
-offset_top = -6.0
-offset_right = -11.0
-offset_bottom = 6.177887
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 70.0
+offset_top = 118.29004
+offset_right = 466.0
+offset_bottom = 235.29004
 theme = ExtResource("8_6wcb6")
+text = "PLAY"
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainMenu/TextureRect/VBoxContainer"]
-layout_mode = 2
-ratio = 3.4
-stretch_mode = 1
-
-[node name="Play" type="Button" parent="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer"]
-layout_mode = 2
+[node name="Settings" type="Button" parent="MainMenu/TextureRect"]
+z_as_relative = false
+layout_mode = 0
+offset_left = 67.0
+offset_top = 271.29004
+offset_right = 468.0
+offset_bottom = 389.29004
 theme = ExtResource("8_6wcb6")
-text = "Play"
+text = "SETTINGS"
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MainMenu/TextureRect/VBoxContainer"]
-layout_mode = 2
-ratio = 3.4
-stretch_mode = 1
-
-[node name="Settings" type="Button" parent="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer2"]
-layout_mode = 2
+[node name="Quit" type="Button" parent="MainMenu/TextureRect"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 425.29004
+offset_right = 469.0
+offset_bottom = 544.29004
 theme = ExtResource("8_6wcb6")
-text = "Settings"
-
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="MainMenu/TextureRect/VBoxContainer"]
-layout_mode = 2
-ratio = 3.4
-stretch_mode = 1
-
-[node name="Quit" type="Button" parent="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer3"]
-layout_mode = 2
-theme = ExtResource("8_6wcb6")
-text = "Quit"
+text = "QUIT"
 
 [node name="levelselector" parent="." instance=ExtResource("8_ubq7q")]
 visible = false
@@ -269,14 +199,6 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_ofngt")
 
-[node name="LevelSelectionShowcase" type="Sprite2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-z_index = -1
-position = Vector2(638.78, 360.4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_5dsdd")
-
-[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer/Play" to="MainMenu" method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer2/Settings" to="MainMenu" method="_on_settings_pressed"]
-[connection signal="pressed" from="MainMenu/TextureRect/VBoxContainer/AspectRatioContainer3/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/Settings" to="MainMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/TextureRect/Quit" to="MainMenu" method="_on_quit_pressed"]
