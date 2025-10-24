@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwjc8lhq044v0"]
+[gd_scene load_steps=16 format=3 uid="uid://bwjc8lhq044v0"]
 
 [ext_resource type="Script" uid="uid://c7yks3tsro0xy" path="res://src/scripts/audio_manager.gd" id="1_wdger"]
 [ext_resource type="AudioStream" uid="uid://vnymgvhcn2wt" path="res://src/assets/sounds/SFX/oudukas_cut.wav" id="2_nvaun"]
+[ext_resource type="AudioStream" uid="uid://desk1w7k6ldg3" path="res://src/assets/sounds/Lydian Dwarf (Demo).mp3" id="2_vt8aq"]
 [ext_resource type="AudioStream" uid="uid://bew6psjny45fs" path="res://src/assets/sounds/SFX/burning_match.wav" id="3_ckoot"]
 [ext_resource type="AudioStream" uid="uid://b5coce87hl0u" path="res://src/assets/sounds/SFX/picaxe_in_wood.wav" id="4_1xe7u"]
 [ext_resource type="AudioStream" uid="uid://dcnmuv5virrms" path="res://src/assets/sounds/SFX/pickaxe_throw_woosh.wav" id="5_0d3i6"]
@@ -48,7 +49,7 @@ stream = ExtResource("8_hwudm")
 bus = &"SFX"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_nvaun")
+stream = ExtResource("2_vt8aq")
 volume_db = -10.0
 bus = &"Music"
 
