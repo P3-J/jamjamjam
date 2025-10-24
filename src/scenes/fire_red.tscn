@@ -86,6 +86,7 @@ draw_pass_1 = SubResource("QuadMesh_2tngd")
 material_override = SubResource("ShaderMaterial_o3xlb")
 amount = 5
 lifetime = 1.2
+speed_scale = 0.9
 process_material = SubResource("ParticleProcessMaterial_xpnnt")
 draw_pass_1 = SubResource("QuadMesh_011py")
 

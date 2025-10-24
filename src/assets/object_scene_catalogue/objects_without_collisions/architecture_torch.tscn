@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnn1r3v7jujqt"]
+
+[ext_resource type="PackedScene" uid="uid://q3bgwym60omg" path="res://src/assets/object_scene_catalogue/big_pedestal.tscn" id="1_nurj1"]
+[ext_resource type="PackedScene" uid="uid://dk5vqvmwunv6h" path="res://src/assets/object_scene_catalogue/crystall_cage.tscn" id="2_eipn6"]
+[ext_resource type="PackedScene" uid="uid://cyxydyqne5ouo" path="res://src/scenes/fire_red.tscn" id="3_0pb8j"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BigPedestal" parent="." instance=ExtResource("1_nurj1")]
+
+[node name="CrystallCage" parent="." instance=ExtResource("2_eipn6")]
+transform = Transform3D(93.03103, 0, 0, 0, 93.03103, 0, 0, 0, 93.03103, 0, 3.2952018, 0)
+
+[node name="fire_red" parent="CrystallCage" instance=ExtResource("3_0pb8j")]
+transform = Transform3D(0.039058626, 0, 0, 0, 0.039058626, 0, 0, 0, 0.039058626, 0, 0.00949043, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CrystallCage"]
+transform = Transform3D(0.010749102, 0, 0, 0, 0.010749102, 0, 0, 0, 0.010749102, -0.005459811, 0.014463756, 0.0016438066)
+light_color = Color(0.70060855, 0.5026809, 0.20129052, 1)
+light_energy = 46.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 5.226
+omni_range = 41.166
+omni_attenuation = 2.184
